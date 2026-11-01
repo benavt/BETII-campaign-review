@@ -20,7 +20,7 @@ Choose each sequence in the interface and select:
 - Boltz2 Exact, AlphaFold 3, OpenDDE Exact or OpenFold.
 - Binder monomer, or complex with BRD3, BRD2, BRD4 or BRDT ET.
 
-The publication manifest reports the actual available structures and any missing cells. The initial snapshot contains **392 of 400 comparisons**: AP2-9's eight OpenFold complexes are pending native calculation and validation. Its monomers and other three complex methods are available. Each comparison bundles its selected native model; additional native ensemble members remain in the original research archive.
+The publication manifest reports the actual available structures and any missing cells. The completed snapshot contains **400 of 400 comparisons**, including all eight validated AP2-9 OpenFold complexes. Both monomers and all four complex methods are available for every sequence and construct. Each comparison bundles its selected native model; additional native ensemble members remain in the original research archive.
 
 All displayed affinities and selectivities are predictions. Tagged and untagged models and their scores remain separate. DeltaForge is **saved-scores-only**: the tagged panels for RFD3 1933 and C-34 have no saved Kds. A completed structure does not create a new Kd or establish biological function.
 

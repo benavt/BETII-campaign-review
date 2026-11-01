@@ -1,6 +1,6 @@
+import {renderPymolDownload} from './pymol-download.mjs';
 import {publicReadiness,renderPublicOverview} from './public-readiness.mjs';
 import {renderDimerModels,dimerModelData} from './dimer-models.mjs';
-import {renderPymolDownload} from './pymol-download.mjs';
 import {settleWithin,setStartupMessage} from './startup.mjs';
 import {renderJobLaunch,friendlyJobMessage} from './job-launch.mjs';
 import {bindCampaignNavigation} from './navigation.mjs';
@@ -36,7 +36,7 @@ import {CHECKS, makeCandidateReview, guidedReviewStatus, validateWorkspace, bloc
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const forceDemo=false;
-const key='betii-static-736cca22880563b81869bdae509a528b348e41f3d26180ff1a0e35f6a2cd4689';
+const key='betii-static-12dc81400406006bf79314fd1d194e37724259e80d9c904ab00f81d15b2c869e';
 let persistence='saved',storageError='',pendingImport=null,lastCampaignTab='overview';
 let persistenceRevision=0;
 const dimerSelections=new Map();
