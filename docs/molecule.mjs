@@ -7,7 +7,7 @@ import {confidenceAvailable,residueConfidence,chainbowColors,atomDisplayColor} f
 const LIBRARY = new URL('./vendor/3Dmol-min.js', import.meta.url).href;
 const FRAME = new URL('./molecule-frame.html', import.meta.url).href;
 const ASSETS = new URL('./data/assets/', import.meta.url);
-const DEFAULT_PALETTE = { humanReceptor: '#ffcc80', mouseReceptor: '#3380cc', receptor: '#808080', binder: '#00ffff', hotspots: '#ff0080', d46Dd2: '#ff00ff', d46Dd1: '#00ffff' };
+const DEFAULT_PALETTE = { humanReceptor: '#ffcc80', mouseReceptor: '#3380cc', receptor: '#808080', binder: '#00ffff', hotspots: '#FF69B4', d46Dd2: '#ff00ff', d46Dd1: '#00ffff' };
 
 export function molecularAssetURL(value) {
   if (typeof value !== 'string' || /[\\?#]/.test(value)) throw new Error('Model needs a local asset URL without query or fragment.');
@@ -122,7 +122,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
   const initialAssets=overlayAssets(assets,overlaySpecies===undefined?[assets[0].species]:overlaySpecies);
   const isoformColor=asset=>color(asset.overlayColor,OVERLAY_ISOFORM_COLORS[targetOf(asset)]||'#64748b');
   let loaded=[],loadErrors=[],isoformColors=false;
-  let disposed = false, viewer, current, selectedAtom, initialView, initialFrame, request, generation = 0, representation = 'cartoon', showHotspots = false, projectColors = true, showSideChains = false, showResidueColors = false, showInterface = false;
+  let disposed = false, viewer, current, selectedAtom, initialView, initialFrame, request, generation = 0, representation = 'cartoon', showHotspots = true, projectColors = true, showSideChains = false, showResidueColors = false, showInterface = false;
   let colors = { ...DEFAULT_PALETTE, ...palette };
   let colorMode='project';
   const defaults={...viewDefaults};let automaticView=null;
