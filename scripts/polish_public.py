@@ -54,7 +54,7 @@ def run(site):
   app=app.replace("'workspace','monomers','models'].includes", "'workspace','monomers','models','dimers'].includes")
   # Existing shared viewport machinery is reused for native two-binder assets.
   marker='  bind(c);';assert app.count(marker)==1
-  app=app.replace(marker,marker+"\n  if(tab==='dimers'){const d=dimerModelData(c,dimerSelections.get(c.id)||{});document.querySelectorAll('[data-dimer-candidate],[data-dimer-variant],[data-dimer-engine]').forEach(n=>n.onchange=()=>{dimerSelections.set(c.id,{candidateId:document.querySelector('[data-dimer-candidate]').value,variant:document.querySelector('[data-dimer-variant]').value,engine:document.querySelector('[data-dimer-engine]').value});render();});if(d.assets.length)viewerController=mountMolecule(document.getElementById('dimer-molecule'),{...d.subject,molecularModels:d.assets},{campaignId:c.id,palette:{binder:'#F07A21'},onStatus:t=>{document.getElementById('dimer-status').textContent=t;}});}")
+  app=app.replace(marker,marker+"\n  if(tab==='dimers'){const d=dimerModelData(c,dimerSelections.get(c.id)||{});document.querySelectorAll('[data-dimer-candidate],[data-dimer-variant],[data-dimer-engine],[data-dimer-rank]').forEach(n=>n.onchange=()=>{dimerSelections.set(c.id,{candidateId:document.querySelector('[data-dimer-candidate]').value,variant:document.querySelector('[data-dimer-variant]').value,engine:document.querySelector('[data-dimer-engine]').value,rank:Number(document.querySelector('[data-dimer-rank]')?.value||1)});render();});if(d.assets.length)viewerController=mountMolecule(document.getElementById('dimer-molecule'),{...d.subject,molecularModels:d.assets},{campaignId:c.id,palette:{binder:'#F07A21'},onStatus:t=>{const n=document.getElementById('dimer-status');if(version===renderVersion&&n)n.textContent=t;}});}")
   # Reversible current review; historical package records remain in the backup.
   marker="try{const id=button.dataset.reviewGood,subject="
   app=app.replace(marker,"try{const id=button.dataset.reviewGood;if(button.getAttribute('aria-pressed')==='true'){delete workspace.candidateReviews?.[c.id]?.[id];await persist();await render();notify('Looks good cleared. You can review this design again.');return;}const subject=")
@@ -88,7 +88,7 @@ def run(site):
  styles=(site/'style.css').read_text();marker='/* Public single-campaign layout */'
  if marker not in styles:styles+='\n'+marker+'\n.workspace{margin-left:0!important;width:100%!important}.shell-sidebar,.mobile-nav-toggle,.mobile-nav-backdrop{display:none!important}.public-review-note{display:grid;gap:6px;margin-top:12px}.guided-progress-panel progress{width:min(440px,100%)}\n'
  (site/'style.css').write_text(styles)
- molecule=(site/'molecule.mjs').read_text().replace('showHotspots = false','showHotspots = true').replace('hotspots: \'#ff0080\'','hotspots: \'#FF69B4\'');(site/'molecule.mjs').write_text(molecule)
+ molecule=Path(__file__).with_name('molecule.mjs').read_text().replace('showHotspots = false','showHotspots = true').replace('hotspots: \'#ff0080\'','hotspots: \'#FF69B4\'');(site/'molecule.mjs').write_text(molecule)
  colors=(site/'colors.mjs').read_text().replace('Hotspots · apo reference only','ET target hotspots');(site/'colors.mjs').write_text(colors)
  model=(site/'model.mjs').read_text();marker="  assert(str(reviewer)" # Supplement the existing approval gate for this fixed public roster.
  needle='export async function makeDecision(c, selectedIds, {reviewer, note, checks, outcome, viewContext = {}}) {'

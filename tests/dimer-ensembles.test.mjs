@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {validMolecularRoles,binderChains,receptorChains} from '../docs/molecule.mjs';
+import {dimerModelData,renderDimerModels} from '../docs/dimer-models.mjs';
+import {followupURL} from '../docs/followup.mjs';
+const s={id:'test-fixture',label:'Test fixture',sequenceSha256:'a'.repeat(64),constructVariants:[{id:'untagged',sequenceSha256:'a'.repeat(64)}],dimerModels:[]};
+for(let rank=1;rank<=5;rank++)s.dimerModels.push({id:'fixture-'+rank,copies:2,status:'verified',constructVariant:'untagged',constructSequenceSha256:s.sequenceSha256,foldingEngine:'openfold',nativeRank:rank,ipTM:rank/10,pTM:.5,modelSha256:String(rank).repeat(64),molecularModel:{sha256:String(rank).repeat(64),kind:'binder_homodimer',roles:{binder:'A'},binderCopies:['B'],url:'./data/assets/'+String(rank).repeat(64)+'.pdb'}});
+const c={subjects:[s]};
+test('two binder copies are rendered without inventing a receptor role',()=>{const a=s.dimerModels[0].molecularModel;assert.equal(validMolecularRoles(a),true);assert.deepEqual(binderChains(a),['A','B']);assert.deepEqual(receptorChains(a),[]);assert.equal(validMolecularRoles({...a,roles:{binder:'A',receptor:'B'}}),false);assert.equal(validMolecularRoles({...a,binderCopies:[]}),false)});
+test('all five native ranks can be selected with matching confidence, download and follow-up context',()=>{for(let rank=1;rank<=5;rank++){const d=dimerModelData(c,{engine:'openfold',rank});assert.equal(d.chosen.nativeRank,rank);assert.equal(d.assets[0].sha256,String(rank).repeat(64));assert.match(renderDimerModels(c,{engine:'openfold',rank}),/data-dimer-rank/);const u=new URL(followupURL(s,{selection:{kind:'dimer',engine:'openfold',variant:'untagged',rank}}));assert.match(u.searchParams.get('body'),new RegExp(String(rank).repeat(64)));}assert.throws(()=>dimerModelData(c,{engine:'openfold',rank:6}),/rank/)});
+test('incomplete native ensembles are rejected',()=>{const broken=structuredClone(c);broken.subjects[0].dimerModels.pop();assert.throws(()=>dimerModelData(broken,{engine:'openfold'}),/five-output/)});

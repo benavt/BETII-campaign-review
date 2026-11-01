@@ -36,7 +36,7 @@ The site opens directly as a single campaign. **Final Review** links to the sele
 
 Reviews stay in each browser; use **Data & backups** to exchange review metadata. The public site needs no private service to view its bundled structures.
 
-The **Binder dimers** tab is reserved for true two-chain binder homodimers: ten sequences × two constructs × five native methods (the four above plus ColabFold), with five native outputs per condition, or **500 coordinate files**. Each tagged copy retains its complete 64-residue tag. Native ipTM values appear with validated models; pending entries never use monomer/ET scores as substitutes.
+The **Binder dimers** tab is reserved for true two-chain binder homodimers: ten sequences × two constructs × five native methods (the four above plus ColabFold), with five native outputs per condition, or **500 coordinate files**. Each tagged copy retains its complete 64-residue tag. Choose any of the five native ranks to inspect its coordinates, ipTM/pTM and matching PSE download. Pending entries never use monomer/ET scores as substitutes. Dimer follow-ups include the exact selected native rank and coordinate hash.
 
 The browser viewer and PSE downloads show canonical BRD3 hotspot positions mapped by full ET-sequence alignment onto each isoform and then onto its actual native residue numbers. Native coordinate files remain byte-for-byte unchanged.
 

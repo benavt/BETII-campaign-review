@@ -22,6 +22,10 @@ function color(value, fallback) {
   return swatchFor(value) || swatchFor(fallback) || '#808080';
 }
 function chain(value) { return typeof value === 'string' && value.length > 0 && value.length <= 32; }
+export function validMolecularRoles(asset){
+ if(asset.kind==='binder_homodimer')return chain(asset.roles?.binder)&&asset.roles.receptor===undefined&&Array.isArray(asset.binderCopies)&&asset.binderCopies.length===1&&chain(asset.binderCopies[0])&&asset.binderCopies[0]!==asset.roles.binder&&!(asset.contextChains||[]).length;
+ return asset.kind==='binder_only'?chain(asset.roles?.binder)&&asset.roles.receptor===undefined:chain(asset.roles?.receptor)&&(asset.kind==='receptor_only'?asset.roles.binder===undefined:chain(asset.roles.binder)&&asset.roles.receptor!==asset.roles.binder);
+}
 export function receptorChains(asset) {
   const context=asset.contextChains||[];
   if(!Array.isArray(context)||context.length>32||context.some(id=>!chain(id)||id===asset.roles?.receptor||id===asset.roles?.binder)||new Set(context).size!==context.length||asset.kind==='binder_only'&&context.length)throw new Error('Receptor context chains must be explicit, distinct target partners.');
@@ -110,7 +114,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
     if(asset.target!==undefined&&(typeof asset.target!=='string'||!asset.target.trim()||asset.target.length>1000))throw new Error('A molecular target label must be nonempty text.');
     molecularAssetURL(asset.url);
     if (!['pdb', 'cif', 'mmcif'].includes(asset.format)) throw new Error('Molecular model format must be pdb, cif or mmcif.');
-    const validRoles=asset.kind==='binder_only'?chain(asset.roles?.binder)&&asset.roles.receptor===undefined:chain(asset.roles?.receptor)&&(asset.kind==='receptor_only'?asset.roles.binder===undefined:chain(asset.roles.binder)&&asset.roles.receptor!==asset.roles.binder);
+    const validRoles=validMolecularRoles(asset);
     if (!validRoles) throw new Error('Molecular models need distinct explicit receptor and binder chain roles, or an explicit single-role input.');
     receptorChains(asset);
     binderChains(asset);
@@ -271,6 +275,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
           const atoms=model.selectedAtoms({});
           if(!atoms.length)throw new Error('No atoms were found in this model.');
           if([...receptorChains(asset),...binderChains(asset)].some(id=>!model.selectedAtoms({chain:id}).length))throw new Error('Recorded receptor or binder chain is absent from this model.');
+          if(asset.kind==='binder_homodimer'&&atoms.some(a=>!binderChains(asset).includes(a.chain)))throw new Error('A binder homodimer must contain exactly its two declared binder chains.');
           if(asset.kind==='binder_only'&&atoms.some(a=>a.chain!==asset.roles.binder))throw new Error('A designed-binder monomer must contain only the recorded binder chain.');
           for(const segment of fusionSegments)if(!model.selectedAtoms({chain:asset.roles.binder,resi:`${segment.range[0]}-${segment.range[1]}`}).length)throw new Error(`The documented ${segment.label} domain is absent from this model.`);
           alignDisplayAtoms(atoms,asset);
