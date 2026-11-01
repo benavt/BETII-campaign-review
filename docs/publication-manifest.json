@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 133807,
-      "sha256": "447907fff37aadec28c8f7397c059294218bd08d41e7e76e278eae9b0998ee6f"
+      "bytes": 133932,
+      "sha256": "d57314326ed8b1d4d54d92cef0c82da624a99ad4aa8dfe1e2cdc2407b936fd87"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -1751,8 +1751,8 @@
       "sha256": "6d8ddc8d2dec0fcbd9fe611ca555685376beaf95463dd0f62bfb99669925b4db"
     },
     "molecule.mjs": {
-      "bytes": 34098,
-      "sha256": "9a01550c6141496d0035ebc9102ead275d30a5e84992633fbf39342b1a81420b"
+      "bytes": 34652,
+      "sha256": "ca49d0e72844c85144d02d0f8c2a846a77f8c0a6769f65a26a18b94d2923dab1"
     },
     "monomer-models.mjs": {
       "bytes": 15827,
@@ -1871,12 +1871,12 @@
       "sha256": "9d74907123d94dd7fdfd915b78db514a631598828f1dd89935795db43a4b83bd"
     },
     "dimer-models.mjs": {
-      "bytes": 3024,
-      "sha256": "6b359366c953b746f279a8fa23dc220924ed9d513eeb1852ed4b4a6b3a731e01"
+      "bytes": 3946,
+      "sha256": "287142d0fbf165dc7f63480fe472c061b04444d05c5c88bfdc08f12cb768ef2a"
     },
     "followup.mjs": {
-      "bytes": 955,
-      "sha256": "f8992584df367a83b6b6862b59f30204e726426f1b0dd4565d5968d0123337d5"
+      "bytes": 1130,
+      "sha256": "0ee5d41b272dc755a9ebc1c245b04208f05ab650683ffc235e1f4b6b0b8708c7"
     },
     "public-readiness.mjs": {
       "bytes": 2301,

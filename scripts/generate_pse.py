@@ -18,7 +18,7 @@ def run(site,*,limit=None):
  site=Path(site).resolve();manifest=json.loads((site/'publication-manifest.json').read_bytes());path=site/'data/local-workspace.json';workspace=json.loads(path.read_bytes());sessions={};models=[]
  for c in workspace['campaigns']:
   for s in c['subjects']:
-   for kind,rows in [('complex',s['modelCoverage']['models']),('monomer',s['monomerModels'])]:
+   for kind,rows in [('complex',s['modelCoverage']['models']),('monomer',s['monomerModels']),('dimer',s.get('dimerModels',[]))]:
     for model in rows:models.append((s,kind,model))
  if limit:models=models[:limit]
  output=site/'data/sessions';output.mkdir(exist_ok=True)
@@ -26,8 +26,10 @@ def run(site,*,limit=None):
   asset=m['molecularModel'];relative=asset['url'].removeprefix('./');raw=(site/relative).read_bytes();assert sha(raw)==m['modelSha256']==asset['sha256']
   expected={asset['roles']['binder']:m['constructSequence']}
   if kind=='complex':expected[asset['roles']['receptor']]=m['targetSequence']
-  filename=re.sub(r'[^A-Za-z0-9_.-]','_',s['id']+'__'+m['constructVariant']+'__'+m['foldingEngine']+'__'+(m.get('target') or 'monomer'))+'.pse'
-  style={'version':'betii-et-hotspots-v2','coordinateSha256':asset['sha256'],'hotspots':asset.get('hotspots',[])}
+  if kind=='dimer':
+   assert m['copies']==2 and asset['kind']=='binder_homodimer' and asset['roles']=={'binder':'A'} and asset['binderCopies']==['B'];expected['B']=m['constructSequence']
+  filename=re.sub(r'[^A-Za-z0-9_.-]','_',s['id']+'__'+m['constructVariant']+'__'+m['foldingEngine']+'__'+('dimer_native-rank-'+str(m['nativeRank']) if kind=='dimer' else m.get('target') or 'monomer'))+'.pse'
+  style={'version':'betii-binder-homodimer-v1' if kind=='dimer' else 'betii-et-hotspots-v2','coordinateSha256':asset['sha256'],'hotspots':asset.get('hotspots',[])}
   target=output/(sha(encoded(style))+'.pse')
   if not target.exists():
    cmd.reinitialize();cmd.set('max_threads',2);cmd.bg_color('white');cmd.set('orthoscopic',1);cmd.set('ray_shadows',0)
@@ -36,6 +38,7 @@ def run(site,*,limit=None):
    atom_count=cmd.count_atoms('native');cmd.hide('everything','all');cmd.show('cartoon','native')
    cmd.set_color('binder_orange',[240/255,122/255,33/255]);cmd.set_color('target_bluegray',[117/255,148/255,171/255])
    cmd.color('binder_orange','native and chain '+asset['roles']['binder'])
+   if kind=='dimer':cmd.color('binder_orange','native and chain B')
    if kind=='complex':
     cmd.color('target_bluegray','native and chain '+asset['roles']['receptor'])
     hotspots=asset.get('hotspots',[]);assert len(hotspots)==10
@@ -54,7 +57,7 @@ def run(site,*,limit=None):
  # Mirror the same exact sessions into the separate explorer pool copy.
  for c in workspace['campaigns']:
   for s in c.get('candidatePool',[]):
-   for m in s.get('modelCoverage',{}).get('models',[])+s.get('monomerModels',[]):
+   for m in s.get('modelCoverage',{}).get('models',[])+s.get('monomerModels',[])+s.get('dimerModels',[]):
     if m['id'] in sessions:m['molecularModel']['pymolSession']=sessions[m['id']]
  oldhash=manifest['exportedWorkspaceSha256'];raw=encoded(workspace);path.write_bytes(raw);newhash=sha(raw)
  app=site/'app.js';text=app.read_text();assert text.count(oldhash)==1;text=text.replace(oldhash,newhash)

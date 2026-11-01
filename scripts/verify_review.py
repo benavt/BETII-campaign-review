@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Verify the complete public file allowlist, scope, hashes and asset closure."""
 import argparse,hashlib,json,re
+from verify_dimers import verify_dimers
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
 
@@ -26,6 +27,7 @@ def verify(root):
   if p.suffix in {'.mjs','.js'}:
    for ref in re.findall(r"(?:from\s*|import\s*\()\s*['\"](\./[^'\"]+)['\"]",p.read_text()):assert (p.parent/ref).is_file(),ref
  for ref in re.findall(r'(?:src|href)="(\./[^"?#]+)',(root/'index.html').read_text()):assert (root/ref).is_file(),ref
- return dict(valid=True,candidates=10,structuralCells=manifest['verifiedCoordinateModels'],missing=len(manifest['missingCells']),files=len(actual),bytes=sum(r['bytes'] for r in manifest['files'].values()),public=True)
+ dimers=verify_dimers(root,workspace,manifest)
+ return dict(**dimers,valid=True,candidates=10,structuralCells=manifest['verifiedCoordinateModels'],missing=len(manifest['missingCells']),files=len(actual),bytes=sum(r['bytes'] for r in manifest['files'].values()),public=True)
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--site',type=Path,default=Path(__file__).resolve().parents[1]/'docs');print(json.dumps(verify(p.parse_args().site)))
