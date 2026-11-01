@@ -477,64 +477,8 @@
           }
         }
       ]
-    },
-    {
-      "id": "LF-BRD3-r09",
-      "label": "LF-BRD3-r09",
-      "origin": "LigandForge",
-      "Kd_nM": {
-        "BRD3": 1.092428878354908,
-        "BRD2": 34.489520742393935,
-        "BRD4": 27.89380550987366,
-        "BRDT": 0.9997018475554238
-      },
-      "minimumSelectivity": 0.9151184734889816,
-      "limitingTarget": "BRDT",
-      "sources": [
-        {
-          "title": "Exact-coordinate saved affinity response",
-          "label": "retained-source:4bee8f52abec2177/LF-BRD3-r09__BRD3.json | SHA-256 63fde0af2f9f5bb0fbf74ae6704990df9d2fac39d0ee6afc12b5d15373e3b372",
-          "path": "retained-source:4bee8f52abec2177/LF-BRD3-r09__BRD3.json",
-          "sha256": "63fde0af2f9f5bb0fbf74ae6704990df9d2fac39d0ee6afc12b5d15373e3b372",
-          "locator": {
-            "format": "json",
-            "pointer": "/response/kd_nm"
-          }
-        },
-        {
-          "title": "Exact-coordinate saved affinity response",
-          "label": "retained-source:cdb50a13c9f8f85a/LF-BRD3-r09__BRD2.json | SHA-256 82d927e4d9d9bf2b005d2868c1dfd3f500a8c469cc5e47ffbf4445db8a4a8167",
-          "path": "retained-source:cdb50a13c9f8f85a/LF-BRD3-r09__BRD2.json",
-          "sha256": "82d927e4d9d9bf2b005d2868c1dfd3f500a8c469cc5e47ffbf4445db8a4a8167",
-          "locator": {
-            "format": "json",
-            "pointer": "/response/kd_nm"
-          }
-        },
-        {
-          "title": "Exact-coordinate saved affinity response",
-          "label": "retained-source:fc97b9bf6e4effeb/LF-BRD3-r09__BRD4.json | SHA-256 c9921ab5b5849432f6df79fc466a5757a4efbf7b0862fb90ea41c69fff7e4a52",
-          "path": "retained-source:fc97b9bf6e4effeb/LF-BRD3-r09__BRD4.json",
-          "sha256": "c9921ab5b5849432f6df79fc466a5757a4efbf7b0862fb90ea41c69fff7e4a52",
-          "locator": {
-            "format": "json",
-            "pointer": "/response/kd_nm"
-          }
-        },
-        {
-          "title": "Exact-coordinate saved affinity response",
-          "label": "retained-source:e265976e0597b169/LF-BRD3-r09__BRDT.json | SHA-256 3e12f7cf035ea228d1bc803e60a442e197b3fb10c4f42d24d63a1174008a0e71",
-          "path": "retained-source:e265976e0597b169/LF-BRD3-r09__BRDT.json",
-          "sha256": "3e12f7cf035ea228d1bc803e60a442e197b3fb10c4f42d24d63a1174008a0e71",
-          "locator": {
-            "format": "json",
-            "pointer": "/response/kd_nm"
-          }
-        }
-      ]
     }
   ],
-  "excludedId": "LF-BRD3-r09",
   "selectedIds": [
     "C2K_L60_0608",
     "Brd3ET_Brd3ET_1933_model_6",

@@ -1,3 +1,4 @@
+import {publicReadiness} from './public-readiness.mjs';
 import {validateDesignInputs} from './campaign-inputs.mjs';
 import {validateFoldPlan,validatePlanReviews} from './fold-plan.mjs';
 import {validateMonomerModels} from './monomer-models.mjs';
@@ -221,6 +222,8 @@ export async function decisionStatus(c, selectedIds, decisions, viewContext = {}
 }
 
 export async function makeDecision(c, selectedIds, {reviewer, note, checks, outcome, viewContext = {}}) {
+  if(outcome==='approved'&&c.publicReview?.fixedRoster)assert(selectedIds.length===c.subjects.length&&c.subjects.every(s=>selectedIds.includes(s.id)),'Fixed public panel: review all ten designs before confirmation.');
+  if(outcome==='approved'&&c.publicReview?.fixedRoster)assert(publicReadiness(c).length===0,publicReadiness(c).join(' '));
   assert(str(reviewer), 'Enter the reviewer’s name.');
   assert(typeof note === 'string' && note.length <= 12000, 'Review note is too long.');
   assert(['approved','changes_requested'].includes(outcome), 'Unknown review action.');

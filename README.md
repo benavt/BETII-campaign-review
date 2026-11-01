@@ -2,15 +2,15 @@
 
 A public, self-contained review snapshot of nine candidates from the edited BETII shortlist plus AP2-9 as the requested positive control. It includes the selected native structures, exact untagged and tagged sequences, model-specific confidence and saved affinity predictions.
 
-Open **[Campaign Manager](https://benavt.github.io/BETII-campaign-review/?view=candidates)** or **[selection and sequences](https://benavt.github.io/BETII-campaign-review/triage.html)** after the Pages deployment completes.
+Open **[Campaign Manager](https://benavt.github.io/BETII-campaign-review/?view=candidates)** or **[selection and sequences](https://benavt.github.io/BETII-campaign-review/triage.html)**.
 
 ## Selection
 
-Rank the original ten candidates by `min(Kd_BRD2, Kd_BRD4, Kd_BRDT) / Kd_BRD3`, using only untagged Boltz2 Exact coordinates with matched saved DeltaForge scores and the same scorer calibration. Exclude LF-BRD3-r09, the lowest at 0.915×, and include AP2-9 separately as the control.
+Rank the original ten candidates by `min(Kd_BRD2, Kd_BRD4, Kd_BRDT) / Kd_BRD3`, using only untagged Boltz2 Exact coordinates with matched saved DeltaForge scores and the same scorer calibration. Include the nine highest-ranked candidates and AP2-9 separately as the control.
 
 The panel contains **5 RFD3, 2 LigandForge, 1 AP Novo and 1 collaborator candidate, plus AP2-9**. These are design origins. Boltz2 Exact, AlphaFold 3, OpenDDE Exact and OpenFold are separate refolding methods; no candidate is assigned to only one of them.
 
-This is a ranking within the user's edited shortlist, not a search of the entire design pool. Only four of the nine candidates exceed the historical provisional 10× predicted selectivity criterion. The remaining five are weaker-selectivity candidates/comparators. AP2-9 is a requested positive control whose archived role is a historical reference; no experimental control-validation record is supplied here.
+This is a ranking within the user's edited shortlist, not a search of the entire design pool. Only four of the nine candidates exceed the historical provisional 10× predicted selectivity criterion. The remaining five are weaker-selectivity candidates/comparators. AP2-9 is a requested positive control whose archived role is a historical reference; its experimental positive-control status still needs verification.
 
 ## Structures and scope
 
@@ -30,7 +30,15 @@ Everything under `docs/` is intentionally public. It contains only this selected
 
 Use **Download PSE** beside the 3D viewer to open the currently selected method, construct and monomer/isoform model in PyMOL. Sessions are standalone, use the project colors, and retain the exact full chains. For an overlay, the button downloads the primary selected model. Every generated session was reopened and checked against its native atom count and chain sequences.
 
-The site requires no private Mac service. Reviews stay in each browser; use **Data & backups** to exchange review metadata. Static hosting cannot run scientific jobs or paid scoring.
+The site opens directly as a single campaign. **Final Review** links to the selection and both complete FASTA files. **Looks good** can be undone or replaced with a follow-up. Package confirmation requires current reviews for all ten designs and validated publication of the requested model scope; an early attempt explains what remains.
+
+**Request follow-up** saves a browser-local note. **Send follow-up on GitHub** opens an issue with exact candidate, sequence and selected-model context. Sign in and submit that form to send it to the shared queue. Submitted `[Follow-up]` issues are checked every two minutes by a private notification bridge, which sends the campaign owner a phone alert through the existing Fleet route. Delivery depends on that bridge and its credential-owning receiver being available. The queue is available for agent or researcher triage; it does not automatically start an AI session, calculations or paid scoring.
+
+Reviews stay in each browser; use **Data & backups** to exchange review metadata. The public site needs no private service to view its bundled structures.
+
+The **Binder dimers** tab is reserved for true two-chain binder homodimers: ten sequences × two constructs × five native methods (the four above plus ColabFold), with five native outputs per condition, or **500 coordinate files**. Each tagged copy retains its complete 64-residue tag. Native ipTM values appear with validated models; pending entries never use monomer/ET scores as substitutes.
+
+The browser viewer and PSE downloads show canonical BRD3 hotspot positions mapped by full ET-sequence alignment onto each isoform and then onto its actual native residue numbers. Native coordinate files remain byte-for-byte unchanged.
 
 ## Verification and updates
 

@@ -13,7 +13,7 @@ const atomRoles = [
 const cartoon = (id,label,color,filter) => ({id,label,color,scope:'cartoon',...(filter?{filter}:{})});
 const presets = {
   tfr1: {label:'TfR1 · Week 4 domains / designed binder',roles:[cartoon('receptor','Other receptor context','#BAC4CF'),cartoon('proteaseLike','Protease-like domain','blue'),cartoon('apical','Apical domain','#29A6AD'),cartoon('helical','Helical domain','slate'),cartoon('binder','Designed binder','magenta'),{id:'originalHotspots',label:'Requested hotspot guidance',color:'#1AE633',scope:'atom'}]},
-  betii: {label:'BETII · documented target / binder',roles:[cartoon('receptor','ET target · recorded blue gray','#7594AB'),cartoon('binder','Binder · recorded orange','#F07A21'),{id:'apoHotspots',label:'Hotspots · apo reference only',color:'#FF69B4',scope:'atom'}]},
+  betii: {label:'BETII · documented target / binder',roles:[cartoon('receptor','ET target · recorded blue gray','#7594AB'),cartoon('binder','Binder · recorded orange','#F07A21'),{id:'apoHotspots',label:'ET target hotspots',color:'#FF69B4',scope:'atom'}]},
   neutral: {label:'Neutral · project standard not yet verified',roles:[cartoon('receptor','Receptor (neutral reference)','gray'),cartoon('binder','Binder (neutral reference)','cyan'),...atomRoles]},
   egfr: { label:'EGFR · human / mouse / binder', roles:[
     cartoon('humanReceptor','Human receptor','lightorange'),
