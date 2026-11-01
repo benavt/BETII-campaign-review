@@ -1,0 +1,42 @@
+name: Verify and publish BETII Campaign Manager
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: betii-public-pages
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Verify exact public scope and files
+        run: python3 scripts/verify_review.py
+      - name: Check publication boundaries
+        run: python3 -m unittest discover -s tests
+      - name: Check static startup and all 400 viewer controls
+        run: node --test tests/*.test.mjs
+      - name: Upload verified static site
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: docs
+          retention-days: 1
+  deploy:
+    needs: verify
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.publish.outputs.page_url }}
+    steps:
+      - name: Publish public campaign snapshot
+        id: publish
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

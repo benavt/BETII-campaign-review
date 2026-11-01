@@ -1,0 +1,607 @@
+{
+  "schemaVersion": 1,
+  "scope": "Untagged, full canonical receptor constructs, Boltz2 Exact coordinates and matched saved DeltaForge calibration",
+  "formula": "min(Kd_BRD2,Kd_BRD4,Kd_BRDT)/Kd_BRD3",
+  "ranking": [
+    {
+      "id": "C2K_L60_0608",
+      "label": "C2K_L60_0608",
+      "origin": "AP Novo",
+      "Kd_nM": {
+        "BRD3": 0.7709502890199941,
+        "BRD2": 383.08885586581124,
+        "BRD4": 416.26089762843196,
+        "BRDT": 108.10679851338959
+      },
+      "minimumSelectivity": 140.22538165309115,
+      "limitingTarget": "BRDT",
+      "sources": [
+        {
+          "path": "retained-source:8f7aee9288ef1c6a/C2K_L60_0608__BRD3.json",
+          "sha256": "3efb4273ae39a986fbee249504ac6961c6f80569d95cb81c0ef752bc1a968c1f",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:091de5501d4aa8ff/C2K_L60_0608__BRD2.json",
+          "sha256": "935597a02e49a258820d5660cc9a2395ca176a835c6cbf3e653ed976eb39ca26",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:7fbdb32170dfc67b/C2K_L60_0608__BRD4.json",
+          "sha256": "e6bf71f48d260d4dbc8503328fe34ade12436d7a564de1b5f7f4397ba02459d1",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:af0814a0e48b338c/C2K_L60_0608__BRDT.json",
+          "sha256": "8f61f1e79f579c9687f7db3edf67e8f5cd3ad72445df97977775efac88650dd8",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Brd3ET_Brd3ET_1933_model_6",
+      "label": "RFD3 1933 \u00b7 model 6",
+      "origin": "RFD3",
+      "Kd_nM": {
+        "BRD3": 0.588594127245306,
+        "BRD2": 34.78280812192732,
+        "BRD4": 39.60156904903851,
+        "BRDT": 36.97840804030433
+      },
+      "minimumSelectivity": 59.09472506073956,
+      "limitingTarget": "BRD2",
+      "sources": [
+        {
+          "path": "retained-source:acd681ed52356a34/Brd3ET_Brd3ET_1933_model_6__BRD3.json",
+          "sha256": "1a0495066b67ebb425cea1e67908d8dd5009bc4b4a4c25eb191f9a38300eedaf",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:b3688e7be7aa57d6/Brd3ET_Brd3ET_1933_model_6__BRD2.json",
+          "sha256": "e2c58321cbd3516851e8037f58c50776dd7cc9b073d0a1fd7fc1d6e1c3e0e635",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:ceeb4832c4ed3b36/Brd3ET_Brd3ET_1933_model_6__BRD4.json",
+          "sha256": "0669af959606d400b677fbdf00dbab85871e212a0705fd510358def8858203d7",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:196b4ef32c710ec2/Brd3ET_Brd3ET_1933_model_6__BRDT.json",
+          "sha256": "89ec7be41c5826345a012b6fd4f5b862e9bacd267f325649fb3a18e70506889e",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Brd3ET_Brd3ET_3761_model_2",
+      "label": "RFD3 3761_model_2",
+      "origin": "RFD3",
+      "Kd_nM": {
+        "BRD3": 0.5100294956252365,
+        "BRD2": 26.24873858490477,
+        "BRD4": 77.1670920880808,
+        "BRDT": 162.9709683737902
+      },
+      "minimumSelectivity": 51.46513840876377,
+      "limitingTarget": "BRD2",
+      "sources": [
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:4922f52d6e7e7ce3/Brd3ET_Brd3ET_3761_model_2__BRD3.json | SHA-256 57a751126e8301408bfc9aa56960460371e4e50b485c13e412eca9fe5e304b25",
+          "path": "retained-source:4922f52d6e7e7ce3/Brd3ET_Brd3ET_3761_model_2__BRD3.json",
+          "sha256": "57a751126e8301408bfc9aa56960460371e4e50b485c13e412eca9fe5e304b25",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:710e163c17e32f17/Brd3ET_Brd3ET_3761_model_2__BRD2.json | SHA-256 fac9e0fb81fba5d1ed3d74a4018af054b3bbff7afad51b181c9fc40d28e29b1b",
+          "path": "retained-source:710e163c17e32f17/Brd3ET_Brd3ET_3761_model_2__BRD2.json",
+          "sha256": "fac9e0fb81fba5d1ed3d74a4018af054b3bbff7afad51b181c9fc40d28e29b1b",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:a9d47f9720d87c78/Brd3ET_Brd3ET_3761_model_2__BRD4.json | SHA-256 4b502a4729fb8762d34f22b3d7bcbec7d423d6f00e76a8faf8c29a2fa13cc032",
+          "path": "retained-source:a9d47f9720d87c78/Brd3ET_Brd3ET_3761_model_2__BRD4.json",
+          "sha256": "4b502a4729fb8762d34f22b3d7bcbec7d423d6f00e76a8faf8c29a2fa13cc032",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:8fe7c33fe9922908/Brd3ET_Brd3ET_3761_model_2__BRDT.json | SHA-256 8c6e10c4cc90557e513b0f1bdb0d985cf5c3c80f7c8bd6c764e3acdb1fb5dd6b",
+          "path": "retained-source:8fe7c33fe9922908/Brd3ET_Brd3ET_3761_model_2__BRDT.json",
+          "sha256": "8c6e10c4cc90557e513b0f1bdb0d985cf5c3c80f7c8bd6c764e3acdb1fb5dd6b",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Brd3ET_Brd3ET_5020_model_5",
+      "label": "RFD3 5020_model_5",
+      "origin": "RFD3",
+      "Kd_nM": {
+        "BRD3": 0.7689295173768272,
+        "BRD2": 53.27249673274767,
+        "BRD4": 23.039955940034453,
+        "BRDT": 28.25862908137143
+      },
+      "minimumSelectivity": 29.96367731939119,
+      "limitingTarget": "BRD4",
+      "sources": [
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:2c46dc22e6551056/Brd3ET_Brd3ET_5020_model_5__BRD3.json | SHA-256 6e5d38069ca1529e67e3f3278cf73e8c40122d8b5e51c7fc68d33b5a8ed5b47a",
+          "path": "retained-source:2c46dc22e6551056/Brd3ET_Brd3ET_5020_model_5__BRD3.json",
+          "sha256": "6e5d38069ca1529e67e3f3278cf73e8c40122d8b5e51c7fc68d33b5a8ed5b47a",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:90f983b944296180/Brd3ET_Brd3ET_5020_model_5__BRD2.json | SHA-256 07c96faf6b82e0448579d195bed1a83e9817b4e5e1b057a918c7613dad6c9e01",
+          "path": "retained-source:90f983b944296180/Brd3ET_Brd3ET_5020_model_5__BRD2.json",
+          "sha256": "07c96faf6b82e0448579d195bed1a83e9817b4e5e1b057a918c7613dad6c9e01",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:d7a07492e2b30411/Brd3ET_Brd3ET_5020_model_5__BRD4.json | SHA-256 42d005f0cbdc96b77126bb6eadcbb41e07b08f7db4566bb506903cc8516c661b",
+          "path": "retained-source:d7a07492e2b30411/Brd3ET_Brd3ET_5020_model_5__BRD4.json",
+          "sha256": "42d005f0cbdc96b77126bb6eadcbb41e07b08f7db4566bb506903cc8516c661b",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:6987e0fbdf0b798b/Brd3ET_Brd3ET_5020_model_5__BRDT.json | SHA-256 6dff39529dd67a5199fa70b42e43d28cd4d63246fa86f4985b746e0be4acdb6b",
+          "path": "retained-source:6987e0fbdf0b798b/Brd3ET_Brd3ET_5020_model_5__BRDT.json",
+          "sha256": "6dff39529dd67a5199fa70b42e43d28cd4d63246fa86f4985b746e0be4acdb6b",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "BRD3ET_rank17",
+      "label": "BRD3ET_rank17",
+      "origin": "LigandForge",
+      "Kd_nM": {
+        "BRD3": 16.04042220013974,
+        "BRD2": 44.2738512625101,
+        "BRD4": 35.17706122223308,
+        "BRDT": 151.74086964276964
+      },
+      "minimumSelectivity": 2.193025893166741,
+      "limitingTarget": "BRD4",
+      "sources": [
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:d0d5b78049dc6fd2/BRD3ET_rank17__BRD3.json | SHA-256 115d857b40ab250789b915c7b33e8da5c92fd5df7449f42729b6a4d7908f45dd",
+          "path": "retained-source:d0d5b78049dc6fd2/BRD3ET_rank17__BRD3.json",
+          "sha256": "115d857b40ab250789b915c7b33e8da5c92fd5df7449f42729b6a4d7908f45dd",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:c1af4b3fd7fcb76a/BRD3ET_rank17__BRD2.json | SHA-256 ca473d792aeba7ffbf6c75cd906edbf65f3e1e9fe92ea028d6a7be9b1ce10d3f",
+          "path": "retained-source:c1af4b3fd7fcb76a/BRD3ET_rank17__BRD2.json",
+          "sha256": "ca473d792aeba7ffbf6c75cd906edbf65f3e1e9fe92ea028d6a7be9b1ce10d3f",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:be8a5c718b2a03c1/BRD3ET_rank17__BRD4.json | SHA-256 5eae92d6ca44ac895bdf9d5dd4604e0a89b8e83fb0ccc7b298c5f22a406d1552",
+          "path": "retained-source:be8a5c718b2a03c1/BRD3ET_rank17__BRD4.json",
+          "sha256": "5eae92d6ca44ac895bdf9d5dd4604e0a89b8e83fb0ccc7b298c5f22a406d1552",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:8f0ef7c7e21fa3eb/BRD3ET_rank17__BRDT.json | SHA-256 e8dd0c49e287370e824fd327da01c05caf7d8b3db45899019a9fe064f2d41b50",
+          "path": "retained-source:8f0ef7c7e21fa3eb/BRD3ET_rank17__BRDT.json",
+          "sha256": "e8dd0c49e287370e824fd327da01c05caf7d8b3db45899019a9fe064f2d41b50",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "Brd3ET_Brd3ET_1010_model_0",
+      "label": "RFD3 1010_model_0",
+      "origin": "RFD3",
+      "Kd_nM": {
+        "BRD3": 1.113589164418327,
+        "BRD2": 1.719719037091296,
+        "BRD4": 87.48912352708875,
+        "BRDT": 36.686565951493414
+      },
+      "minimumSelectivity": 1.544302954842036,
+      "limitingTarget": "BRD2",
+      "sources": [
+        {
+          "path": "retained-source:df7ef06e76d9d7af/Brd3ET_Brd3ET_1010_model_0__BRD3.json",
+          "sha256": "7511a44074be9b7c8589b849a53fdd8568841b50737a97a898cc6ecb11de3d34",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:9efbb6e18775b47f/Brd3ET_Brd3ET_1010_model_0__BRD2.json",
+          "sha256": "53b37adc64e31e17592803f03723fb480371c952e3bdc112607db95336b22de9",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:5c80721b7129db3f/Brd3ET_Brd3ET_1010_model_0__BRD4.json",
+          "sha256": "d6faf705570a4e2aa260837b16d90189428e0bf9a8b09021da79946257125564",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:6843a54c50e8f4fc/Brd3ET_Brd3ET_1010_model_0__BRDT.json",
+          "sha256": "882de2c7d0fcbb87ed947526424d0eb21d81b2cd1e9b454fe8a109f5f6a73ae5",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "C-34",
+      "label": "C-34",
+      "origin": "Collaborator",
+      "Kd_nM": {
+        "BRD3": 0.8865730538838655,
+        "BRD2": 42.732717720812595,
+        "BRD4": 77.13961389554454,
+        "BRDT": 1.2247776855208639
+      },
+      "minimumSelectivity": 1.3814740704732726,
+      "limitingTarget": "BRDT",
+      "sources": [
+        {
+          "path": "retained-source:caba40762c303766/C-34__BRD3.json",
+          "sha256": "97974ca3f7d64a70d6158225d543cf76befa7478efde210865d231c65809eed4",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:877b0cbfb5045bdb/C-34__BRD2.json",
+          "sha256": "2f6497b24ddf66d08614f8524f43f3bcdbae51a018635c5124f4d19819baf1c4",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:29dcaafe5cbcc9e5/C-34__BRD4.json",
+          "sha256": "84efc80a3f7572b165426738fba508c5bfe0aaa3e54d5d47d764ffeda92f0f24",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:44752dedc634dc6c/C-34__BRDT.json",
+          "sha256": "2fca17eaaa1ac8ad50a956a6ca85545b5ba7fc97a70235eef8cba1bb545da323",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "R3-05",
+      "label": "R3-05",
+      "origin": "RFD3",
+      "Kd_nM": {
+        "BRD3": 17.88618869826443,
+        "BRD2": 22.673144222145478,
+        "BRD4": 31.090752057640227,
+        "BRDT": 46.734636895905474
+      },
+      "minimumSelectivity": 1.2676341843774435,
+      "limitingTarget": "BRD2",
+      "sources": [
+        {
+          "path": "retained-source:0f9fc9d0a21ec354/R3-05__BRD3.json",
+          "sha256": "222e3c06e3d5d1c717ed259e0f4913c25e0bdbec7042325a20ee2c4e994c23fb",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:d565bc485eb06233/R3-05__BRD2.json",
+          "sha256": "687d989cb4b437a07ca8344a04c27dd7875f538b7f328897f63f850830a94d5f",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:107aa36f236d9f25/R3-05__BRD4.json",
+          "sha256": "0682ab1c40c6d5e9eaab482deebd7054f5a0369a8a23e37d4a24e2e5dd1243e9",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "path": "retained-source:fd6421c319a7319a/R3-05__BRDT.json",
+          "sha256": "547593d3ab8866dfa289040e072780dcb1d655cbd112e4b3e506001702834581",
+          "label": "Saved Exact-coordinate affinity",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LF-BRD2-r01",
+      "label": "LF-BRD2-r01",
+      "origin": "LigandForge",
+      "Kd_nM": {
+        "BRD3": 0.8205918169770092,
+        "BRD2": 0.9270579336312835,
+        "BRD4": 1.2497002976906102,
+        "BRDT": 1.1498465591061036
+      },
+      "minimumSelectivity": 1.1297430884047643,
+      "limitingTarget": "BRD2",
+      "sources": [
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:1cad30badedc46ed/LF-BRD2-r01__BRD3.json | SHA-256 9ad3a1502d57717c7a794fff72eb60d9911290e2163bbf7054e6f8d59934e59a",
+          "path": "retained-source:1cad30badedc46ed/LF-BRD2-r01__BRD3.json",
+          "sha256": "9ad3a1502d57717c7a794fff72eb60d9911290e2163bbf7054e6f8d59934e59a",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:f90a0d9e492c723b/LF-BRD2-r01__BRD2.json | SHA-256 2a03ac80829cdd3f7cb667f6df57d0bb6f55591e8382165a55c470ce1cf2e578",
+          "path": "retained-source:f90a0d9e492c723b/LF-BRD2-r01__BRD2.json",
+          "sha256": "2a03ac80829cdd3f7cb667f6df57d0bb6f55591e8382165a55c470ce1cf2e578",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:9314d193c2980f10/LF-BRD2-r01__BRD4.json | SHA-256 0d97d445256d6737709359eed7a5fa841190e5c1286f84780cd6a0eed7650f38",
+          "path": "retained-source:9314d193c2980f10/LF-BRD2-r01__BRD4.json",
+          "sha256": "0d97d445256d6737709359eed7a5fa841190e5c1286f84780cd6a0eed7650f38",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:6bc66d129b81211c/LF-BRD2-r01__BRDT.json | SHA-256 368ca8bc397c8cfc6575dec2414566fed29df23401fef954c7ae7f1d306f0376",
+          "path": "retained-source:6bc66d129b81211c/LF-BRD2-r01__BRDT.json",
+          "sha256": "368ca8bc397c8cfc6575dec2414566fed29df23401fef954c7ae7f1d306f0376",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    },
+    {
+      "id": "LF-BRD3-r09",
+      "label": "LF-BRD3-r09",
+      "origin": "LigandForge",
+      "Kd_nM": {
+        "BRD3": 1.092428878354908,
+        "BRD2": 34.489520742393935,
+        "BRD4": 27.89380550987366,
+        "BRDT": 0.9997018475554238
+      },
+      "minimumSelectivity": 0.9151184734889816,
+      "limitingTarget": "BRDT",
+      "sources": [
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:4bee8f52abec2177/LF-BRD3-r09__BRD3.json | SHA-256 63fde0af2f9f5bb0fbf74ae6704990df9d2fac39d0ee6afc12b5d15373e3b372",
+          "path": "retained-source:4bee8f52abec2177/LF-BRD3-r09__BRD3.json",
+          "sha256": "63fde0af2f9f5bb0fbf74ae6704990df9d2fac39d0ee6afc12b5d15373e3b372",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:cdb50a13c9f8f85a/LF-BRD3-r09__BRD2.json | SHA-256 82d927e4d9d9bf2b005d2868c1dfd3f500a8c469cc5e47ffbf4445db8a4a8167",
+          "path": "retained-source:cdb50a13c9f8f85a/LF-BRD3-r09__BRD2.json",
+          "sha256": "82d927e4d9d9bf2b005d2868c1dfd3f500a8c469cc5e47ffbf4445db8a4a8167",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:fc97b9bf6e4effeb/LF-BRD3-r09__BRD4.json | SHA-256 c9921ab5b5849432f6df79fc466a5757a4efbf7b0862fb90ea41c69fff7e4a52",
+          "path": "retained-source:fc97b9bf6e4effeb/LF-BRD3-r09__BRD4.json",
+          "sha256": "c9921ab5b5849432f6df79fc466a5757a4efbf7b0862fb90ea41c69fff7e4a52",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        },
+        {
+          "title": "Exact-coordinate saved affinity response",
+          "label": "retained-source:e265976e0597b169/LF-BRD3-r09__BRDT.json | SHA-256 3e12f7cf035ea228d1bc803e60a442e197b3fb10c4f42d24d63a1174008a0e71",
+          "path": "retained-source:e265976e0597b169/LF-BRD3-r09__BRDT.json",
+          "sha256": "3e12f7cf035ea228d1bc803e60a442e197b3fb10c4f42d24d63a1174008a0e71",
+          "locator": {
+            "format": "json",
+            "pointer": "/response/kd_nm"
+          }
+        }
+      ]
+    }
+  ],
+  "excludedId": "LF-BRD3-r09",
+  "selectedIds": [
+    "C2K_L60_0608",
+    "Brd3ET_Brd3ET_1933_model_6",
+    "Brd3ET_Brd3ET_3761_model_2",
+    "Brd3ET_Brd3ET_5020_model_5",
+    "BRD3ET_rank17",
+    "Brd3ET_Brd3ET_1010_model_0",
+    "C-34",
+    "R3-05",
+    "LF-BRD2-r01",
+    "AP2-9"
+  ],
+  "control": {
+    "id": "AP2-9",
+    "label": "AP2-9",
+    "origin": "AP2-9 reference",
+    "Kd_nM": {
+      "BRD3": 2.657838683788922,
+      "BRD2": 34.658970437737565,
+      "BRD4": 3.0593474792751354,
+      "BRDT": 2.2455459326370444
+    },
+    "minimumSelectivity": 0.844876683575044,
+    "limitingTarget": "BRDT",
+    "sources": [
+      {
+        "title": "Exact-coordinate saved affinity response",
+        "label": "retained-source:4b6003301e1b1c03/AP2-9__BRD3.json | SHA-256 6889488f8faff0a33c5492cc6f18920305fbc97e750e0d92f9613b63a2d06deb",
+        "path": "retained-source:4b6003301e1b1c03/AP2-9__BRD3.json",
+        "sha256": "6889488f8faff0a33c5492cc6f18920305fbc97e750e0d92f9613b63a2d06deb",
+        "locator": {
+          "format": "json",
+          "pointer": "/response/kd_nm"
+        }
+      },
+      {
+        "title": "Exact-coordinate saved affinity response",
+        "label": "retained-source:9928bfe1e137d27a/AP2-9__BRD2.json | SHA-256 818bd3804a6e6d3005c79194b48f9a99afb00b89f8b10ec4dbbd30bfda022eb2",
+        "path": "retained-source:9928bfe1e137d27a/AP2-9__BRD2.json",
+        "sha256": "818bd3804a6e6d3005c79194b48f9a99afb00b89f8b10ec4dbbd30bfda022eb2",
+        "locator": {
+          "format": "json",
+          "pointer": "/response/kd_nm"
+        }
+      },
+      {
+        "title": "Exact-coordinate saved affinity response",
+        "label": "retained-source:2f5140d4f6464a68/AP2-9__BRD4.json | SHA-256 38fcf1773269c2291f1ea95e256e7e2ae6fe7b6ae6574cf386cf69adbe3411a8",
+        "path": "retained-source:2f5140d4f6464a68/AP2-9__BRD4.json",
+        "sha256": "38fcf1773269c2291f1ea95e256e7e2ae6fe7b6ae6574cf386cf69adbe3411a8",
+        "locator": {
+          "format": "json",
+          "pointer": "/response/kd_nm"
+        }
+      },
+      {
+        "title": "Exact-coordinate saved affinity response",
+        "label": "retained-source:9466fa4a34ef8f52/AP2-9__BRDT.json | SHA-256 8c51b1b95c29d33dd97f2cd78ad55ba0027f0bd08f16c3bbec53487ad88b7fad",
+        "path": "retained-source:9466fa4a34ef8f52/AP2-9__BRDT.json",
+        "sha256": "8c51b1b95c29d33dd97f2cd78ad55ba0027f0bd08f16c3bbec53487ad88b7fad",
+        "locator": {
+          "format": "json",
+          "pointer": "/response/kd_nm"
+        }
+      }
+    ]
+  },
+  "untaggedOnly": true,
+  "newDeltaForgeCalls": 0
+}
