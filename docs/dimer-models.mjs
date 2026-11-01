@@ -2,8 +2,8 @@ import {followupURL} from './followup.mjs';
 import {renderPymolDownload} from './pymol-download.mjs';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const DIMER_METHODS={'boltz2-exact':'Boltz2 Exact',af3:'AlphaFold 3','opendde-exact':'OpenDDE Exact',openfold:'OpenFold',colabfold:'ColabFold'};
-export function dimerModelData(c,{candidateId,variant='untagged',engine='boltz2-exact',rank=1}={}){
- const subject=c.subjects.find(s=>s.id===candidateId)||c.subjects[0];if(!['untagged','ctag64'].includes(variant)||!DIMER_METHODS[engine])throw Error('Choose a declared dimer construct and method');
+export function dimerModelData(c,{candidateId,variant='untagged',engine,rank=1}={}){
+ const subject=c.subjects.find(s=>s.id===candidateId)||c.subjects[0];engine=engine||Object.keys(DIMER_METHODS).find(key=>(subject.dimerModels||[]).some(m=>m.constructVariant===variant&&m.foldingEngine===key))||'boltz2-exact';if(!['untagged','ctag64'].includes(variant)||!DIMER_METHODS[engine])throw Error('Choose a declared dimer construct and method');
  const models=(subject.dimerModels||[]).filter(m=>m.constructVariant===variant&&m.foldingEngine===engine);
  for(const m of models)if(!Number.isInteger(m.nativeRank)||m.nativeRank<1||m.nativeRank>5||m.copies!==2||m.status!=='verified'||m.constructSequenceSha256!==subject.constructVariants.find(v=>v.id===variant)?.sequenceSha256||m.molecularModel?.sha256!==m.modelSha256||m.molecularModel?.roles?.receptor||m.molecularModel?.roles?.binder!=='A'||JSON.stringify(m.molecularModel?.binderCopies)!=='["B"]'||!Number.isFinite(m.ipTM)||m.ipTM<0||m.ipTM>1)throw Error('Dimer requires two exact binder copies and native validated ipTM');
  if(!Number.isInteger(Number(rank))||Number(rank)<1||Number(rank)>5)throw Error('Choose native rank 1–5');
