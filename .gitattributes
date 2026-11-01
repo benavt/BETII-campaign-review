@@ -1,2 +1,3 @@
 # Preserve exact native coordinate bytes; never normalize or reformat these files.
 docs/data/assets/* -text -diff
+docs/data/sessions/* -text -diff
