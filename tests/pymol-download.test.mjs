@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import test from 'node:test';
+import {selectedPymolSession,renderPymolDownload} from '../docs/pymol-download.mjs';
+import {modelBrowser} from '../docs/model-browser.mjs';
+import {monomerBrowser} from '../docs/monomer-models.mjs';
+const w=JSON.parse(fs.readFileSync(new URL('../docs/data/local-workspace.json',import.meta.url))),c=w.campaigns[0];
+test('every available candidate/method/construct/object has its own exact selected-model PSE',()=>{let count=0;for(const s of c.subjects)for(const variant of ['untagged','ctag64'])for(const engine of ['boltz2-exact','af3','opendde-exact','openfold']){const assets=[monomerBrowser(s,{variant,engine}).resolved.asset,...['BRD3','BRD2','BRD4','BRDT'].map(target=>modelBrowser(s,{selection:{variant,engine,target}}).assets[0])].filter(Boolean);for(const asset of assets){const session=selectedPymolSession([asset]);assert.ok(session);assert.equal(session.modelSha256,asset.sha256);assert.ok(fs.statSync(new URL('../docs/'+session.url.slice(2),import.meta.url)).size>0);assert.match(renderPymolDownload([asset]),/download=/);count++}}assert.equal(count,JSON.parse(fs.readFileSync(new URL('../docs/publication-manifest.json',import.meta.url))).verifiedCoordinateModels)});
+test('foreign hashes, remote URLs and unsafe session filenames are never offered',()=>{const s=c.subjects[0].modelCoverage.models[0].molecularModel;for(const patch of [{modelSha256:'0'.repeat(64)},{url:'https://example.org/x.pse'},{url:'./data/sessions/../secret.pse'}]){const asset={...s,pymolSession:{...s.pymolSession,...patch}};assert.equal(selectedPymolSession([asset]),null);assert.equal(renderPymolDownload([asset]),'')}assert.equal(renderPymolDownload([]),'')});
+test('overlay download names the primary selected model instead of implying all overlay objects',()=>{const assets=c.subjects[0].modelCoverage.models.slice(0,2).map(m=>m.molecularModel);assert.match(renderPymolDownload(assets),/Selected model PSE/);assert.equal(selectedPymolSession(assets).modelSha256,assets[0].sha256)});

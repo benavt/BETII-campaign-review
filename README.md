@@ -28,6 +28,8 @@ All displayed affinities and selectivities are predictions. Tagged and untagged 
 
 Everything under `docs/` is intentionally public. It contains only this selected panel and its referenced scientific assets, not the private multi-project workspace, raw provider responses, credentials, machine bindings or source-host paths. The original source hashes are retained. Original runs, failed attempts and underlying scientific outputs remain unchanged.
 
+Use **Download PSE** beside the 3D viewer to open the currently selected method, construct and monomer/isoform model in PyMOL. Sessions are standalone, use the project colors, and retain the exact full chains. For an overlay, the button downloads the primary selected model. Every generated session was reopened and checked against its native atom count and chain sequences.
+
 The site requires no private Mac service. Reviews stay in each browser; use **Data & backups** to exchange review metadata. Static hosting cannot run scientific jobs or paid scoring.
 
 ## Verification and updates
