@@ -1871,8 +1871,8 @@
       "sha256": "9d74907123d94dd7fdfd915b78db514a631598828f1dd89935795db43a4b83bd"
     },
     "dimer-models.mjs": {
-      "bytes": 4087,
-      "sha256": "224e5365839e6a6d112b09d9998dd7d826fbe7ff73ca8a0d381a5de4d9107a4f"
+      "bytes": 5299,
+      "sha256": "d90636ff82f31b8f16c8921f155ae8e9a0a79805dda071e1afe9e6cf9dfc40bf"
     },
     "followup.mjs": {
       "bytes": 1130,
