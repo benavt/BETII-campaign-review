@@ -36,7 +36,7 @@ import {CHECKS, makeCandidateReview, guidedReviewStatus, validateWorkspace, bloc
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const forceDemo=false;
-const key='betii-static-12dc81400406006bf79314fd1d194e37724259e80d9c904ab00f81d15b2c869e';
+const key='betii-static-a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe';
 let persistence='saved',storageError='',pendingImport=null,lastCampaignTab='overview';
 let persistenceRevision=0;
 const dimerSelections=new Map();
