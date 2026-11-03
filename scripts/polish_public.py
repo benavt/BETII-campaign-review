@@ -103,5 +103,7 @@ def run(site):
  for p in site.rglob('*'):
   if p.is_file() and p.name!='publication-manifest.json':manifest['files'][str(p.relative_to(site))]={'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
  (site/'publication-manifest.json').write_bytes(encoded(manifest));print(json.dumps(dict(status='updated',campaigns=1,hotspotTargets=list(maps),dimerConditions=100,nativeDimerOutputs=500)))
+ from refresh_ui import run as refresh_ui
+ refresh_ui(site)
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--site',type=Path,default=Path(__file__).resolve().parents[1]/'docs');run(p.parse_args().site)

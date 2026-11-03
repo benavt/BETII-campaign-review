@@ -1,23 +1,14 @@
 /* Application chrome only. Molecular role/element colors remain source-defined. */
-body[data-campaign-theme="betii"] {
-  --ink:#26334c; --muted:#64728a; --green:#405cb3; --line:#dce2ef;
-  --paper:#f4f6fb; --cream:#ece6fa; --amber:#936519; --red:#a34747;
-  --theme-accent:#405cb3; --theme-deep:#263c79; --theme-secondary:#7352a2;
-  --theme-soft:#e9eefb; --theme-soft-2:#f1edf9; --theme-sidebar:#edf0f8;
-  --theme-surface:#fafbff; --theme-chart-muted:#a5b0c9; --theme-on-deep:#dce5ff;
-  --theme-focus:#8061bd; --theme-warning:#fff4dc; --theme-warning-ink:#865b14;
-}
-body[data-campaign-theme="egfr"] {
-  --ink:#44382f; --muted:#807365; --green:#85603d; --line:#e6dfd4;
-  --paper:#f8f6f1; --cream:#f1e4d0; --amber:#936519; --red:#a34747;
-  --theme-accent:#85603d; --theme-deep:#594737; --theme-secondary:#a57246;
-  --theme-soft:#f0e8dc; --theme-soft-2:#f7eee2; --theme-sidebar:#f0ece4;
-  --theme-surface:#fdfbf7; --theme-chart-muted:#b8aa98; --theme-on-deep:#f4e5d0;
-  --theme-focus:#ad794c; --theme-warning:#fff4dc; --theme-warning-ink:#865b14;
+body[data-campaign-theme] {
+  --ink:#242529; --muted:#65686f; --green:#465ac7; --line:#e6e7eb;
+  --paper:#fff; --cream:#f0f2fc; --amber:#936519; --red:#a34747;
+  --theme-accent:#465ac7; --theme-deep:#30374c; --theme-secondary:#6976ad;
+  --theme-soft:#f0f2fc; --theme-soft-2:#f5f5f8; --theme-sidebar:#f7f7f9;
+  --theme-surface:#fafafb; --theme-chart-muted:#a5a9b6; --theme-on-deep:#fff;
+  --theme-focus:#465ac7; --theme-warning:#fff4dc; --theme-warning-ink:#865b14;
 }
 body[data-campaign-theme] { color:var(--ink); background:var(--paper); }
 body[data-campaign-theme] .sidebar { background:var(--theme-sidebar); }
-body[data-campaign-theme] .brand-mark { color:var(--theme-on-deep); }
 body[data-campaign-theme] .topbar,
 body[data-campaign-theme] .workflow-selected-stage { background:var(--theme-surface); }
 body[data-campaign-theme] .workspace-label,
@@ -27,7 +18,6 @@ body[data-campaign-theme] .panel-model-selector,
 body[data-campaign-theme] .model-generation-summary strong { color:var(--theme-accent); }
 body[data-campaign-theme] .nav-item.active,
 body[data-campaign-theme] .nav-item small,
-body[data-campaign-theme] .step-number,
 body[data-campaign-theme] .selected-row,
 body[data-campaign-theme] .candidate-evidence-group>summary { background:var(--theme-soft); color:var(--theme-deep); }
 body[data-campaign-theme] .sidebar-rule { background:var(--line); }
@@ -40,7 +30,6 @@ body[data-campaign-theme] .page-foot,
 body[data-campaign-theme] .tabs button,
 body[data-campaign-theme] .stats small,
 body[data-campaign-theme] .section-heading p,
-body[data-campaign-theme] .pipeline p,
 body[data-campaign-theme] dt,
 body[data-campaign-theme] .priority p,
 body[data-campaign-theme] .evidence-card p,
@@ -51,12 +40,6 @@ body[data-campaign-theme] .tabs button.active,
 body[data-campaign-theme] .row-button,
 body[data-campaign-theme] .clear-state>span { color:var(--theme-accent); }
 body[data-campaign-theme] .tabs button.active:after { background:var(--theme-accent); }
-body[data-campaign-theme] .hero { background:linear-gradient(115deg,var(--theme-deep),var(--theme-accent)); color:white; }
-body[data-campaign-theme] .hero p,
-body[data-campaign-theme] .hero .eyebrow.light,
-body[data-campaign-theme] .graphic-label { color:var(--theme-on-deep); }
-body[data-campaign-theme] .hero .orbit { border-color:var(--theme-on-deep); opacity:.35; }
-body[data-campaign-theme] .hero .molecule { background:radial-gradient(circle at 35% 30%,var(--theme-on-deep),var(--theme-secondary)); box-shadow:0 0 38px #ffffff18; }
 body[data-campaign-theme] .search,
 body[data-campaign-theme] .audit-details,
 body[data-campaign-theme] .metric-definitions,

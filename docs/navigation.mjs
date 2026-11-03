@@ -1,8 +1,19 @@
 // One navigation drawer, shared across touch, keyboard and pointer layouts.
+function bindCampaignMenu(root){
+  const close=event=>{
+    const more=root.querySelector('.campaign-more[open]');
+    if(!more)return;
+    if(event.type==='keydown'&&event.key==='Escape'){event.preventDefault();more.open=false;more.querySelector('summary').focus();}
+    if(event.type==='click'&&!more.contains(event.target))more.open=false;
+  };
+  document.addEventListener('keydown',close);document.addEventListener('click',close);
+  return ()=>{document.removeEventListener('keydown',close);document.removeEventListener('click',close);};
+}
 export function bindCampaignNavigation(root=document,{initialOpen=false}={}) {
+  const disposeMenu=bindCampaignMenu(root);
   const panel=root.querySelector('#campaign-navigation'), workspace=root.querySelector('.workspace');
   const toggle=root.querySelector('[data-mobile-nav="toggle"]');
-  if(!panel||!toggle)return;
+  if(!panel||!toggle)return disposeMenu;
   const media=matchMedia('(max-width: 850px)');
   const focusable=()=>[...panel.querySelectorAll('button,a,input,select,textarea,[tabindex="0"]')].filter(el=>!el.disabled&&el.getClientRects().length);
   const setOpen=(open,restore=false)=>{
@@ -25,5 +36,5 @@ export function bindCampaignNavigation(root=document,{initialOpen=false}={}) {
   document.addEventListener('keydown',onKey);
   const onResize=()=>setOpen(false);media.addEventListener('change',onResize);
   setOpen(initialOpen);
-  return ()=>{document.removeEventListener('keydown',onKey);media.removeEventListener('change',onResize);};
+  return ()=>{disposeMenu();document.removeEventListener('keydown',onKey);media.removeEventListener('change',onResize);};
 }

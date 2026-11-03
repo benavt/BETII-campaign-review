@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 133932,
-      "sha256": "4b14f69dd8ed157da1efe7edfdfbe0f63ef08bcb410fedb82f67537f737d6764"
+      "bytes": 128743,
+      "sha256": "02a04c80bf687e5e949f88dc2ee2c02711b4d2b7f417a4138325893fd508a195"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -59,16 +59,16 @@
       "sha256": "888e30dea7b53d8f132775e7edc117dce939f749a5d38e94da0803ce857015d1"
     },
     "campaign-inputs.mjs": {
-      "bytes": 13085,
-      "sha256": "eab82794d8f8d14e8803f80606b511044f9ec2578762c41519695f6789e5c00a"
+      "bytes": 12939,
+      "sha256": "6c38ab60182a0564143f152c2e6730d7d6c1212ab7325587bd9daf2f3b4465ca"
     },
     "campaign-presentation.mjs": {
       "bytes": 1702,
       "sha256": "c80a594ce5e813e474dfc0857ccf62fa3ba0954c173771dbe435117d714b626e"
     },
     "candidate-explorer.mjs": {
-      "bytes": 25449,
-      "sha256": "cd586c475dfc4c46d349c5eb4bedc78d73d1e93a1d67d7817d5ac364399ef523"
+      "bytes": 25144,
+      "sha256": "8a963dd9fda41ec8fc18f5a751e581d7a9b82cdacf5ed3f46da4914a72848bfb"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -1707,12 +1707,12 @@
       "sha256": "98f5632f3987fe9a1069f5225c458a93759a6db1b819e6c0a00447665c2ee65e"
     },
     "folding-dashboard.mjs": {
-      "bytes": 14519,
-      "sha256": "385281ceed3164b5d0c8ce1d2969fdf539df8c15bd5d1ca26db7c6be017ac8ce"
+      "bytes": 14450,
+      "sha256": "be2773ed570645c72e86112c972e8a10a80e6ff94d6214689ee9492a15a1fb6d"
     },
     "index.html": {
-      "bytes": 1525,
-      "sha256": "27c08f4708de3c7389fc6cc53d9b3ffc828f3735d6f40c3ff0acab1b2f94ed32"
+      "bytes": 1468,
+      "sha256": "afc9b4c3626690434e6cbf7a1532e4263eb924d47c9d2a4dcac778292aea0012"
     },
     "input-ui.css": {
       "bytes": 2921,
@@ -1735,8 +1735,8 @@
       "sha256": "c404bd4fc49c1365f9c9628fb55c383daf1e3efe7e99af8a1a0aa61ecb1056c3"
     },
     "model-library.mjs": {
-      "bytes": 10327,
-      "sha256": "865d4ed86541782483ee62890f50fef1a7a1201a275a9095c86b4a3d6f80054c"
+      "bytes": 10205,
+      "sha256": "b06bd38d0c8b377183a298835a18847abd6b62d29db9d4dbd5c9c0edfc2ca880"
     },
     "model.mjs": {
       "bytes": 20720,
@@ -1763,8 +1763,8 @@
       "sha256": "8e0f7d7a6d8750d0bea5027d6dc1dcdc5bc29e31730395aa13cad9aa7465d884"
     },
     "navigation.mjs": {
-      "bytes": 2027,
-      "sha256": "25a464e2871b1f7155a35de520bafecb46d70013488309f5e18c41449b512644"
+      "bytes": 2641,
+      "sha256": "9708d6d6b166b83e0c8a42069d7fb5aa7f37af613f1ffdd2a72e2f3709d9d6c5"
     },
     "openfold-results.mjs": {
       "bytes": 9114,
@@ -1779,20 +1779,20 @@
       "sha256": "6c55af5c81bed4fa56048ed76063b9423eac12ee0536324d13b338a51a967482"
     },
     "responsive.css": {
-      "bytes": 29470,
-      "sha256": "ca8f0b842f2ec6039f5320383471eac2a8ce2912e46946711fcea10daf327950"
+      "bytes": 31449,
+      "sha256": "9a347bf8cbc9742f478040d51f02f89c01305e8973fc99cab635d30831251b96"
     },
     "review-plan.mjs": {
       "bytes": 12036,
       "sha256": "067dde24031789c294d39fa8753dd972e156f23392c5aeb35bbae2680b246408"
     },
     "review-ui.css": {
-      "bytes": 6317,
-      "sha256": "397b08fb0f904ef44f0a644ee1962ab25a9bbe7fe16fe85953dc39569add3b1e"
+      "bytes": 6334,
+      "sha256": "97c2aee60051a40650f5399a4f7d9a6587abce336e1ededbfc562b538ec110cb"
     },
     "review-ui.mjs": {
-      "bytes": 5255,
-      "sha256": "9d74907123d94dd7fdfd915b78db514a631598828f1dd89935795db43a4b83bd"
+      "bytes": 5165,
+      "sha256": "07cad3710a1a091187ccab85dab1ff17a054c9215f1c6a1a97c438ef10efd297"
     },
     "selectivity.mjs": {
       "bytes": 14747,
@@ -1815,12 +1815,12 @@
       "sha256": "f0c93fe23464b87adeeb4d56caa558d8bcdb1c021056ccc1db7aa99608058584"
     },
     "style.css": {
-      "bytes": 39559,
-      "sha256": "32d7706e0ad27b136add40a8c2541d98d4964bd853b96f89576746dcd4694dca"
+      "bytes": 36940,
+      "sha256": "3cfe0087dddb5c007b582f5add3de8b1e669020cf7a0a1f1b8e2c3ca105423df"
     },
     "themes.css": {
-      "bytes": 10846,
-      "sha256": "3113adc29ca7d7ef72cadfb6243704e78d8f237898df0f894cfb31cbc0cbd0a5"
+      "bytes": 9665,
+      "sha256": "8fdde12580b777261da042f27858dae1290d12050a4e0b9d3fe8cadccb2480ee"
     },
     "triage.html": {
       "bytes": 3277,
@@ -1851,8 +1851,8 @@
       "sha256": "c162a0c9d52c2f51e46adc96141e04edde4f64ff9154b9e8edf855a9f1cc3772"
     },
     "workspace-shell.mjs": {
-      "bytes": 5545,
-      "sha256": "ff36a53fdfcc47d5b421bd7749016840e9477020970715323da7b3ed0a68fb14"
+      "bytes": 6715,
+      "sha256": "42d506f6d233ffdcdee167aab55ba96a75a6847c1ebc29cf1fa39cff2c6a1d7b"
     },
     "workspace-storage.mjs": {
       "bytes": 4486,
@@ -1867,8 +1867,8 @@
       "sha256": "c7e5c64115503c5e3386a540ca9c9ab623109f266a07d36619fa895bd815b69f"
     },
     "public-review-ui.mjs": {
-      "bytes": 5255,
-      "sha256": "9d74907123d94dd7fdfd915b78db514a631598828f1dd89935795db43a4b83bd"
+      "bytes": 5165,
+      "sha256": "07cad3710a1a091187ccab85dab1ff17a054c9215f1c6a1a97c438ef10efd297"
     },
     "dimer-models.mjs": {
       "bytes": 5299,
@@ -1879,8 +1879,8 @@
       "sha256": "0ee5d41b272dc755a9ebc1c245b04208f05ab650683ffc235e1f4b6b0b8708c7"
     },
     "public-readiness.mjs": {
-      "bytes": 2301,
-      "sha256": "aae8c68406596b206ceb060d6b1dc4ccfb6ad4cdc6dbe5b654927a8309897aeb"
+      "bytes": 2148,
+      "sha256": "bb8145f1b78d870606f496adaa32e23c54eea6f9b2b5d1fcfe13bdef614f218e"
     },
     "data/sessions/f89fe60703c93de7ed3c8da2e0d8ca7021b110015fec4ccd8d6cda53afad4701.pse": {
       "bytes": 371392,
@@ -4281,6 +4281,14 @@
     "data/sessions/1c99b3b7cfe31e7c4eb65389ccdefc4195a6d5430af246ed3c9d9d7f02542b1e.pse": {
       "bytes": 612320,
       "sha256": "878dd4c4dbe46469ae99701d8e1f39454868d8ea996727e0bca667878a7fbc21"
+    },
+    "campaign-overview.mjs": {
+      "bytes": 2505,
+      "sha256": "3b8bef497b79c46d8bf481fd50e5cddd33160c2c256b64b0f64b568e00945e11"
+    },
+    "public-navigation.mjs": {
+      "bytes": 547,
+      "sha256": "54c293c355d6d54582d46e62078514a510d8a2dbef2ced22c9b9919f7d2f4cec"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4290,5 +4298,8 @@
   "verifiedDimerModels": 100,
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
-  "expectedDimerConditions": 100
+  "expectedDimerConditions": 100,
+  "uiAppCommit": "79cbf15d014d549b85c9591d7e89ab9d622250ba",
+  "uiRefreshedAt": "2026-11-03T08:57:06.983529-05:00",
+  "previousPublicationManifestSha256": "ae7cc165c78574b6444fb0c41df04fb9c0126a04e64205ec0be95215e891b8ac"
 }
