@@ -17,6 +17,8 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
+      - name: Install privacy checker test dependency
+        run: python3 -m pip install --user pikepdf==9.4.2
       - name: Run privacy checker test suite
         run: python3 scripts/test_check_privacy.py
       - name: Run full-tree privacy check
