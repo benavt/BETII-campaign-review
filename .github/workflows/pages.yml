@@ -2,6 +2,7 @@ name: Verify and publish BETII Campaign Manager
 on:
   push:
     branches: [main]
+  pull_request:
   workflow_dispatch:
 permissions: {}
 concurrency:
@@ -16,6 +17,14 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
+      - name: Install privacy checker test dependencies
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          python3 -m pip install --user pikepdf==9.4.2 reportlab==4.2.5
+      - name: Run privacy checker test suite
+        run: python3 scripts/test_check_privacy.py
+      - name: Run full-tree privacy check
+        run: python3 scripts/check_privacy.py
       - name: Verify exact public scope and files
         run: python3 scripts/verify_review.py
       - name: Check publication boundaries
@@ -29,6 +38,7 @@ jobs:
           retention-days: 1
   deploy:
     needs: verify
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-24.04
     permissions:
       pages: write
