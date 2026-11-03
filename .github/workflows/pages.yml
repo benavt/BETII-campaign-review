@@ -38,6 +38,7 @@ jobs:
           retention-days: 1
   deploy:
     needs: verify
+    if: github.event_name != 'pull_request'
     runs-on: ubuntu-24.04
     permissions:
       pages: write
