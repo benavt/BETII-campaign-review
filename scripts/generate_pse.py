@@ -51,7 +51,9 @@ def run(site,*,limit=None):
    content=target.read_bytes()
    try:decoded=gzip.decompress(content)
    except OSError:decoded=content
-   assert not any(marker in decoded for marker in [b'/home/tiburon/',b'/Users/tiburon/',b'/scratch/benavt/']), 'Session contains a private source path'
+   # Reject any absolute personal paths (Linux home, macOS home, or cluster scratch).
+   personal_path_pattern = rb'/(home|Users)/[^/]+/|/scratch/[^/]+/'
+   assert not re.search(personal_path_pattern, decoded), 'Session contains a private source path'
   content=target.read_bytes();reference=dict(url='./data/sessions/'+target.name,sha256=sha(content),modelSha256=asset['sha256'],format='pse',renderingStyle=style['version'],hotspotCount=len(asset.get('hotspots',[])),filename=filename,label='Open '+filename.removesuffix('.pse')+' in PyMOL')
   asset['pymolSession']=reference;sessions[m['id']]=reference
  # Mirror the same exact sessions into the separate explorer pool copy.
