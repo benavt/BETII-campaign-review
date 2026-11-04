@@ -3,7 +3,7 @@ import {canonical, digest, validateWorkspace} from './model.mjs';
 export const MAX_WORKSPACE_BYTES = 64 * 1024 * 1024;
 export const REVIEW_KIND = 'campaign-review-changes';
 export const REVIEW_STATE_FIELDS = Object.freeze(['decisions','planReviews','candidateReviews','selectionDrafts','selections','subjectReviews','viewPreferences','molecularViewDefaults','modelSelections']);
-export const SAVED_STATE_FIELDS = Object.freeze([...REVIEW_STATE_FIELDS, 'jobRequests']);
+export const SAVED_STATE_FIELDS = Object.freeze([...REVIEW_STATE_FIELDS, 'jobRequests', 'hotspotDesignDrafts', 'hotspotDesignRequests']);
 const arrays = new Set(['decisions','planReviews']);
 const nested = new Set(['candidateReviews','subjectReviews','modelSelections','molecularViewDefaults']);
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);

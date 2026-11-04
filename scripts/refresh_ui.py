@@ -9,7 +9,7 @@ import re
 import subprocess
 
 ROOT=Path(__file__).resolve().parents[1]
-SHARED=['affinity.mjs','themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
+SHARED=['hotspot-request.mjs','hotspot-design.mjs','workspace-transfer.mjs','affinity.mjs','themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def encoded(value):return (json.dumps(value,indent=2,allow_nan=False)+'\n').encode()
 def run(site,app_root=None):
@@ -47,7 +47,10 @@ export function renderPublicTabs(c,options={}){
 }
 """
  (site/'public-navigation.mjs').write_text(navigation)
- app=(site/'app.js').read_text()
+ from hotspot_ui import adapt_hotspots,adapt_molecule
+ if app_root:(site/'molecule.mjs').write_text(adapt_molecule((site/'molecule.mjs').read_text(),(source/'molecule.mjs').read_text()))
+ (site/'design-issue-config.json').write_bytes(encoded(dict(schemaVersion=1,defaultRepository='MontelioneLab/BETII',issueCreationEnabled=False)))
+ app=adapt_hotspots((site/'app.js').read_text(),source)
  if "from './affinity.mjs'" not in app:
   app="import {renderAffinity,affinitySelection,affinityRequest} from './affinity.mjs';\nconst affinityStates=new Map();\n"+app
  if "tab==='affinity'?renderAffinity" not in app:

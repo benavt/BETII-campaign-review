@@ -314,6 +314,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
   ready.catch(() => {});
   return {
     ready, setSpecies, setVisibleModels,
+    getAtomCatalog() {return loaded.flatMap(e=>e.atoms.map(a=>({modelSha256:e.asset.sha256,chain:a.chain,resi:Number(a.resi),icode:['.','?'].includes(a.icode)?'':String(a.icode||'').trim(),resn:a.resn,atom:a.atom})));},
     getVisibleModels() {return loaded.map(entry=>entry.asset.species);},
     setIsoformColors(value) {isoformColors=value===true;restyle();},
     captureView() { return viewer&&current&&!disposed&&displayFrame(current)?{frameId:displayFrame(current),target:targetOf(current),overlayCount:Math.max(0,loaded.length-1),view:cameraView(viewer.getView())}:null; },
@@ -325,8 +326,8 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       if(!current||!Array.isArray(selectors)||selectors.length>1000)throw new Error('Wait for the target structure to load.');
       pickedResidues=selectors.map(s=>{
         const entry=loaded.find(e=>e.asset.species===(s?.species||current.species));
-        if(!s||!entry||s.chain!==entry.asset.roles.receptor||!Number.isInteger(s.resi)||!entry.atoms.some(a=>a.chain===s.chain&&Number(a.resi)===s.resi&&(!s.atom||a.atom===s.atom)))throw new Error('Selected hotspot is absent from this target.');
-        return {species:entry.asset.species,chain:s.chain,resi:s.resi,...(s.atom?{atom:s.atom}:{})};
+        if(!s||!entry||!receptorChains(entry.asset).includes(s.chain)||!Number.isInteger(s.resi)||!entry.atoms.some(a=>a.chain===s.chain&&Number(a.resi)===s.resi&&String(a.icode||'').trim().replace(/^[.?]$/,'')===String(s.icode||'').trim()&&(!s.atom||a.atom===s.atom)))throw new Error('Selected hotspot is absent from this target.');
+        return {species:entry.asset.species,chain:s.chain,resi:s.resi,...(s.icode?{icode:s.icode}:{}),...(s.atom?{atom:s.atom}:{})};
       });selectedAtom=null;restyle();
     },
     reset() { if (viewer && current && !disposed && initialView) { selectedAtom = null; restyle(); applyCamera(initialView); viewer.render(); report(`${current.species}${loaded.length>1?` + ${loaded.length-1} overlays`:''} · ${matchingCamera(defaults[targetOf(current)],{...current,species:targetOf(current)})?'saved target view':'project starting view'} restored`, 'ready'); } },

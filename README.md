@@ -53,3 +53,5 @@ node --test tests/*.test.mjs
 UI-only refreshes use `python3 scripts/refresh_ui.py --app-root /path/to/Design_Campaign_Manager`. They preserve the published workspace and all scientific assets, record the UI commit separately, and reuse that presentation for later verified result publications.
 
 The shared **kD predictions** view compares model-bound saved DeltaForge/PCANN values and exports exact PCANN run or DeltaForge quote requests. Execute requests from a trusted source checkout with its retained native inputs and saved provider receipts; the public site does not submit scientific jobs or authorize spending.
+
+**More → Design from hotspots** reviews exact native target residues/atoms and prepares RFD3/RFD4/LigandForge requests for the owning scientific repository. Download the capsule or copy the complete issue text into its GitHub issue form. This static site has no authenticated publisher or agent listener. Requests do not launch jobs or authorize spending.

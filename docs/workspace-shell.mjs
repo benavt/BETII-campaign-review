@@ -18,6 +18,7 @@ export function campaignViews(c){
   ].map(([id,label])=>({id,label,primary:true})).concat([
     ...(c.reviewPlan?[['review-plan','Review coverage']]:[]),
     ['affinity','kD predictions'],
+    ['hotspot-design','Design from hotspots'],
     ...((c.candidatePool||c.subjects||[]).some(s=>s.monomerPlan||s.monomerModels)?[['monomers','Binder alone']]:[]),
     ['evidence','Evidence'],
     ...(c.cacheAudit?[['gaps','Cache gaps']]:[]),

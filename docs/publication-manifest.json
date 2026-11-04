@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 130646,
-      "sha256": "fa492e8a87dae747d5b7bc2da8b7b84428af1b52bbb41514ec542f1fc3a498e2"
+      "bytes": 132839,
+      "sha256": "01ed5859af956cbbf2b82f98f12b96f901b8198261a31b2604f4d4d97465b9b2"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -59,8 +59,8 @@
       "sha256": "888e30dea7b53d8f132775e7edc117dce939f749a5d38e94da0803ce857015d1"
     },
     "campaign-inputs.mjs": {
-      "bytes": 12939,
-      "sha256": "6c38ab60182a0564143f152c2e6730d7d6c1212ab7325587bd9daf2f3b4465ca"
+      "bytes": 13031,
+      "sha256": "7d6bc5cbcc2dd245cfd20e0936d1977cb3b39293f259da72d56b997a3457669d"
     },
     "campaign-presentation.mjs": {
       "bytes": 1702,
@@ -1751,8 +1751,8 @@
       "sha256": "6d8ddc8d2dec0fcbd9fe611ca555685376beaf95463dd0f62bfb99669925b4db"
     },
     "molecule.mjs": {
-      "bytes": 34652,
-      "sha256": "ca49d0e72844c85144d02d0f8c2a846a77f8c0a6769f65a26a18b94d2923dab1"
+      "bytes": 34992,
+      "sha256": "0f35ae454f886e2d0eb82b54eb822d9924be158d720a42ed4677ee2f03028ada"
     },
     "monomer-models.mjs": {
       "bytes": 15827,
@@ -1779,8 +1779,8 @@
       "sha256": "6c55af5c81bed4fa56048ed76063b9423eac12ee0536324d13b338a51a967482"
     },
     "responsive.css": {
-      "bytes": 31572,
-      "sha256": "4a0938dae1704d64ed462dca636f21d231caad93637d9282d9cb08e4427401b2"
+      "bytes": 32562,
+      "sha256": "621f0a5d4986b935f63002d176f449bafb6dd625918055ffaded28a7bf169cbb"
     },
     "review-plan.mjs": {
       "bytes": 12036,
@@ -1851,16 +1851,16 @@
       "sha256": "c162a0c9d52c2f51e46adc96141e04edde4f64ff9154b9e8edf855a9f1cc3772"
     },
     "workspace-shell.mjs": {
-      "bytes": 6750,
-      "sha256": "a80a4caf416df1c6e9e1c075e7393dc1324e0b01b7418d636e7cc4b5e3869ec2"
+      "bytes": 6797,
+      "sha256": "6e472f5204f1cdf0f4151121404e66737dbff24622998515643c5ea33383e4cc"
     },
     "workspace-storage.mjs": {
       "bytes": 4486,
       "sha256": "0f5e1d7a0b4c53f913b95e34ec45d1d8155310a4aa77dcd0c7c277043b27814d"
     },
     "workspace-transfer.mjs": {
-      "bytes": 5706,
-      "sha256": "c8e7caff74055a994d353a223696a9ca1ddba00f530b18f318b82ded3998b1af"
+      "bytes": 5754,
+      "sha256": "1888776aab27ef1eeb35e6eed1ed009c132d1e9c667e6f153de2987fd9fd5492"
     },
     "pymol-download.mjs": {
       "bytes": 957,
@@ -4293,6 +4293,18 @@
     "affinity.mjs": {
       "bytes": 8476,
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
+    },
+    "hotspot-design.mjs": {
+      "bytes": 23972,
+      "sha256": "9c8d682e9d8ea17753a0103077c4de418d69690a97e5de359fbacf81f3b823d4"
+    },
+    "design-issue-config.json": {
+      "bytes": 104,
+      "sha256": "5221f63b4aa4111b74db4e41f6c934f554f6c585fc00c6d8b65ca100c669c7f1"
+    },
+    "hotspot-request.mjs": {
+      "bytes": 9415,
+      "sha256": "d6a151df76f806851927ecbecf83b89b22a2ca47e32b4c00e0279a180fe9d070"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4303,7 +4315,7 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "c13bff6f1990cb24763922e41baf67fb7bf565fe",
-  "uiRefreshedAt": "2026-11-04T08:36:46.017278-05:00",
-  "previousPublicationManifestSha256": "a81a336c188cc3dbdc22c3a98866b114c246605629846a6ceefb0236e8c24a1c"
+  "uiAppCommit": "125a2ee3e4bacefa59ef42c4d3e6a36cf4258d5b",
+  "uiRefreshedAt": "2026-11-04T09:43:11.109821-05:00",
+  "previousPublicationManifestSha256": "1b8c35372b84012a2523b7d4ffa1cfd487104687e4d5dc1d9af10cf48c7509f7"
 }
