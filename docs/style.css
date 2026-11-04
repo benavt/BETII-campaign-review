@@ -47,6 +47,12 @@ body[data-campaign-theme] .design-sweep-count{background:var(--theme-soft);color
 .selectivity-plot>svg { display:block; height:auto; aspect-ratio:650 / 255; }
 
 .startup-status{max-width:640px;margin:10vh auto;padding:24px}.startup-status p{overflow-wrap:anywhere}.startup-status button{padding:12px 18px;border:1px solid var(--line);border-radius:8px;background:var(--white)}
+/* Compact scientific pool review on narrow screens and long native IDs. */
+.candidate-roster,.candidate-workbench,.candidate-roster label,.candidate-roster .audit-filters {min-width:0;max-width:100%;}
+.candidate-roster #candidate-picker {display:block;width:100%;min-width:0;max-width:100%;text-overflow:ellipsis;}
+.candidate-workbench h2,.candidate-workbench .mono,.candidate-roster details {overflow-wrap:anywhere;}
+.candidate-roster .scatter {display:block;width:100%;height:auto;max-width:100%;}
+.review-legend {margin:12px 0;display:flex;gap:12px;flex-wrap:wrap;}
 
 /* Public single-campaign layout */
 .workspace{margin-left:0!important;width:100%!important}.shell-sidebar,.mobile-nav-toggle,.mobile-nav-backdrop{display:none!important}.public-review-note{display:grid;gap:6px;margin-top:12px}.guided-progress-panel progress{width:min(440px,100%)}

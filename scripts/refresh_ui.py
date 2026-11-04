@@ -9,7 +9,7 @@ import re
 import subprocess
 
 ROOT=Path(__file__).resolve().parents[1]
-SHARED=['themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
+SHARED=['affinity.mjs','themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def encoded(value):return (json.dumps(value,indent=2,allow_nan=False)+'\n').encode()
 def run(site,app_root=None):
@@ -19,7 +19,10 @@ def run(site,app_root=None):
  # Existing publication is the presentation seed for subsequent scientific builds.
  source=Path(app_root)/'site' if app_root else ROOT/'docs'
  pin=subprocess.check_output(['git','-C',str(app_root),'rev-parse','HEAD'],text=True).strip() if app_root else json.loads((source/'publication-manifest.json').read_bytes())['uiAppCommit']
- for name in SHARED:(site/name).write_bytes((source/name).read_bytes())
+ for name in SHARED:
+  content=(source/name).read_bytes()
+  if name=='affinity.mjs':content=re.sub(rb'PCANN runs on the configured [A-Za-z][A-Za-z0-9-]* host',b'PCANN runs on the configured host',content)
+  (site/name).write_bytes(content)
  style=(source/'style.css').read_text();marker='/* Public single-campaign layout */'
  if app_root:
   previous=(site/'style.css').read_text();assert marker in previous
@@ -45,6 +48,20 @@ export function renderPublicTabs(c,options={}){
 """
  (site/'public-navigation.mjs').write_text(navigation)
  app=(site/'app.js').read_text()
+ if "from './affinity.mjs'" not in app:
+  app="import {renderAffinity,affinitySelection,affinityRequest} from './affinity.mjs';\nconst affinityStates=new Map();\n"+app
+ if "tab==='affinity'?renderAffinity" not in app:
+  marker="tab==='overview'?renderPublicOverview(c):"
+  assert app.count(marker)==1
+  app=app.replace(marker,"tab==='affinity'?renderAffinity(c,affinityStates.get(c.id)||{}):"+marker)
+ if 'data-affinity-request' not in app:
+  source_app=(source/'app.js').read_text()
+  start=source_app.index('  const affinityUpdate=')
+  end=source_app.index('\n',source_app.index("document.querySelectorAll('[data-affinity-request]')",start))
+  bindings=source_app[start:end]
+  assert app.count('function bind(c) {\n')==1
+  app=app.replace('function bind(c) {\n','function bind(c) {\n'+bindings+'\n')
+ app=app.replace("['overview','inputs','review-plan','evidence','review','colors','workspace','monomers','models','dimers']", "['affinity','overview','inputs','review-plan','evidence','review','colors','workspace','monomers','models','dimers']")
  if "from './public-navigation.mjs'" not in app:app="import {renderPublicTabs} from './public-navigation.mjs';\n"+app
  if '<nav class="tabs" aria-label="Campaign views">' in app:
   start=app.index('<nav class="tabs" aria-label="Campaign views">');end=app.index('</nav>',start)+6

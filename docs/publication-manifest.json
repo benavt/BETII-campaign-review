@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 128743,
-      "sha256": "02a04c80bf687e5e949f88dc2ee2c02711b4d2b7f417a4138325893fd508a195"
+      "bytes": 130646,
+      "sha256": "fa492e8a87dae747d5b7bc2da8b7b84428af1b52bbb41514ec542f1fc3a498e2"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -1779,8 +1779,8 @@
       "sha256": "6c55af5c81bed4fa56048ed76063b9423eac12ee0536324d13b338a51a967482"
     },
     "responsive.css": {
-      "bytes": 31449,
-      "sha256": "9a347bf8cbc9742f478040d51f02f89c01305e8973fc99cab635d30831251b96"
+      "bytes": 31572,
+      "sha256": "4a0938dae1704d64ed462dca636f21d231caad93637d9282d9cb08e4427401b2"
     },
     "review-plan.mjs": {
       "bytes": 12036,
@@ -1815,8 +1815,8 @@
       "sha256": "f0c93fe23464b87adeeb4d56caa558d8bcdb1c021056ccc1db7aa99608058584"
     },
     "style.css": {
-      "bytes": 36940,
-      "sha256": "3cfe0087dddb5c007b582f5add3de8b1e669020cf7a0a1f1b8e2c3ca105423df"
+      "bytes": 37510,
+      "sha256": "666680dbc6d0090b3b851ed5eae71eeda747d3a21a2009690ea55500fb699bd8"
     },
     "themes.css": {
       "bytes": 9665,
@@ -1851,8 +1851,8 @@
       "sha256": "c162a0c9d52c2f51e46adc96141e04edde4f64ff9154b9e8edf855a9f1cc3772"
     },
     "workspace-shell.mjs": {
-      "bytes": 6715,
-      "sha256": "42d506f6d233ffdcdee167aab55ba96a75a6847c1ebc29cf1fa39cff2c6a1d7b"
+      "bytes": 6750,
+      "sha256": "a80a4caf416df1c6e9e1c075e7393dc1324e0b01b7418d636e7cc4b5e3869ec2"
     },
     "workspace-storage.mjs": {
       "bytes": 4486,
@@ -4289,6 +4289,10 @@
     "public-navigation.mjs": {
       "bytes": 547,
       "sha256": "54c293c355d6d54582d46e62078514a510d8a2dbef2ced22c9b9919f7d2f4cec"
+    },
+    "affinity.mjs": {
+      "bytes": 8476,
+      "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4299,7 +4303,7 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "79cbf15d014d549b85c9591d7e89ab9d622250ba",
-  "uiRefreshedAt": "2026-11-03T08:57:06.983529-05:00",
-  "previousPublicationManifestSha256": "ae7cc165c78574b6444fb0c41df04fb9c0126a04e64205ec0be95215e891b8ac"
+  "uiAppCommit": "c13bff6f1990cb24763922e41baf67fb7bf565fe",
+  "uiRefreshedAt": "2026-11-04T08:36:46.017278-05:00",
+  "previousPublicationManifestSha256": "a81a336c188cc3dbdc22c3a98866b114c246605629846a6ceefb0236e8c24a1c"
 }
