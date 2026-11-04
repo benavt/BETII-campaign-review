@@ -4315,7 +4315,7 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "d3f1ef52d9c8af3dcbda888b0e216a8768fa24be",
-  "uiRefreshedAt": "2026-11-04T10:21:07.304763-05:00",
-  "previousPublicationManifestSha256": "4a65a312878957678d05f64b76f4858eeec9d329ee654143ba9c41990adc7f50"
+  "uiAppCommit": "2a757fe09bcd09ee28cddb48287f87829809e2ff",
+  "uiRefreshedAt": "2026-11-04T10:30:02.430901-05:00",
+  "previousPublicationManifestSha256": "9be048a1e671f2e12eadfff91c5eae863a53dde26ecb2460fa5d4da32fcb49cd"
 }
