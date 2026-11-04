@@ -4291,8 +4291,8 @@
       "sha256": "54c293c355d6d54582d46e62078514a510d8a2dbef2ced22c9b9919f7d2f4cec"
     },
     "affinity.mjs": {
-      "bytes": 8480,
-      "sha256": "343a59d41dded6ffb0ae99151002456f4a6adb3423fa61b9e98b2bc9acca0ccf"
+      "bytes": 8476,
+      "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4304,6 +4304,6 @@
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
   "uiAppCommit": "c13bff6f1990cb24763922e41baf67fb7bf565fe",
-  "uiRefreshedAt": "2026-11-04T08:30:50.198084-05:00",
-  "previousPublicationManifestSha256": "50be165763a4c04c15648b1f3cbede607f99e57529e22880c3f95bd6fb1b4246"
+  "uiRefreshedAt": "2026-11-04T08:36:46.017278-05:00",
+  "previousPublicationManifestSha256": "a81a336c188cc3dbdc22c3a98866b114c246605629846a6ceefb0236e8c24a1c"
 }

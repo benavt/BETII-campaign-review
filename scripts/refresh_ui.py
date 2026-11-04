@@ -19,7 +19,10 @@ def run(site,app_root=None):
  # Existing publication is the presentation seed for subsequent scientific builds.
  source=Path(app_root)/'site' if app_root else ROOT/'docs'
  pin=subprocess.check_output(['git','-C',str(app_root),'rev-parse','HEAD'],text=True).strip() if app_root else json.loads((source/'publication-manifest.json').read_bytes())['uiAppCommit']
- for name in SHARED:(site/name).write_bytes((source/name).read_bytes())
+ for name in SHARED:
+  content=(source/name).read_bytes()
+  if name=='affinity.mjs':content=re.sub(rb'PCANN runs on the configured [A-Za-z][A-Za-z0-9-]* host',b'PCANN runs on the configured host',content)
+  (site/name).write_bytes(content)
  style=(source/'style.css').read_text();marker='/* Public single-campaign layout */'
  if app_root:
   previous=(site/'style.css').read_text();assert marker in previous
