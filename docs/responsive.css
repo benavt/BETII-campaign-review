@@ -475,3 +475,6 @@ input[type="checkbox"] { width:22px; height:22px; margin:0; }
 /* Compact model-request matrices retain a single page scroll on phones. */
 .refold-registry table{white-space:normal;table-layout:fixed;width:100%}
 .refold-registry th,.refold-registry td{padding:8px 6px;overflow-wrap:anywhere}
+
+/* Keep method values readable; the named table region scrolls by keyboard/touch. */
+.affinity-table { min-width:850px; }

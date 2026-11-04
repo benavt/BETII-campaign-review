@@ -51,3 +51,5 @@ node --test tests/*.test.mjs
 `build_review.py` is the project-owned publication adapter for the pinned Campaign Manager revision. It runs on the source host with its scientific validators, checks full coordinate sequences/chains, hashes, exact selection, saved score provenance and asset closure, and creates a new immutable output. It never launches predictions or scoring. Update the committed snapshot only after those checks pass. The Pages workflow verifies the prebuilt package and deploys only `docs/`.
 
 UI-only refreshes use `python3 scripts/refresh_ui.py --app-root /path/to/Design_Campaign_Manager`. They preserve the published workspace and all scientific assets, record the UI commit separately, and reuse that presentation for later verified result publications.
+
+The shared **kD predictions** view compares model-bound saved DeltaForge/PCANN values and exports exact PCANN run or DeltaForge quote requests. Execute requests from a trusted source checkout with its retained native inputs and saved provider receipts; the public site does not submit scientific jobs or authorize spending.

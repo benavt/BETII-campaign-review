@@ -1,0 +1,42 @@
+// Exact native-cell predictions. Calibration groups never get silently averaged.
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const hash=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
+const positive=v=>typeof v==='number'&&Number.isFinite(v)&&v>0;
+export function affinityGroup(o){
+ if(o.method==='PCANN'&&typeof o.version==='string'){
+  try{const v=JSON.parse(o.version);if(v.recipe==='affinity-v1'&&v.runtime){const runtime={...v.runtime};delete runtime.embeddingCache;return JSON.stringify({recipe:v.recipe,runtime});}}catch{}
+ }
+ return JSON.stringify(o.calibration||o.version||null);
+}
+function observations(model,method){return (model.observations||[]).filter(o=>o.method===method&&o.metric==='Kd_nM'&&o.unit==='nM'&&positive(o.value)&&hash(model.modelSha256)&&o.modelSha256===model.modelSha256&&o.modelId===model.id&&['target','constructVariant','foldingEngine'].every(k=>o[k]===model[k])&&typeof o.source?.path==='string'&&hash(o.source.sha256));}
+export function affinityData(c,options={}){
+ const pool=new Map();for(const s of [...(c.subjects||[]),...(c.candidatePool||[])])if(!pool.has(s.id))pool.set(s.id,s);
+ const all=[...pool.values()].flatMap(s=>(s.modelCoverage?.models||[]).filter(m=>m.status==='verified'&&hash(m.modelSha256)).map(model=>({subject:s,model,candidateId:s.id,modelId:model.id,modelSha256:model.modelSha256})));
+ const dimensions={target:'Target',constructVariant:'Construct',foldingEngine:'Folding method'};
+ const choices=Object.fromEntries(Object.keys(dimensions).map(k=>[k,[...new Set(all.map(r=>r.model[k]))].sort()]));
+ const filters=Object.fromEntries(Object.keys(dimensions).map(k=>[k,choices[k].includes(options[k])?options[k]:'all']));
+ const selected=all.filter(r=>Object.keys(dimensions).every(k=>filters[k]==='all'||r.model[k]===filters[k]));
+ const groups=Object.fromEntries(['DeltaForge','PCANN'].map(method=>[method,[...new Set(selected.flatMap(r=>observations(r.model,method).map(affinityGroup)))]]));
+ const calibration=Object.fromEntries(['DeltaForge','PCANN'].map(method=>[method,groups[method].includes(options[method])?options[method]:groups[method][0]??null]));
+ const rows=selected.map(r=>{
+  const predictions=Object.fromEntries(['DeltaForge','PCANN'].map(method=>{const values=observations(r.model,method).filter(o=>affinityGroup(o)===calibration[method]);return [method,values.length===1?values[0]:null];}));
+  const a=predictions.DeltaForge,b=predictions.PCANN;
+  return {...r,...predictions,ratio:a&&b?b.value/a.value:null};
+ });
+ return {rows,choices,filters,groups,calibration,paired:rows.filter(r=>r.ratio!==null).length};
+}
+export function affinitySelection(c,options={},selectedIds=[]){
+ const ids=new Set(selectedIds),rows=affinityData(c,options).rows.filter(r=>ids.has(r.modelId));
+ if(!rows.length)throw new Error('Select at least one exact model.');
+ if(rows.length>1000)throw new Error('Select at most 1,000 exact models per snapshot.');
+ return {schemaVersion:1,campaignId:c.id,models:rows.map(({candidateId,modelId,modelSha256})=>({candidateId,modelId,modelSha256}))};
+}
+export function affinityRequest(c,operation,options={},selectedIds=[]){
+ if(!['pcann-predict-v1','deltaforge-quote-v1'].includes(operation))throw new Error('Choose PCANN or a DeltaForge quote.');
+ return {...affinitySelection(c,options,selectedIds),operation,reuseSavedDeltaforge:true,spendingAuthorized:false,externalLLMCalls:0};
+}
+export function renderAffinity(c,options={}){
+ const d=affinityData(c,options),page=Math.max(0,Math.min(Math.ceil(d.rows.length/100)-1,Number.isInteger(options.page)?options.page:0)),visible=d.rows.slice(page*100,page*100+100),selected=new Set(options.selectedIds||[]),number=v=>positive(v)?v.toPrecision(4):'Missing';
+ const filter=(key,label,values,value)=>`<label>${label}<select class="input" data-affinity-filter="${key}"><option value="all">All</option>${values.map(v=>`<option value="${esc(v)}" ${v===value?'selected':''}>${esc(v)}</option>`).join('')}</select></label>`;
+ return `<section class="panel" aria-labelledby="affinity-title"><div class="panel-head"><h2 id="affinity-title">kD predictions</h2><button class="button primary" data-affinity-export ${selected.size?'':'disabled'}>Export selected models (${selected.size})</button></div><p>Compare DeltaForge and PCANN on the same native structure. Lower predicted kD means stronger binding. These are predictions, not measured affinities.</p><div class="model-browser-selectors">${Object.entries({target:'Target',constructVariant:'Construct',foldingEngine:'Folding method'}).map(([k,label])=>filter(k,label,d.choices[k],d.filters[k])).join('')}${['DeltaForge','PCANN'].map(method=>`<label>${method} calibration<select class="input" data-affinity-filter="${method}" ${d.groups[method].length?'':'disabled'}>${d.groups[method].length?d.groups[method].map((g,i)=>`<option value="${esc(g)}" ${g===d.calibration[method]?'selected':''}>${method} series ${i+1}</option>`).join(''):'<option>No saved predictions</option>'}</select></label>`).join('')}</div><p class="fine muted">${d.paired} paired structures · ${d.rows.length} native models. Missing or conflicting predictions stay empty. PCANN uses its 25-model average and a 298 K kD conversion.</p><div class="table-scroll" role="region" aria-label="kD predictions table" tabindex="0"><table class="affinity-table"><caption class="sr-only">Native structure kD predictions in nanomolar</caption><thead><tr><th scope="col">Select</th><th scope="col">Candidate</th><th scope="col">Target</th><th scope="col">Construct</th><th scope="col">Fold</th><th scope="col">DeltaForge (nM)</th><th scope="col">PCANN (nM)</th><th scope="col">PCANN / DeltaForge</th></tr></thead><tbody>${visible.map(r=>`<tr><td><input type="checkbox" data-affinity-select="${esc(r.modelId)}" aria-label="Select ${esc(r.subject.label||r.candidateId)} ${esc(r.model.target)} ${esc(r.model.constructVariant)} ${esc(r.model.foldingEngine)}" ${selected.has(r.modelId)?'checked':''}></td><th scope="row">${esc(r.subject.label||r.candidateId)}</th><td>${esc(r.model.target)}</td><td>${esc(r.model.constructVariant)}</td><td>${esc(r.model.foldingEngine)}</td><td>${number(r.DeltaForge?.value)}</td><td>${number(r.PCANN?.value)}</td><td>${r.ratio===null?'—':number(r.ratio)+'×'}</td></tr>`).join('')||'<tr><td colspan="8">No verified native complex models are available.</td></tr>'}</tbody></table></div><div class="review-actions"><button class="button subtle" data-affinity-page="${page-1}" ${page===0?'disabled':''}>Previous</button><span>Page ${page+1} of ${Math.max(1,Math.ceil(d.rows.length/100))}</span><button class="button subtle" data-affinity-page="${page+1}" ${(page+1)*100>=d.rows.length?'disabled':''}>Next</button></div><details><summary>Run predictions</summary><p>Select models, then export a request for either method. Saved DeltaForge results are reused. PCANN runs on the configured Pax host. DeltaForge prepares a quote for missing results; paid scoring requires your explicit approval.</p><div class="review-actions"><button class="button primary" data-affinity-request="pcann-predict-v1" ${selected.size?'':'disabled'}>Export PCANN run request</button><button class="button" data-affinity-request="deltaforge-quote-v1" ${selected.size?'':'disabled'}>Export DeltaForge quote request</button></div><details><summary>Run an exported request</summary><p>From the repository, use the same entry point for every campaign:</p><pre class="sequence">python3 scripts/campaign_affinity.py start --request &lt;downloaded-request.json&gt; --output local/YYYY-MM-DD_affinity_001</pre><p>For a DeltaForge quote, add <code>--originating-chat &lt;current-chat-reference&gt;</code>. This command prepares a quote only. PCANN collection and import:</p><pre class="sequence">python3 scripts/campaign_affinity.py collect --run local/YYYY-MM-DD_affinity_001 --output local/YYYY-MM-DD_affinity-collected_001</pre><p>Collection previews the import. Apply with <code>--apply --expected-workspace-sha256 &lt;current-hash&gt;</code>. Native PCANN supports complete two-chain complexes; new DeltaForge scoring supports validated Boltz2 Exact dimers.</p></details></details><details class="audit-details"><summary>Prediction records</summary><pre class="sequence">${esc(JSON.stringify(visible.filter(r=>r.DeltaForge||r.PCANN).map(r=>({modelId:r.modelId,modelSha256:r.modelSha256,DeltaForge:r.DeltaForge,PCANN:r.PCANN})),null,2))}</pre></details></section>`;
+}
