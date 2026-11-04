@@ -1,3 +1,5 @@
+import {renderHotspotDesign,mountHotspotDesign,hotspotTargets} from './hotspot-design.mjs';
+let hotspotController=null;const pendingHotspotTargets=new Map();
 import {renderAffinity,affinitySelection,affinityRequest} from './affinity.mjs';
 const affinityStates=new Map();
 import {renderPublicTabs} from './public-navigation.mjs';
@@ -75,7 +77,7 @@ const badge = (text, style='') => `<span class="badge ${style}">${esc(text)}</sp
 function notify(message) { $('#toast').textContent=message; $('#toast').classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),4200); }
 function displayCampaign(c){return c.selectionDraft?materializeSelectionDraft(c,workspace.selectionDrafts?.[c.id]):c;}
 function selection(c) {if(c.selectionDraft)return selectionDraftFor(c,workspace.selectionDrafts?.[c.id]).selectedIds; return Object.hasOwn(workspace.selections,c.id) ? workspace.selections[c.id] : c.subjects.filter(s=>s.recommended).map(s=>s.id); }
-function savedState(){const fields=['decisions','planReviews','candidateReviews','jobRequests','selectionDrafts','selections','subjectReviews','viewPreferences','molecularViewDefaults','modelSelections'];return Object.fromEntries(fields.filter(k=>workspace[k]!==undefined).map(k=>[k,workspace[k]]));}
+function savedState(){const fields=['decisions','planReviews','candidateReviews','jobRequests','selectionDrafts','selections','subjectReviews','viewPreferences','molecularViewDefaults','modelSelections','hotspotDesignDrafts','hotspotDesignRequests'];return Object.fromEntries(fields.filter(k=>workspace[k]!==undefined).map(k=>[k,workspace[k]]));}
 function refreshStorageStatus(){document.querySelectorAll('[data-storage-status]').forEach(node=>{node.textContent=persistence==='saved'?'Reviews saved in this browser':persistence==='saving'?'Saving changes…':'Changes are not saved · download a backup';});}
 async function persist() {
   const savedMode=mode,revision=++persistenceRevision,payload=mode==='cache'?{schemaVersion:2,mode,state:savedState()}:{workspace,mode};
@@ -86,7 +88,7 @@ async function persist() {
 async function connectedWorkspace(state={}){
   const response=await fetch('./data/local-workspace.json',{cache:'no-store'});if(!response.ok)throw new Error('The bundled BETII snapshot is unavailable. Reload the site or contact its maintainer.');
   const data=validateWorkspace(await response.json()),next={...data};
-  for(const field of ['decisions','planReviews','candidateReviews','jobRequests','selectionDrafts','molecularViewDefaults','viewPreferences','subjectReviews','modelSelections'])if(state[field]!==undefined)next[field]=state[field];
+  for(const field of ['decisions','planReviews','candidateReviews','jobRequests','selectionDrafts','molecularViewDefaults','viewPreferences','subjectReviews','modelSelections','hotspotDesignDrafts','hotspotDesignRequests'])if(state[field]!==undefined)next[field]=state[field];
   next.decisions||=[];next.selections={};for(const[id,ids]of Object.entries(state.selections||{})){const c=data.campaigns.find(c=>c.id===id);if(c&&!c.selectionDraft)next.selections[id]=ids.filter(id=>c.subjects.some(s=>s.id===id));}
   return validateWorkspace(next);
 }
@@ -166,7 +168,7 @@ async function render() {
   const s=statuses[c.id],selected=selection(c),issues=[...blockers(c,selected),...panelBlockers(c,selected,reviewContext(c))];
   const workspaceBackupBytes=tab==='workspace'?new TextEncoder().encode(JSON.stringify(workspace,null,2)).byteLength:null;
   let reviewBackupBytes=null;if(tab==='workspace'){try{reviewBackupBytes=new TextEncoder().encode(JSON.stringify(await createReviewExport(workspace),null,2)).byteLength;}catch(error){storageError=error.message;}}
-  if(version!==renderVersion)return;if(explorerController){explorerStates.set(explorerCampaignId,{...(explorerStates.get(explorerCampaignId)||{}),startingView:explorerController.captureView()});explorerController.dispose();explorerController=null;}inputController?.dispose();inputController=null;viewerController?.dispose();viewerController=null;workflowController?.dispose();workflowController=null;designController?.dispose();designController=null;
+  if(version!==renderVersion)return;if(explorerController){explorerStates.set(explorerCampaignId,{...(explorerStates.get(explorerCampaignId)||{}),startingView:explorerController.captureView()});explorerController.dispose();explorerController=null;}hotspotController?.dispose();hotspotController=null;inputController?.dispose();inputController=null;viewerController?.dispose();viewerController=null;workflowController?.dispose();workflowController=null;designController?.dispose();designController=null;
   const navWasOpen=document.body.dataset.navOpen==='true';disposeNavigation?.();
   $('#app').innerHTML=`
 
@@ -176,7 +178,7 @@ async function render() {
       ${tab==='workspace'?`<button class="text-button workspace-back" data-tab="${esc(lastCampaignTab)}">← Back to ${esc(campaignName(c))}</button>${renderWorkspaceTools({mode,runtime:runnerRuntime,workspaceBytes:workspaceBackupBytes,reviewBytes:reviewBackupBytes,persistence,storageError,importPreview:pendingImport?.preview})}`:`<div class="title-row"><div><h1>${esc(campaignName(c))}</h1></div>${badge(s.label,s.key)}</div>
       ${c.demo?'<div class="notice demo"><div><strong>Example data</strong> These candidates and results demonstrate the interface. Use Data & backups to open your campaign data.</div></div>':''}
       ${c.supersededBy?`<div class="notice private"><span>↗</span><div>This frozen selection and its submitted runs retain their original scope. <button class="text-button" data-campaign="${esc(c.supersededBy)}">Open the current shortlist draft →</button></div></div>`:''}${renderPublicTabs(c,{active:tab,issueCount:issues.length})}
-      ${tab==='affinity'?renderAffinity(c,affinityStates.get(c.id)||{}):tab==='overview'?renderPublicOverview(c):tab==='inputs'?renderDesignInputs(c,inputViews.get(c.id)?.id):tab==='review-plan'?renderAffinityQuote(c)+renderReviewPlan(c,{selectedIds:selected})+refoldRegistrySection(c):tab==='explorer'?renderCandidateExplorer(c,{...explorerStates.get(c.id),draft:workspace.selectionDrafts?.[c.id],browserOptions:browserOptionsForExplorer(c)})+refoldRegistrySection(c):tab==='subjects'?subjects(c,selected):tab==='models'?renderModelLibrary(c,{...libraryStates.get(c.id),selectedIds:selected}):tab==='monomers'?monomerPage(c):tab==='dimers'?renderDimerModels(c,dimerSelections.get(c.id)||{}):tab==='evidence'?evidence(c):tab==='gaps'?cacheGaps(c):tab==='fold-plan'?renderFoldingDashboard(c,{selectedCellId:foldCell}):tab==='openfold'?renderOpenFoldResults(c,{selection:openFoldSelections.get(c.id)||{}}):tab==='jobs'?jobsPage(c):tab==='colors'?colorStandards(c):review(c,s,selected,issues)}`}
+      ${tab==='hotspot-design'?renderHotspotDesign():tab==='affinity'?renderAffinity(c,affinityStates.get(c.id)||{}):tab==='overview'?renderPublicOverview(c):tab==='inputs'?renderDesignInputs(c,inputViews.get(c.id)?.id):tab==='review-plan'?renderAffinityQuote(c)+renderReviewPlan(c,{selectedIds:selected})+refoldRegistrySection(c):tab==='explorer'?renderCandidateExplorer(c,{...explorerStates.get(c.id),draft:workspace.selectionDrafts?.[c.id],browserOptions:browserOptionsForExplorer(c)})+refoldRegistrySection(c):tab==='subjects'?subjects(c,selected):tab==='models'?renderModelLibrary(c,{...libraryStates.get(c.id),selectedIds:selected}):tab==='monomers'?monomerPage(c):tab==='dimers'?renderDimerModels(c,dimerSelections.get(c.id)||{}):tab==='evidence'?evidence(c):tab==='gaps'?cacheGaps(c):tab==='fold-plan'?renderFoldingDashboard(c,{selectedCellId:foldCell}):tab==='openfold'?renderOpenFoldResults(c,{selection:openFoldSelections.get(c.id)||{}}):tab==='jobs'?jobsPage(c):tab==='colors'?colorStandards(c):review(c,s,selected,issues)}`}
       <footer class="page-foot"><span data-storage-status>Reviews saved in this browser</span></footer>
     </main>
   </div>`;
@@ -190,6 +192,7 @@ async function render() {
     else if(active.right>frame.right)campaignTabs.scrollLeft+=active.right-frame.right+8;
   }
   if(tab==='subjects'){const subject=c.subjects.find(s=>s.id===focus);if(candidateView==='provenance'&&subject?.provenance)loadProvenance(subject,version);}
+  if(tab==='hotspot-design')mountHotspotPage(c,version);
   if(tab==='inputs')mountInputs(c,version);
   if(tab==='explorer')mountExplorer(c,version);
   if(['explorer','review-plan'].includes(tab)&&refoldEnabled(c)&&!refoldRegistries.has(c.id))loadRefolds(c);
@@ -204,6 +207,13 @@ async function render() {
   if((tab==='subjects'||tab==='monomers')&&viewerEnabled){const sourceSubject=tab==='monomers'?monomerSubject(c):c.subjects.find(s=>s.id===focus),subject=modelSubject(sourceSubject,c),host=$('#molecule-container');if(host&&subject?.molecularModels?.length){try{const palette=standardFor(c).palette,startingView=pendingPanelView?.campaignId===c.id&&pendingPanelView.subjectId===sourceSubject.id?pendingPanelView.camera:null;pendingPanelView=null;viewerController=mountMolecule(host,subject,{palette,campaignId:c.id,viewDefaults:workspace.molecularViewDefaults?.[c.id]||{},viewPresets:c.molecularViewPresets||{},startingView,overlaySpecies:subject.browser?.mode==='overlay'?subject.molecularModels.map(a=>a.species):undefined,onStatus:message=>{if(version===renderVersion&&$('#molecule-status')){$('#molecule-status').textContent=message;refreshContactList();refreshCameraInfo();refreshViewerColors('viewer',viewerController);}}});const controller=viewerController;controller.ready.then(()=>{if(version!==renderVersion)return;applyViewerOptions(controller);if(subject.browser)controller.setIsoformColors(subject.browser.overlayColors);bindViewerColors('viewer',controller,{shared:true});document.querySelectorAll('[data-action="viewer-save-default"],[data-action="viewer-project-view"]').forEach(b=>b.disabled=!subject.molecularModels.some(m=>m.displayFrame||m.coordinateFrame&&!m.coordinateFrame.startsWith('native:')));if(sourceSubject.modelCoverage||subject.monomerModel){viewerSpecies=subject.molecularModels[0].species;}else if(subject.molecularModels.some(m=>m.species===viewerSpecies)&&viewerSpecies!==subject.molecularModels[0].species)return controller.setSpecies(viewerSpecies);}).catch(error=>notify(error.message));}catch(error){$('#molecule-status').textContent=error.message;}}}
 }
 
+async function mountHotspotPage(c,version){
+ let config={};try{const response=await fetch('./design-issue-config.json',{cache:'no-store'});if(response.ok)config=await response.json();}catch{}
+ if(version!==renderVersion)return;
+ const post=async(path,body)=>{const response=await fetch(path,{method:'POST',headers:{'Content-Type':'application/json','X-Campaign-CSRF':runnerRuntime.csrfToken},body:JSON.stringify(body)});const value=await response.json();if(!response.ok)throw new Error(value.reason||value.error||'Issue request failed.');return value;};
+ const connected=false;
+ hotspotController=mountHotspotDesign(document.getElementById('hotspot-design-root'),c,{config,startingTarget:pendingHotspotTargets.get(c.id),state:workspace.hotspotDesignDrafts?.[c.id],records:workspace.hotspotDesignRequests?.[c.id]||[],onSave:state=>{workspace.hotspotDesignDrafts||={};workspace.hotspotDesignDrafts[c.id]=state;persist();},onRecord:record=>{workspace.hotspotDesignRequests||={};workspace.hotspotDesignRequests[c.id]||=[];if(!workspace.hotspotDesignRequests[c.id].some(r=>r.request.requestDigest===record.request.requestDigest))workspace.hotspotDesignRequests[c.id].push(record);persist();},preview:connected?r=>post('./api/hotspot-designs/preview',{request:r}):null,publish:connected?(r,d)=>post('./api/hotspot-designs/issues',{request:r,previewDigest:d,confirmed:true}):null});pendingHotspotTargets.delete(c.id);
+}
 function mountInputs(c,version){
   const selected=inputSelection(c,inputViews.get(c.id)?.id),host=$('#campaign-input-molecule');
   const picker=$('#campaign-input-view');
@@ -501,6 +511,7 @@ function bindSelectivity(host,subject,c,onModel=null,onRerender=null){
 }
 
 function bind(c) {
+  document.querySelectorAll('[data-design-from-input]').forEach(button=>button.onclick=()=>{const selected=inputSelection(c,inputViews.get(c.id)?.id),target=hotspotTargets(c).find(t=>t.asset.sha256===selected?.view?.asset?.sha256&&t.asset.url===selected?.view?.asset?.url);if(target)pendingHotspotTargets.set(c.id,target.id);tab='hotspot-design';render();});
   const affinityUpdate=patch=>{const active=document.activeElement,select=active?.dataset.affinitySelect,filter=active?.dataset.affinityFilter;affinityStates.set(c.id,{...(affinityStates.get(c.id)||{}),...patch});render().then(()=>{[...document.querySelectorAll('[data-affinity-select],[data-affinity-filter]')].find(el=>select?el.dataset.affinitySelect===select:filter&&el.dataset.affinityFilter===filter)?.focus({preventScroll:true});});};
   document.querySelectorAll('[data-affinity-filter]').forEach(control=>control.onchange=()=>affinityUpdate({[control.dataset.affinityFilter]:control.value,selectedIds:[],page:0}));
   document.querySelectorAll('[data-affinity-select]').forEach(control=>control.onchange=()=>{const ids=new Set(affinityStates.get(c.id)?.selectedIds||[]);if(control.checked)ids.add(control.dataset.affinitySelect);else ids.delete(control.dataset.affinitySelect);affinityUpdate({selectedIds:[...ids]});});
@@ -669,7 +680,7 @@ async function start() {
   workspace.selections||={};workspace.decisions||=[];
   if(runnerRuntime){try{const response=await fetch('./api/jobs',{cache:'no-store'});if(response.ok){runnerJobs=(await response.json()).jobs||[];for(const job of runnerJobs)if(workspace.campaigns.some(c=>c.id===job.request?.campaignId))workspace=upsertJobRequest(workspace,job.request);}}catch(error){notify('Saved job requests need attention: '+error.message);}}
   const requested=new URL(location.href).searchParams;current=workspace.campaigns.find(c=>c.id===requested.get('campaign'))?.id||workspace.campaigns[0].id;
-  if(['choose-candidates','explorer'].includes(requested.get('view'))&&workspace.campaigns.find(c=>c.id===current)?.candidatePool)tab='explorer';else if(requested.get('view')==='candidates')tab='subjects';else if(requested.get('view')==='cache-gaps')tab='gaps';else if(requested.get('view')==='fold-plan')tab='fold-plan';else if(requested.get('view')==='jobs')tab='jobs';else if(requested.get('view')==='openfold'&&workspace.campaigns.find(c=>c.id===current)?.openfoldPlan)tab='openfold';else if(['affinity','overview','inputs','review-plan','evidence','review','colors','workspace','monomers','models','dimers'].includes(requested.get('view')))tab=requested.get('view');if(tab==='review-plan'&&!workspace.campaigns.find(c=>c.id===current)?.reviewPlan)tab='overview';await render();
+  if(['choose-candidates','explorer'].includes(requested.get('view'))&&workspace.campaigns.find(c=>c.id===current)?.candidatePool)tab='explorer';else if(requested.get('view')==='candidates')tab='subjects';else if(requested.get('view')==='cache-gaps')tab='gaps';else if(requested.get('view')==='fold-plan')tab='fold-plan';else if(requested.get('view')==='jobs')tab='jobs';else if(requested.get('view')==='openfold'&&workspace.campaigns.find(c=>c.id===current)?.openfoldPlan)tab='openfold';else if(['hotspot-design','affinity','overview','inputs','review-plan','evidence','review','colors','workspace','monomers','models','dimers'].includes(requested.get('view')))tab=requested.get('view');if(tab==='review-plan'&&!workspace.campaigns.find(c=>c.id===current)?.reviewPlan)tab='overview';await render();
 }
 
 export const ready=start().then(()=>{document.getElementById('app').removeAttribute('aria-busy');});

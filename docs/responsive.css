@@ -478,3 +478,7 @@ input[type="checkbox"] { width:22px; height:22px; margin:0; }
 
 /* Keep method values readable; the named table region scrolls by keyboard/touch. */
 .affinity-table { min-width:850px; }
+
+.hotspot-workbench{display:grid;grid-template-columns:minmax(280px,1fr) minmax(280px,1fr);gap:20px}.hotspot-engines{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}.hotspot-engines fieldset{min-width:0}.hotspot-workbench .table-scroll{max-height:440px}.hotspot-workbench .molecule-container{min-height:360px}
+@media(max-width:800px){.hotspot-workbench{grid-template-columns:1fr}.hotspot-workbench .molecule-container{min-height:300px}}
+#hotspot-form label{display:grid;gap:6px;margin:0 0 12px}#hotspot-form label .input{width:100%;box-sizing:border-box}#hotspot-form legend label,#hotspot-form .review-actions label{display:flex;align-items:center;gap:8px}#hotspot-form fieldset{padding:14px;border:1px solid var(--line);border-radius:8px}#hotspot-selected{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}#hotspot-preview p,#hotspot-preview pre{overflow-wrap:anywhere}#hotspot-preview .check-row{display:flex;gap:10px;align-items:flex-start;margin:16px 0}
