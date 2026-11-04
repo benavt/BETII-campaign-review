@@ -49,7 +49,7 @@ export function renderPublicTabs(c,options={}){
  (site/'public-navigation.mjs').write_text(navigation)
  from hotspot_ui import adapt_hotspots,adapt_molecule
  if app_root:(site/'molecule.mjs').write_text(adapt_molecule((site/'molecule.mjs').read_text(),(source/'molecule.mjs').read_text()))
- (site/'design-issue-config.json').write_bytes(encoded(dict(schemaVersion=1,defaultRepository='MontelioneLab/BETII',issueCreationEnabled=False)))
+ (site/'design-issue-config.json').write_bytes(encoded(dict(schemaVersion=1,defaultRepository='MontelioneLab/BETII',issueCreationEnabled=False,listenerEnabled=True)))
  app=adapt_hotspots((site/'app.js').read_text(),source)
  if "from './affinity.mjs'" not in app:
   app="import {renderAffinity,affinitySelection,affinityRequest} from './affinity.mjs';\nconst affinityStates=new Map();\n"+app

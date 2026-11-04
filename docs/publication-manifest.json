@@ -4295,16 +4295,16 @@
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     },
     "hotspot-design.mjs": {
-      "bytes": 23972,
-      "sha256": "9c8d682e9d8ea17753a0103077c4de418d69690a97e5de359fbacf81f3b823d4"
+      "bytes": 24116,
+      "sha256": "b6db5b75e662d34721ffef903c5b863d1c1a01f2f70bdc1ef98fccbea6155f02"
     },
     "design-issue-config.json": {
-      "bytes": 104,
-      "sha256": "5221f63b4aa4111b74db4e41f6c934f554f6c585fc00c6d8b65ca100c669c7f1"
+      "bytes": 131,
+      "sha256": "8812ff1f9498f7a5830b22eae767138b2ee754e435c31e5be5be5f8d90e65253"
     },
     "hotspot-request.mjs": {
-      "bytes": 9415,
-      "sha256": "d6a151df76f806851927ecbecf83b89b22a2ca47e32b4c00e0279a180fe9d070"
+      "bytes": 9471,
+      "sha256": "cb0f8dcb5458d153c7b089cf964fa2d462dea73287062902e4aa452f82faf650"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4315,7 +4315,7 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "125a2ee3e4bacefa59ef42c4d3e6a36cf4258d5b",
-  "uiRefreshedAt": "2026-11-04T09:43:11.109821-05:00",
-  "previousPublicationManifestSha256": "1b8c35372b84012a2523b7d4ffa1cfd487104687e4d5dc1d9af10cf48c7509f7"
+  "uiAppCommit": "2a757fe09bcd09ee28cddb48287f87829809e2ff",
+  "uiRefreshedAt": "2026-11-04T10:30:02.430901-05:00",
+  "previousPublicationManifestSha256": "9be048a1e671f2e12eadfff91c5eae863a53dde26ecb2460fa5d4da32fcb49cd"
 }

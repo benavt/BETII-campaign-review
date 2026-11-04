@@ -1,5 +1,6 @@
 {
   "schemaVersion": 1,
   "defaultRepository": "MontelioneLab/BETII",
-  "issueCreationEnabled": false
+  "issueCreationEnabled": false,
+  "listenerEnabled": true
 }
