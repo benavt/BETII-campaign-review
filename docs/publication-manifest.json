@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 132839,
-      "sha256": "01ed5859af956cbbf2b82f98f12b96f901b8198261a31b2604f4d4d97465b9b2"
+      "bytes": 133308,
+      "sha256": "a6d1f04eff8bb3d332510cc7feef63611ebecbe1a1efd61b54c422364d648194"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -59,16 +59,16 @@
       "sha256": "888e30dea7b53d8f132775e7edc117dce939f749a5d38e94da0803ce857015d1"
     },
     "campaign-inputs.mjs": {
-      "bytes": 13031,
-      "sha256": "7d6bc5cbcc2dd245cfd20e0936d1977cb3b39293f259da72d56b997a3457669d"
+      "bytes": 13230,
+      "sha256": "c065ec0c094ad020a21f43cb8577ef78d99413b98998a60942eaed47bdebafe1"
     },
     "campaign-presentation.mjs": {
       "bytes": 1702,
       "sha256": "c80a594ce5e813e474dfc0857ccf62fa3ba0954c173771dbe435117d714b626e"
     },
     "candidate-explorer.mjs": {
-      "bytes": 25144,
-      "sha256": "8a963dd9fda41ec8fc18f5a751e581d7a9b82cdacf5ed3f46da4914a72848bfb"
+      "bytes": 24993,
+      "sha256": "57622afe5ea39d0e943673a55df991e3f8a350c2287bc8420f6c0d8f0db4caca"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -1751,8 +1751,8 @@
       "sha256": "6d8ddc8d2dec0fcbd9fe611ca555685376beaf95463dd0f62bfb99669925b4db"
     },
     "molecule.mjs": {
-      "bytes": 34992,
-      "sha256": "0f35ae454f886e2d0eb82b54eb822d9924be158d720a42ed4677ee2f03028ada"
+      "bytes": 35043,
+      "sha256": "3e705f2318b1787ac4f568d5d478198e53f7bcb4936a0dc4a6a3a858f4051852"
     },
     "monomer-models.mjs": {
       "bytes": 15827,
@@ -1843,8 +1843,8 @@
       "sha256": "47b7583edd56784c245e23a63644a243cfc2edc82e1c4a3b5cf3b5323ae63334"
     },
     "viewer-colors.mjs": {
-      "bytes": 4494,
-      "sha256": "3ef5c569749db6e71cff1c08a08abee6e4b8c2d6d1f85dbc531956b26039b7d0"
+      "bytes": 5993,
+      "sha256": "204cbf355f97a458e1dba2660aec8134dd60b4ba274ffb6dabe28f34d33cf000"
     },
     "workflow.mjs": {
       "bytes": 17515,
@@ -4295,8 +4295,8 @@
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     },
     "hotspot-design.mjs": {
-      "bytes": 24116,
-      "sha256": "b6db5b75e662d34721ffef903c5b863d1c1a01f2f70bdc1ef98fccbea6155f02"
+      "bytes": 24410,
+      "sha256": "af42d9bb0fbe37735ef919d978dbabf732f4a3765b42fc1fc6fd201deacb4761"
     },
     "design-issue-config.json": {
       "bytes": 131,
@@ -4315,7 +4315,13 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "2a757fe09bcd09ee28cddb48287f87829809e2ff",
+  "uiAppCommit": "7ddb33eb904634b76ade78235183d36ccd5351a2",
   "uiRefreshedAt": "2026-11-04T10:30:02.430901-05:00",
-  "previousPublicationManifestSha256": "9be048a1e671f2e12eadfff91c5eae863a53dde26ecb2460fa5d4da32fcb49cd"
+  "previousPublicationManifestSha256": "9be048a1e671f2e12eadfff91c5eae863a53dde26ecb2460fa5d4da32fcb49cd",
+  "uiUpdate": {
+    "id": "2026-11-06_viewer-options_001",
+    "predecessorManifestSHA256": "634cc882408d8233f6af905c07cd11674cb06b4ecfd47386c6bd532f6affe6d1",
+    "appliedAt": "2026-11-06T19:02:49.373002+00:00",
+    "scope": "Display controls and per-residue stick colors; scientific evidence unchanged"
+  }
 }

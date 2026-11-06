@@ -188,12 +188,13 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       const {asset,model,atoms}=entry;
       const addStyle=(selection,style)=>model.setStyle(selection,style,true);
       const roleColor=atom=>atomRoleColor(atom,entry);
-      const style=value=>colorMode==='project'?(representation==='sticks'?{stick:sticks(value)}:{cartoon:{color:value}}):representation==='sticks'?{stick:{radius:0.16,colorfunc:atom=>atom.elem==='C'?roleColor(atom):frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}}:{cartoon:{colorfunc:roleColor}};
+      const style=value=>colorMode==='project'?(representation==='sticks'?{stick:sticks(value)}:{cartoon:{color:value}}):representation==='sticks'?{stick:{radius:0.16,colorfunc:roleColor}}:{cartoon:{colorfunc:roleColor}};
       // GLModel methods scope all selections, including duplicate chain/residue IDs.
       model.setStyle({},representation==='backbone'||asset.kind==='receptor_only'?{}:style('#b4bec7'));
       if(representation!=='backbone'){
         for(const id of receptorChains(asset))model.setStyle({chain:id},style(roleColor({chain:id})));
         for(const id of binderChains(asset))model.setStyle({chain:id},style(projectColors?color(colors.ligand||colors.binder,DEFAULT_PALETTE.binder):'#666666'));
+        for(const id of asset.contextChains||[])model.setStyle({chain:id},style(roleColor({chain:id})));
         if(projectColors&&colorMode==='project')for(const id of binderChains(asset))for(const segment of fusionSegments)model.setStyle({chain:id,resi:`${segment.range[0]}-${segment.range[1]}`},style(color(colors[segment.role],DEFAULT_PALETTE[segment.role])));
         if(projectColors&&colorMode==='project'&&!isoformColors)for(const region of entry.regionLayers)model.setStyle({index:region.indices},style(color(colors[region.role],region.color)));
       }else{
@@ -207,7 +208,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       }
       if(showSideChains&&representation!=='sticks')for(const role of [...receptorChains(asset),...binderChains(asset)]){
         const indices=atoms.filter(a=>a.chain===role&&!['N','CA','C','O','OXT'].includes(a.atom)&&!['H','D'].includes(a.elem)).map(a=>a.index);
-        if(indices.length)addStyle({index:indices},{stick:{radius:0.16,colorfunc:atom=>atom.elem==='C'?roleColor(atom):frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}});
+        if(indices.length)addStyle({index:indices},{stick:{radius:0.16,colorfunc:atom=>colorMode!=='project'||atom.elem==='C'?roleColor(atom):frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}});
       }
       if(showResidueColors)for(const [resn,value]of [[['HIS'],'#bf00bf'],[['ASP','GLU'],'#0000ff'],[['ARG','LYS'],'#ff0000'],[['NAG'],'#ffff00']])addStyle({resn,...(asset.kind==='receptor_only'?{chain:asset.roles.receptor}:{})},{stick:sticks(value,0.18)});
       if(showHotspots)for(const hotspot of asset.hotspots||[])addStyle({chain:hotspot.chain,resi:hotspot.resi},{stick:sticks(color(colors.hotspots,DEFAULT_PALETTE.hotspots),0.25)});
@@ -218,7 +219,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
           const indices=atoms.filter(a=>residues.has(JSON.stringify([a.chain,Number(a.resi),a.icode||'']))).map(a=>a.index);
           addStyle({index:indices},{stick:sticks(layer.color,0.18)});
         }
-        addStyle({index:layer.indices},layer.kind==='hotspot'?{stick:sticks(layer.color,0.22),...(atomGuidance?{sphere:{radius:0.30,colorfunc:atom=>atom.elem==='C'?layer.color:frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}}:{})}:{...(colorMode==='project'?{cartoon:{color:layer.color}}:{}),stick:sticks(layer.color,0.14)});
+        addStyle({index:layer.indices},layer.kind==='hotspot'?{stick:sticks(layer.color,0.22),...(atomGuidance?{sphere:{radius:0.30,colorfunc:atom=>atom.elem==='C'?layer.color:frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}}:{})}:{...(colorMode==='project'&&representation==='cartoon'?{cartoon:{color:layer.color}}:{}),stick:sticks(layer.color,0.14)});
       }
       if(annotationLabels)for(const layer of entry.annotationLayers)if(layer.kind==='hotspot'&&!hiddenAnnotationLayers.has(layer.id)){
         const residues=new Map();for(const index of layer.indices){const atom=atoms.find(a=>a.index===index);if(atom)residues.set(atom.chain+':'+atom.resi,atom);}
