@@ -9,7 +9,7 @@ import re
 import subprocess
 
 ROOT=Path(__file__).resolve().parents[1]
-SHARED=['hotspot-request.mjs','hotspot-design.mjs','workspace-transfer.mjs','affinity.mjs','themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
+SHARED=['viewer-colors.mjs','hotspot-request.mjs','hotspot-design.mjs','workspace-transfer.mjs','affinity.mjs','themes.css','responsive.css','navigation.mjs','campaign-overview.mjs','campaign-presentation.mjs','candidate-explorer.mjs','campaign-inputs.mjs','folding-dashboard.mjs','model-library.mjs','review-ui.css']
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def encoded(value):return (json.dumps(value,indent=2,allow_nan=False)+'\n').encode()
 def run(site,app_root=None):

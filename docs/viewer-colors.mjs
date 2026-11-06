@@ -35,9 +35,27 @@ export function atomDisplayColor(mode,atom,{confidence=new Map(),chainbow=new Ma
   return fallback;
 }
 const swatch=(color,label)=>`<span><svg width="12" height="12" aria-hidden="true"><rect width="12" height="12" rx="2" fill="${color}"/></svg> ${esc(label)}</span>`;
+export function renderViewerRepresentationControls(prefix,representation='cartoon'){
+  if(!/^[a-z][a-z0-9-]*$/.test(prefix))throw new Error('Invalid viewer control prefix.');
+  return `<label class="viewer-representation">Display<select id="${prefix}-representation" class="input" aria-label="Structure display">${[['cartoon','Cartoon'],['sticks','Full sticks'],['backbone','Cα trace']].map(([value,label])=>`<option value="${value}" ${representation===value?'selected':''}>${label}</option>`).join('')}</select></label>`;
+}
 export function renderViewerColorControls(prefix,mode='project'){
   if(!/^[a-z][a-z0-9-]*$/.test(prefix))throw new Error('Invalid viewer control prefix.');
   return `<label class="viewer-representation">Color by<select id="${prefix}-color-mode" class="input" aria-label="Structure color mode">${[['project','Project palette'],['chainbow','Chainbow · N→C'],['plddt','pLDDT confidence']].map(([v,label])=>`<option value="${v}" ${mode===v?'selected':''}>${label}</option>`).join('')}</select></label><div id="${prefix}-color-legend" class="fine muted" role="status"></div>`;
+}
+// For standalone target pickers; application views share their own display state.
+export function bindViewerDisplayControls(root,prefix,controller){
+  if(!/^[a-z][a-z0-9-]*$/.test(prefix))throw new Error('Invalid viewer control prefix.');
+  const representation=root.querySelector(`#${prefix}-representation`),colors=root.querySelector(`#${prefix}-color-mode`),legend=root.querySelector(`#${prefix}-color-legend`);
+  const refresh=()=>{
+    const info=controller.getColorInfo();
+    if(legend)legend.innerHTML=renderViewerColorLegend(info);
+    const confidence=colors?.querySelector('option[value="plddt"]');
+    if(confidence)confidence.disabled=!info.confidenceAvailable;
+  };
+  if(representation){controller.setRepresentation(representation.value);representation.onchange=()=>controller.setRepresentation(representation.value);}
+  if(colors){controller.setColorMode(colors.value);colors.onchange=()=>{controller.setColorMode(colors.value);refresh();};}
+  refresh();
 }
 export function renderViewerColorLegend({mode='project',confidenceAvailable:available=false,scoredResidues=0,missingResidues=0}={}){
   if(mode==='chainbow')return `<span class="confidence-swatches">${swatch('#0000ff','N terminus')}${swatch('#00ffff','')}${swatch('#00ff00','')}${swatch('#ffff00','')}${swatch('#ff8000','')}${swatch('#ff0000','C terminus')}</span> Rainbow restarts for each observed polymer chain.`;
