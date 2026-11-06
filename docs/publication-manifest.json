@@ -1751,8 +1751,8 @@
       "sha256": "6d8ddc8d2dec0fcbd9fe611ca555685376beaf95463dd0f62bfb99669925b4db"
     },
     "molecule.mjs": {
-      "bytes": 35015,
-      "sha256": "5fc191c9ed0f7ae974904e91b4068598c3dc16c9a2ddd3bd7093d083baa04823"
+      "bytes": 35043,
+      "sha256": "3e705f2318b1787ac4f568d5d478198e53f7bcb4936a0dc4a6a3a858f4051852"
     },
     "monomer-models.mjs": {
       "bytes": 15827,
@@ -4315,7 +4315,7 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "d5bbd9f93ac4ef3dd821ad79dfcd4b71c691dd05",
+  "uiAppCommit": "7ddb33eb904634b76ade78235183d36ccd5351a2",
   "uiRefreshedAt": "2026-11-04T10:30:02.430901-05:00",
   "previousPublicationManifestSha256": "9be048a1e671f2e12eadfff91c5eae863a53dde26ecb2460fa5d4da32fcb49cd",
   "uiUpdate": {

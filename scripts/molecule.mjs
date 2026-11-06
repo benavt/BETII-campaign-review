@@ -219,7 +219,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
           const indices=atoms.filter(a=>residues.has(JSON.stringify([a.chain,Number(a.resi),a.icode||'']))).map(a=>a.index);
           addStyle({index:indices},{stick:sticks(layer.color,0.18)});
         }
-        addStyle({index:layer.indices},layer.kind==='hotspot'?{stick:sticks(layer.color,0.22),...(atomGuidance?{sphere:{radius:0.30,colorfunc:atom=>atom.elem==='C'?layer.color:frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}}:{})}:{...(colorMode==='project'?{cartoon:{color:layer.color}}:{}),stick:sticks(layer.color,0.14)});
+        addStyle({index:layer.indices},layer.kind==='hotspot'?{stick:sticks(layer.color,0.22),...(atomGuidance?{sphere:{radius:0.30,colorfunc:atom=>atom.elem==='C'?layer.color:frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}}:{})}:{...(colorMode==='project'&&representation==='cartoon'?{cartoon:{color:layer.color}}:{}),stick:sticks(layer.color,0.14)});
       }
       if(annotationLabels)for(const layer of entry.annotationLayers)if(layer.kind==='hotspot'&&!hiddenAnnotationLayers.has(layer.id)){
         const residues=new Map();for(const index of layer.indices){const atom=atoms.find(a=>a.index===index);if(atom)residues.set(atom.chain+':'+atom.resi,atom);}
