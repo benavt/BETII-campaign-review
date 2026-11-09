@@ -23,6 +23,9 @@ def run(site,app_root=None):
   content=(source/name).read_bytes()
   if name=='affinity.mjs':content=re.sub(rb'PCANN runs on the configured [A-Za-z][A-Za-z0-9-]* host',b'PCANN runs on the configured host',content)
   (site/name).write_bytes(content)
+ # Keep the frame paired with BETII's project-specific viewer on rebuilds.
+ for name in ('molecule-frame.html','molecule-frame.css'):
+  (site/name).write_bytes((ROOT/'docs'/name).read_bytes())
  style=(source/'style.css').read_text();marker='/* Public single-campaign layout */'
  if app_root:
   previous=(site/'style.css').read_text();assert marker in previous

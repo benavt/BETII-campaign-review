@@ -1,2 +1,31 @@
 html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #f7f9fc; }
-#model { position: absolute; inset: 0; }
+body { display: flex; flex-direction: column; }
+#model { position: relative; flex: 1; min-height: 0; }
+#model canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.molecule-tools, .camera-controls, .coordinate-controls { display: flex; flex-wrap: wrap; gap: 6px; }
+.molecule-tools {
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: #fff;
+  border-bottom: 1px solid #d7dfe6;
+  font: 14px system-ui, sans-serif;
+}
+.molecule-tools button, .molecule-tools select {
+  box-sizing: border-box;
+  min-height: 44px;
+  padding: 4px 8px;
+  border: 1px solid #bccbd7;
+  border-radius: 6px;
+  background: #fff;
+  color: #25353e;
+  font: inherit;
+}
+.molecule-tools select { max-width: min(40vw, 16rem); }
+.molecule-tools button:not(:disabled) { cursor: pointer; }
+.molecule-tools button:not(:disabled):hover { background: #eef4f9; }
+.molecule-tools button:disabled { opacity: .58; }
+.molecule-tools :focus-visible { outline: 2px solid #275bc1; outline-offset: 1px; }
+@media (max-width: 420px) {
+  .molecule-tools { font-size: 13px; }
+  .molecule-tools button, .molecule-tools select { padding-inline: 6px; }
+}

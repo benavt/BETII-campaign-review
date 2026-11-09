@@ -30,6 +30,11 @@ Everything under `docs/` is intentionally public. It contains only this selected
 
 Use **Download PSE** beside the 3D viewer to open the currently selected method, construct and monomer/isoform model in PyMOL. Sessions are standalone, use the project colors, and retain the exact full chains. For an overlay, the button downloads the primary selected model. Every generated session was reopened and checked against its native atom count and chain sequences.
 
+Use **Download coordinates** to save the exact native structure. **Center on
+binder** or **Center on residue** changes the rotation center while keeping the
+current zoom and orientation. Click a highlighted residue again to clear it.
+**Side chains** includes alanine methyls.
+
 The site opens directly as a single campaign. **Final Review** links to the selection and both complete FASTA files. **Looks good** can be undone or replaced with a follow-up. Package confirmation requires current reviews for all ten designs and validated publication of the requested model scope; an early attempt explains what remains.
 
 **Request follow-up** saves a browser-local note. **Send follow-up on GitHub** opens an issue with exact candidate, sequence and selected-model context. Sign in and submit that form to send it to the shared queue. Submitted `[Follow-up]` issues are checked every two minutes by a private notification bridge, which sends the campaign owner a phone alert through the existing Fleet route. Delivery depends on that bridge and its credential-owning receiver being available. The queue is available for agent or researcher triage; it does not automatically start an AI session, calculations or paid scoring.
