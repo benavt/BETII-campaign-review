@@ -8,5 +8,18 @@
 <title>Interactive molecular model</title>
 <link rel="stylesheet" href="./molecule-frame.css">
 </head>
-<body><div id="model" aria-label="Interactive molecular structure"></div></body>
+<body>
+  <div class="molecule-tools" data-molecule-tools role="group" aria-label="Structure controls">
+    <div class="camera-controls" role="group" aria-label="Camera and residue controls">
+      <button type="button" id="center-binder" disabled>Center on binder</button>
+      <button type="button" id="center-residue" disabled>Center on residue</button>
+      <button type="button" id="clear-residue" disabled>Clear residue</button>
+    </div>
+    <div class="coordinate-controls">
+      <select id="download-model" aria-label="Model to download" hidden></select>
+      <button type="button" id="download-coordinates" disabled>Download coordinates</button>
+    </div>
+  </div>
+  <div id="model" aria-label="Interactive molecular structure"></div>
+</body>
 </html>

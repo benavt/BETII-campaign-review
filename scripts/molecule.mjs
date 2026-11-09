@@ -5,9 +5,24 @@ import {cameraView,displayFrame,alignDisplayAtoms,quaternionFromRotation,matchin
 import {stageLayers,stageDistances} from './stage-layers.mjs';
 import {confidenceAvailable,residueConfidence,chainbowColors,atomDisplayColor} from './viewer-colors.mjs';
 const LIBRARY = new URL('./vendor/3Dmol-min.js', import.meta.url).href;
-const FRAME = new URL('./molecule-frame.html', import.meta.url).href;
+const FRAME = new URL('./molecule-frame.html', import.meta.url);
+FRAME.search = new URL(import.meta.url).search;
 const ASSETS = new URL('./data/assets/', import.meta.url);
 const DEFAULT_PALETTE = { humanReceptor: '#ffcc80', mouseReceptor: '#3380cc', receptor: '#808080', binder: '#00ffff', hotspots: '#FF69B4', d46Dd2: '#ff00ff', d46Dd1: '#00ffff' };
+
+export function verifyMolecularDrawing(viewer) {
+  const gl = viewer.renderer.getContext();
+  if (gl.isContextLost()) throw new Error('The molecular graphics context was lost. Reopen this structure to retry.');
+  const width = gl.drawingBufferWidth, height = gl.drawingBufferHeight;
+  if (!width || !height) throw new Error('The molecular canvas has no visible size. Reopen this structure to retry.');
+  const pixels = new Uint8Array(width * height * 4);
+  gl.readPixels(0, 0, width, height, gl.RGBA, gl.UNSIGNED_BYTE, pixels);
+  if (gl.getError() !== gl.NO_ERROR) throw new Error('The molecular canvas could not be checked. Reopen this structure to retry.');
+  for (let i = 4; i < pixels.length; i += 4) {
+    if (pixels[i] !== pixels[0] || pixels[i + 1] !== pixels[1] || pixels[i + 2] !== pixels[2]) return;
+  }
+  throw new Error('The browser produced an empty molecular canvas. Reopen this structure to retry.');
+}
 
 export function molecularAssetURL(value) {
   if (typeof value !== 'string' || /[\\?#]/.test(value)) throw new Error('Model needs a local asset URL without query or fragment.');
@@ -16,6 +31,29 @@ export function molecularAssetURL(value) {
   try { path = decodeURIComponent(url.pathname); } catch { throw new Error('Invalid model asset path.'); }
   if (url.origin !== ASSETS.origin || !url.pathname.startsWith(ASSETS.pathname) || path.includes('..') || path.includes('\\') || path.includes('%') || url.username || url.password) throw new Error('Models must be local files under data/assets/.');
   return url.href;
+}
+
+async function loadMolecularAsset(asset,{signal}={}){
+  const limit=20*1024*1024,hex=bytes=>Array.from(new Uint8Array(bytes),b=>b.toString(16).padStart(2,'0')).join('');
+  const transport=asset.transport;
+  if(transport!==undefined&&(!transport||transport.compression!=='gzip'||!/^[a-f0-9]{64}$/i.test(transport.sha256||'')||!Number.isInteger(transport.bytes)||transport.bytes<=0||transport.bytes>limit||!/^[a-f0-9]{64}$/i.test(asset.sha256||'')))throw new Error('Compressed models require explicit gzip size and transport/native hashes.');
+  const response=await fetch(molecularAssetURL(asset.url),{signal,credentials:'same-origin',redirect:'error'});
+  if(!response.ok)throw new Error(`The local model could not be read (${response.status}).`);
+  if(Number(response.headers.get('content-length'))>limit)throw new Error('Model exceeds this viewer’s 20 MiB limit.');
+  let bytes=await response.arrayBuffer();
+  if(bytes.byteLength>limit)throw new Error('Model exceeds this viewer’s 20 MiB limit.');
+  if(transport){
+    if(bytes.byteLength!==transport.bytes||hex(await crypto.subtle.digest('SHA-256',bytes))!==transport.sha256.toLowerCase())throw new Error('Compressed model transport hash or size differs.');
+    if(typeof DecompressionStream!=='function')throw new Error('This compressed model needs a browser with gzip decompression support.');
+    const reader=new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip')).getReader(),chunks=[];let size=0;
+    try{while(true){const {value,done}=await reader.read();if(done)break;size+=value.byteLength;if(size>limit){await reader.cancel();throw new Error('Model exceeds this viewer’s 20 MiB limit.');}chunks.push(value);}}
+    finally{reader.releaseLock();}
+    const decoded=new Uint8Array(size);let offset=0;for(const chunk of chunks){decoded.set(chunk,offset);offset+=chunk.byteLength;}bytes=decoded.buffer;
+  }
+  if(asset.sha256&&hex(await crypto.subtle.digest('SHA-256',bytes))!==asset.sha256.toLowerCase())throw new Error('Model hash does not match the imported evidence.');
+  const data=new TextDecoder().decode(bytes);
+  if(/^\s*</.test(data))throw new Error('The model URL returned a web page rather than molecular coordinates.');
+  return {bytes,data};
 }
 
 function color(value, fallback) {
@@ -100,6 +138,17 @@ export function overlayAssets(assets, species) {
   return selected;
 }
 const targetOf=asset=>asset.target||asset.species;
+const residueKey=atom=>JSON.stringify([atom.chain,Number(atom.resi),String(atom.icode||'').trim().replace(/^[.?]$/,'')]);
+
+function sideChainIndices(atoms,asset){
+  const chains=new Set([...receptorChains(asset),...binderChains(asset)]);
+  const heavy=atoms.filter(atom=>chains.has(atom.chain)&&!['H','D'].includes(atom.elem));
+  const sideChains=heavy.filter(atom=>!['N','CA','C','O','OXT'].includes(atom.atom));
+  const residues=new Set(sideChains.map(residueKey));
+  // The stick renderer needs both ends of the bond. For alanine, Cα–Cβ is the only one.
+  return [...sideChains,...heavy.filter(atom=>atom.atom==='CA'&&residues.has(residueKey(atom)))].map(atom=>atom.index);
+}
+
 export const OVERLAY_ISOFORM_COLORS=Object.freeze({BRD3:'#8b5cf6',BRD2:'#2563eb',BRD4:'#ea8a23',BRDT:'#0d9488'});
 
 export function mountMolecule(container, subject, { palette = {}, onStatus = () => {}, onAtomSelected = () => {}, campaignId='', viewDefaults={}, viewPresets={}, startingView=null, annotations=[], annotationsVisible=true, annotationLabels=false, measurements=[], overlaySpecies } = {}) {
@@ -125,7 +174,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
   }
   const initialAssets=overlayAssets(assets,overlaySpecies===undefined?[assets[0].species]:overlaySpecies);
   const isoformColor=asset=>color(asset.overlayColor,OVERLAY_ISOFORM_COLORS[targetOf(asset)]||'#64748b');
-  let loaded=[],loadErrors=[],isoformColors=false;
+  let loaded=[],loadErrors=[],isoformColors=false,tools;
   let disposed = false, viewer, current, selectedAtom, initialView, initialFrame, request, generation = 0, representation = 'cartoon', showHotspots = true, projectColors = true, showSideChains = false, showResidueColors = false, showInterface = false;
   let colors = { ...DEFAULT_PALETTE, ...palette };
   let colorMode='project';
@@ -137,8 +186,8 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
   const applyCamera=view=>viewer.setView(frame.contentWindow.Array.from(cameraView(view)));
   const frame = container.ownerDocument.createElement('iframe');
   frame.title = `Interactive molecular model: ${subject.label || subject.id || 'selected subject'}`;
-  frame.setAttribute('aria-label', 'Molecular viewer. Drag to rotate, scroll to zoom; use Reset view to restore the saved target default, or the project starting view.');
-  frame.src = FRAME;
+  frame.setAttribute('aria-label', 'Molecular viewer. Drag to rotate, pinch or scroll to zoom. Tap a residue to select or clear it.');
+  frame.src = FRAME.href;
   let settleFrame, rejectFrame;
   const frameReady = new Promise((resolve, reject) => { settleFrame = resolve; rejectFrame = reject; });
   let timeout = setTimeout(() => rejectFrame(new Error('The local molecular viewer did not finish loading.')), 25000);
@@ -152,7 +201,14 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
     script.onload = () => {
       if (disposed) return;
       try {
-        viewer = frame.contentWindow.$3Dmol.createViewer(doc.getElementById('model'), { backgroundColor: '#f7f9fc', antialias: true });
+        // Establish a direct WebGL canvas before 3Dmol chooses its context.
+        // Keep embedded views off the WebGL2/upscale framebuffer path.
+        const canvas = doc.createElement('canvas');
+        const contextOptions = { alpha: false, antialias: false, premultipliedAlpha: false, preserveDrawingBuffer: true };
+        const gl = canvas.getContext('webgl', contextOptions) || canvas.getContext('experimental-webgl', contextOptions) || canvas.getContext('webgl2', contextOptions);
+        if (!gl) throw new Error('WebGL unavailable');
+        viewer = frame.contentWindow.$3Dmol.createViewer(doc.getElementById('model'), { canvas, backgroundColor: '#f7f9fc', antialias: false, upscale: false, alpha: false, rows: 1, cols: 1, row: 0, col: 0 });
+        bindTools(doc);
         clearTimeout(timeout); timeout = null;
         settleFrame();
       } catch { rejectFrame(new Error('WebGL molecular viewing is unavailable in this browser.')); }
@@ -161,6 +217,88 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
     doc.head.append(script);
   }, { once: true });
   container.append(frame);
+
+  function bindTools(doc){
+    const toolbar=doc.querySelector?.('[data-molecule-tools]');
+    if(!toolbar)return;
+    tools={
+      binder:toolbar.querySelector('#center-binder'),
+      residue:toolbar.querySelector('#center-residue'),
+      clear:toolbar.querySelector('#clear-residue'),
+      choice:toolbar.querySelector('#download-model'),
+      download:toolbar.querySelector('#download-coordinates'),
+    };
+    tools.binder.onclick=centerOnBinder;
+    tools.residue.onclick=centerOnResidue;
+    tools.clear.onclick=()=>{
+      clearResidue();
+      // Clearing disables the button. Keep keyboard focus in the toolbar.
+      (tools.binder.disabled?tools.download:tools.binder).focus();
+    };
+    tools.download.onclick=()=>{
+      const {blob,filename}=getNativeCoordinates(tools.choice.value);
+      const url=URL.createObjectURL(blob),link=doc.createElement('a');
+      link.href=url;link.download=filename;link.click();
+      setTimeout(()=>URL.revokeObjectURL(url),30000);
+    };
+  }
+
+  function updateTools({models=false}={}){
+    if(!tools)return;
+    tools.binder.disabled=!loaded.length||!binderChains(loaded[0].asset).length;
+    tools.residue.disabled=!selectedAtom;
+    tools.clear.disabled=!selectedAtom;
+    if(!models)return;
+    const {choice,download}=tools;
+    choice.replaceChildren(...loaded.map(({asset})=>{
+      const option=choice.ownerDocument.createElement('option');
+      option.value=option.textContent=asset.species;
+      return option;
+    }));
+    choice.hidden=loaded.length<2;
+    download.disabled=!loaded.length;
+  }
+
+  function getNativeCoordinates(species=current?.species){
+    const entry=loaded.find(({asset})=>asset.species===species);
+    if(!entry)throw new Error('Load the exact model before downloading its coordinates.');
+    const {asset,bytes}=entry;
+    const name=decodeURIComponent(new URL(molecularAssetURL(asset.url)).pathname.split('/').at(-1)).replace(/\.gz$/i,'');
+    const stem=subject.displayName||subject.label||subject.id;
+    const extension=name.match(/\.(?:pdb|cif|mmcif)$/i)?.[0]||`.${asset.format}`;
+    const downloadName=asset.displayModelId?`${asset.displayModelId.replaceAll('::','_')}${extension}`:stem&&!name.toLowerCase().startsWith(stem.toLowerCase())?`${stem}_${name}`:name;
+    const filename=downloadName.replace(/[^\w. -]/g,'_');
+    return {filename,blob:new Blob([bytes],{type:'application/octet-stream'})};
+  }
+
+  function centerOnAtoms(atoms,label){
+    const valid=atoms.filter(atom=>[atom.x,atom.y,atom.z].every(Number.isFinite));
+    if(!valid.length)return false;
+    const view=cameraView(viewer.getView());
+    for(const [i,axis] of ['x','y','z'].entries())view[i]=-valid.reduce((sum,atom)=>sum+atom[axis],0)/valid.length;
+    applyCamera(view);
+    report(`Rotation centered on ${label}`,'ready');
+    return true;
+  }
+
+  function centerOnBinder(){
+    if(!loaded.length)return false;
+    const {asset,atoms}=loaded[0],chains=binderChains(asset);
+    return centerOnAtoms(atoms.filter(atom=>chains.includes(atom.chain)),`the binder · ${asset.species}`);
+  }
+
+  function centerOnResidue(){
+    if(!selectedAtom)return false;
+    const {entry,atom,residueAtoms}=selectedAtom;
+    return centerOnAtoms(residueAtoms,atomIdentityLabel(entry.asset,atom));
+  }
+
+  function clearResidue(){
+    if(!selectedAtom)return false;
+    selectedAtom=null;restyle();updateTools();
+    report('Residue selection cleared','ready');
+    return true;
+  }
 
   // Override carbon only; other elements keep the library's element colors.
   function sticks(value, radius = 0.16) {
@@ -206,10 +344,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
           previous.set(atom.chain,atom);
         }
       }
-      if(showSideChains&&representation!=='sticks')for(const role of [...receptorChains(asset),...binderChains(asset)]){
-        const indices=atoms.filter(a=>a.chain===role&&!['N','CA','C','O','OXT'].includes(a.atom)&&!['H','D'].includes(a.elem)).map(a=>a.index);
-        if(indices.length)addStyle({index:indices},{stick:{radius:0.16,colorfunc:atom=>colorMode!=='project'||atom.elem==='C'?roleColor(atom):frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}});
-      }
+      if(showSideChains&&representation!=='sticks'&&entry.sideChains.length)addStyle({index:entry.sideChains},{stick:{radius:0.16,colorfunc:atom=>colorMode!=='project'||atom.elem==='C'?roleColor(atom):frame.contentWindow.$3Dmol.elementColors.defaultColors[atom.elem]??'#808080'}});
       if(showResidueColors)for(const [resn,value]of [[['HIS'],'#bf00bf'],[['ASP','GLU'],'#0000ff'],[['ARG','LYS'],'#ff0000'],[['NAG'],'#ffff00']])addStyle({resn,...(asset.kind==='receptor_only'?{chain:asset.roles.receptor}:{})},{stick:sticks(value,0.18)});
       if(showHotspots)for(const hotspot of asset.hotspots||[])addStyle({chain:hotspot.chain,resi:hotspot.resi},{stick:sticks(color(colors.hotspots,DEFAULT_PALETTE.hotspots),0.25)});
       for(const layer of [...entry.annotationLayers].sort((a,b)=>Number(a.kind==='hotspot')-Number(b.kind==='hotspot')))if(!hiddenAnnotationLayers.has(layer.id)){
@@ -239,24 +374,13 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
         }
       }
       if(selectedAtom?.entry===entry){const atom=selectedAtom.atom;
-        addStyle({chain:atom.chain,resi:atom.resi,...(atom.icode?{icode:atom.icode}:{})},{stick:sticks('#ffff00',0.26)});
+        addStyle({index:selectedAtom.residueAtoms.map(a=>a.index)},{stick:sticks('#ffff00',0.26)});
         viewer.addLabel(atomIdentityLabel(asset,atom),{position:atom,fontSize:13,fontColor:'#17232d',backgroundColor:'#ffffff',backgroundOpacity:0.92,borderThickness:1,borderColor:'#d0d9e2',inFront:true});
       }
     }
     viewer.render();
   }
 
-  async function readAsset(asset,signal){
-    const response=await fetch(molecularAssetURL(asset.url),{signal,credentials:'same-origin',redirect:'error'});
-    if(!response.ok)throw new Error(`The local model could not be read (${response.status}).`);
-    if(Number(response.headers.get('content-length'))>20*1024*1024)throw new Error('Model exceeds this viewer’s 20 MiB limit.');
-    const bytes=await response.arrayBuffer();
-    if(bytes.byteLength>20*1024*1024)throw new Error('Model exceeds this viewer’s 20 MiB limit.');
-    if(asset.sha256){const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');if(hash!==asset.sha256.toLowerCase())throw new Error('Model hash does not match the imported evidence.');}
-    const data=new TextDecoder().decode(bytes);
-    if(/^\s*</.test(data))throw new Error('The model URL returned a web page rather than molecular coordinates.');
-    return data;
-  }
   async function setVisibleModels(species){
     if(disposed)return false;
     const selected=overlayAssets(assets,species),token=++generation;
@@ -265,14 +389,15 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
     try{
       await frameReady;if(disposed||token!==generation)return false;
       const previous=current,sharedCamera=current&&displayFrame(current)&&displayFrame(current)===displayFrame(selected[0])?viewer.getView():null;
-      selectedAtom=null;pickedResidues=[];current=null;loaded=[];loadErrors=[];viewer.clear();
-      const results=await Promise.allSettled(selected.map(asset=>readAsset(asset,controller.signal)));
+      selectedAtom=null;pickedResidues=[];current=null;loaded=[];loadErrors=[];viewer.clear();updateTools({models:true});
+      const results=await Promise.allSettled(selected.map(asset=>loadMolecularAsset(asset,{signal:controller.signal})));
       if(disposed||token!==generation)return false;
       for(let i=0;i<selected.length;i++){
         const asset=selected[i],result=results[i];let model;
         try{
           if(result.status==='rejected')throw result.reason;
-          model=viewer.addModel(result.value,asset.format==='mmcif'?'cif':asset.format);
+          const {bytes,data}=result.value;
+          model=viewer.addModel(data,asset.format==='mmcif'?'cif':asset.format);
           const atoms=model.selectedAtoms({});
           if(!atoms.length)throw new Error('No atoms were found in this model.');
           if([...receptorChains(asset),...binderChains(asset)].some(id=>!model.selectedAtoms({chain:id}).length))throw new Error('Recorded receptor or binder chain is absent from this model.');
@@ -280,11 +405,13 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
           if(asset.kind==='binder_only'&&atoms.some(a=>a.chain!==asset.roles.binder))throw new Error('A designed-binder monomer must contain only the recorded binder chain.');
           for(const segment of fusionSegments)if(!model.selectedAtoms({chain:asset.roles.binder,resi:`${segment.range[0]}-${segment.range[1]}`}).length)throw new Error(`The documented ${segment.label} domain is absent from this model.`);
           alignDisplayAtoms(atoms,asset);
-          const entry={asset,model,atoms,confidence:residueConfidence(asset,atoms),chainbow:chainbowColors(atoms),annotationLayers:stageLayers(atoms,asset,selected.length>1?annotations.filter(a=>a.modelSha256===asset.sha256):annotations),distanceLayers:stageDistances(atoms,asset,selected.length>1?measurements.filter(a=>a.modelSha256===asset.sha256):measurements),contacts:null};
+          const entry={asset,model,atoms,bytes,sideChains:sideChainIndices(atoms,asset),confidence:residueConfidence(asset,atoms),chainbow:chainbowColors(atoms),annotationLayers:stageLayers(atoms,asset,selected.length>1?annotations.filter(a=>a.modelSha256===asset.sha256):annotations),distanceLayers:stageDistances(atoms,asset,selected.length>1?measurements.filter(a=>a.modelSha256===asset.sha256):measurements),contacts:null};
           entry.regionLayers=molecularRegions(atoms,asset);entry.regionByAtom=new Map(entry.regionLayers.flatMap(region=>region.indices.map(index=>[index,region])));
           model.setClickable(asset.kind==='receptor_only'?{chain:receptorChains(asset)}:{},true,atom=>{
             if(disposed||!loaded.includes(entry))return;
-            selectedAtom={atom,entry};restyle();
+            const key=residueKey(atom);
+            if(selectedAtom?.entry===entry&&residueKey(selectedAtom.atom)===key){clearResidue();return;}
+            selectedAtom={atom,entry,residueAtoms:atoms.filter(a=>residueKey(a)===key)};restyle();updateTools();
             const confidence=entry.confidence.get(JSON.stringify([atom.chain,atom.resi,atom.icode||'']));
             const role=molecularChainRole(asset,atom.chain);
             report(`${atomIdentityLabel(asset,atom)} · atom ${atom.atom||atom.elem||''}${confidenceAvailable(asset)?` · Cα pLDDT ${Number.isFinite(confidence)?confidence.toFixed(1):'unavailable for this residue'}`:''}`,'ready');
@@ -301,11 +428,17 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       initialView=matchingCamera(defaults[target],cameraAsset)||[...automaticView];initialFrame=displayFrame(current);
       const carriedCamera=(sharedCamera&&displayFrame(selected[0])===initialFrame?sharedCamera:null)||equivalentCamera(pendingView,current);pendingView=null;
       applyCamera(carriedCamera||initialView);viewer.render();
-      report(`${current.species}${loaded.length>1?` + ${loaded.length-1} overlays`:''} · ${carriedCamera?'equivalent receptor perspective retained':matchingCamera(defaults[target],cameraAsset)?'your saved target view':preset&&preset.frameId===initialFrame?'recorded project front view':'fitted view'}${current.displayFrame?' · receptor aligned':''} · drag to rotate${current.sha256?' · source file checked':''}${previous&&!sharedCamera&&!current.displayFrame?' · independent view; shared receptor frame unavailable':''}${loadErrors.length?` · ${loadErrors.map(e=>`${e.species}: ${e.message}`).join('; ')}`:''}`,loadErrors.length?'error':'ready');
+      let refitted=false;
+      try { verifyMolecularDrawing(viewer); }
+      catch {
+        applyCamera(automaticView);viewer.render();verifyMolecularDrawing(viewer);refitted=true;
+      }
+      updateTools({models:true});
+      report(`${current.species}${loaded.length>1?` + ${loaded.length-1} overlays`:''} · ${refitted?'fitted view restored':carriedCamera?'equivalent receptor perspective retained':matchingCamera(defaults[target],cameraAsset)?'your saved target view':preset&&preset.frameId===initialFrame?'recorded project front view':'fitted view'}${current.displayFrame?' · receptor aligned':''} · drag to rotate${current.sha256?' · source file checked':''}${previous&&!sharedCamera&&!current.displayFrame?' · independent view; shared receptor frame unavailable':''}${loadErrors.length?` · ${loadErrors.map(e=>`${e.species}: ${e.message}`).join('; ')}`:''}`,loadErrors.length?'error':'ready');
       return true;
     }catch(error){
       if(disposed||token!==generation||error.name==='AbortError')return false;
-      current=null;loaded=[];selectedAtom=null;viewer?.clear();report(error.message||'The models could not be displayed.','error');throw error;
+      current=null;loaded=[];selectedAtom=null;viewer?.clear();updateTools({models:true});report(error.message||'The models could not be displayed.','error');throw error;
     }
   }
   const setSpecies=species=>setVisibleModels([species]);
@@ -314,7 +447,8 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
   // when the caller uses only the status callback.
   ready.catch(() => {});
   return {
-    ready, setSpecies, setVisibleModels,
+    ready, setSpecies, setVisibleModels, getNativeCoordinates, centerOnBinder, centerOnResidue, clearResidue,
+    getAtomCatalog() {return loaded.flatMap(e=>e.atoms.map(a=>({modelSha256:e.asset.sha256,chain:a.chain,resi:Number(a.resi),icode:['.','?'].includes(a.icode)?'':String(a.icode||'').trim(),resn:a.resn,atom:a.atom})));},
     getVisibleModels() {return loaded.map(entry=>entry.asset.species);},
     setIsoformColors(value) {isoformColors=value===true;restyle();},
     captureView() { return viewer&&current&&!disposed&&displayFrame(current)?{frameId:displayFrame(current),target:targetOf(current),overlayCount:Math.max(0,loaded.length-1),view:cameraView(viewer.getView())}:null; },
@@ -326,11 +460,11 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       if(!current||!Array.isArray(selectors)||selectors.length>1000)throw new Error('Wait for the target structure to load.');
       pickedResidues=selectors.map(s=>{
         const entry=loaded.find(e=>e.asset.species===(s?.species||current.species));
-        if(!s||!entry||s.chain!==entry.asset.roles.receptor||!Number.isInteger(s.resi)||!entry.atoms.some(a=>a.chain===s.chain&&Number(a.resi)===s.resi&&(!s.atom||a.atom===s.atom)))throw new Error('Selected hotspot is absent from this target.');
-        return {species:entry.asset.species,chain:s.chain,resi:s.resi,...(s.atom?{atom:s.atom}:{})};
-      });selectedAtom=null;restyle();
+        if(!s||!entry||!receptorChains(entry.asset).includes(s.chain)||!Number.isInteger(s.resi)||!entry.atoms.some(a=>a.chain===s.chain&&Number(a.resi)===s.resi&&String(a.icode||'').trim().replace(/^[.?]$/,'')===String(s.icode||'').trim()&&(!s.atom||a.atom===s.atom)))throw new Error('Selected hotspot is absent from this target.');
+        return {species:entry.asset.species,chain:s.chain,resi:s.resi,...(s.icode?{icode:s.icode}:{}),...(s.atom?{atom:s.atom}:{})};
+      });selectedAtom=null;restyle();updateTools();
     },
-    reset() { if (viewer && current && !disposed && initialView) { selectedAtom = null; restyle(); applyCamera(initialView); viewer.render(); report(`${current.species}${loaded.length>1?` + ${loaded.length-1} overlays`:''} · ${matchingCamera(defaults[targetOf(current)],{...current,species:targetOf(current)})?'saved target view':'project starting view'} restored`, 'ready'); } },
+    reset() { if (viewer && current && !disposed && initialView) { selectedAtom = null; restyle(); updateTools(); applyCamera(initialView); viewer.render(); report(`${current.species}${loaded.length>1?` + ${loaded.length-1} overlays`:''} · ${matchingCamera(defaults[targetOf(current)],{...current,species:targetOf(current)})?'saved target view':'project starting view'} restored`, 'ready'); } },
     fitVisible() {
       if(!viewer||!current||disposed)return;
       const rotation=cameraView(viewer.getView()).slice(4);viewer.zoomTo();viewer.zoom(0.85);
@@ -345,7 +479,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
     },
     clearDefaultView() {
       if(!viewer||!current||disposed||!automaticView)throw new Error('Wait for the model to load.');
-      delete defaults[targetOf(current)];initialView=[...automaticView];selectedAtom=null;restyle();applyCamera(initialView);viewer.render();
+      delete defaults[targetOf(current)];initialView=[...automaticView];selectedAtom=null;restyle();updateTools();applyCamera(initialView);viewer.render();
       report(`${current.species} · project starting view restored · personal default removed`,'ready');return targetOf(current);
     },
     setPalette(value = {}) { colors = { ...colors, ...value }; restyle(); },
@@ -372,8 +506,7 @@ export function mountMolecule(container, subject, { palette = {}, onStatus = () 
       rejectFrame(new Error('Molecular viewer disposed.'));
       try {
         viewer?.spin(false); viewer?.stopAnimate(); viewer?.clear();
-        const canvas = viewer?.getCanvas();
-        const gl = canvas?.getContext('webgl') || canvas?.getContext('experimental-webgl');
+        const gl = viewer?.renderer?.getContext();
         gl?.getExtension('WEBGL_lose_context')?.loseContext();
       } catch { /* The owned iframe still releases its entire browsing context. */ }
       viewer = null; current = null; loaded=[]; frame.remove();
