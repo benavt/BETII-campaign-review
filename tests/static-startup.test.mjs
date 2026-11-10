@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import test from 'node:test';
+import vm from 'node:vm';
 import {validateWorkspace} from '../docs/model.mjs';
 import {publicationOptions, resolveStartupWorkspace} from '../docs/startup.mjs';
 import {validateSavedWorkspace} from '../docs/workspace-storage.mjs';
@@ -43,4 +44,13 @@ test('BETII retains the original browser record and isolates backup imports',()=
   assert.ok(app.includes("workspacePath:'./data/local-workspace.json'"));
   assert.doesNotThrow(()=>validateSavedWorkspace({schemaVersion:2,mode:'cache',state:{subjectReviews:{}}}));
   assert.equal(publicationOptions({dataset,href:base+'?workspace=import'}).importView,true);
+});
+
+test('publication saves use the record shape supported by the previous BETII build',()=>{
+  const snapshotFor = app.slice(app.indexOf('function snapshotFor('),app.indexOf('const importLabel'));
+  const state = {subjectReviews:{}};
+  const result = vm.runInNewContext(snapshotFor+"\nJSON.stringify(snapshotFor({mode:'published',workspace:state}))",{
+    savedState:value=>value, state,
+  });
+  assert.deepEqual(JSON.parse(result),{schemaVersion:2,mode:'cache',state});
 });

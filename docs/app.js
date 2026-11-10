@@ -132,7 +132,8 @@ function savedState(source) {
   return Object.fromEntries(SAVED_STATE_FIELDS.filter(key=>source[key]!==undefined).map(key=>[key,source[key]]));
 }
 function snapshotFor({workspace,mode,importInfo}){
-  if(['cache','published'].includes(mode))return {schemaVersion:2,mode,state:savedState(workspace)};
+  // The previous BETII build reads the same publication key as a cache record.
+  if(['cache','published'].includes(mode))return {schemaVersion:2,mode:'cache',state:savedState(workspace)};
   return {workspace,mode,...(mode==='imported'&&importInfo?{importInfo}:{})};
 }
 const importLabel=record=>record.importInfo?.name||record.workspace.campaigns[0].name||'Saved import';
