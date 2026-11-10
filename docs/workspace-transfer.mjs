@@ -92,3 +92,28 @@ export async function applyReviewExport(workspace,bundle) {
   }
   return validateWorkspace(merged);
 }
+
+export function restorePreview(file,{kind,data},workspace) {
+  const campaigns = kind === 'workspace' ? data.campaigns : [];
+  const state = kind === 'reviews' ? data.state : data;
+  const drafts = new Set([...campaigns.filter(c=>c.selectionDraft).map(c=>c.id), ...Object.keys(state.selectionDrafts||{})]);
+  const replacements=[];
+  if(kind==='reviews'&&workspace){
+    const add=(field,campaign,entry,before,after)=>{
+      if(before!==undefined&&canonical(before)!==canonical(after))replacements.push({field,campaign,entry,before,after});
+    };
+    for(const [field,values] of Object.entries(state)){
+      if(arrays.has(field))continue;
+      for(const [campaign,value] of Object.entries(values)){
+        const before=workspace[field]?.[campaign];
+        if(nested.has(field))for(const [entry,after] of Object.entries(value))add(field,campaign,entry,before?.[entry],after);
+        else add(field,campaign,null,before,value);
+      }
+    }
+  }
+  return {
+    kind,fileName:file.name,bytes:file.size,campaignCount:data.campaigns.length,
+    candidateCount:campaigns.reduce((count,c)=>count+(c.candidatePool||c.subjects).length,0),
+    decisionCount:state.decisions?.length||0,draftCount:drafts.size,replacements,
+  };
+}

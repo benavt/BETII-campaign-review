@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 133308,
-      "sha256": "a6d1f04eff8bb3d332510cc7feef63611ebecbe1a1efd61b54c422364d648194"
+      "bytes": 164186,
+      "sha256": "ee435f86ac2bf5c9bc4a6292637039f23e7eebb54ba0423c87efdf50ab1618e7"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -1711,8 +1711,8 @@
       "sha256": "be2773ed570645c72e86112c972e8a10a80e6ff94d6214689ee9492a15a1fb6d"
     },
     "index.html": {
-      "bytes": 1468,
-      "sha256": "afc9b4c3626690434e6cbf7a1532e4263eb924d47c9d2a4dcac778292aea0012"
+      "bytes": 1579,
+      "sha256": "521658b8254eea727e89aa3d39d45bf3927e74634f8ebbd2f4494d10ed15950b"
     },
     "input-ui.css": {
       "bytes": 2921,
@@ -1807,12 +1807,12 @@
       "sha256": "bf6d9cefde199300539a49a240baaaaa5783905370fbce8ec6277e970d335e49"
     },
     "stage-layers.mjs": {
-      "bytes": 3416,
-      "sha256": "9b028ecd1b3175d9ce72bc6d15d9cbae0ee4eebff524968b81f3ec7eb4be5924"
+      "bytes": 4372,
+      "sha256": "a4c12229d01b1f356e097988d9a09e798405538e95031c40cbfbaf1a378f886d"
     },
     "startup.mjs": {
-      "bytes": 1487,
-      "sha256": "f0c93fe23464b87adeeb4d56caa558d8bcdb1c021056ccc1db7aa99608058584"
+      "bytes": 3546,
+      "sha256": "8b2c9ded73933b9405dcf9bb47d730c0b2e9d1c0444a513080cc6ba1b5c74b5b"
     },
     "style.css": {
       "bytes": 37510,
@@ -1851,16 +1851,16 @@
       "sha256": "c162a0c9d52c2f51e46adc96141e04edde4f64ff9154b9e8edf855a9f1cc3772"
     },
     "workspace-shell.mjs": {
-      "bytes": 6797,
-      "sha256": "6e472f5204f1cdf0f4151121404e66737dbff24622998515643c5ea33383e4cc"
+      "bytes": 15677,
+      "sha256": "d9ba5f66875d802f9c5274e3b623c6434f3088db2749a0aa02000d016817ed55"
     },
     "workspace-storage.mjs": {
-      "bytes": 4486,
-      "sha256": "0f5e1d7a0b4c53f913b95e34ec45d1d8155310a4aa77dcd0c7c277043b27814d"
+      "bytes": 8582,
+      "sha256": "52be436211b114beba45330c4676a6a7354f893190aacdf2b857b63078fe170a"
     },
     "workspace-transfer.mjs": {
-      "bytes": 5754,
-      "sha256": "1888776aab27ef1eeb35e6eed1ed009c132d1e9c667e6f153de2987fd9fd5492"
+      "bytes": 6981,
+      "sha256": "356b2fcf77f703044b6ac15bd77a6111c62fe70b1ecc818ad03e15d5cada95bf"
     },
     "pymol-download.mjs": {
       "bytes": 957,
@@ -4305,6 +4305,22 @@
     "hotspot-request.mjs": {
       "bytes": 9471,
       "sha256": "cb0f8dcb5458d153c7b089cf964fa2d462dea73287062902e4aa452f82faf650"
+    },
+    "connected-workspace.mjs": {
+      "bytes": 5287,
+      "sha256": "a02778d5f3d0f32738e7af7c1d1e55777f23f619acd861c7b7020b45fb80243d"
+    },
+    "workspace-lifecycle.mjs": {
+      "bytes": 9140,
+      "sha256": "b686b48a1a710125c311408d2b6b942d1b086d657ee96965b1e0d8fef845a71e"
+    },
+    "saved-results.mjs": {
+      "bytes": 6330,
+      "sha256": "41790ce5883c445f5505ae833adecd3fd216d350d2d9a8e385146aecfe8dc627"
+    },
+    "review-scatter.mjs": {
+      "bytes": 6312,
+      "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4315,13 +4331,10 @@
   "verifiedDimerConditions": 20,
   "expectedDimerModels": 500,
   "expectedDimerConditions": 100,
-  "uiAppCommit": "768e217140d8602cbe1c08ad6560c84ea4c805c8",
-  "uiRefreshedAt": "2026-11-09T16:21:40.873073-05:00",
-  "previousPublicationManifestSha256": "2a5ed6fa799f004e6f5fa53c440b8aa6a3ca935e31dc59363eec3f51f1da2833",
+  "uiAppCommit": "a45a1322e50ffd1eecbdb1106c5bc5f33beea281",
+  "uiRefreshedAt": "2026-11-10T15:39:03.177042-05:00",
+  "previousPublicationManifestSha256": "54fe8d6bc4b5e8fb9a9a3495298b002fe99f85298e2fc7dfd69c6d94a94101ed",
   "uiUpdate": {
-    "id": "2026-11-09_betii-viewer-controls_001",
-    "predecessorManifestSHA256": "2a5ed6fa799f004e6f5fa53c440b8aa6a3ca935e31dc59363eec3f51f1da2833",
-    "appliedAt": "2026-11-09T16:21:40.873073-05:00",
-    "scope": "Native coordinate downloads, binder and residue centering, alanine side chains, residue deselection, and separated shortlist actions"
+    "scope": "Workspace lifecycle, preserving the existing public snapshot and legacy browser storage key"
   }
 }
