@@ -1,41 +1,46 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import vm from 'node:vm';
 import test from 'node:test';
 import {validateWorkspace} from '../docs/model.mjs';
+import {publicationOptions, resolveStartupWorkspace} from '../docs/startup.mjs';
+import {validateSavedWorkspace} from '../docs/workspace-storage.mjs';
 
-const app=fs.readFileSync(new URL('../docs/app.js',import.meta.url),'utf8');
-const data=JSON.parse(fs.readFileSync(new URL('../docs/data/local-workspace.json',import.meta.url),'utf8'));
-const connected=app.slice(app.indexOf('async function connectedWorkspace('),app.indexOf('\nfunction download(',app.indexOf('async function connectedWorkspace(')));
-const start=app.slice(app.indexOf('async function start() {'),app.indexOf('\nexport const ready='));
+const base = 'https://benavt.github.io/BETII-campaign-review/';
+const data = validateWorkspace(JSON.parse(fs.readFileSync(new URL('../docs/data/local-workspace.json',import.meta.url),'utf8')));
+const html = fs.readFileSync(new URL('../docs/index.html',import.meta.url),'utf8');
+const app = fs.readFileSync(new URL('../docs/app.js',import.meta.url),'utf8');
+const manifest = JSON.parse(fs.readFileSync(new URL('../docs/publication-manifest.json',import.meta.url),'utf8'));
+const dataset = {
+  workspaceMode: html.match(/data-workspace-mode="([^"]+)"/)[1],
+  publicationId: html.match(/data-publication-id="([^"]+)"/)[1],
+};
 
-function context(available){
-  const state={
-    console,URL,structuredClone,document:{},location:{href:'https://benavt.github.io/BETII-campaign-review/'},
-    key:'isolated-test',forceDemo:false,mode:'demo',workspace:undefined,current:null,tab:'overview',runnerRuntime:null,persistence:'saved',storageError:'',rendered:false,
-    readSavedWorkspace:async()=>null,settleWithin:async f=>f(),setStartupMessage:()=>{},
-    demoWorkspace:()=>({campaigns:[{id:'illustrative-placeholder'}]}),validateWorkspace,
-    runtimeInfo:()=>{throw new Error('Static startup contacted a backend');},
-    fetch:async url=>{assert.equal(url,'./data/local-workspace.json');return{ok:available,json:async()=>structuredClone(data)};},
-    notify:message=>{throw new Error(message);},
-  };
-  vm.createContext(state);
-  vm.runInContext(connected+'\n'+start+'\nasync function render(){rendered=true;}',state);
-  return state;
-}
-
-test('Pages hostname loads actual bundled BETII data before rendering',async()=>{
-  const state=context(true);
-  await vm.runInContext('start()',state);
-  assert.equal(state.mode,'cache');
-  assert.equal(state.workspace.campaigns.length,1);
-  assert.equal(state.workspace.campaigns.reduce((n,c)=>n+c.subjects.length,0),10);
-  assert.equal(state.rendered,true);
-  assert.equal(state.runnerRuntime,null);
+test('published BETII opens the bundled snapshot before rendering',async()=>{
+  const options = publicationOptions({dataset,href:base});
+  assert.equal(options.published,true);
+  assert.equal(options.importView,false);
+  const result = await resolveStartupWorkspace({
+    href:base, published:options.published, connect:async()=>data,
+    demo:()=>{throw new Error('Static startup must use published data');},
+  });
+  assert.equal(result.mode,'published');
+  assert.equal(result.workspace.campaigns.length,1);
+  assert.equal(result.workspace.campaigns[0].subjects.length,10);
 });
 
-test('missing static evidence fails instead of rendering illustrative candidates',async()=>{
-  const state=context(false);
-  await assert.rejects(vm.runInContext('start()',state),/BETII snapshot could not be opened/);
-  assert.equal(state.rendered,false);
+test('missing static evidence fails instead of falling back to illustrative data',async()=>{
+  await assert.rejects(resolveStartupWorkspace({
+    href:base, published:true,
+    connect:async()=>{throw new Error('Missing bundled BETII snapshot');},
+    demo:()=>{throw new Error('Static startup must use published data');},
+  }),/Published review data could not be opened.*Missing bundled BETII snapshot/);
+});
+
+test('BETII retains the original browser record and isolates backup imports',()=>{
+  const key = 'betii-static-'+manifest.exportedWorkspaceSha256;
+  assert.ok(app.includes("const publicationStorageKey='"+key+"';"));
+  assert.ok(app.includes("importKey:publicationStorageKey+':import'"));
+  assert.ok(app.includes("workspacePath:'./data/local-workspace.json'"));
+  assert.doesNotThrow(()=>validateSavedWorkspace({schemaVersion:2,mode:'cache',state:{subjectReviews:{}}}));
+  assert.equal(publicationOptions({dataset,href:base+'?workspace=import'}).importView,true);
 });

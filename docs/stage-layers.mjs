@@ -9,12 +9,21 @@ const insertion=value=>{const result=typeof value==='string'?value.trim():'';ret
 // 3Dmol leaves label_seq_id as a string when a CIF has no auth_seq_id.
 const residueNumber=value=>typeof value==='string'&&/^-?\d+$/.test(value)?Number(value):value;
 const matches=(atom,s)=>atom.chain===s.chain&&residueNumber(atom.resi)===s.resi&&insertion(atom.icode)===insertion(s.icode)&&(!s.atom||atom.atom===s.atom);
+export function recordedModelAnnotations(subject,assets=[]){
+  const layers=subject?.explorerAnnotations||[];
+  assert(Array.isArray(layers)&&layers.length<=60,'Recorded model annotations must be a bounded list.');
+  assert(subject?.explorerAnnotationsVisible===undefined||typeof subject.explorerAnnotationsVisible==='boolean','Annotation visibility must be explicit.');
+  const text=subject?.explorerAnnotationLabel;assert(text===undefined||typeof text==='string'&&text.trim().length>0&&text.length<=160,'Annotation controls require a bounded label.');
+  const models=new Set(assets.map(asset=>asset.sha256).filter(hash));
+  return {annotations:layers.filter(layer=>models.has(layer.modelSha256)),visible:subject?.explorerAnnotationsVisible===true,label:text||'Working pocket residues'};
+}
 export function stageLayers(atoms,asset,layers=[]){
   assert(Array.isArray(layers)&&layers.length<=30,'Too many stage annotation layers.');
   const residueKey=value=>JSON.stringify([value.chain,residueNumber(value.resi),insertion(value.icode)]),residues=new Map();
   for(const atom of atoms){const key=residueKey(atom);if(!residues.has(key))residues.set(key,[]);residues.get(key).push(atom);}
   return layers.map(layer=>{
     bound(layer,asset);assert(['hotspot','flexible','fixed','assessment'].includes(layer.kind)&&/^#[a-f0-9]{6}$/i.test(layer.color)&&Array.isArray(layer.selectors)&&layer.selectors.length>0&&layer.selectors.length<=5000,'Invalid stage annotation.');
+    assert(layer.sphereColor===undefined||layer.kind==='hotspot'&&/^#[a-f0-9]{6}$/i.test(layer.sphereColor),'Hotspot sphere colors require an explicit hex color.');
     const indices=new Set();
     for(const s of layer.selectors){selector(s);const found=(residues.get(residueKey(s))||[]).filter(a=>matches(a,s));assert(found.length>0,`Recorded stage annotation is absent: ${layer.label} · ${s.chain}:${s.resi}${s.atom?':'+s.atom:''}`);found.forEach(a=>indices.add(a.index));}
     return {...layer,indices:[...indices]};
