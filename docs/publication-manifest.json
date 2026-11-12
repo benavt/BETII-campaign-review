@@ -6,7 +6,7 @@
   "createdAt": "2026-11-01T16:07:50.950252-05:00",
   "appCommit": "77fdef1743941469f0eb24ac829d5e333d4299e1",
   "sourceWorkspaceSha256": "e5f8a8cffce4148a2c53d8dd25bb67d05cc422efc51e72c05564215f8f76570d",
-  "exportedWorkspaceSha256": "a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe",
+  "exportedWorkspaceSha256": "96163f999d87aa088ed8a4d814edba9623c45fd14673af6e0e8ea056c7a6b2a7",
   "candidateIds": [
     "C2K_L60_0608",
     "Brd3ET_Brd3ET_1933_model_6",
@@ -67,8 +67,8 @@
       "sha256": "c80a594ce5e813e474dfc0857ccf62fa3ba0954c173771dbe435117d714b626e"
     },
     "candidate-explorer.mjs": {
-      "bytes": 25076,
-      "sha256": "0017709e0160bfffe8c87f4eb82deec0cea29c344292714e3a5906a3eb810cce"
+      "bytes": 27679,
+      "sha256": "1ed765e4205136806c5ced0732165d59e137a044683e91969d5fc4ef183560a5"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -1679,8 +1679,8 @@
       "sha256": "fff2ec535343603b9bd05310fbc43c7b7f33be331e20322bfeae5b28af0515a1"
     },
     "data/local-workspace.json": {
-      "bytes": 11181487,
-      "sha256": "a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe"
+      "bytes": 11192811,
+      "sha256": "96163f999d87aa088ed8a4d814edba9623c45fd14673af6e0e8ea056c7a6b2a7"
     },
     "data/triage.json": {
       "bytes": 21551,
@@ -4287,8 +4287,8 @@
       "sha256": "3b8bef497b79c46d8bf481fd50e5cddd33160c2c256b64b0f64b568e00945e11"
     },
     "public-navigation.mjs": {
-      "bytes": 547,
-      "sha256": "54c293c355d6d54582d46e62078514a510d8a2dbef2ced22c9b9919f7d2f4cec"
+      "bytes": 653,
+      "sha256": "46de3128515cdfb92853ca23de458135f4648adf497c504ba508e076324a820b"
     },
     "affinity.mjs": {
       "bytes": 8476,
@@ -4321,6 +4321,10 @@
     "review-scatter.mjs": {
       "bytes": 6312,
       "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
+    },
+    "data/2026-11-12_betii-public-explorer_001/netsolp-d-scores.csv": {
+      "bytes": 1325,
+      "sha256": "0d8f80143280c2210b3055bb3a62621fbbf389c0edeba8a3366e3455ab4358e0"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -4336,5 +4340,15 @@
   "previousPublicationManifestSha256": "54fe8d6bc4b5e8fb9a9a3495298b002fe99f85298e2fc7dfd69c6d94a94101ed",
   "uiUpdate": {
     "scope": "Workspace lifecycle, preserving the existing public snapshot and legacy browser storage key"
-  }
+  },
+  "netSolPScoreRelease": {
+    "id": "2026-11-12_betii-public-explorer_001",
+    "model": "NetSolP-D 1.0",
+    "rowCount": 10,
+    "csv": "data/2026-11-12_betii-public-explorer_001/netsolp-d-scores.csv",
+    "sha256": "0d8f80143280c2210b3055bb3a62621fbbf389c0edeba8a3366e3455ab4358e0",
+    "previousPublicationManifestSha256": "86c46532dfb31de749a09d21d3e91f11b0e17254444a7b7d80a2fb6f0814cd2f",
+    "createdAt": "2026-11-12T18:41:20.365204+00:00"
+  },
+  "browserStorageKey": "betii-static-a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe"
 }

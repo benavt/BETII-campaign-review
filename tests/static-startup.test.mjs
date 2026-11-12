@@ -38,7 +38,8 @@ test('missing static evidence fails instead of falling back to illustrative data
 });
 
 test('BETII retains the original browser record and isolates backup imports',()=>{
-  const key = 'betii-static-'+manifest.exportedWorkspaceSha256;
+  const key = manifest.browserStorageKey??('betii-static-'+manifest.exportedWorkspaceSha256);
+  if(manifest.netSolPScoreRelease)assert.match(key,/^betii-static-[0-9a-f]{64}$/);
   assert.ok(app.includes("const publicationStorageKey='"+key+"';"));
   assert.ok(app.includes("importKey:publicationStorageKey+':import'"));
   assert.ok(app.includes("workspacePath:'./data/local-workspace.json'"));
