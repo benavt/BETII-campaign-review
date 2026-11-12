@@ -1,9 +1,37 @@
 #!/usr/bin/env python3
 """Verify the complete public file allowlist, scope, hashes and asset closure."""
-import argparse,hashlib,json,re
+import argparse,csv,hashlib,json,re
 from verify_dimers import verify_dimers
 from pathlib import Path
 from urllib.parse import unquote,urlsplit
+
+def verify_netsolp(root,c,manifest):
+ release=manifest.get('netSolPScoreRelease')
+ if not release:
+  assert not c.get('publicReview',{}).get('netSolPScores')
+  return
+ path=release['csv']
+ assert re.fullmatch(r'data/[a-zA-Z0-9_-]+/netsolp-d-scores\.csv',path)
+ assert release['sha256']==manifest['files'][path]['sha256']
+ source={'path':'site/'+path,'sha256':release['sha256']}
+ model='NetSolP-D 1.0'
+ assert c['publicReview']['netSolPScores']=={'model':model,'source':source}
+ with (root/path).open(encoding='utf-8',newline='') as handle:
+  reader=csv.DictReader(handle)
+  assert reader.fieldnames==['order','candidate_id','sequence_sha256','role','predicted_solubility','predicted_usability']
+  rows=list(reader)
+ ids=manifest['candidateIds']
+ assert len(rows)==release['rowCount']==len(ids) and [row['candidate_id'] for row in rows]==ids
+ for entries in (c['subjects'],c['candidatePool']):
+  assert [subject['id'] for subject in entries]==ids
+  for i,(subject,row) in enumerate(zip(entries,rows,strict=True),start=1):
+   seq_hash=hashlib.sha256(subject['sequence'].encode('ascii')).hexdigest()
+   assert row['order']==str(i) and subject['kind']=='sequence_candidate'
+   assert row['role']==('positive_control' if subject['id']=='AP2-9' else 'sequence_candidate')
+   assert seq_hash==subject['sequenceSha256']==row['sequence_sha256']
+   scores={key:float(row['predicted_'+key]) for key in ('solubility','usability')}
+   assert all(0<=score<=1 for score in scores.values())
+   assert subject['netSolP']=={'model':model,'sequenceSha256':seq_hash,'role':row['role'],'source':source,'scores':scores}
 
 def verify(root):
  manifest=json.loads((root/'publication-manifest.json').read_bytes());expected=set(manifest['files'])|{'publication-manifest.json'};actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()}
@@ -27,6 +55,7 @@ def verify(root):
   if p.suffix in {'.mjs','.js'}:
    for ref in re.findall(r"(?:from\s*|import\s*\()\s*['\"](\./[^'\"]+)['\"]",p.read_text()):assert (p.parent/ref).is_file(),ref
  for ref in re.findall(r'(?:src|href)="(\./[^"?#]+)',(root/'index.html').read_text()):assert (root/ref).is_file(),ref
+ verify_netsolp(root,c,manifest)
  dimers=verify_dimers(root,workspace,manifest)
  return dict(**dimers,valid=True,candidates=10,structuralCells=manifest['verifiedCoordinateModels'],missing=len(manifest['missingCells']),files=len(actual),bytes=sum(r['bytes'] for r in manifest['files'].values()),public=True)
 if __name__=='__main__':
