@@ -51,8 +51,8 @@
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     },
     "app.js": {
-      "bytes": 164186,
-      "sha256": "723ae76b0b64d96c92a11da83946c22698ed0e12ecd7aabac7798837a9faac8e"
+      "bytes": 164273,
+      "sha256": "51c7569a02866275fead39adf9169fe61869248daa0ffe822e8d9b9b9f3856a6"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -83,8 +83,8 @@
       "sha256": "34b5f65eae18e74608a5760e398b975751860c3f6bd8c6c7f0c79a705a0a5e2a"
     },
     "candidate-explorer.mjs": {
-      "bytes": 27775,
-      "sha256": "feec533771381c7b74cc46ba8eab2fbcbf3799c15bcea8db5d5749c50c634992"
+      "bytes": 27958,
+      "sha256": "e0b6e905e9dceaf147d52ef57bf20e1801a1f5010025afe36ee775e9bc53a2d8"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -2723,8 +2723,8 @@
       "sha256": "067dde24031789c294d39fa8753dd972e156f23392c5aeb35bbae2680b246408"
     },
     "review-scatter.mjs": {
-      "bytes": 6312,
-      "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
+      "bytes": 6437,
+      "sha256": "0d24e352203786997e23727efa9191d8fa849598ecf715acbec7801c65d0139e"
     },
     "review-ui.css": {
       "bytes": 6666,
@@ -2755,12 +2755,12 @@
       "sha256": "7bd797d38279702c363059645d2363d1fe8f42f96b32fbfa3508090d04c2b663"
     },
     "style.css": {
-      "bytes": 37510,
-      "sha256": "666680dbc6d0090b3b851ed5eae71eeda747d3a21a2009690ea55500fb699bd8"
+      "bytes": 38585,
+      "sha256": "b5f026aed7223e2dfca18de186241e1cd87ff489ccfa661fe1d1ad40baf395eb"
     },
     "themes.css": {
-      "bytes": 9665,
-      "sha256": "8fdde12580b777261da042f27858dae1290d12050a4e0b9d3fe8cadccb2480ee"
+      "bytes": 9595,
+      "sha256": "1af4a76165bdbb971fad9fba24e6ff903f0a4eda358b7371d233b4f2e778f170"
     },
     "vendor/3Dmol-LICENSE.txt": {
       "bytes": 4283,
