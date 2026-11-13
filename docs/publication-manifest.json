@@ -1823,8 +1823,8 @@
       "sha256": "1af4a76165bdbb971fad9fba24e6ff903f0a4eda358b7371d233b4f2e778f170"
     },
     "triage.html": {
-      "bytes": 3277,
-      "sha256": "84bb47f7c035a1cfcccbd4f1854bd7921235fa311c8d70ff462f17c236bba357"
+      "bytes": 3341,
+      "sha256": "86a4ce23bbc2380e588169af925445e6fee9e30be8df07869ac6253e75438f11"
     },
     "vendor/3Dmol-LICENSE.txt": {
       "bytes": 4283,
@@ -6916,7 +6916,7 @@
     },
     "jokent/publication-manifest.json": {
       "bytes": 158785,
-      "sha256": "5e25e2cc16dabf68789c0f8a82935a616f729196870eab2020ed1a5f1a3ff0df"
+      "sha256": "f0d12ce487fd95fcc8f892b111fa4697b95ba7c8d2ad18d3a73755ada67f299b"
     },
     "jokent/pymol-download.mjs": {
       "bytes": 957,
@@ -6963,8 +6963,8 @@
       "sha256": "8b2c9ded73933b9405dcf9bb47d730c0b2e9d1c0444a513080cc6ba1b5c74b5b"
     },
     "jokent/status.html": {
-      "bytes": 3320,
-      "sha256": "b43485e7b6f658eb084875f9455d39d5b907163ef9893c966791adcf0b2b27a3"
+      "bytes": 3396,
+      "sha256": "1dd867b002a1bf0bf57cdfa1c69b845483ce03e31d2750d43c25343e9bb6ec19"
     },
     "jokent/style.css": {
       "bytes": 38585,
@@ -7529,6 +7529,38 @@
     "jokent/data/assets/ff837119751c2acd78d2fe289c416280852aba4d45a09846404c814e5783e8e3.cif": {
       "bytes": 99822,
       "sha256": "ff837119751c2acd78d2fe289c416280852aba4d45a09846404c814e5783e8e3"
+    },
+    "comparison/style.css": {
+      "bytes": 4920,
+      "sha256": "fe994c3506fed6917c7a61600ddbca21d1c3222aedbcbcc9e100b7350e3c35d7"
+    },
+    "comparison/twenty-sequences.fasta": {
+      "bytes": 2338,
+      "sha256": "2db581f1fde55b4fc570744f51fee0b665732b604cc1c972b60baf79b35d5391"
+    },
+    "comparison/data.json": {
+      "bytes": 3362869,
+      "sha256": "cb5c6459feeb41b81e65634b3f566cb5d6e23b0135ce17b8729dcc37ad38d87b"
+    },
+    "comparison/metrics.mjs": {
+      "bytes": 3673,
+      "sha256": "cdd42f9bd0fc7118fa9215a16e07f5c4898ce5bd39faead7de72f11a734f909a"
+    },
+    "comparison/app.mjs": {
+      "bytes": 14161,
+      "sha256": "5cbb137d5b83c6f90b749512bce46f984931e2339d09d478552e76e875894afd"
+    },
+    "comparison/affinity-selectivity.csv": {
+      "bytes": 13501,
+      "sha256": "302b6c2c397bc62b1b607e93d57d16def9d62b67b51014290544737ed3f43734"
+    },
+    "comparison/sequences_for_Adaptyv_modified.fa": {
+      "bytes": 1509,
+      "sha256": "b83ede742b9e93f06d2ad62e61450a7d2804585aaa16061fafe9d44470cae567"
+    },
+    "comparison/index.html": {
+      "bytes": 6278,
+      "sha256": "3238d196cfd0c3e3d3b9c7000bb0319d4026f5c3666b81568cc688b9f5488029"
     }
   },
   "publicInterface": "single-campaign-v2",

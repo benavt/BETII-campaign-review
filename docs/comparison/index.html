@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>20-sequence comparison · BETII</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<header><nav aria-label="Campaign pages"><a href="../?view=explorer">Our Campaign Manager</a><a href="../jokent/?view=explorer">Jokent Campaign Manager</a><a href="../triage.html">Our selection</a></nav>
+<p class="eyebrow">BETII / GROUP COMPARISON</p><h1>Our panel + modified Adaptyv</h1>
+<p class="intro">Our nine candidates and AP2-9 alongside the ten sequences in <code>sequences_for_Adaptyv_modified.fa</code>. All 20 rows use the full <strong>untagged sequences</strong>.</p>
+<div class="group-legend"><span><i class="our"></i>Our panel · 10, including AP2-9</span><span><i class="jokent"></i>Jokent · modified Adaptyv · 10</span><span><i class="control"></i>AP2-9 reference</span></div>
+<p class="notice">Affinity, selectivity and structure confidence are predictions. Selectivity = comparator Kd / BRD3 Kd; values above 1 favor BRD3. Ratios require all four matched Boltz2 Exact models and one compatible calibration. Each scorer is shown separately.</p>
+<div class="downloads"><a href="./twenty-sequences.fasta" download>20 sequences FASTA ↓</a><a href="./affinity-selectivity.csv" download>Affinity + selectivity CSV ↓</a><a href="./data.json" download>All saved metrics + provenance JSON ↓</a><button id="download-current">Current table CSV ↓</button></div>
+</header>
+<main>
+<div id="load-status" role="status">Loading saved metrics…</div>
+<section class="toolbar" aria-label="Comparison controls">
+<label>Group<select id="group"><option value="all">Both groups · 20 sequences</option><option value="our-panel">Our panel + AP2-9 · 10</option><option value="modified-adaptyv">Jokent · modified Adaptyv · 10</option></select></label>
+<label>Search<input id="search" type="search" placeholder="Sequence ID or label"></label>
+<label>Model kind<select id="kind"><option value="complex">Binder–ET complex</option><option value="monomer">Binder monomer</option><option value="homodimer">Binder homodimer</option></select></label>
+<label>Folding method<select id="engine"><option value="boltz2-exact">Boltz2 Exact</option><option value="af3">AlphaFold 3</option><option value="opendde-exact">OpenDDE Exact</option><option value="openfold">OpenFold</option><option value="colabfold">ColabFold · dimers only</option></select></label>
+<label>ET isoform<select id="target"><option>BRD3</option><option>BRD2</option><option>BRD4</option><option>BRDT</option></select></label>
+<label>Affinity scorer<select id="scorer"><option>DeltaForge</option><option>PCANN</option></select></label>
+<label id="rank-label" hidden>Native dimer rank<select id="rank"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
+<button id="reset">Reset view</button>
+</section>
+<p id="context" class="muted"></p><section id="group-summary" class="summary-grid" aria-label="Group metric summaries"></section>
+<section class="panel"><div class="section-title"><div><h2>Compare metrics</h2><p class="muted">Choose axes. Select a point or table row to inspect its exact evidence.</p></div><div class="axes"><label>X axis<select id="x"></select></label><label class="check"><input id="log-x" type="checkbox" checked>Log X</label><label>Y axis<select id="y"></select></label><label class="check"><input id="log-y" type="checkbox" checked>Log Y</label></div></div>
+<svg id="scatter" viewBox="0 0 1000 420" role="group" aria-label="Metric scatterplot"></svg><p id="plot-status" class="muted" role="status"></p></section>
+<section class="panel"><div class="section-title"><div><h2>All selected sequences</h2><p class="muted">Click headings to sort. Choosing another sort metric adds its column. Missing values are excluded from plots and medians.</p></div><label>Sort metric<select id="sort"></select></label><button id="direction">Highest first</button></div>
+<div class="table-scroll" tabindex="0" aria-label="Scrollable comparison table"><table id="comparison-table"><thead></thead><tbody></tbody></table></div></section>
+<section id="detail" class="panel" aria-live="polite"><h2>Inspect a sequence</h2><p>Select a row or plot point to see the sequence, four-isoform predictions, native coordinates and metric sources.</p></section>
+<details class="panel"><summary>Scope and metric definitions</summary><p>This page retains the original ten-design panel (nine candidates plus AP2-9) and exactly the ten records from the supplied modified Adaptyv FASTA. The original panel includes one collaborator-origin candidate; grouping here follows the requested panels, not design origin. AP2-9 remains a requested reference; its experimental positive-control status has not been verified.</p>
+<p>Native confidence metrics belong to the selected model, method and isoform. Changing the folding method never carries over Kds from another structure. Minimum selectivity always compares BRD2, BRD4 and BRDT to BRD3 on Boltz2 Exact coordinates, regardless of the selected display isoform. ipSAE core and full-chain values remain separate. Native confidence score definitions can differ by method.</p>
+<p>NetSolP-D solubility and purification usability are sequence-level scores from 0 to 1, independent of the selected complex. Working pocket distance is available only where a source-bound assessment exists. Homodimer ranks are native ranks within each condition, not matched conformations between sequences.</p>
+<p>DeltaForge has 19 complete panels in this selection. <strong>miniprotein_879 is pending BRD2, BRD4 and BRDT Kds.</strong> PCANN has ten complete Jokent panels; the original panel has no saved PCANN predictions. Unavailable values are never replaced with another scorer. Group medians describe available rows only and do not establish experimental performance.</p><p>This page reads published saved evidence; it launches no folding, predictions or paid requests.</p></details>
+</main><footer>BETII Campaign Manager · Saved evidence comparison · <a href="./sequences_for_Adaptyv_modified.fa" download>Original modified FASTA</a></footer>
+<script type="module" src="./app.mjs"></script>
+</body></html>
