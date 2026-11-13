@@ -71,7 +71,6 @@ body[data-campaign-theme] .plot-point[fill="#255d50"] { fill:var(--theme-accent)
 body[data-campaign-theme] .plot-point[fill="#9aa8a3"] { fill:var(--theme-chart-muted); }
 body[data-campaign-theme] .plot-point:hover,
 body[data-campaign-theme] .plot-point.focused { stroke:var(--theme-secondary); }
-body[data-campaign-theme] .scatter .axis-label { fill:var(--muted); }
 body[data-campaign-theme] .priority,
 body[data-campaign-theme] td,
 body[data-campaign-theme] .shortlist li { border-color:var(--line); }
