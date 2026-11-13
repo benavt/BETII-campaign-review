@@ -1,0 +1,3466 @@
+{
+  "expectedConditions": 432,
+  "counts": {
+    "complex": 256,
+    "monomer": 67,
+    "homodimer": 55
+  },
+  "cells": [
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2183",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_50",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1147",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2871",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "boltz2-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "boltz2-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "pending"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "af3",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "af3",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "opendde-exact",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "opendde-exact",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "monomer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD3",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD2",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRD4",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "complex",
+      "engine": "openfold",
+      "target": "BRDT",
+      "variant": "untagged",
+      "status": "published"
+    },
+    {
+      "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+      "kind": "homodimer",
+      "engine": "openfold",
+      "target": null,
+      "variant": "untagged",
+      "status": "published"
+    }
+  ]
+}

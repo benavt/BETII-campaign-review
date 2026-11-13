@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Interactive molecular model</title>
+<link rel="stylesheet" href="./molecule-frame.css">
+</head>
+<body>
+  <div class="molecule-tools" data-molecule-tools role="group" aria-label="Structure controls">
+    <div class="camera-controls" role="group" aria-label="Camera and residue controls">
+      <button type="button" id="center-binder" disabled>Center on binder</button>
+      <button type="button" id="center-residue" disabled>Center on residue</button>
+      <button type="button" id="clear-residue" disabled>Clear residue</button>
+    </div>
+    <div class="coordinate-controls">
+      <select id="download-model" aria-label="Model to download" hidden></select>
+      <button type="button" id="download-coordinates" disabled>Download coordinates</button>
+    </div>
+  </div>
+  <div id="model" aria-label="Interactive molecular structure"></div>
+</body>
+</html>

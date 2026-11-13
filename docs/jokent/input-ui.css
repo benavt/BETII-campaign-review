@@ -1,0 +1,26 @@
+.campaign-inputs .campaign-input-structure{margin:18px 0 24px}
+.campaign-inputs .panel-head h3{margin:6px 0 0;font-size:19px}
+.input-summary{font-size:13px;margin:0 0 12px;line-height:1.5}.input-summary small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.input-numbering{font-size:11px;line-height:1.6;color:var(--muted)}
+.input-color-legend{display:flex;flex-wrap:wrap;gap:5px 14px;list-style:none;padding:0;margin:0 0 12px;font-size:11px;color:var(--muted)}.input-color-legend li{display:inline-flex;align-items:center;gap:5px}
+.campaign-inputs .molecule-container{height:460px;min-height:300px}
+.campaign-inputs .input-context{grid-template-columns:125px minmax(0,1fr);font-size:12px;margin:18px 0;gap:8px 14px}
+.campaign-inputs .workflow-layer-controls{margin:14px 0}
+.campaign-inputs .workflow-layer-controls>label{width:auto;min-height:32px;padding-block:4px}
+.campaign-inputs .workflow-layer-controls input[type="checkbox"]{width:19px;height:19px;flex:none}
+.input-run-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:14px}
+.input-run-card .panel-head{align-items:flex-start;gap:12px;margin-bottom:10px}
+.input-run-card h4{margin:7px 0 0;font-size:15px;line-height:1.4}
+.input-run-card p{font-size:12px;line-height:1.6;color:var(--muted)}
+.input-run-card table{font-size:12px;margin:0 0 12px;width:100%}.input-run-card caption{text-align:left;font-weight:600;padding-bottom:8px}.input-run-card th,.input-run-card td{padding:7px 10px;white-space:normal;min-width:0}.input-run-card .review-actions{display:flex;flex-wrap:wrap;gap:8px;margin-block:12px}
+.input-run-counts{display:flex;flex-wrap:wrap;gap:12px 20px;margin:16px 0}
+.input-run-counts>div{display:flex;flex-direction:column;gap:3px}
+.input-run-counts dt{font-size:10px}.input-run-counts dd{font-size:21px;font-weight:600}
+.input-gaps{padding-left:18px;font-size:12px;line-height:1.6;color:var(--muted)}
+.input-run-card .badge{white-space:normal;text-align:center}
+.input-run-card .state-completed{background:#e8f1ed;color:#35634c}
+.input-run-card .state-unknown,.input-run-card .state-planned{background:#f0f1f3;color:#69727e}
+.input-run-card .state-failed,.input-run-card .state-blocked{background:#f7eddd;color:#8c662d}
+.campaign-inputs .panel-model-selector{max-width:900px}
+@media(max-width:650px){.input-run-grid{grid-template-columns:1fr}.campaign-inputs .molecule-container{height:360px}.campaign-inputs .input-context{grid-template-columns:1fr;gap:3px}.campaign-inputs .input-context dd{margin-bottom:7px}.campaign-inputs .workflow-layer-controls{gap:8px}.campaign-inputs .panel-head h3{font-size:17px}}
+@media(max-width:650px){.campaign-inputs .workflow-layer-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 10px}.campaign-inputs .workflow-layer-controls>label:first-child{grid-column:1/-1}.campaign-inputs .workflow-layer-controls>.button{justify-self:start}}
