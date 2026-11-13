@@ -1,8 +1,18 @@
-# BETII Campaign Manager · Nine candidates and AP2-9
+# BETII Campaign Manager
 
 A public, self-contained review snapshot of nine candidates from the edited BETII shortlist plus AP2-9 as the requested positive control. It includes the selected native structures, exact untagged and tagged sequences, model-specific confidence and saved affinity predictions.
 
 Open **[Campaign Manager](https://benavt.github.io/BETII-campaign-review/?view=candidates)** or **[selection and sequences](https://benavt.github.io/BETII-campaign-review/triage.html)**.
+
+## Jokent collaborator sequences
+
+Open **[Jokent Sequences](https://benavt.github.io/BETII-campaign-review/jokent/?view=explorer)** or the **[complete folding status and downloads](https://benavt.github.io/BETII-campaign-review/jokent/status.html)**. This separate review contains all 18 unique sequences supplied in the two collaborator FASTAs, used as supplied without tags. The modified FASTA repeats ten original sequences.
+
+The saved snapshot publishes **256 of 288 binder–ET complexes, 67 of 72 binder monomers, and 55 of 72 binder homodimer conditions**, across Boltz2 Exact, AlphaFold 3, OpenDDE Exact and OpenFold. Each available homodimer condition includes all five native models, giving **598 coordinate files** in total. All 432 requested conditions remain visible in the status table, including the 54 still pending validated publication.
+
+NetSolP-D solubility and purification usability scores are complete for all 18 sequences. **48 of 72 Boltz2 Exact isoform conditions** have coordinate-matched PCANN predictions, including Kd and ΔG downloads. Native pTM, ipTM, mean pLDDT and ipSAE are included where the source method reports them. No new DeltaForge predictions were made; missing scores remain absent under the saved-scores-only policy. These predictions do not establish experimental binding or selectivity.
+
+The original nine-candidate plus AP2-9 scientific workspace and all of its assets remain unchanged. `build_jokent.py` builds only the independently authorized collaborator cohort, and `verify_jokent.py` verifies its frozen sequences, canonical isoforms, native chains, hashes, metrics and asset closure.
 
 ## Selection
 
@@ -49,6 +59,7 @@ The browser viewer and PSE downloads show canonical BRD3 hotspot positions mappe
 
 ```sh
 python3 scripts/verify_review.py
+python3 scripts/verify_jokent.py
 python3 -m unittest discover -s tests
 node --test tests/*.test.mjs
 ```

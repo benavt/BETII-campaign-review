@@ -1,3 +1,5 @@
 # Preserve exact native coordinate bytes; never normalize or reformat these files.
 docs/data/assets/* -text -diff
 docs/data/sessions/* -text -diff
+docs/jokent/data/assets/* -text -diff
+docs/jokent/data/*.csv -text whitespace=cr-at-eol
