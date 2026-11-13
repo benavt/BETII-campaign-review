@@ -49,8 +49,8 @@
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     },
     "app.js": {
-      "bytes": 164186,
-      "sha256": "75bab4f5d776b1288aa1b9916a177a52d44ef36ed5795d0127af6ca7619a19ac"
+      "bytes": 164273,
+      "sha256": "930e7c83705ce0a06ca72ceb55b7896545354161e5403b9cba3c10c05d3627a5"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -81,8 +81,8 @@
       "sha256": "34b5f65eae18e74608a5760e398b975751860c3f6bd8c6c7f0c79a705a0a5e2a"
     },
     "candidate-explorer.mjs": {
-      "bytes": 27661,
-      "sha256": "01d6556ea37d842236f37e30578af852fa8f7de8e31718d9f32d6f53f31f03a9"
+      "bytes": 27844,
+      "sha256": "723c6d899ff0e48e2e50c51b1563ee6983e8740df10db26f22bdf5c6cce46642"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -2645,8 +2645,8 @@
       "sha256": "067dde24031789c294d39fa8753dd972e156f23392c5aeb35bbae2680b246408"
     },
     "review-scatter.mjs": {
-      "bytes": 6312,
-      "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
+      "bytes": 6437,
+      "sha256": "0d24e352203786997e23727efa9191d8fa849598ecf715acbec7801c65d0139e"
     },
     "review-ui.css": {
       "bytes": 6666,
@@ -2677,12 +2677,12 @@
       "sha256": "8202c21a2194e35ffd49e84ad1cf62740858d645485b6abd43b264e630086b65"
     },
     "style.css": {
-      "bytes": 37510,
-      "sha256": "666680dbc6d0090b3b851ed5eae71eeda747d3a21a2009690ea55500fb699bd8"
+      "bytes": 38585,
+      "sha256": "b5f026aed7223e2dfca18de186241e1cd87ff489ccfa661fe1d1ad40baf395eb"
     },
     "themes.css": {
-      "bytes": 9665,
-      "sha256": "8fdde12580b777261da042f27858dae1290d12050a4e0b9d3fe8cadccb2480ee"
+      "bytes": 9595,
+      "sha256": "1af4a76165bdbb971fad9fba24e6ff903f0a4eda358b7371d233b4f2e778f170"
     },
     "vendor/3Dmol-LICENSE.txt": {
       "bytes": 4283,
@@ -2724,5 +2724,10 @@
       "bytes": 6981,
       "sha256": "356b2fcf77f703044b6ac15bd77a6111c62fe70b1ecc818ad03e15d5cada95bf"
     }
+  },
+  "scatterplotUiUpdate": {
+    "sourceCommit": "2730ba8119fafa0b18cf6f15f7a2922813ab8f3a",
+    "previousManifestSha256": "1ad5e4418f2ce5386c64c7f4925f48d156e719d2c52f193e10bcdfb7d3ee2dd1",
+    "updatedAt": "2026-11-13T12:14:17.716055-05:00"
   }
 }

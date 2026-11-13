@@ -39,8 +39,8 @@
       "sha256": "27de8a9167cf06e78d56dc6c4e2702c45cccad1c66daea6dd7140e39f9fecf1a"
     },
     "app.js": {
-      "bytes": 164186,
-      "sha256": "ee435f86ac2bf5c9bc4a6292637039f23e7eebb54ba0423c87efdf50ab1618e7"
+      "bytes": 164273,
+      "sha256": "63099a91eba19818765a96f3d8f2156f4daae6f27eed5d999fb50443b4b88521"
     },
     "betii-demo.mjs": {
       "bytes": 4223,
@@ -67,8 +67,8 @@
       "sha256": "c80a594ce5e813e474dfc0857ccf62fa3ba0954c173771dbe435117d714b626e"
     },
     "candidate-explorer.mjs": {
-      "bytes": 27679,
-      "sha256": "1ed765e4205136806c5ced0732165d59e137a044683e91969d5fc4ef183560a5"
+      "bytes": 27862,
+      "sha256": "7a90598362088635f9ec199a21ae90da3d1f743c3baa6485096a2b4c94140bc3"
     },
     "colors.mjs": {
       "bytes": 8181,
@@ -1815,12 +1815,12 @@
       "sha256": "8b2c9ded73933b9405dcf9bb47d730c0b2e9d1c0444a513080cc6ba1b5c74b5b"
     },
     "style.css": {
-      "bytes": 37510,
-      "sha256": "666680dbc6d0090b3b851ed5eae71eeda747d3a21a2009690ea55500fb699bd8"
+      "bytes": 38585,
+      "sha256": "b5f026aed7223e2dfca18de186241e1cd87ff489ccfa661fe1d1ad40baf395eb"
     },
     "themes.css": {
-      "bytes": 9665,
-      "sha256": "8fdde12580b777261da042f27858dae1290d12050a4e0b9d3fe8cadccb2480ee"
+      "bytes": 9595,
+      "sha256": "1af4a76165bdbb971fad9fba24e6ff903f0a4eda358b7371d233b4f2e778f170"
     },
     "triage.html": {
       "bytes": 3277,
@@ -4319,8 +4319,8 @@
       "sha256": "41790ce5883c445f5505ae833adecd3fd216d350d2d9a8e385146aecfe8dc627"
     },
     "review-scatter.mjs": {
-      "bytes": 6312,
-      "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
+      "bytes": 6437,
+      "sha256": "0d24e352203786997e23727efa9191d8fa849598ecf715acbec7801c65d0139e"
     },
     "data/2026-11-12_betii-public-explorer_001/netsolp-d-scores.csv": {
       "bytes": 1325,
@@ -4335,8 +4335,8 @@
       "sha256": "5b59a6fb9b14edcc6e4ea546a0399203b0547d79621dc1ba7248edea19336ff9"
     },
     "jokent/app.js": {
-      "bytes": 164186,
-      "sha256": "75bab4f5d776b1288aa1b9916a177a52d44ef36ed5795d0127af6ca7619a19ac"
+      "bytes": 164273,
+      "sha256": "930e7c83705ce0a06ca72ceb55b7896545354161e5403b9cba3c10c05d3627a5"
     },
     "jokent/betii-demo.mjs": {
       "bytes": 4223,
@@ -4367,8 +4367,8 @@
       "sha256": "34b5f65eae18e74608a5760e398b975751860c3f6bd8c6c7f0c79a705a0a5e2a"
     },
     "jokent/candidate-explorer.mjs": {
-      "bytes": 27661,
-      "sha256": "01d6556ea37d842236f37e30578af852fa8f7de8e31718d9f32d6f53f31f03a9"
+      "bytes": 27844,
+      "sha256": "723c6d899ff0e48e2e50c51b1563ee6983e8740df10db26f22bdf5c6cce46642"
     },
     "jokent/colors.mjs": {
       "bytes": 8181,
@@ -6915,8 +6915,8 @@
       "sha256": "1c6ec254663529545a6020607d88e50dfc3c2d833648f4393142d2cf1c00c4ad"
     },
     "jokent/publication-manifest.json": {
-      "bytes": 132848,
-      "sha256": "1ad5e4418f2ce5386c64c7f4925f48d156e719d2c52f193e10bcdfb7d3ee2dd1"
+      "bytes": 133094,
+      "sha256": "bfb4e53a604bd575c48f78b128043f4f9ea85f09df7bf53db6caf317b4919092"
     },
     "jokent/pymol-download.mjs": {
       "bytes": 957,
@@ -6935,8 +6935,8 @@
       "sha256": "067dde24031789c294d39fa8753dd972e156f23392c5aeb35bbae2680b246408"
     },
     "jokent/review-scatter.mjs": {
-      "bytes": 6312,
-      "sha256": "2639add1550a8bcb5ff3ed827b432ce2369e2863ef1aacc1d6a31d03c3fac1c0"
+      "bytes": 6437,
+      "sha256": "0d24e352203786997e23727efa9191d8fa849598ecf715acbec7801c65d0139e"
     },
     "jokent/review-ui.css": {
       "bytes": 6666,
@@ -6967,12 +6967,12 @@
       "sha256": "8202c21a2194e35ffd49e84ad1cf62740858d645485b6abd43b264e630086b65"
     },
     "jokent/style.css": {
-      "bytes": 37510,
-      "sha256": "666680dbc6d0090b3b851ed5eae71eeda747d3a21a2009690ea55500fb699bd8"
+      "bytes": 38585,
+      "sha256": "b5f026aed7223e2dfca18de186241e1cd87ff489ccfa661fe1d1ad40baf395eb"
     },
     "jokent/themes.css": {
-      "bytes": 9665,
-      "sha256": "8fdde12580b777261da042f27858dae1290d12050a4e0b9d3fe8cadccb2480ee"
+      "bytes": 9595,
+      "sha256": "1af4a76165bdbb971fad9fba24e6ff903f0a4eda358b7371d233b4f2e778f170"
     },
     "jokent/vendor/3Dmol-LICENSE.txt": {
       "bytes": 4283,
@@ -7038,5 +7038,10 @@
     "previousPublicationManifestSha256": "86c46532dfb31de749a09d21d3e91f11b0e17254444a7b7d80a2fb6f0814cd2f",
     "createdAt": "2026-11-12T18:41:20.365204+00:00"
   },
-  "browserStorageKey": "betii-static-a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe"
+  "browserStorageKey": "betii-static-a818d53da4502c2023706e52b98c87266f6fb20c106429d32152e9240ff4fdbe",
+  "scatterplotUiUpdate": {
+    "sourceCommit": "2730ba8119fafa0b18cf6f15f7a2922813ab8f3a",
+    "previousManifestSha256": "73bde71c897458d16b860910f82b63556723c5ce21ac7ebdf4885ae31b21961f",
+    "updatedAt": "2026-11-13T12:14:17.879463-05:00"
+  }
 }
