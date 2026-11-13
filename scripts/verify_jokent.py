@@ -8,12 +8,13 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit,unquote
 from build_jokent import IDENTITY,ROSTER,METHODS,TARGETS,grid,model_rows,verify_model
+from jokent_selectivity import predicted_selectivity
 
 def sha(raw):return hashlib.sha256(raw).hexdigest()
 def verify(site):
  root=site/'jokent';manifest=json.loads((root/'publication-manifest.json').read_bytes())
  assert manifest['campaignId']==IDENTITY and manifest['candidateIds']==list(ROSTER)
- assert manifest['scientificJobs']==manifest['providerCalls']==0 and manifest['DeltaForge']=='saved-scores-only'
+ assert manifest['scientificJobs']==manifest['providerCalls']==0 and manifest['DeltaForge'] in ['saved-scores-only','explicitly-approved-saved-results']
  assert sha((site/'data/local-workspace.json').read_bytes())==manifest['originalWorkspaceSha256'],'Original ten-candidate scientific workspace changed'
  actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file()};expected=set(manifest['files'])|{'publication-manifest.json'}
  assert actual==expected and not any(p.is_symlink() for p in root.rglob('*')),'Jokent file allowlist differs'
@@ -55,6 +56,28 @@ def verify(site):
   model=lookup[row['model_id']];observations=[o for o in model['observations'] if o['method']=='PCANN' and o['metric']=='Kd_nM']
   assert len(observations)==1 and row['model_sha256']==model['modelSha256'] and float(row['pcann_Kd_nM'])==observations[0]['value'] and row['source_sha256']==observations[0]['source']['sha256']
   assert row['temperature_K']=='298' and row['construct']=='untagged' and row['engine']=='boltz2-exact'
+ with (root/'data/deltaforge-scores.csv').open(newline='') as f:deltaforge=list(csv.DictReader(f))
+ expected_deltaforge=[(m,o) for m in lookup.values() for o in m.get('observations',[]) if o['method']=='DeltaForge' and o['metric']=='Kd_nM']
+ assert len(deltaforge)==len(expected_deltaforge)==manifest['deltaforgePredictions']
+ for row in deltaforge:
+  model=lookup[row['model_id']];scores=[o for o in model['observations'] if o['method']=='DeltaForge'];kd=[o for o in scores if o['metric']=='Kd_nM'];dg=[o for o in scores if o['metric']=='deltaG_kcal_mol']
+  assert len(kd)==len(dg)==1 and row['model_sha256']==model['modelSha256'] and float(row['DeltaForge_Kd_nM'])==kd[0]['value'] and float(row['DeltaForge_deltaG_kcal_mol'])==dg[0]['value'] and row['response_sha256']==kd[0]['source']['sha256']
+ selectivity=[predicted_selectivity(s) for s in subjects]
+ assert json.loads((root/'data/predicted-selectivity.json').read_bytes())==selectivity
+ assert all(s['predictedSelectivity']==r for s,r in zip(subjects,selectivity,strict=True))
+ assert manifest['completePredictedSelectivityPanels']==sum(r['status']=='complete' for r in selectivity)
+ pcann_selectivity=[predicted_selectivity(s,'PCANN') for s in subjects]
+ assert json.loads((root/'data/pcann-predicted-selectivity.json').read_bytes())==pcann_selectivity
+ assert all(s['pcannPredictedSelectivity']==r for s,r in zip(subjects,pcann_selectivity,strict=True))
+ for method,stem,series in [('DeltaForge','predicted-selectivity',selectivity),('PCANN','pcann-predicted-selectivity',pcann_selectivity)]:
+  with (root/('data/'+stem+'.csv')).open(newline='') as f:selectivity_csv=list(csv.DictReader(f))
+  assert len(selectivity_csv)==18
+  for row,r in zip(selectivity_csv,series,strict=True):
+   assert row['candidate_id']==r['candidateId'] and row['status']==r['status'] and row['affinity_method']==method and row['missing_isoforms']==';'.join(r['missingTargets'])
+   if r['status']=='complete':
+    assert float(row['BRD3_Kd_nM'])==r['Kd_nM']['BRD3'] and float(row['minimum_predicted_selectivity'])==r['minimumPredictedSelectivity'] and row['limiting_isoform']==r['limitingIsoform']
+    for t in ['BRD2','BRD4','BRDT']:assert float(row[t+'_over_BRD3'])==r['ratiosOverBRD3'][t]
+   else:assert not any(row[k] for k in ['BRD2_over_BRD3','BRD4_over_BRD3','BRDT_over_BRD3','minimum_predicted_selectivity','limiting_isoform'])
  for s in subjects:
   for kind,m in model_rows(s):
    for o in m.get('observations',[]):
@@ -77,6 +100,6 @@ def verify(site):
   if p.suffix in {'.mjs','.js'}:
    for ref in re.findall(r"(?:from\s*|import\s*\()\s*['\"](\./[^'\"]+)['\"]",p.read_text()):assert (p.parent/ref).is_file(),ref
  for ref in re.findall(r'(?:src|href)="(\./[^"?#]+)',(root/'index.html').read_text()):assert (root/ref).is_file(),ref
- return dict(valid=True,candidates=18,expectedConditions=432,counts=counts,coordinateFiles=len(coordinate_hashes),metrics=metric_count,pcannObservations=pcann_count,originalWorkspaceUnchanged=True)
+ return dict(valid=True,candidates=18,expectedConditions=432,counts=counts,coordinateFiles=len(coordinate_hashes),metrics=metric_count,pcannObservations=pcann_count,deltaforgePredictions=len(deltaforge),completePredictedSelectivityPanels=manifest['completePredictedSelectivityPanels'],originalWorkspaceUnchanged=True)
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--site',type=Path,default=Path(__file__).resolve().parents[1]/'docs');print(json.dumps(verify(p.parse_args().site)))

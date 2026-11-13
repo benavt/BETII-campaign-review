@@ -1,0 +1,1 @@
+import{renderPredictedSelectivityTable}from './predicted-selectivity.mjs';const w=await(await fetch('./data/local-workspace.json')).json();document.getElementById('predicted-selectivity-summary').innerHTML=renderPredictedSelectivityTable(w.campaigns[0]);

@@ -1,0 +1,749 @@
+[
+  {
+    "candidateId": "miniprotein_2183",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 307.35369835115034,
+      "BRD2": 317.9112702177453,
+      "BRD4": 334.43147613199994,
+      "BRDT": 323.32528181150184
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0343499099676783,
+      "BRD4": 1.0880997298100292,
+      "BRDT": 1.051964832523681
+    },
+    "minimumPredictedSelectivity": 1.0343499099676783,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_2183::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_2183::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_2183::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_2183::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "d88050b910966eda0f14de46ae3f18643d346eef11343180ea3b939701b4f623",
+      "BRD2": "c3311281bca6c5967b60f91db7877c614fe178e890c5dfe756bbbdd187466d10",
+      "BRD4": "e32be7991a2a459b1ec361315e11c34948a04cee8547a213775c2fd28892aa68",
+      "BRDT": "1dfe76d3de1830560dd1db2581000235ce39b94e5ff6a9d382be3d4b990faa94"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_2183::untagged::BRD3::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD2": "miniprotein_2183::untagged::BRD2::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD4": "miniprotein_2183::untagged::BRD4::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRDT": "miniprotein_2183::untagged::BRDT::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD2": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD4": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRDT": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068"
+    }
+  },
+  {
+    "candidateId": "miniprotein_879",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_522",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 123.48563994606485,
+      "BRD2": 125.58859365976154,
+      "BRD4": 94.24896916728002,
+      "BRDT": 121.41789973538684
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0170299454626077,
+      "BRD4": 0.76323829401091,
+      "BRDT": 0.9832552172739993
+    },
+    "minimumPredictedSelectivity": 0.76323829401091,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_522::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_522::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_522::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_522::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "ce05f9bfedc6ee0a0699fad4a297ddb76019d16ccf4bb1e0d1123d83d33b1d62",
+      "BRD2": "bcc35bea40db43545085a4e111c5e80c318613178dfb0e7b70cd4791c746ddc4",
+      "BRD4": "1f5d7e0feec657b4a439a9569752f0c014fc30b479059cc51da7b3d41b842b22",
+      "BRDT": "687356f9020dda9b2bee0a2bf68b74cb70c3f41a221c7bd045f4410a84fc4ef0"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_522::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "miniprotein_522::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "miniprotein_522::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "miniprotein_522::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "miniprotein_50",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_1147",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 179.0435777406816,
+      "BRD2": 185.19370851636438,
+      "BRD4": 194.81726856385595,
+      "BRDT": 194.81726856385595
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0343499099676747,
+      "BRD4": 1.0880997298100255,
+      "BRDT": 1.0880997298100255
+    },
+    "minimumPredictedSelectivity": 1.0343499099676747,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_1147::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_1147::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_1147::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_1147::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "8e5cd082a4658254a3d50ed2beda62370df00234da89600e85df929e10650a05",
+      "BRD2": "76e2acb7389b4cfc4be5aa93a787010dc7fea44453bb7f679a25fc5996cb1145",
+      "BRD4": "b5ba2d8976e46af199d2449be7aa19ccc5203fd93eb126215055cd783ce9a825",
+      "BRDT": "101da02265960f18d99165a0145ed4513b10bc3432138864b85d5ac69a0a27b7"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_1147::untagged::BRD3::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD2": "miniprotein_1147::untagged::BRD2::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD4": "miniprotein_1147::untagged::BRD4::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRDT": "miniprotein_1147::untagged::BRDT::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD2": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD4": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRDT": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068"
+    }
+  },
+  {
+    "candidateId": "miniprotein_2871",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_5",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 312.5879150718023,
+      "BRD2": 376.3945523963422,
+      "BRD4": 501.55309829173984,
+      "BRDT": 334.43147613199994
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.2041238136473809,
+      "BRD4": 1.6045185181792192,
+      "BRDT": 1.0698797362501367
+    },
+    "minimumPredictedSelectivity": 1.0698797362501367,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_5::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_5::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_5::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_5::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "494f6f279c5dbd4362f4d3dc28d7246a37ead8d2b5f91acd9d0c38340d538e84",
+      "BRD2": "43fc7efca70f6bc40962a61fc1fa20a6f79dade65770ab1a7e0d2de618adda6c",
+      "BRD4": "6b44a337b3b01809f89f59344249f0aedbe4e627c5f56d881cc8cba4e8a321f3",
+      "BRDT": "63ad68a9b5c8491776e3b2968ab6d524cb1b6c33609dd8d6bf51781230028a57"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_5::untagged::BRD3::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD2": "miniprotein_5::untagged::BRD2::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD4": "miniprotein_5::untagged::BRD4::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRDT": "miniprotein_5::untagged::BRDT::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD2": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD4": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRDT": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068"
+    }
+  },
+  {
+    "candidateId": "miniprotein_1762",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 57.75613656462239,
+      "BRD2": 68.38101447455253,
+      "BRD4": 71.9344224395218,
+      "BRDT": 82.33920793017509
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.1839610220126504,
+      "BRD4": 1.2454853582360994,
+      "BRDT": 1.425635661035726
+    },
+    "minimumPredictedSelectivity": 1.1839610220126504,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+      "BRD2": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+      "BRD4": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+      "BRDT": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact::PCANN::ce83a9713b0e2e32::Kd_nM",
+      "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact::PCANN::ce83a9713b0e2e32::Kd_nM",
+      "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact::PCANN::ce83a9713b0e2e32::Kd_nM",
+      "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact::PCANN::ce83a9713b0e2e32::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ce83a9713b0e2e320cb7a4aeec8dbf45ffd0c60e78b9dce29fb5af6aaa0f11cf",
+      "BRD2": "ce83a9713b0e2e320cb7a4aeec8dbf45ffd0c60e78b9dce29fb5af6aaa0f11cf",
+      "BRD4": "ce83a9713b0e2e320cb7a4aeec8dbf45ffd0c60e78b9dce29fb5af6aaa0f11cf",
+      "BRDT": "ce83a9713b0e2e320cb7a4aeec8dbf45ffd0c60e78b9dce29fb5af6aaa0f11cf"
+    }
+  },
+  {
+    "candidateId": "miniprotein_2767",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 104.29873758525238,
+      "BRD2": 119.38478338527047,
+      "BRD4": 113.48742818603985,
+      "BRDT": 100.83506227453717
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.1446426500386637,
+      "BRD4": 1.0880997298100252,
+      "BRDT": 0.9667908222965397
+    },
+    "minimumPredictedSelectivity": 0.9667908222965397,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_2767::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_2767::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_2767::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_2767::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "9fdc02ed6f33057df7665f829b0fdf3ed4cf7f6a531ddfd3ea671402d5c09fb9",
+      "BRD2": "3f92dac5ef171c15ff6d4642c00078b9d4a282f09151b9aac921d91ab7275f4f",
+      "BRD4": "b8a7bbfedb9c8e5865f7b080ee033ae47569b7af4a1202ec1646ba72f8ccb6d9",
+      "BRDT": "b2f9cc43926a0083c1e78ea05bb2cd449f8ade48b8d618eee6f320d3b5802bc7"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_2767::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "miniprotein_2767::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "miniprotein_2767::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "miniprotein_2767::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "miniprotein_887",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 141.34693014958393,
+      "BRD2": 148.69199970254297,
+      "BRD4": 153.7995565052391,
+      "BRDT": 173.09768775082773
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0519648325236772,
+      "BRD4": 1.0880997298100277,
+      "BRDT": 1.2246299765240234
+    },
+    "minimumPredictedSelectivity": 1.0519648325236772,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "miniprotein_887::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_887::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_887::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_887::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "88d27164f0b4bde71344b49de8abab7c06f921b6f825a1a253412d91d35289cb",
+      "BRD2": "91b9f782edade51e5dcb9b23d8ee96302f71f2558a96c7c472da70377155f281",
+      "BRD4": "097410e62076af231fa8e0a948d66630dcc8f154643e77771ec8e9280f1cfe16",
+      "BRDT": "25ada70bc31943207cf8e6be0643999f67973453729976652f387c6581bf4881"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_887::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "miniprotein_887::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "miniprotein_887::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "miniprotein_887::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 109.71860401630097,
+      "BRD2": 136.65291482840783,
+      "BRD4": 146.20218447442934,
+      "BRDT": 141.34693014958393
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.2454853582361038,
+      "BRD4": 1.3325195465730495,
+      "BRDT": 1.2882676681575707
+    },
+    "minimumPredictedSelectivity": 1.2454853582361038,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "e9bd620c0273ec3dda8175ae704e90cfe7d55efb1bed7c78ffea26d008fb848a",
+      "BRD2": "e98e78f751aa999e62644cceff2e1e553b86725566ad89ed130e6f32c7664e4d",
+      "BRD4": "c2e4d7d24a5cb6f449a73a3019d3fa1150249a66f2f3e9d105c58429bc17df16",
+      "BRDT": "e61fbabfe2a6523e726c5b3bdca441c6e9b0666b63ebe1167cb3787f5938cebe"
+    },
+    "observationIds": {
+      "BRD3": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 138.980106515242,
+      "BRD2": 151.22421634820336,
+      "BRD4": 173.09768775082773,
+      "BRDT": 176.0455319329278
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0880997298100252,
+      "BRD4": 1.2454853582361016,
+      "BRDT": 1.2666959059613385
+    },
+    "minimumPredictedSelectivity": 1.0880997298100252,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "ecb2d016c386a86eba2e77d61c37beaabd283323211530d3e57d57aeefacf384",
+      "BRD2": "2d2cbf520b22c6a0660283cb50592b08f3d1ff6091b5040eae98bb8df8411433",
+      "BRD4": "704dd10ba834b064daa71cb042a94bd5a88f18738b5fb7aadb64209415427093",
+      "BRDT": "ff3f1428bc20f6add48ab8bf9e0895cdab453e2202faca078f042ea9383a7537"
+    },
+    "observationIds": {
+      "BRD3": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 73.15946173055103,
+      "BRD2": 76.96118090690176,
+      "BRD4": 83.7414401506603,
+      "BRDT": 63.9146739186068
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.051964832523681,
+      "BRD4": 1.144642650038666,
+      "BRDT": 0.8736351034676401
+    },
+    "minimumPredictedSelectivity": 0.8736351034676401,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "7036b555bb839e69cf6c23dab96f718b1f565e79f0631c5efe7fc39afee696e6",
+      "BRD2": "5df854adba19506fe386989349b284165fb0d37bf9f7927c93cec5c85fabae5b",
+      "BRD4": "3ad8885c38d353b5d438ed15d97a9ee8614d5e6d71d0593450647d9be2eb4cd5",
+      "BRDT": "8e34432497a65f39cf2524750cbcd5d901af64f61f4d1b7f4afba921d60a34cf"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD3::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD2": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD2::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD4": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD4::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRDT": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRDT::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD2": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD4": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRDT": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068"
+    }
+  },
+  {
+    "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 185.19370851636438,
+      "BRD2": 226.79376691279208,
+      "BRD4": 204.9409152974977,
+      "BRDT": 185.19370851636438
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.224629976524023,
+      "BRD4": 1.1066300088665721,
+      "BRDT": 1.0
+    },
+    "minimumPredictedSelectivity": 1.0,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "c8bceffd85aa08793d79a99f114691e4edb2c9db915ec7e1c0c3c964e1a97799",
+      "BRD2": "278aa3ea990aea973457105a0a61268aba690b4f1fa4ddee58f51b53b2f4297f",
+      "BRD4": "de7db920071eb0758cea10f5b389206a58f63732825b380d32c633733f09afd2",
+      "BRDT": "4ac504fd22fbfe88329c00506711c535c55567e63bc0fdd2ab1869be3ca8c485"
+    },
+    "observationIds": {
+      "BRD3": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  },
+  {
+    "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 226.79376691279208,
+      "BRD2": 242.64205552783383,
+      "BRD4": 282.4683160290948,
+      "BRDT": 282.4683160290948
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0698797362501404,
+      "BRD4": 1.2454853582361063,
+      "BRDT": 1.2454853582361063
+    },
+    "minimumPredictedSelectivity": 1.0698797362501404,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "e93f04a99811a388026e96785682d017e49e223c9439d0af195758e6c2ea0f9f",
+      "BRD2": "f85462746028177403159bc5d76dbaff97ba01d23a3a12fb683003161c05f8af",
+      "BRD4": "d44eb038de3d24e2f9da2d2f805b85ef7870befef0c5e638f95976a58117357e",
+      "BRDT": "7e993f43028420c9c95f64cef7dd6a2355ac60dcf77a855c148f7a2e8a934c29"
+    },
+    "observationIds": {
+      "BRD3": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD3::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRD2": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD2::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRD4": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD4::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRDT": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRDT::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRD2": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRD4": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRDT": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee"
+    }
+  },
+  {
+    "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 292.1710772534148,
+      "BRD2": 402.6969044437868,
+      "BRD4": 292.1710772534148,
+      "BRDT": 423.6229816410122
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.3782914730280005,
+      "BRD4": 1.0,
+      "BRDT": 1.4499141585927153
+    },
+    "minimumPredictedSelectivity": 1.0,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "f121267327cb8b8cfc98f81e932e5c1b43ae865812969b9f02d0e82adf115b2b",
+      "BRD2": "1caed50d119684f60940fe3ad0781213026ba733ca29fec83b1186fd9cc36826",
+      "BRD4": "5304fcdcb82afe32050a23036b32b9d6dbd98fda9a0c0fd7b9fc44b62217f54e",
+      "BRDT": "88d5b2016f6d32f56e3f20104d95cd71ec32bf39905be4f9b43d8e403677c689"
+    },
+    "observationIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact::PCANN::378823036d4d9b20::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRD2": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRD4": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee",
+      "BRDT": "378823036d4d9b206e5e824931ec5921d716243e1139af5581480536338972ee"
+    }
+  },
+  {
+    "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 402.6969044437868,
+      "BRD2": 445.6364789351682,
+      "BRD4": 423.6229816410122,
+      "BRDT": 423.6229816410122
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.1066300088665704,
+      "BRD4": 1.051964832523679,
+      "BRDT": 1.051964832523679
+    },
+    "minimumPredictedSelectivity": 1.051964832523679,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "4d723c3b2ef15045413606a3d76fec4cd3afa8849e87cb20bbc0122be38e1808",
+      "BRD2": "c9e96475c06eda54aa70feae9b335a1db00525143a9fc3559e26b177c60d60da",
+      "BRD4": "29f8e8a20ce9144fbf3a31233400fd306f7d3591fe689a37ebd456032b5ce367",
+      "BRDT": "8b191d833a156f7b25dc8d436393cd1473bff4b7f60cdc4268b65feaefd57119"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD3::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD2": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD2::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRD4": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD4::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM",
+      "BRDT": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRDT::boltz2-exact::PCANN::d8939d135e40889b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD2": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRD4": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068",
+      "BRDT": "d8939d135e40889b8c3be5575062596712b8651cfe81e55cdea9233092308068"
+    }
+  },
+  {
+    "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+    "method": "PCANN",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible PCANN calibration.",
+    "Kd_nM": {
+      "BRD3": 182.09268010503558,
+      "BRD2": 170.19920457906701,
+      "BRD4": 250.97678828958593,
+      "BRDT": 176.0455319329278
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.9346844940768179,
+      "BRD4": 1.3782914730280003,
+      "BRDT": 0.9667908222965379
+    },
+    "minimumPredictedSelectivity": 0.9346844940768179,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"method\":\"PCANN\",\"recipe\":\"affinity-v1\",\"runtime\":{\"checkpoints\":{\"model_01.pth\":\"ec7d204b0c200fabc59202d17d8d6c5dc0d4737ba9c2920c795efe8658441a70\",\"model_02.pth\":\"9e6197fd9f4c89d6ec912e0c28e2044d9c4f255ef59881cf9e27a8772a0c5744\",\"model_03.pth\":\"0e333cb126946445ba267c7dee692dab506c53a8c73147fb7950b9475ecbcb67\",\"model_04.pth\":\"b2d37b734950d6cdfb06cc5128030b15840b64e274715c9086aee77037296600\",\"model_05.pth\":\"85a2944bd6de2916f37c73c48f5367c30d858a3ece11199a9120cf8c3bd843ab\",\"model_06.pth\":\"5317c3b9030263307d891e2e0377950c5020a5ce1811c2dd4d0a00fcf569f0f3\",\"model_07.pth\":\"ad0b8524ea4da5c614fe95289d29ef868d9b0482b8fb7451ae9c185cffad64ae\",\"model_08.pth\":\"c912d1c4731a3e871f91642c388078278bcd82792c9e36062f2bb8d56e1bad4c\",\"model_09.pth\":\"d8cf98d49f3d865872111ec94085f75eedeb15450485f50d5dc80f505e87024d\",\"model_10.pth\":\"8bdf88fcad1a2743e3b6db4bc5036102eb7055de9553acbb2f6bee36c6b11d32\",\"model_11.pth\":\"722648355061f33d819a1eeba337702b4c748cf23aafd7c9dfd753474f363dd1\",\"model_12.pth\":\"daa7a3ba4fec76cbcdd5507470638e2a1b6073be5acea072a86b5cb434195f5f\",\"model_13.pth\":\"9d28ff2ba13e3b22d1c658fea80125c3350b16ffc426eb3bb407eaf14f4941c6\",\"model_14.pth\":\"bae894d3bb19ae9f2408d19b39a8908a497c0b24285e6f0bfd921a87c39fdaf4\",\"model_15.pth\":\"b842efdf7d9e760c1d5316bfd3aba9aaa82a0976d8408a46f7523daa68e7c674\",\"model_16.pth\":\"f6aaceffa70543255c2d23c0fd4618249e56df0bd79473e8dce024b886a250a6\",\"model_17.pth\":\"290fcc42d17744f308a24fd416d4468753426b92542f545ed66c5a9f8b50350e\",\"model_18.pth\":\"3ce05f96d23c5c51b3135692060f97263e51ad9171d3fc949ac4e0bd630f1e02\",\"model_19.pth\":\"8cb088bf01d0bb70e766b3c0978b87bf6d5cbc4ce3944a039e25e8ea286833e3\",\"model_20.pth\":\"a97a14110fa2f7dbbf57b30927ef37df048ff0e60ee5f385fd741ba2b4c854a7\",\"model_21.pth\":\"5204aaab1e60b2df02b6731d2f5d92bc18e630e2bc3a3ba38947934d22f462b1\",\"model_22.pth\":\"c8d466719e5e79c298287e1aa13aefc4a5477a55b4cb5db9bfbdfb3e2d172ff3\",\"model_23.pth\":\"d026121a0b3a3c96005dc45f0df16e0c2771fad90ed9a5109cdb10145d5bea9b\",\"model_24.pth\":\"885816682d22ca217da0945f6629a3a9b785078eedb5f3bd73a86aa9d2dc2f2a\",\"model_25.pth\":\"f7077219ece8b5ed8b3c6c199f032f9b1dfcf2505990c9a0462ada89f22254a0\"},\"compatibilityRepairs\":{\"parent\":\"retained-source:8f1f839279ca664e/2026-11-03_native_001\",\"patches\":[{\"afterSha256\":\"155d2e09398bb48ecaf8e6be4a51766261091f79bb09ea35604bc2dd0f43c16b\",\"beforeSha256\":\"9de2dbe1c0d87a126ef867c552e7ba0c8c46c57bf52306249e33b2af11dc3c6d\",\"operation\":\"Clear executable bit of PT_GNU_STACK only; glibc 2.41+ compatibility\",\"path\":\"venv/lib/python3.9/site-packages/torch/lib/libtorch_cpu.so\"}]},\"device\":\"cpu\",\"esmRevision\":\"2b369911bb5b4b0dda914521b9475cad1656b2ac\",\"esmWeights\":{\"esm2_t33_650M_UR50D-contact-regression.pt\":\"8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575\",\"esm2_t33_650M_UR50D.pt\":\"ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c\"},\"nativeRounding\":\"Round 25 kcal/mol outputs to 2 decimals; round their arithmetic mean to 2 decimals before kD conversion\",\"packagesSha256\":\"0754d6c0312a3d089172e96e3def5647dadca7ea860e7f178e9a07f685b3c15f\",\"pcannRevision\":\"0f6cb2b4aa73610244149ca843a1fe485cea5cee\",\"python\":\"3.9.25\",\"torch\":\"1.12.1+cpu\"},\"temperatureK\":298}",
+    "modelIds": {
+      "BRD3": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "187e5187052ec9aa2e9f2927af7a2ac2f4bd0406a0dd321dc481dd127bd30853",
+      "BRD2": "c340a021e30eb6994c57552e619bd823617bcea7af546a5a99dd2eab51e8617f",
+      "BRD4": "68c6fe36c83d985de7eac9fcb63d0e793d57130edfebb945071b6f17255aee6e",
+      "BRDT": "fc9858c7a859c7af08b0efa01c29f88e2d16f29466e6785ac725ed27b9cc220c"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD3::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD2": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD2::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRD4": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD4::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM",
+      "BRDT": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRDT::boltz2-exact::PCANN::ae6bd01fc665249b::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD2": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRD4": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac",
+      "BRDT": "ae6bd01fc665249ba47aee2f8722a12a668b7b5156d80b44339016034b2ca8ac"
+    }
+  }
+]

@@ -22,9 +22,10 @@ test('Jokent is a separate exact18-sequence untagged campaign with explicit gaps
  }
  assert.match(publicReadiness(c).join(' '),/of 432/);
 });
-test('PCANN is available as its own native-coordinate-bound series without DeltaForge substitutes',()=>{
+test('PCANN and DeltaForge remain separate native-coordinate-bound series',()=>{
  const data=affinityData(c,{foldingEngine:'boltz2-exact'}),expected=c.subjects.flatMap(s=>s.modelCoverage.models).flatMap(m=>(m.observations||[]).filter(o=>o.method==='PCANN'));
- assert.ok(expected.length>0);assert.equal(data.rows.filter(r=>r.PCANN).length,expected.length);assert.equal(data.rows.filter(r=>r.DeltaForge).length,0);
+ const deltaforge=c.subjects.flatMap(s=>s.modelCoverage.models).flatMap(m=>(m.observations||[]).filter(o=>o.method==='DeltaForge'&&o.metric==='Kd_nM'));
+ assert.ok(expected.length>0);assert.equal(data.rows.filter(r=>r.PCANN).length,expected.length);assert.equal(data.rows.filter(r=>r.DeltaForge).length,deltaforge.length);
  for(const row of data.rows.filter(r=>r.PCANN))assert.equal(row.PCANN.modelSha256,row.modelSha256);
  const explorer=candidateExplorerData(c);assert.equal(explorer.candidates.filter(r=>r.metrics.netsolp_d_solubility).length,18);
 });

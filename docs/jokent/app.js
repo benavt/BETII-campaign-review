@@ -47,7 +47,7 @@ const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt
 const forceDemo=false;
 const publicationURL=new URL(location.href);
 publicationURL.searchParams.delete('demo');
-const publicationStorageKey='betii-jokent-41913c685aa990e9f74013b1b57443b33d40de2fb97c66efc0d45680c39120ed';
+const publicationStorageKey='betii-jokent-d7c1df06ce41bb689cc0e8fd48a00b9a31ad163b58a8c6cbf3ae4012020907dc';
 const publication={
   ...publicationOptions({dataset:document.documentElement.dataset,href:publicationURL.href}),
   storageKey:publicationStorageKey,
