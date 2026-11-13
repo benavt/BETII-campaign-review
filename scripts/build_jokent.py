@@ -14,10 +14,12 @@ import shutil
 import subprocess
 from urllib.parse import unquote, urlsplit
 
-from build_review import sanitize, MODEL_KEYS
+from build_review import sanitize, MODEL_KEYS, pointer
+from jokent_selectivity import predicted_selectivity,calibration_identity
 from verify_dimers import coordinate_sequences
 
 ROOT=Path(__file__).resolve().parents[1]
+ROOT_LINK='<nav style="padding:10px 20px;background:#17354d;color:white"><a style="color:#c5f3ed" href="./jokent/index.html?view=explorer">Jokent Sequences · collaborator cohort →</a></nav>'
 IDENTITY='betii-jokent-sequences'
 METHODS=['boltz2-exact','af3','opendde-exact','openfold']
 TARGETS=['BRD3','BRD2','BRD4','BRDT']
@@ -62,7 +64,7 @@ def verify_model(subject,kind,m,assets):
   expected[a['binderCopies'][0]]=sequence
  require(coordinate_sequences(assets/path)==expected,'Native full-chain identity differs')
  for o in m.get('observations',[]):
-  methods=[m['foldingEngine'],'PCANN']+(['Arithmetic mean of verified native C-alpha pLDDT'] if o.get('metric')=='mean_pLDDT' else [])
+  methods=[m['foldingEngine'],'PCANN','DeltaForge']+(['Arithmetic mean of verified native C-alpha pLDDT'] if o.get('metric')=='mean_pLDDT' else [])
   require(o.get('modelSha256')==m['modelSha256'] and o.get('modelId')==m['id'] and o.get('foldingEngine')==m['foldingEngine'] and o.get('constructVariant')==m['constructVariant'] and o.get('target')==m.get('target') and o.get('method') in methods and type(o.get('value')) in (int,float) and math.isfinite(o['value']) and re.fullmatch('[0-9a-f]{64}',o.get('source',{}).get('sha256','')),'Metric is not finite and bound to the selected coordinate and condition')
   if o['metric']=='mean_pLDDT':require(0<=o['value']<=100,'Mean pLDDT must use the 0–100 scale')
   if o['metric'] in ['pTM','ipTM','ipSAE_full']:require(0<=o['value']<=1,'Confidence metric must use the 0–1 scale')
@@ -85,7 +87,7 @@ def refresh_manifest(site):
  manifest_path.write_bytes(encoded(manifest))
 def build(evidence,assets,netsolp,site,node='node',metric_files=()):
  raw=evidence.read_bytes();source=json.loads(raw);candidates=source['candidates'];original_workspace=(site/'data/local-workspace.json').read_bytes()
- models={m['id']:m for s in candidates for _,m in model_rows(s)};pcann_rows=[]
+ models={m['id']:m for s in candidates for _,m in model_rows(s)};pcann_rows=[];deltaforge_rows=[]
  for metric_file in metric_files:
   metric_release=json.loads(metric_file.read_bytes())
   for entry in metric_release['observations']:
@@ -94,8 +96,16 @@ def build(evidence,assets,netsolp,site,node='node',metric_files=()):
    model=models[observation['modelId']]
    require(observation['modelSha256']==model['modelSha256'] and model['foldingEngine']=='boltz2-exact','Additional score coordinate scope differs')
    require(not any(o['id']==observation['id'] for o in model.get('observations',[])),'Duplicate metric observation')
+   if observation['method']=='DeltaForge':
+    score_source=observation['source'];response_raw=Path(score_source['path']).read_bytes();require(sha(response_raw)==score_source['sha256'],'Saved DeltaForge response changed');envelope=json.loads(response_raw)
+    require(pointer(envelope,score_source['locator']['pointer'])==observation['value'] and envelope['source_model_sha256']==model['modelSha256'] and envelope['scoring_PDB_sha256']==observation['provenance']['scoringPdbSha256'] and envelope['response']['source_pdb_sha256']==envelope['scoring_PDB_sha256'],'DeltaForge value or native/scoring input binding differs')
+    require(calibration_identity(observation['calibration'])==calibration_identity(envelope['response']) and envelope['response'].get('success') is True and envelope['response'].get('affinity_quotable') is True and envelope['response'].get('model_equivalence_verified') is True,'Saved DeltaForge calibration or scientific validation differs')
    model.setdefault('observations',[]).append(observation)
   for row in metric_release.get('rows',[]):
+   if metric_release.get('method')=='DeltaForge':
+    model=models[row['modelId']];kd=[o for o in model['observations'] if o['method']=='DeltaForge' and o['metric']=='Kd_nM'];dg=[o for o in model['observations'] if o['method']=='DeltaForge' and o['metric']=='deltaG_kcal_mol']
+    require(len(kd)==len(dg)==1 and row['deltaforgeKd_nM']==kd[0]['value'] and row['deltaforgeDeltaG_kcal_mol']==dg[0]['value'],'DeltaForge export row differs from source-bound observations')
+    deltaforge_rows.append(dict(candidate_id=row['candidateId'],model_id=row['modelId'],model_sha256=row['modelSha256'],scoring_PDB_sha256=row['pdbSha256'],target=row['target'],construct='untagged',engine='boltz2-exact',DeltaForge_Kd_nM=row['deltaforgeKd_nM'],DeltaForge_deltaG_kcal_mol=row['deltaforgeDeltaG_kcal_mol'],response_sha256=row['responseSha256']));continue
    model=models[row['modelId']];observations=[o for o in model['observations'] if o['method']=='PCANN' and o['metric']=='Kd_nM']
    require(len(observations)==1 and row['modelSha256']==model['modelSha256'] and row['pcannKd_nM']==observations[0]['value'] and math.isfinite(row['pcannDeltaG_kcal_mol']) and row['temperatureK']==298,'PCANN export row differs from the verified native model/score')
    pcann_rows.append(dict(candidate_id=row['candidateId'],model_id=row['modelId'],model_sha256=row['modelSha256'],target=row['target'],construct='untagged',engine='boltz2-exact',pcann_Kd_nM=row['pcannKd_nM'],pcann_deltaG_kcal_mol=row['pcannDeltaG_kcal_mol'],temperature_K=row['temperatureK'],source_sha256=observations[0]['source']['sha256']))
@@ -132,7 +142,7 @@ def build(evidence,assets,netsolp,site,node='node',metric_files=()):
    key='modelCoverage' if kind=='complex' else 'monomerModels' if kind=='monomer' else 'dimerModels'
    if key=='modelCoverage':subject[key]['models'].append(sanitize(model))
    else:subject.setdefault(key,[]).append(sanitize(model))
-  subjects.append(sanitize(subject))
+  subject['predictedSelectivity']=predicted_selectivity(subject);subject['pcannPredictedSelectivity']=predicted_selectivity(subject,'PCANN');subjects.append(sanitize(subject))
  cells=grid(subjects);counts={kind:sum(r['kind']==kind and r['status']=='published' for r in cells) for kind in ['complex','monomer','homodimer']}
  stamp=datetime.now(timezone.utc).isoformat();ids=[s['id'] for s in subjects]
  campaign={k:deepcopy(parent[k]) for k in ['target','axes','viewRecipe','molecularViewPresets'] if k in parent}
@@ -151,21 +161,34 @@ def build(evidence,assets,netsolp,site,node='node',metric_files=()):
  (destination/'data/coverage.json').write_bytes(encoded(dict(expectedConditions=432,counts=counts,cells=cells)))
  (destination/'data/native-metrics.csv').write_bytes(csv_bytes(['candidate_id','kind','engine','target','construct','model_sha256','metric','method','value','unit','source_sha256'],metrics))
  (destination/'data/pcann-scores.csv').write_bytes(csv_bytes(['candidate_id','model_id','model_sha256','target','construct','engine','pcann_Kd_nM','pcann_deltaG_kcal_mol','temperature_K','source_sha256'],pcann_rows))
+ (destination/'data/deltaforge-scores.csv').write_bytes(csv_bytes(['candidate_id','model_id','model_sha256','scoring_PDB_sha256','target','construct','engine','DeltaForge_Kd_nM','DeltaForge_deltaG_kcal_mol','response_sha256'],deltaforge_rows))
+ selectivity=[s['predictedSelectivity'] for s in subjects];(destination/'data/predicted-selectivity.json').write_bytes(encoded(selectivity))
+ selectivity_rows=[dict(candidate_id=r['candidateId'],affinity_method='DeltaForge',status=r['status'],BRD3_Kd_nM=r.get('Kd_nM',{}).get('BRD3'),BRD2_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRD2'),BRD4_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRD4'),BRDT_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRDT'),minimum_predicted_selectivity=r.get('minimumPredictedSelectivity'),limiting_isoform=r.get('limitingIsoform'),missing_isoforms=';'.join(r['missingTargets'])) for r in selectivity]
+ (destination/'data/predicted-selectivity.csv').write_bytes(csv_bytes(['candidate_id','affinity_method','status','BRD3_Kd_nM','BRD2_over_BRD3','BRD4_over_BRD3','BRDT_over_BRD3','minimum_predicted_selectivity','limiting_isoform','missing_isoforms'],selectivity_rows))
+ pcann_selectivity=[s['pcannPredictedSelectivity'] for s in subjects];(destination/'data/pcann-predicted-selectivity.json').write_bytes(encoded(pcann_selectivity))
+ pcann_selectivity_rows=[dict(candidate_id=r['candidateId'],affinity_method='PCANN',status=r['status'],BRD3_Kd_nM=r.get('Kd_nM',{}).get('BRD3'),BRD2_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRD2'),BRD4_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRD4'),BRDT_over_BRD3=r.get('ratiosOverBRD3',{}).get('BRDT'),minimum_predicted_selectivity=r.get('minimumPredictedSelectivity'),limiting_isoform=r.get('limitingIsoform'),missing_isoforms=';'.join(r['missingTargets'])) for r in pcann_selectivity]
+ (destination/'data/pcann-predicted-selectivity.csv').write_bytes(csv_bytes(['candidate_id','affinity_method','status','BRD3_Kd_nM','BRD2_over_BRD3','BRD4_over_BRD3','BRDT_over_BRD3','minimum_predicted_selectivity','limiting_isoform','missing_isoforms'],pcann_selectivity_rows))
  (destination/'jokent-sequences.fasta').write_text(''.join('>'+s['id']+'\n'+s['sequence']+'\n' for s in subjects))
  adapt_ui(destination,counts)
+ from jokent_selectivity_ui import adapt_selectivity_ui
+ adapt_selectivity_ui(destination)
  pcann_count=sum(o.get('method')=='PCANN' and o['metric']=='Kd_nM' for s in subjects for _,m in model_rows(s) for o in m.get('observations',[]))
  for name in ['status.html','public-readiness.mjs']:
-  p=destination/name;text=p.read_text().replace('PCANN is pending where no verified saved score is present.',f'PCANN Kd is complete for {pcann_count} of 72 Boltz2 Exact isoform conditions; remaining conditions are pending.').replace('PCANN: only saved, coordinate-matched scores are included when available.',f'PCANN Kd: {pcann_count} of 72 Boltz2 Exact isoform conditions complete; remaining conditions are pending. All published scores match the exact native coordinate hash.').replace('Native metrics CSV</a>','Native metrics CSV</a> · <a href="./data/pcann-scores.csv" download>PCANN Kd and ΔG CSV</a>');p.write_text(text)
+  p=destination/name;text=p.read_text().replace('PCANN is pending where no verified saved score is present.',f'PCANN Kd is complete for {pcann_count} of 72 Boltz2 Exact isoform conditions.'+(' Remaining conditions are pending.' if pcann_count<72 else '')).replace('PCANN: only saved, coordinate-matched scores are included when available.',f'PCANN Kd: {pcann_count} of 72 Boltz2 Exact isoform conditions complete.'+(' Remaining conditions are pending.' if pcann_count<72 else '')+' All published scores match the exact native coordinate hash.').replace('Native metrics CSV</a>','Native metrics CSV</a> · <a href="./data/pcann-scores.csv" download>PCANN Kd and ΔG CSV</a>');p.write_text(text)
+ deltaforge_count=len(deltaforge_rows)
+ for name in ['status.html','public-readiness.mjs']:
+  p=destination/name;text=p.read_text().replace('DeltaForge remains saved-scores-only; no new predictions were requested.',f'DeltaForge Kd is complete for {deltaforge_count} of 72 Exact isoform conditions under the explicitly approved batch.'+(' Remaining DeltaForge scores are pending after provider account reads timed out.' if deltaforge_count<72 else '')).replace('DeltaForge: no saved Jokent scores in this snapshot; saved-scores-only policy prohibits new predictions.',f'DeltaForge Kd: {deltaforge_count} of 72 Exact isoform conditions complete under the explicitly approved batch.'+(' Remaining DeltaForge scores are pending after provider account reads timed out.' if deltaforge_count<72 else ''));p.write_text(text)
  p=destination/'data/local-workspace.json';workspace_data=json.loads(p.read_bytes());workspace_data['campaigns'][0]['run']['execution']='unknown';workspace=encoded(workspace_data);p.write_bytes(workspace)
  p=destination/'app.js';p.write_text(re.sub(r"const publicationStorageKey='[^']+';","const publicationStorageKey='betii-jokent-"+sha(workspace)+"';",p.read_text()))
- manifest=dict(schemaVersion=1,audience='public',publicationAllowed=True,campaignId=IDENTITY,candidateIds=ids,sourceEvidenceSha256=sha(raw),sourceWorkspaceSha256=source['workspaceSha256'],originalWorkspaceSha256=sha(original_workspace),exportedWorkspaceSha256=sha(workspace),netSolPSourceSha256=sha(score_raw),createdAt=stamp,expectedConditions=432,counts=counts,scientificJobs=0,providerCalls=0,DeltaForge='saved-scores-only',selection='All 18 unique sequences, untagged only; no experimental ranking',files={})
+ manifest=dict(schemaVersion=1,audience='public',publicationAllowed=True,campaignId=IDENTITY,candidateIds=ids,sourceEvidenceSha256=sha(raw),sourceWorkspaceSha256=source['workspaceSha256'],originalWorkspaceSha256=sha(original_workspace),exportedWorkspaceSha256=sha(workspace),netSolPSourceSha256=sha(score_raw),createdAt=stamp,expectedConditions=432,counts=counts,scientificJobs=0,providerCalls=0,DeltaForge='explicitly-approved-saved-results' if deltaforge_count else 'saved-scores-only',deltaforgePredictions=deltaforge_count,pcannPredictions=pcann_count,completePCANNSelectivityPanels=sum(r['status']=='complete' for r in pcann_selectivity),completePredictedSelectivityPanels=sum(r['status']=='complete' for r in selectivity),selection='All 18 unique sequences, untagged only; no experimental ranking',files={})
  (destination/'publication-manifest.json').write_bytes(encoded(manifest));refresh_manifest(destination)
- index=site/'index.html';html=index.read_text();html=html.replace('<body>','<body><nav style="padding:10px 20px;background:#17354d;color:white"><a style="color:#c5f3ed" href="./jokent/index.html?view=explorer">Jokent Sequences · collaborator cohort →</a></nav>',1);index.write_text(html)
+ index=site/'index.html';html=index.read_text()
+ if ROOT_LINK not in html:index.write_text(html.replace('<body>','<body>'+ROOT_LINK,1))
  require((site/'data/local-workspace.json').read_bytes()==original_workspace,'Original ten campaign changed')
  refresh_manifest(site)
  print(json.dumps(dict(output=str(destination),counts=counts,coordinateFiles=len(bundle),metrics=len(metrics),originalWorkspaceUnchanged=True)))
 def adapt_ui(destination,counts):
- index=destination/'index.html';html=index.read_text().replace('data-publication-id="betii-nine-plus-ap2-9"',f'data-publication-id="{IDENTITY}"')
+ index=destination/'index.html';html=index.read_text().replace(ROOT_LINK,'').replace('data-publication-id="betii-nine-plus-ap2-9"',f'data-publication-id="{IDENTITY}"')
  html=re.sub(r'<aside style="padding:10px 20px;background:#17354d.*?</aside>','',html,count=1,flags=re.S)
  html=html.replace('<body>','<body><nav style="padding:10px 20px;background:#17354d;color:white"><a style="color:#c5f3ed" href="../?view=candidates">← Nine candidates + AP2-9</a> · Jokent Sequences · 18 untagged collaborators · <a style="color:#c5f3ed" href="./status.html">Folding status &amp; downloads</a></nav>',1)
  html=html.replace('BETII · Nine candidates and control','BETII · Jokent Sequences');index.write_text(html)

@@ -1,0 +1,716 @@
+[
+  {
+    "candidateId": "miniprotein_2183",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 12.432853668772932,
+      "BRD2": 8.927722332481364,
+      "BRD4": 11.68639706712948,
+      "BRDT": 14.323788699611177
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.7180750751458407,
+      "BRD4": 0.9399609597659551,
+      "BRDT": 1.1520917949503118
+    },
+    "minimumPredictedSelectivity": 0.7180750751458407,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_2183::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_2183::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_2183::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_2183::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "d88050b910966eda0f14de46ae3f18643d346eef11343180ea3b939701b4f623",
+      "BRD2": "c3311281bca6c5967b60f91db7877c614fe178e890c5dfe756bbbdd187466d10",
+      "BRD4": "e32be7991a2a459b1ec361315e11c34948a04cee8547a213775c2fd28892aa68",
+      "BRDT": "1dfe76d3de1830560dd1db2581000235ce39b94e5ff6a9d382be3d4b990faa94"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_2183::untagged::BRD3::boltz2-exact::DeltaForge::a532a953c0438752::Kd_nM",
+      "BRD2": "miniprotein_2183::untagged::BRD2::boltz2-exact::DeltaForge::ab6c616a27760ed8::Kd_nM",
+      "BRD4": "miniprotein_2183::untagged::BRD4::boltz2-exact::DeltaForge::b8218de4d9246ad9::Kd_nM",
+      "BRDT": "miniprotein_2183::untagged::BRDT::boltz2-exact::DeltaForge::a02c5b9efcb5e8c9::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "a532a953c043875261886372b4b481b56bfa9f2d1b5b0d2ae9244a323a9b8b24",
+      "BRD2": "ab6c616a27760ed8826e5935a41297b82816f1a316e218c06d08c39675bac894",
+      "BRD4": "b8218de4d9246ad942011e48514b7ca722a9d0fb449c67ce69b417d1db689cc1",
+      "BRDT": "a02c5b9efcb5e8c933b113879ffaf07bb9e9bb1dec6578bf75cddf6d4b0e8dbc"
+    }
+  },
+  {
+    "candidateId": "miniprotein_879",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_522",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 3.2708746743439465,
+      "BRD2": 1.6412211592884838,
+      "BRD4": 45.342762412941276,
+      "BRDT": 5.367946243084872
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.5017682799533341,
+      "BRD4": 13.862580174226904,
+      "BRDT": 1.6411347965086875
+    },
+    "minimumPredictedSelectivity": 0.5017682799533341,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_522::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_522::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_522::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_522::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "ce05f9bfedc6ee0a0699fad4a297ddb76019d16ccf4bb1e0d1123d83d33b1d62",
+      "BRD2": "bcc35bea40db43545085a4e111c5e80c318613178dfb0e7b70cd4791c746ddc4",
+      "BRD4": "1f5d7e0feec657b4a439a9569752f0c014fc30b479059cc51da7b3d41b842b22",
+      "BRDT": "687356f9020dda9b2bee0a2bf68b74cb70c3f41a221c7bd045f4410a84fc4ef0"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_522::untagged::BRD3::boltz2-exact::DeltaForge::42d01d1c2ad6b532::Kd_nM",
+      "BRD2": "miniprotein_522::untagged::BRD2::boltz2-exact::DeltaForge::e0662b15fb7d78e4::Kd_nM",
+      "BRD4": "miniprotein_522::untagged::BRD4::boltz2-exact::DeltaForge::9b00688aacfaee50::Kd_nM",
+      "BRDT": "miniprotein_522::untagged::BRDT::boltz2-exact::DeltaForge::97ec7fc62668f955::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "42d01d1c2ad6b532a6b5c7e9f04cdd681e59022081540a7f6887b0fd34854d1a",
+      "BRD2": "e0662b15fb7d78e4c76cc516c66f7e0f17d8ca772b5547546dc284f262779bd1",
+      "BRD4": "9b00688aacfaee502cc76f639ec518c08f2c39319cfa155f9492810127606509",
+      "BRDT": "97ec7fc62668f9551b7824192b63379a629db03a38966745c4e3032778bc0bd2"
+    }
+  },
+  {
+    "candidateId": "miniprotein_50",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_1147",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 69.01522570780149,
+      "BRD2": 3.2165358534325366,
+      "BRD4": 5.733321034700943,
+      "BRDT": 2.168451751775624
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.04660617741150035,
+      "BRD4": 0.08307327804700416,
+      "BRDT": 0.03141990378987491
+    },
+    "minimumPredictedSelectivity": 0.03141990378987491,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_1147::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_1147::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_1147::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_1147::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "8e5cd082a4658254a3d50ed2beda62370df00234da89600e85df929e10650a05",
+      "BRD2": "76e2acb7389b4cfc4be5aa93a787010dc7fea44453bb7f679a25fc5996cb1145",
+      "BRD4": "b5ba2d8976e46af199d2449be7aa19ccc5203fd93eb126215055cd783ce9a825",
+      "BRDT": "101da02265960f18d99165a0145ed4513b10bc3432138864b85d5ac69a0a27b7"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_1147::untagged::BRD3::boltz2-exact::DeltaForge::7bd2d71b9cfceb07::Kd_nM",
+      "BRD2": "miniprotein_1147::untagged::BRD2::boltz2-exact::DeltaForge::ffc41feb76ee3058::Kd_nM",
+      "BRD4": "miniprotein_1147::untagged::BRD4::boltz2-exact::DeltaForge::ea0ef8f86c83cf8d::Kd_nM",
+      "BRDT": "miniprotein_1147::untagged::BRDT::boltz2-exact::DeltaForge::3cc67e8d53093383::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "7bd2d71b9cfceb07bce04a08b0c42707f8a389beaf0ae56c6d4e0d2cbf3a8046",
+      "BRD2": "ffc41feb76ee30586740a150b0f83c8c295cd33d54c9019e098a4ffb914484ae",
+      "BRD4": "ea0ef8f86c83cf8d542528dff3002a0cc026c5b83db052ffac599d37957d5403",
+      "BRDT": "3cc67e8d530933836722eb8e5fc055950b6172fde28e5cdf79d22ec411d2751f"
+    }
+  },
+  {
+    "candidateId": "miniprotein_2871",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_5",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 30.88606578657125,
+      "BRD2": 10.370576124527808,
+      "BRD4": 1.407514198909022,
+      "BRDT": 23.095498885865783
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.335768763693975,
+      "BRD4": 0.04557117143488653,
+      "BRDT": 0.747764349317268
+    },
+    "minimumPredictedSelectivity": 0.04557117143488653,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_5::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_5::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_5::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_5::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "494f6f279c5dbd4362f4d3dc28d7246a37ead8d2b5f91acd9d0c38340d538e84",
+      "BRD2": "43fc7efca70f6bc40962a61fc1fa20a6f79dade65770ab1a7e0d2de618adda6c",
+      "BRD4": "6b44a337b3b01809f89f59344249f0aedbe4e627c5f56d881cc8cba4e8a321f3",
+      "BRDT": "63ad68a9b5c8491776e3b2968ab6d524cb1b6c33609dd8d6bf51781230028a57"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_5::untagged::BRD3::boltz2-exact::DeltaForge::bd023d652f562c18::Kd_nM",
+      "BRD2": "miniprotein_5::untagged::BRD2::boltz2-exact::DeltaForge::d12a288471654a93::Kd_nM",
+      "BRD4": "miniprotein_5::untagged::BRD4::boltz2-exact::DeltaForge::f06ee610ce96760d::Kd_nM",
+      "BRDT": "miniprotein_5::untagged::BRDT::boltz2-exact::DeltaForge::a6739a428556b6f5::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "bd023d652f562c18d4051c5fbdc10a8055c49c49bcdfbb24e0705740bb7c9062",
+      "BRD2": "d12a288471654a931876b900bac7afbb047685b24eacf37517e11474f2f79336",
+      "BRD4": "f06ee610ce96760d09770801768ab1e7c14dd328cf8046be106fd619366c8567",
+      "BRDT": "a6739a428556b6f5883222721cc9b0094da8f7de5a9be243e6a362c32f832bbc"
+    }
+  },
+  {
+    "candidateId": "miniprotein_1762",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "pending",
+    "missingTargets": [
+      "BRD3",
+      "BRD2",
+      "BRD4",
+      "BRDT"
+    ],
+    "reason": "A complete compatible four-isoform Exact panel is required."
+  },
+  {
+    "candidateId": "miniprotein_2767",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 408.0650896222766,
+      "BRD2": 13.82451319461408,
+      "BRD4": 155.9245933759466,
+      "BRDT": 247.32587357634546
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.03387820606612212,
+      "BRD4": 0.3821071621693427,
+      "BRDT": 0.6060941743516491
+    },
+    "minimumPredictedSelectivity": 0.03387820606612212,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_2767::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_2767::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_2767::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_2767::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "9fdc02ed6f33057df7665f829b0fdf3ed4cf7f6a531ddfd3ea671402d5c09fb9",
+      "BRD2": "3f92dac5ef171c15ff6d4642c00078b9d4a282f09151b9aac921d91ab7275f4f",
+      "BRD4": "b8a7bbfedb9c8e5865f7b080ee033ae47569b7af4a1202ec1646ba72f8ccb6d9",
+      "BRDT": "b2f9cc43926a0083c1e78ea05bb2cd449f8ade48b8d618eee6f320d3b5802bc7"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_2767::untagged::BRD3::boltz2-exact::DeltaForge::64b9c6fe36765622::Kd_nM",
+      "BRD2": "miniprotein_2767::untagged::BRD2::boltz2-exact::DeltaForge::dc9d7a51ea71442a::Kd_nM",
+      "BRD4": "miniprotein_2767::untagged::BRD4::boltz2-exact::DeltaForge::bf5c517025713f34::Kd_nM",
+      "BRDT": "miniprotein_2767::untagged::BRDT::boltz2-exact::DeltaForge::3b8c2481c401dcb1::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "64b9c6fe36765622423f0b5a8108baa01fe4fa165961fe6930bc29d1d1184b89",
+      "BRD2": "dc9d7a51ea71442a81e76378a529caa5316ad756288a1cb96b31eea5a7a08e4a",
+      "BRD4": "bf5c517025713f3461eee9028fe6d60bb784fef47dda54e4330de0ea01676eaf",
+      "BRDT": "3b8c2481c401dcb1595ff8622d1cc635e7dbd1d9508381da1a713fe2cc90a4a1"
+    }
+  },
+  {
+    "candidateId": "miniprotein_887",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 4.686996943098241,
+      "BRD2": 20.293121382792062,
+      "BRD4": 7.523680727105573,
+      "BRDT": 2.8387048920669717
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 4.329663882685983,
+      "BRD4": 1.6052241591888476,
+      "BRDT": 0.6056553751858232
+    },
+    "minimumPredictedSelectivity": 0.6056553751858232,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "miniprotein_887::untagged::BRD3::boltz2-exact",
+      "BRD2": "miniprotein_887::untagged::BRD2::boltz2-exact",
+      "BRD4": "miniprotein_887::untagged::BRD4::boltz2-exact",
+      "BRDT": "miniprotein_887::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "88d27164f0b4bde71344b49de8abab7c06f921b6f825a1a253412d91d35289cb",
+      "BRD2": "91b9f782edade51e5dcb9b23d8ee96302f71f2558a96c7c472da70377155f281",
+      "BRD4": "097410e62076af231fa8e0a948d66630dcc8f154643e77771ec8e9280f1cfe16",
+      "BRDT": "25ada70bc31943207cf8e6be0643999f67973453729976652f387c6581bf4881"
+    },
+    "observationIds": {
+      "BRD3": "miniprotein_887::untagged::BRD3::boltz2-exact::DeltaForge::ac4c291cbff0f925::Kd_nM",
+      "BRD2": "miniprotein_887::untagged::BRD2::boltz2-exact::DeltaForge::84beee1f14c13629::Kd_nM",
+      "BRD4": "miniprotein_887::untagged::BRD4::boltz2-exact::DeltaForge::4bc4e71837e72229::Kd_nM",
+      "BRDT": "miniprotein_887::untagged::BRDT::boltz2-exact::DeltaForge::f6aa912bae5ea7f8::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "ac4c291cbff0f925dcbe9cf5f5a52e8188d8c835fbc3033a151f87712604b4a1",
+      "BRD2": "84beee1f14c13629d20a87640d54c2dd3ca0b0a9934a1c76516e210c08cf31ae",
+      "BRD4": "4bc4e71837e72229587718b64d3033bb8709e0fdfc9e3c8e250dfa6d86ff702a",
+      "BRDT": "f6aa912bae5ea7f8d9b8599b1380dc053c6dfcdd23747b0552c15f17af4b9518"
+    }
+  },
+  {
+    "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 15.25785898003299,
+      "BRD2": 41.66408631233342,
+      "BRD4": 14.891294376419815,
+      "BRDT": 21.69984088358788
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 2.730664005143619,
+      "BRD4": 0.9759753577423362,
+      "BRDT": 1.4222074612162237
+    },
+    "minimumPredictedSelectivity": 0.9759753577423362,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "e9bd620c0273ec3dda8175ae704e90cfe7d55efb1bed7c78ffea26d008fb848a",
+      "BRD2": "e98e78f751aa999e62644cceff2e1e553b86725566ad89ed130e6f32c7664e4d",
+      "BRD4": "c2e4d7d24a5cb6f449a73a3019d3fa1150249a66f2f3e9d105c58429bc17df16",
+      "BRDT": "e61fbabfe2a6523e726c5b3bdca441c6e9b0666b63ebe1167cb3787f5938cebe"
+    },
+    "observationIds": {
+      "BRD3": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD3::boltz2-exact::DeltaForge::1145141235a9cc38::Kd_nM",
+      "BRD2": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD2::boltz2-exact::DeltaForge::bd3574ed18baa1c6::Kd_nM",
+      "BRD4": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRD4::boltz2-exact::DeltaForge::6a6e4206c7ceaa9a::Kd_nM",
+      "BRDT": "1run_m001_fixed_sc_et_0_model_2_b0_d1::untagged::BRDT::boltz2-exact::DeltaForge::b16d9a59bea9e511::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "1145141235a9cc387bf9caf294064662d6cce306938917feb2aca21835cde102",
+      "BRD2": "bd3574ed18baa1c6cb583c55fe9a0de3d385f132be4f10e0248534812d96f40e",
+      "BRD4": "6a6e4206c7ceaa9ac215ef796fe8ede86c8ac95b4219ed3df741079eb1bfd9b8",
+      "BRDT": "b16d9a59bea9e51172f2ea7934d653e042dc0fd7cd530748aaef395fcdab8d10"
+    }
+  },
+  {
+    "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 675.3106237795132,
+      "BRD2": 116.9553254696751,
+      "BRD4": 3505.040680000402,
+      "BRDT": 5389.091205044377
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.17318745085796347,
+      "BRD4": 5.19026438586695,
+      "BRDT": 7.980166482326655
+    },
+    "minimumPredictedSelectivity": 0.17318745085796347,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "ecb2d016c386a86eba2e77d61c37beaabd283323211530d3e57d57aeefacf384",
+      "BRD2": "2d2cbf520b22c6a0660283cb50592b08f3d1ff6091b5040eae98bb8df8411433",
+      "BRD4": "704dd10ba834b064daa71cb042a94bd5a88f18738b5fb7aadb64209415427093",
+      "BRDT": "ff3f1428bc20f6add48ab8bf9e0895cdab453e2202faca078f042ea9383a7537"
+    },
+    "observationIds": {
+      "BRD3": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD3::boltz2-exact::DeltaForge::c5ed5aea6bbbbc53::Kd_nM",
+      "BRD2": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD2::boltz2-exact::DeltaForge::dd5ab80dac3e885c::Kd_nM",
+      "BRD4": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRD4::boltz2-exact::DeltaForge::13bbb79903adc095::Kd_nM",
+      "BRDT": "1run_m008_redesign_sc_et_168_model_3_b0_d1::untagged::BRDT::boltz2-exact::DeltaForge::73fc11c7d634278f::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "c5ed5aea6bbbbc531d5d8c5e35a0b7c4414675919bc44b7a4e22367c08a81a71",
+      "BRD2": "dd5ab80dac3e885cbae2987c0ba4dc3343964d7690fc32042e9b385e7a2ba0ac",
+      "BRD4": "13bbb79903adc095d295195b829b9066647392b91d9de14e28d09357f7179f89",
+      "BRDT": "73fc11c7d634278fd3148ec73d3b3414fdb020f0f2ea6456d9653e84dc74b4fc"
+    }
+  },
+  {
+    "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 6244.2886643423835,
+      "BRD2": 3094.900518757013,
+      "BRD4": 460.6359533118121,
+      "BRDT": 745.2724077933333
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.4956370028871738,
+      "BRD4": 0.07376916380279545,
+      "BRDT": 0.11935265133547787
+    },
+    "minimumPredictedSelectivity": 0.07376916380279545,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "7036b555bb839e69cf6c23dab96f718b1f565e79f0631c5efe7fc39afee696e6",
+      "BRD2": "5df854adba19506fe386989349b284165fb0d37bf9f7927c93cec5c85fabae5b",
+      "BRD4": "3ad8885c38d353b5d438ed15d97a9ee8614d5e6d71d0593450647d9be2eb4cd5",
+      "BRDT": "8e34432497a65f39cf2524750cbcd5d901af64f61f4d1b7f4afba921d60a34cf"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD3::boltz2-exact::DeltaForge::e06cc608dca17600::Kd_nM",
+      "BRD2": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD2::boltz2-exact::DeltaForge::d165d873e53c6ba0::Kd_nM",
+      "BRD4": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRD4::boltz2-exact::DeltaForge::59134612d29b62ee::Kd_nM",
+      "BRDT": "2run_m004_fixed_sc_et_449_model_0_b0_d0::untagged::BRDT::boltz2-exact::DeltaForge::ee863561bd6f504e::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "e06cc608dca17600769fa444faa259b562ae47317cc851daed4965691b9754ac",
+      "BRD2": "d165d873e53c6ba066e4e626e78af26e533d998aafb1ec986d9a33f3eb856d55",
+      "BRD4": "59134612d29b62ee89ed0cac192513e05ad9a512fe35b2123e1bd265fce794c1",
+      "BRDT": "ee863561bd6f504e17173cd14c1abc5aa734655c7144e9c865514a9b7cddfa6c"
+    }
+  },
+  {
+    "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 2.9580881166613606,
+      "BRD2": 2.7488795508811865,
+      "BRD4": 6.577068915835454,
+      "BRDT": 2.6243287365589447
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.9292757492240302,
+      "BRD4": 2.223418862605975,
+      "BRDT": 0.8871705754056061
+    },
+    "minimumPredictedSelectivity": 0.8871705754056061,
+    "limitingIsoform": "BRDT",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "c8bceffd85aa08793d79a99f114691e4edb2c9db915ec7e1c0c3c964e1a97799",
+      "BRD2": "278aa3ea990aea973457105a0a61268aba690b4f1fa4ddee58f51b53b2f4297f",
+      "BRD4": "de7db920071eb0758cea10f5b389206a58f63732825b380d32c633733f09afd2",
+      "BRDT": "4ac504fd22fbfe88329c00506711c535c55567e63bc0fdd2ab1869be3ca8c485"
+    },
+    "observationIds": {
+      "BRD3": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD3::boltz2-exact::DeltaForge::8c7f42fb7105b59f::Kd_nM",
+      "BRD2": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD2::boltz2-exact::DeltaForge::64670002c5f8e575::Kd_nM",
+      "BRD4": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRD4::boltz2-exact::DeltaForge::88376f7d93de8852::Kd_nM",
+      "BRDT": "2run_m017_redesign_sc_et_200_model_2_b0_d0::untagged::BRDT::boltz2-exact::DeltaForge::42d6e6693b981ea3::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "8c7f42fb7105b59faa5897e20aa40e178de90a462e917679b294559157113e6e",
+      "BRD2": "64670002c5f8e5758024ca4502634eced51752dab69b448a90175b4407f85594",
+      "BRD4": "88376f7d93de885230be722e8e86d3c5effb3e9b3dba9e57384aaa6da38be417",
+      "BRDT": "42d6e6693b981ea33fc86ca249726620e252e9b97b3fe6b1247ff6c9ea0f2244"
+    }
+  },
+  {
+    "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 8.34032180137018,
+      "BRD2": 2.218202848886824,
+      "BRD4": 102.59111340249899,
+      "BRDT": 2.3754894782529847
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.2659613024190996,
+      "BRD4": 12.300618111119517,
+      "BRDT": 0.284819882832666
+    },
+    "minimumPredictedSelectivity": 0.2659613024190996,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "e93f04a99811a388026e96785682d017e49e223c9439d0af195758e6c2ea0f9f",
+      "BRD2": "f85462746028177403159bc5d76dbaff97ba01d23a3a12fb683003161c05f8af",
+      "BRD4": "d44eb038de3d24e2f9da2d2f805b85ef7870befef0c5e638f95976a58117357e",
+      "BRDT": "7e993f43028420c9c95f64cef7dd6a2355ac60dcf77a855c148f7a2e8a934c29"
+    },
+    "observationIds": {
+      "BRD3": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD3::boltz2-exact::DeltaForge::b17ab704c0f66b94::Kd_nM",
+      "BRD2": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD2::boltz2-exact::DeltaForge::494e66d675bb5b6d::Kd_nM",
+      "BRD4": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRD4::boltz2-exact::DeltaForge::773ab4b150a9c69b::Kd_nM",
+      "BRDT": "2run_m017_redesign_sc_et_222_model_3_b0_d0::untagged::BRDT::boltz2-exact::DeltaForge::f68c8a655a4f27e4::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "b17ab704c0f66b94e81df6845323fca1e13eafecbb30c4e5b7d61e217ca27290",
+      "BRD2": "494e66d675bb5b6dba3f7ee29fd64881259432eb4a5980cb230499b8ae5168bc",
+      "BRD4": "773ab4b150a9c69b341d0cfac00d46b9cf0d16fd5e04699e74b56415fbc25a03",
+      "BRDT": "f68c8a655a4f27e4fbd46a2068016f9cbdfaf58b90d8e47ae7755be362206a32"
+    }
+  },
+  {
+    "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 46.00055050382077,
+      "BRD2": 1.5488011102882364,
+      "BRD4": 166.3148804717826,
+      "BRDT": 44.6924364312848
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.033669186418966754,
+      "BRD4": 3.615497611446381,
+      "BRDT": 0.9715630778717024
+    },
+    "minimumPredictedSelectivity": 0.033669186418966754,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "f121267327cb8b8cfc98f81e932e5c1b43ae865812969b9f02d0e82adf115b2b",
+      "BRD2": "1caed50d119684f60940fe3ad0781213026ba733ca29fec83b1186fd9cc36826",
+      "BRD4": "5304fcdcb82afe32050a23036b32b9d6dbd98fda9a0c0fd7b9fc44b62217f54e",
+      "BRDT": "88d5b2016f6d32f56e3f20104d95cd71ec32bf39905be4f9b43d8e403677c689"
+    },
+    "observationIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact::DeltaForge::0b42fa11bee321c7::Kd_nM",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact::DeltaForge::a22b3cd20a0a5866::Kd_nM",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact::DeltaForge::cab57674020f9d4a::Kd_nM",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact::DeltaForge::958d48e64b82ee38::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "0b42fa11bee321c7281712d17403f1644b9ddb7694a3c54290e82a7ad6d5a743",
+      "BRD2": "a22b3cd20a0a5866bdf669569e40411f73374eb4020fe75651ebaa4e7b300164",
+      "BRD4": "cab57674020f9d4a8304b4d84b22fe76d2048d5fe787002006977539d31fc362",
+      "BRDT": "958d48e64b82ee38ee92fb3cdd49d09929f99696c85a1387fbbe20d4363a8788"
+    }
+  },
+  {
+    "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 2.285268809406037,
+      "BRD2": 2.3909133925672084,
+      "BRD4": 2.301295380000304,
+      "BRDT": 66.24505408428574
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 1.0462285148803256,
+      "BRD4": 1.0070129914381636,
+      "BRDT": 28.98786077665124
+    },
+    "minimumPredictedSelectivity": 1.0070129914381636,
+    "limitingIsoform": "BRD4",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "4d723c3b2ef15045413606a3d76fec4cd3afa8849e87cb20bbc0122be38e1808",
+      "BRD2": "c9e96475c06eda54aa70feae9b335a1db00525143a9fc3559e26b177c60d60da",
+      "BRD4": "29f8e8a20ce9144fbf3a31233400fd306f7d3591fe689a37ebd456032b5ce367",
+      "BRDT": "8b191d833a156f7b25dc8d436393cd1473bff4b7f60cdc4268b65feaefd57119"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD3::boltz2-exact::DeltaForge::0621f9c2d6eedc68::Kd_nM",
+      "BRD2": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD2::boltz2-exact::DeltaForge::80643ba88fe07317::Kd_nM",
+      "BRD4": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRD4::boltz2-exact::DeltaForge::1896f1fdc6bad426::Kd_nM",
+      "BRDT": "2run_m004_fixed_sc_et_230_model_3_b0_d0::untagged::BRDT::boltz2-exact::DeltaForge::d5ae1911ed6baf34::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "0621f9c2d6eedc683b65020264c4dceaffbed746b2f4646fdf6f505c87bb2eca",
+      "BRD2": "80643ba88fe073171af1aa31652f347b7f0b3022fbdc1a7721ecd9161ff3bf42",
+      "BRD4": "1896f1fdc6bad4264afef14fb295c0177fb6b5eb5d6042e09ac1ccc8b4af85db",
+      "BRDT": "d5ae1911ed6baf34978bbede3dc02c332f91aa7d39ac0ab8f36fe4b37053ef8a"
+    }
+  },
+  {
+    "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
+    "method": "DeltaForge",
+    "foldingEngine": "boltz2-exact",
+    "constructVariant": "untagged",
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 3339.234045610674,
+      "BRD2": 293.21127130454516,
+      "BRD4": 2168.8142234988723,
+      "BRDT": 4531.618733039555
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.08780794256993242,
+      "BRD4": 0.6494945229579566,
+      "BRDT": 1.357083292498241
+    },
+    "minimumPredictedSelectivity": 0.08780794256993242,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD3::boltz2-exact",
+      "BRD2": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD2::boltz2-exact",
+      "BRD4": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD4::boltz2-exact",
+      "BRDT": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "187e5187052ec9aa2e9f2927af7a2ac2f4bd0406a0dd321dc481dd127bd30853",
+      "BRD2": "c340a021e30eb6994c57552e619bd823617bcea7af546a5a99dd2eab51e8617f",
+      "BRD4": "68c6fe36c83d985de7eac9fcb63d0e793d57130edfebb945071b6f17255aee6e",
+      "BRDT": "fc9858c7a859c7af08b0efa01c29f88e2d16f29466e6785ac725ed27b9cc220c"
+    },
+    "observationIds": {
+      "BRD3": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD3::boltz2-exact::DeltaForge::7f8405ca9949a64c::Kd_nM",
+      "BRD2": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD2::boltz2-exact::DeltaForge::19e2ef9bd0a0a628::Kd_nM",
+      "BRD4": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRD4::boltz2-exact::DeltaForge::e20236ae037c29df::Kd_nM",
+      "BRDT": "2run_m004_redesign_sc_et_120_model_3_b0_d0::untagged::BRDT::boltz2-exact::DeltaForge::ce6ddddae61685a8::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "7f8405ca9949a64ce67458e1d4666eb0378b0a8695ab8bfdb5c6b15707889390",
+      "BRD2": "19e2ef9bd0a0a6286e1011d95749a0b1e46522c8e37a39bfc324778cf9c40db3",
+      "BRD4": "e20236ae037c29dfbc04822f8ab92bba1ec5a3f9536be7a51a4a3789dbbcc93a",
+      "BRDT": "ce6ddddae61685a81259449f3939943b482f876a4b3b9fe318b9ce3f4a6df22b"
+    }
+  }
+]

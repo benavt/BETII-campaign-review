@@ -1,9 +1,9 @@
 {
   "expectedConditions": 432,
   "counts": {
-    "complex": 256,
-    "monomer": 67,
-    "homodimer": 55
+    "complex": 288,
+    "monomer": 72,
+    "homodimer": 72
   },
   "cells": [
     {
@@ -52,7 +52,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2183",
@@ -68,7 +68,7 @@
       "engine": "af3",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2183",
@@ -76,7 +76,7 @@
       "engine": "af3",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2183",
@@ -84,7 +84,7 @@
       "engine": "af3",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2183",
@@ -92,7 +92,7 @@
       "engine": "af3",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2183",
@@ -212,7 +212,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -220,7 +220,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -228,7 +228,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -236,7 +236,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -244,7 +244,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -300,7 +300,7 @@
       "engine": "opendde-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_879",
@@ -436,7 +436,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_522",
@@ -596,7 +596,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_50",
@@ -604,7 +604,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_50",
@@ -612,7 +612,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_50",
@@ -620,7 +620,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_50",
@@ -628,7 +628,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_50",
@@ -820,7 +820,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1147",
@@ -836,7 +836,7 @@
       "engine": "af3",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1147",
@@ -844,7 +844,7 @@
       "engine": "af3",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1147",
@@ -852,7 +852,7 @@
       "engine": "af3",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1147",
@@ -860,7 +860,7 @@
       "engine": "af3",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1147",
@@ -980,7 +980,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2871",
@@ -988,7 +988,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2871",
@@ -996,7 +996,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2871",
@@ -1004,7 +1004,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2871",
@@ -1012,7 +1012,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2871",
@@ -1164,7 +1164,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_5",
@@ -1204,7 +1204,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_5",
@@ -1364,7 +1364,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1762",
@@ -1372,7 +1372,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1762",
@@ -1380,7 +1380,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1762",
@@ -1388,7 +1388,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1762",
@@ -1396,7 +1396,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_1762",
@@ -1588,7 +1588,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_2767",
@@ -1780,7 +1780,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "miniprotein_887",
@@ -1972,7 +1972,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
@@ -2164,7 +2164,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
@@ -2316,7 +2316,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
@@ -2356,7 +2356,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
@@ -2708,7 +2708,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2716,7 +2716,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2724,7 +2724,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2732,7 +2732,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2740,7 +2740,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2748,7 +2748,7 @@
       "engine": "af3",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m017_redesign_sc_et_222_model_3_b0_d0",
@@ -2900,7 +2900,7 @@
       "engine": "boltz2-exact",
       "target": "BRD3",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
@@ -2908,7 +2908,7 @@
       "engine": "boltz2-exact",
       "target": "BRD2",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
@@ -2916,7 +2916,7 @@
       "engine": "boltz2-exact",
       "target": "BRD4",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
@@ -2924,7 +2924,7 @@
       "engine": "boltz2-exact",
       "target": "BRDT",
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
@@ -2932,7 +2932,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "1run_m004_fixed_sc_et_230_model_3_b0_d1",
@@ -3084,7 +3084,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
@@ -3124,7 +3124,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",
@@ -3316,7 +3316,7 @@
       "engine": "boltz2-exact",
       "target": null,
       "variant": "untagged",
-      "status": "pending"
+      "status": "published"
     },
     {
       "candidateId": "2run_m004_redesign_sc_et_120_model_3_b0_d0",
