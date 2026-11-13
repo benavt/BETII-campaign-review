@@ -7539,28 +7539,52 @@
       "sha256": "2db581f1fde55b4fc570744f51fee0b665732b604cc1c972b60baf79b35d5391"
     },
     "comparison/data.json": {
-      "bytes": 3362869,
-      "sha256": "cb5c6459feeb41b81e65634b3f566cb5d6e23b0135ce17b8729dcc37ad38d87b"
+      "bytes": 3978345,
+      "sha256": "6b513e14022e6b28c66bb44a7579cf2d3804f637475999bb1eadf15854addd7a"
     },
     "comparison/metrics.mjs": {
       "bytes": 3673,
       "sha256": "cdd42f9bd0fc7118fa9215a16e07f5c4898ce5bd39faead7de72f11a734f909a"
     },
     "comparison/app.mjs": {
-      "bytes": 14161,
-      "sha256": "5cbb137d5b83c6f90b749512bce46f984931e2339d09d478552e76e875894afd"
+      "bytes": 14328,
+      "sha256": "c4f81e1bda444362a52f14767d6d9ca2b95f60ce25ef1799b47fc9492918384a"
     },
     "comparison/affinity-selectivity.csv": {
-      "bytes": 13501,
-      "sha256": "302b6c2c397bc62b1b607e93d57d16def9d62b67b51014290544737ed3f43734"
+      "bytes": 14917,
+      "sha256": "d51bcfe28ff2c6c6d770985a5644af9651d29da0a1b01e79e4e612365db9849e"
     },
     "comparison/sequences_for_Adaptyv_modified.fa": {
       "bytes": 1509,
       "sha256": "b83ede742b9e93f06d2ad62e61450a7d2804585aaa16061fafe9d44470cae567"
     },
     "comparison/index.html": {
-      "bytes": 6278,
-      "sha256": "3238d196cfd0c3e3d3b9c7000bb0319d4026f5c3666b81568cc688b9f5488029"
+      "bytes": 6694,
+      "sha256": "5a28377b132d0477c13adbf34afa5f3344c9f50e704f12905f2a725cc8271a69"
+    },
+    "comparison/pcann-observations.json": {
+      "bytes": 660715,
+      "sha256": "399afaf80ca918d6bc38930a80af4534b67f39d8f96146c8c0730e09c664f023"
+    },
+    "comparison/metric-gap-audit.json": {
+      "bytes": 330909,
+      "sha256": "99ef0937882632e902cdf64eac60b5942efd3b96cf4302bb215f4b504cf4510a"
+    },
+    "comparison/pcann-selectivity.csv": {
+      "bytes": 3899,
+      "sha256": "c8cbf5e97ff9ca22372a76ed02efb32578e559d64c6952aac55439c145c10f57"
+    },
+    "comparison/pcann-selectivity.json": {
+      "bytes": 88123,
+      "sha256": "698e2c8baf6faa446e46e2c03ca9f368c44a52c18236385533cfebdfd63a3f82"
+    },
+    "comparison/metric-gap-matrix.csv": {
+      "bytes": 7322,
+      "sha256": "a002b4b95c5f8ee7ba2761e0134565b9915a776a003683b65607f4c00efb7101"
+    },
+    "comparison/metrics-plan.html": {
+      "bytes": 23153,
+      "sha256": "e21f7550a35775e82b071bef122b57651c34b6c0b6f647f28b17b22991f5d2a2"
     }
   },
   "publicInterface": "single-campaign-v2",
@@ -7591,5 +7615,19 @@
     "sourceCommit": "2730ba8119fafa0b18cf6f15f7a2922813ab8f3a",
     "previousManifestSha256": "73bde71c897458d16b860910f82b63556723c5ce21ac7ebdf4885ae31b21961f",
     "updatedAt": "2026-11-13T12:14:17.879463-05:00"
+  },
+  "comparisonPCANNRelease": {
+    "json": "comparison/pcann-observations.json",
+    "sha256": "399afaf80ca918d6bc38930a80af4534b67f39d8f96146c8c0730e09c664f023",
+    "sourceBoundComplexes": 80,
+    "completeSelectivityPanels": 20,
+    "newPredictions": 0,
+    "providerCalls": 0,
+    "creditsSpent": 0
+  },
+  "comparisonMetricPlan": {
+    "html": "comparison/metrics-plan.html",
+    "json": "comparison/metric-gap-audit.json",
+    "matrixCSV": "comparison/metric-gap-matrix.csv"
   }
 }

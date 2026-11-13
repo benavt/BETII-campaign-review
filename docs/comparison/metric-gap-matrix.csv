@@ -1,0 +1,103 @@
+group,kind,engine,metric,available,modelsPresent,expectedModels,missingValues,missingModels,classification
+our-panel,complex,boltz2-exact,ipSAE_full,40,40,40,0,0,common metric
+our-panel,complex,boltz2-exact,ipSAE_core,0,40,40,40,0,scope-specific
+our-panel,complex,boltz2-exact,ipTM,0,40,40,40,0,common metric
+our-panel,complex,boltz2-exact,pTM,0,40,40,40,0,common metric
+our-panel,complex,boltz2-exact,mean_pLDDT,0,40,40,40,0,common metric
+our-panel,complex,boltz2-exact,native_confidence_score,0,40,40,40,0,engine-specific optional
+our-panel,complex,af3,ipSAE_full,40,40,40,0,0,common metric
+our-panel,complex,af3,ipSAE_core,4,40,40,36,0,scope-specific
+our-panel,complex,af3,ipTM,36,40,40,4,0,common metric
+our-panel,complex,af3,pTM,36,40,40,4,0,common metric
+our-panel,complex,af3,mean_pLDDT,36,40,40,4,0,common metric
+our-panel,complex,af3,native_confidence_score,28,40,40,12,0,engine-specific optional
+our-panel,complex,opendde-exact,ipSAE_full,40,40,40,0,0,common metric
+our-panel,complex,opendde-exact,ipSAE_core,4,40,40,36,0,scope-specific
+our-panel,complex,opendde-exact,ipTM,36,40,40,4,0,common metric
+our-panel,complex,opendde-exact,pTM,36,40,40,4,0,common metric
+our-panel,complex,opendde-exact,mean_pLDDT,36,40,40,4,0,common metric
+our-panel,complex,opendde-exact,native_confidence_score,28,40,40,12,0,engine-specific optional
+our-panel,complex,openfold,ipSAE_full,0,40,40,40,0,common metric
+our-panel,complex,openfold,ipSAE_core,0,40,40,40,0,scope-specific
+our-panel,complex,openfold,ipTM,40,40,40,0,0,common metric
+our-panel,complex,openfold,pTM,40,40,40,0,0,common metric
+our-panel,complex,openfold,mean_pLDDT,40,40,40,0,0,common metric
+our-panel,complex,openfold,native_confidence_score,40,40,40,0,0,engine-specific optional
+our-panel,monomer,boltz2-exact,pTM,10,10,10,0,0,common metric
+our-panel,monomer,boltz2-exact,mean_pLDDT,8,10,10,2,0,common metric
+our-panel,monomer,af3,pTM,10,10,10,0,0,common metric
+our-panel,monomer,af3,mean_pLDDT,8,10,10,2,0,common metric
+our-panel,monomer,opendde-exact,pTM,10,10,10,0,0,common metric
+our-panel,monomer,opendde-exact,mean_pLDDT,8,10,10,2,0,common metric
+our-panel,monomer,openfold,pTM,10,10,10,0,0,common metric
+our-panel,monomer,openfold,mean_pLDDT,10,10,10,0,0,common metric
+our-panel,homodimer,boltz2-exact,ipTM,0,0,50,0,50,common metric
+our-panel,homodimer,boltz2-exact,pTM,0,0,50,0,50,common metric
+our-panel,homodimer,boltz2-exact,mean_pLDDT,0,0,50,0,50,common metric
+our-panel,homodimer,af3,ipTM,0,0,50,0,50,common metric
+our-panel,homodimer,af3,pTM,0,0,50,0,50,common metric
+our-panel,homodimer,af3,mean_pLDDT,0,0,50,0,50,common metric
+our-panel,homodimer,opendde-exact,ipTM,0,0,50,0,50,common metric
+our-panel,homodimer,opendde-exact,pTM,0,0,50,0,50,common metric
+our-panel,homodimer,opendde-exact,mean_pLDDT,0,0,50,0,50,common metric
+our-panel,homodimer,openfold,ipTM,50,50,50,0,0,common metric
+our-panel,homodimer,openfold,pTM,50,50,50,0,0,common metric
+our-panel,homodimer,openfold,mean_pLDDT,50,50,50,0,0,common metric
+our-panel,complex,boltz2-exact,DeltaForge Kd_nM,40,40,40,0,0,Exact affinity
+our-panel,complex,boltz2-exact,DeltaForge deltaG_kcal_mol,40,40,40,0,0,Exact affinity
+our-panel,complex,boltz2-exact,PCANN Kd_nM,40,40,40,0,0,Exact affinity
+our-panel,complex,boltz2-exact,PCANN deltaG_kcal_mol,40,40,40,0,0,Exact affinity
+our-panel,sequence,NetSolP-D,solubility,10,10,10,0,0,sequence metric
+our-panel,sequence,NetSolP-D,usability,10,10,10,0,0,sequence metric
+our-panel,complex,boltz2-exact,BRD3 working pocket distance,10,10,10,0,0,BRD3 geometry
+modified-adaptyv,complex,boltz2-exact,ipSAE_full,40,40,40,0,0,common metric
+modified-adaptyv,complex,boltz2-exact,ipSAE_core,0,40,40,40,0,scope-specific
+modified-adaptyv,complex,boltz2-exact,ipTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,boltz2-exact,pTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,boltz2-exact,mean_pLDDT,40,40,40,0,0,common metric
+modified-adaptyv,complex,boltz2-exact,native_confidence_score,0,40,40,40,0,engine-specific optional
+modified-adaptyv,complex,af3,ipSAE_full,40,40,40,0,0,common metric
+modified-adaptyv,complex,af3,ipSAE_core,0,40,40,40,0,scope-specific
+modified-adaptyv,complex,af3,ipTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,af3,pTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,af3,mean_pLDDT,40,40,40,0,0,common metric
+modified-adaptyv,complex,af3,native_confidence_score,0,40,40,40,0,engine-specific optional
+modified-adaptyv,complex,opendde-exact,ipSAE_full,40,40,40,0,0,common metric
+modified-adaptyv,complex,opendde-exact,ipSAE_core,0,40,40,40,0,scope-specific
+modified-adaptyv,complex,opendde-exact,ipTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,opendde-exact,pTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,opendde-exact,mean_pLDDT,40,40,40,0,0,common metric
+modified-adaptyv,complex,opendde-exact,native_confidence_score,0,40,40,40,0,engine-specific optional
+modified-adaptyv,complex,openfold,ipSAE_full,0,40,40,40,0,common metric
+modified-adaptyv,complex,openfold,ipSAE_core,0,40,40,40,0,scope-specific
+modified-adaptyv,complex,openfold,ipTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,openfold,pTM,40,40,40,0,0,common metric
+modified-adaptyv,complex,openfold,mean_pLDDT,40,40,40,0,0,common metric
+modified-adaptyv,complex,openfold,native_confidence_score,40,40,40,0,0,engine-specific optional
+modified-adaptyv,monomer,boltz2-exact,pTM,10,10,10,0,0,common metric
+modified-adaptyv,monomer,boltz2-exact,mean_pLDDT,0,10,10,10,0,common metric
+modified-adaptyv,monomer,af3,pTM,10,10,10,0,0,common metric
+modified-adaptyv,monomer,af3,mean_pLDDT,0,10,10,10,0,common metric
+modified-adaptyv,monomer,opendde-exact,pTM,10,10,10,0,0,common metric
+modified-adaptyv,monomer,opendde-exact,mean_pLDDT,0,10,10,10,0,common metric
+modified-adaptyv,monomer,openfold,pTM,10,10,10,0,0,common metric
+modified-adaptyv,monomer,openfold,mean_pLDDT,10,10,10,0,0,common metric
+modified-adaptyv,homodimer,boltz2-exact,ipTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,boltz2-exact,pTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,boltz2-exact,mean_pLDDT,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,af3,ipTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,af3,pTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,af3,mean_pLDDT,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,opendde-exact,ipTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,opendde-exact,pTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,opendde-exact,mean_pLDDT,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,openfold,ipTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,openfold,pTM,50,50,50,0,0,common metric
+modified-adaptyv,homodimer,openfold,mean_pLDDT,50,50,50,0,0,common metric
+modified-adaptyv,complex,boltz2-exact,DeltaForge Kd_nM,37,40,40,3,0,Exact affinity
+modified-adaptyv,complex,boltz2-exact,DeltaForge deltaG_kcal_mol,37,40,40,3,0,Exact affinity
+modified-adaptyv,complex,boltz2-exact,PCANN Kd_nM,40,40,40,0,0,Exact affinity
+modified-adaptyv,complex,boltz2-exact,PCANN deltaG_kcal_mol,40,40,40,0,0,Exact affinity
+modified-adaptyv,sequence,NetSolP-D,solubility,10,10,10,0,0,sequence metric
+modified-adaptyv,sequence,NetSolP-D,usability,10,10,10,0,0,sequence metric
+modified-adaptyv,complex,boltz2-exact,BRD3 working pocket distance,0,10,10,10,0,BRD3 geometry

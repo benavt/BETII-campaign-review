@@ -4,6 +4,8 @@ const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
 const engineNames = {'boltz2-exact':'Boltz2 Exact', af3:'AlphaFold 3', 'opendde-exact':'OpenDDE Exact', openfold:'OpenFold', colabfold:'ColabFold'};
 const defaultState = {group:'all', search:'', kind:'complex', engine:'boltz2-exact', target:'BRD3', scorer:'DeltaForge', rank:1, x:'Kd_nM', y:'minimumPredictedSelectivity', sort:'minimumPredictedSelectivity', descending:true};
+const requestedScorer = new URLSearchParams(location.search).get('scorer');
+if (['DeltaForge','PCANN'].includes(requestedScorer)) defaultState.scorer=requestedScorer;
 let data, state = {...defaultState}, rows = [], selected = null;
 const groupName = id => data.groups.find(g => g.id === id).label;
 const color = s => s.id === 'AP2-9' ? '#d5afff' : s.group === 'our-panel' ? '#f6a15d' : '#63d4c4';

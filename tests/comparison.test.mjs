@@ -24,7 +24,11 @@ test('pending comparator scores never produce a selectivity value or remove save
 test('scorer and folding-method switches cannot reuse another score or exact selectivity',()=>{
   const original=data.subjects.find(s=>s.id==='C2K_L60_0608');
   assert.ok(rowData(original,state).values.Kd_nM>0);
-  assert.equal(rowData(original,{...state,scorer:'PCANN'}).values.Kd_nM,undefined);
+  assert.ok(rowData(original,{...state,scorer:'PCANN'}).values.Kd_nM>0);
+  const missing=structuredClone(original);
+  for(const m of missing.models)m.observations=m.observations.filter(o=>o.method!=='PCANN');
+  missing.panels.PCANN={method:'PCANN',status:'pending',missingTargets:['BRD3','BRD2','BRD4','BRDT'],Kd_nM:{}};
+  assert.equal(rowData(missing,{...state,scorer:'PCANN'}).values.Kd_nM,undefined);
   const af3=rowData(original,{...state,engine:'af3'});
   assert.equal(af3.values.Kd_nM,undefined);assert.equal(af3.values.minimumPredictedSelectivity,undefined);
   assert.equal(af3.model.foldingEngine,'af3');
@@ -53,5 +57,12 @@ test('published ratios match all four saved isoform values and pending values re
     assert.equal(row.values.minimumPredictedSelectivity,Math.min(...Object.values(p.ratiosOverBRD3)));
   }
   assert.equal(data.subjects.filter(s=>s.panels.DeltaForge.status==='complete').length,19);
-  assert.equal(data.subjects.filter(s=>s.panels.PCANN.status==='complete').length,10);
+  assert.equal(data.subjects.filter(s=>s.panels.PCANN.status==='complete').length,20);
+});
+test('all 80 Exact PCANN Kds and native energies retain their selected model identity',()=>{
+  for(const s of data.subjects)for(const target of ['BRD3','BRD2','BRD4','BRDT']){
+    const row=rowData(s,{...state,scorer:'PCANN',target});
+    assert.ok(row.values.Kd_nM>0);assert.equal(row.panel.status,'complete');
+    assert.ok(Math.abs(Math.exp(row.values.deltaG_kcal_mol/(.001987204258*298))*1e9/row.values.Kd_nM-1)<1e-12);
+  }
 });

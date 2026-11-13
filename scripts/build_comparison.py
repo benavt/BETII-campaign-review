@@ -62,7 +62,7 @@ def panel(models, method):
                 observationIds={t: o['id'] for t, o in selected.items()})
 
 
-def subject_record(subject, group, base):
+def subject_record(subject, group, base, pcann):
     assert sha(subject['sequence'].encode()) == subject['sequenceSha256']
     models = []
     for kind, source in [('complex', subject['modelCoverage']['models']), ('monomer', subject.get('monomerModels', [])), ('homodimer', subject.get('dimerModels', []))]:
@@ -74,7 +74,27 @@ def subject_record(subject, group, base):
             asset = model['molecularModel']
             coordinate_path = (base / asset['url']).resolve()
             assert coordinate_path.is_relative_to(DOCS.resolve()) and sha(coordinate_path.read_bytes()) == model['modelSha256'] == asset['sha256']
-            observations = model.get('observations', [])
+            observations = list(model.get('observations', []))
+            extra = pcann.get((group, subject['id'], model['id']))
+            if extra:
+                assert kind == 'complex' and model['foldingEngine'] == 'boltz2-exact'
+                assert extra['modelSha256'] == model['modelSha256']
+                native = extra['nativePCANN']
+                assert native['modelSha256'] == model['modelSha256'] and native['temperatureK'] == 298
+                members = native['ensembleDeltaG_kcal_mol']
+                assert len(members) == 25 and all(type(v) in [int,float] and math.isfinite(v) for v in members)
+                assert native['deltaG_kcal_mol'] == round(math.fsum(members)/25, 2)
+                assert math.isclose(native['kd_nM'], math.exp(native['deltaG_kcal_mol']/(.001987204258*298))*1e9, rel_tol=1e-12)
+                for observation in extra['observations']:
+                    assert observation['method'] == 'PCANN' and observation['source']['sha256']
+                    assert observation['metric'] in ['Kd_nM','deltaG_kcal_mol']
+                    assert observation['unit'] == {'Kd_nM':'nM','deltaG_kcal_mol':'kcal/mol'}[observation['metric']]
+                    assert observation['value'] == native[{'Kd_nM':'kd_nM','deltaG_kcal_mol':'deltaG_kcal_mol'}[observation['metric']]]
+                    assert observation['provenance']['scoringPdbSha256'] == native['pdbSha256']
+                    assert not any(o['method']=='PCANN' and o['metric']==observation['metric'] for o in observations), 'Duplicate PCANN observation'
+                    observations.append(observation)
+                kd, = [o for o in observations if o['method']=='PCANN' and o['metric']=='Kd_nM']
+                assert kd['value'] == native['kd_nM'] and kd['provenance']['scoringPdbSha256'] == native['pdbSha256']
             for o in observations:
                 assert o['modelId'] == model['id'] and o['modelSha256'] == model['modelSha256']
                 assert o['foldingEngine'] == model['foldingEngine'] and o['constructVariant'] == 'untagged'
@@ -99,7 +119,7 @@ def subject_record(subject, group, base):
 
 
 def build():
-    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa']
+    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa', 'comparison/pcann-observations.json']
     sources = {p: dict(sha256=sha((DOCS / p).read_bytes())) for p in source_paths}
     modified = (DOCS / source_paths[2]).read_bytes()
     assert sha(modified) == MODIFIED_SHA
@@ -107,11 +127,17 @@ def build():
     jokent = json.loads((DOCS / source_paths[1]).read_bytes())['campaigns'][0]['subjects']
     assert len(original) == 10 and sum(s['id'] == 'AP2-9' for s in original) == 1
     by_id = {s['id']: s for s in jokent}
-    records = [subject_record(s, 'our-panel', DOCS) for s in original]
+    release = json.loads((DOCS / source_paths[3]).read_bytes())
+    assert release['schemaVersion'] == 1 and release['operation'] == 'saved-PCANN-recovery'
+    assert release['validation']['newPredictions'] == release['validation']['providerCalls'] == release['validation']['creditsSpent'] == 0
+    pcann = {(r['group'],r['candidateId'],r['modelId']): r for r in release['records']}
+    assert len(pcann) == len(release['records']) == 80
+    records = [subject_record(s, 'our-panel', DOCS, pcann) for s in original]
     for candidate_id, sequence in fasta_records(modified.decode()):
         subject = by_id[candidate_id]
         assert subject['sequence'] == sequence, candidate_id
-        records.append(subject_record(subject, 'modified-adaptyv', DOCS / 'jokent'))
+        records.append(subject_record(subject, 'modified-adaptyv', DOCS / 'jokent', pcann))
+    assert set(pcann) == {(s['group'],s['id'],m['id']) for s in records for m in s['models'] if m['kind']=='complex' and m['foldingEngine']=='boltz2-exact'}
     triage = json.loads((DOCS / 'data/triage.json').read_bytes())
     for row, reference in zip(records[:10], triage['ranking'][:9] + [triage['control']], strict=True):
         assert row['id'] == reference['id']
@@ -126,7 +152,7 @@ def build():
 
 def csv_text(data):
     stream = io.StringIO(newline='')
-    writer = csv.writer(stream)
+    writer = csv.writer(stream, lineterminator='\n')
     writer.writerow(['group', 'candidate_id', 'sequence', 'sequence_sha256', 'scorer', 'status', 'BRD3_Kd_nM', 'BRD2_Kd_nM', 'BRD4_Kd_nM', 'BRDT_Kd_nM', 'BRD2_over_BRD3', 'BRD4_over_BRD3', 'BRDT_over_BRD3', 'minimum_predicted_selectivity', 'limiting_isoform', 'NetSolP_solubility', 'NetSolP_usability'])
     for s in data['subjects']:
         for method, p in s['panels'].items():
@@ -138,6 +164,14 @@ def write_or_check(check=False):
     data = build()
     outputs = {'data.json': json.dumps(data, indent=2) + '\n', 'affinity-selectivity.csv': csv_text(data),
                'twenty-sequences.fasta': ''.join('>' + s['id'] + ' | ' + s['group'] + '\n' + s['sequence'] + '\n' for s in data['subjects'])}
+    pcann_panels = [dict(candidateId=s['id'], group=s['group'], sequenceSha256=s['sequenceSha256'], **s['panels']['PCANN']) for s in data['subjects']]
+    assert all(p['status']=='complete' for p in pcann_panels)
+    outputs['pcann-selectivity.json'] = json.dumps(pcann_panels, indent=2)+'\n'
+    stream = io.StringIO(newline=''); writer = csv.writer(stream, lineterminator='\n')
+    writer.writerow(['group','candidate_id','BRD3_Kd_nM','BRD2_Kd_nM','BRD4_Kd_nM','BRDT_Kd_nM','BRD2_over_BRD3','BRD4_over_BRD3','BRDT_over_BRD3','minimum_predicted_selectivity','limiting_isoform'])
+    for p in pcann_panels:
+        writer.writerow([p['group'],p['candidateId'],*[p['Kd_nM'][t] for t in TARGETS],*[p['ratiosOverBRD3'][t] for t in TARGETS[1:]],p['minimumPredictedSelectivity'],p['limitingIsoform']])
+    outputs['pcann-selectivity.csv'] = stream.getvalue()
     for path, text in outputs.items():
         path = DOCS / 'comparison' / path
         if check:
