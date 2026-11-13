@@ -69,6 +69,7 @@ def verify(site):
  pcann_selectivity=[predicted_selectivity(s,'PCANN') for s in subjects]
  assert json.loads((root/'data/pcann-predicted-selectivity.json').read_bytes())==pcann_selectivity
  assert all(s['pcannPredictedSelectivity']==r for s,r in zip(subjects,pcann_selectivity,strict=True))
+ assert manifest.get('pcannPredictions',len(pcann))==len(pcann) and manifest.get('completePCANNSelectivityPanels',sum(r['status']=='complete' for r in pcann_selectivity))==sum(r['status']=='complete' for r in pcann_selectivity)
  for method,stem,series in [('DeltaForge','predicted-selectivity',selectivity),('PCANN','pcann-predicted-selectivity',pcann_selectivity)]:
   with (root/('data/'+stem+'.csv')).open(newline='') as f:selectivity_csv=list(csv.DictReader(f))
   assert len(selectivity_csv)==18

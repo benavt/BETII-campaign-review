@@ -577,14 +577,47 @@
     "method": "DeltaForge",
     "foldingEngine": "boltz2-exact",
     "constructVariant": "untagged",
-    "status": "pending",
-    "missingTargets": [
-      "BRD3",
-      "BRD2",
-      "BRD4",
-      "BRDT"
-    ],
-    "reason": "A complete compatible four-isoform Exact panel is required."
+    "status": "complete",
+    "missingTargets": [],
+    "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+    "Kd_nM": {
+      "BRD3": 46.00055050382077,
+      "BRD2": 1.5488011102882364,
+      "BRD4": 166.3148804717826,
+      "BRDT": 44.6924364312848
+    },
+    "ratiosOverBRD3": {
+      "BRD2": 0.033669186418966754,
+      "BRD4": 3.615497611446381,
+      "BRDT": 0.9715630778717024
+    },
+    "minimumPredictedSelectivity": 0.033669186418966754,
+    "limitingIsoform": "BRD2",
+    "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+    "modelIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact"
+    },
+    "modelSha256s": {
+      "BRD3": "f121267327cb8b8cfc98f81e932e5c1b43ae865812969b9f02d0e82adf115b2b",
+      "BRD2": "1caed50d119684f60940fe3ad0781213026ba733ca29fec83b1186fd9cc36826",
+      "BRD4": "5304fcdcb82afe32050a23036b32b9d6dbd98fda9a0c0fd7b9fc44b62217f54e",
+      "BRDT": "88d5b2016f6d32f56e3f20104d95cd71ec32bf39905be4f9b43d8e403677c689"
+    },
+    "observationIds": {
+      "BRD3": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD3::boltz2-exact::DeltaForge::0b42fa11bee321c7::Kd_nM",
+      "BRD2": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD2::boltz2-exact::DeltaForge::a22b3cd20a0a5866::Kd_nM",
+      "BRD4": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRD4::boltz2-exact::DeltaForge::cab57674020f9d4a::Kd_nM",
+      "BRDT": "1run_m004_fixed_sc_et_230_model_3_b0_d1::untagged::BRDT::boltz2-exact::DeltaForge::958d48e64b82ee38::Kd_nM"
+    },
+    "responseSha256s": {
+      "BRD3": "0b42fa11bee321c7281712d17403f1644b9ddb7694a3c54290e82a7ad6d5a743",
+      "BRD2": "a22b3cd20a0a5866bdf669569e40411f73374eb4020fe75651ebaa4e7b300164",
+      "BRD4": "cab57674020f9d4a8304b4d84b22fe76d2048d5fe787002006977539d31fc362",
+      "BRDT": "958d48e64b82ee38ee92fb3cdd49d09929f99696c85a1387fbbe20d4363a8788"
+    }
   },
   {
     "candidateId": "2run_m004_fixed_sc_et_230_model_3_b0_d0",

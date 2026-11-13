@@ -12,7 +12,7 @@ import {publicReadiness} from '../docs/jokent/public-readiness.mjs';
 if(!globalThis.crypto)globalThis.crypto=webcrypto;
 const workspace=JSON.parse(fs.readFileSync(new URL('../docs/jokent/data/local-workspace.json',import.meta.url))),c=workspace.campaigns[0];
 const coverage=JSON.parse(fs.readFileSync(new URL('../docs/jokent/data/coverage.json',import.meta.url)));
-test('Jokent is a separate exact18-sequence untagged campaign with explicit gaps',()=>{
+test('Jokent is a separate exact18-sequence untagged campaign with accurate condition readiness',()=>{
  validateWorkspace(workspace);assert.equal(c.subjects.length,18);assert.equal(campaignTitle(c),'BETII · Jokent Sequences');
  assert.equal(coverage.cells.length,432);assert.equal(Object.keys(DIMER_METHODS).length,4);
  for(const row of coverage.cells.filter(r=>r.kind==='complex')){
@@ -20,7 +20,11 @@ test('Jokent is a separate exact18-sequence untagged campaign with explicit gaps
   assert.equal(resolved.status,row.status==='published'?'verified':'missing');
   if(resolved.model){assert.equal(resolved.model.target,row.target);assert.equal(resolved.model.foldingEngine,row.engine);}
  }
- assert.match(publicReadiness(c).join(' '),/of 432/);
+ const missing=coverage.cells.filter(r=>r.status!=='published').length;
+ assert.equal(publicReadiness(c).length,missing?1:0);
+ if(missing)assert.match(publicReadiness(c).join(' '),new RegExp(missing+' of 432'));
+ const incomplete=structuredClone(c);incomplete.subjects[0].modelCoverage.models.pop();
+ assert.match(publicReadiness(incomplete).join(' '),new RegExp((missing+1)+' of 432'));
 });
 test('PCANN and DeltaForge remain separate native-coordinate-bound series',()=>{
  const data=affinityData(c,{foldingEngine:'boltz2-exact'}),expected=c.subjects.flatMap(s=>s.modelCoverage.models).flatMap(m=>(m.observations||[]).filter(o=>o.method==='PCANN'));
