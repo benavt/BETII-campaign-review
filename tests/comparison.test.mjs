@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {rowData, sortRows, median, plotRows} from '../docs/comparison/metrics.mjs';
+import {rowData, sortRows, median, plotRows, solubilityRows} from '../docs/comparison/metrics.mjs';
 
 const data=JSON.parse(readFileSync(new URL('../docs/comparison/data.json',import.meta.url)));
 const state={kind:'complex',engine:'boltz2-exact',target:'BRD3',scorer:'DeltaForge',rank:1};
@@ -65,4 +65,37 @@ test('all 80 Exact PCANN Kds and native energies retain their selected model ide
     assert.ok(row.values.Kd_nM>0);assert.equal(row.panel.status,'complete');
     assert.ok(Math.abs(Math.exp(row.values.deltaG_kcal_mol/(.001987204258*298))*1e9/row.values.Kd_nM-1)<1e-12);
   }
+});
+test('ProtSATT scores are bound to all twenty exact untagged sequences and remain sequence metrics',()=>{
+  const release=JSON.parse(readFileSync(new URL('../docs/comparison/protsatt-scores.json',import.meta.url)));
+  assert.equal(release.records.length,20);
+  for(const s of data.subjects){
+    const saved=release.records.find(r=>r.group===s.group&&r.candidateId===s.id);
+    assert.equal(saved.sequenceSha256,s.sequenceSha256);
+    for(const selection of [state,{...state,engine:'af3'},{...state,kind:'monomer'},{...state,kind:'homodimer',engine:'colabfold'}]){
+      const r=rowData(s,selection);assert.equal(r.values.protsatt_esol,saved.value);
+      assert.equal(r.values.solubility,s.netSolP.scores.solubility);
+    }
+    const bad=structuredClone(s);bad.protSATT.sequenceSha256='bad';
+    assert.equal(rowData(bad,state).values.protsatt_esol,undefined);
+  }
+});
+test('paired ranks and reference splits independently reproduce the published export',()=>{
+  const compared=solubilityRows(data.subjects);
+  assert.deepEqual(compared.filter(r=>r.opposite).map(r=>r.subject.id).sort(),['Brd3ET_Brd3ET_1010_model_0','Brd3ET_Brd3ET_1933_model_6'].sort());
+  for(const r of compared){
+    const saved=data.solubilityComparison.rows.find(s=>s.candidate_id===r.subject.id);
+    assert.equal(r.netRank,saved.NetSolP_rank);assert.equal(r.protRank,saved.ProtSATT_rank);
+    assert.equal(r.rankShift,saved.rank_shift_toward_ProtSATT);assert.equal(r.opposite,saved.opposite_sides_of_reference);
+    assert.equal(r.difference,saved.raw_score_difference);
+  }
+});
+test('reference equality, tied ranks, missing scores and sequence hash mismatches remain explicit',()=>{
+  const sample=(id,n,p)=>({id,key:id,sequenceSha256:id,netSolP:{scores:{solubility:n}},protSATT:{value:p,sequenceSha256:id}});
+  const subjects=[sample('a',.5,.5),sample('b',.5,.4),sample('c',.2,.8),sample('d',null,null)];
+  const rows=solubilityRows(subjects);
+  assert.equal(rows[0].opposite,false);assert.equal(rows[1].opposite,true);assert.equal(rows[2].opposite,true);
+  assert.equal(rows[0].netRank,1.5);assert.equal(rows[1].netRank,1.5);
+  assert.equal(rows[3].opposite,null);assert.equal(rows[3].rankShift,null);
+  subjects[0].protSATT.sequenceSha256='mismatch';assert.equal(solubilityRows(subjects)[0].opposite,null);
 });

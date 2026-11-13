@@ -49,6 +49,7 @@ our-panel,complex,boltz2-exact,PCANN Kd_nM,40,40,40,0,0,Exact affinity
 our-panel,complex,boltz2-exact,PCANN deltaG_kcal_mol,40,40,40,0,0,Exact affinity
 our-panel,sequence,NetSolP-D,solubility,10,10,10,0,0,sequence metric
 our-panel,sequence,NetSolP-D,usability,10,10,10,0,0,sequence metric
+our-panel,sequence,ProtSATT eSOL,relative solubility,10,10,10,0,0,sequence metric
 our-panel,complex,boltz2-exact,BRD3 working pocket distance,10,10,10,0,0,BRD3 geometry
 modified-adaptyv,complex,boltz2-exact,ipSAE_full,40,40,40,0,0,common metric
 modified-adaptyv,complex,boltz2-exact,ipSAE_core,0,40,40,40,0,scope-specific
@@ -100,4 +101,5 @@ modified-adaptyv,complex,boltz2-exact,PCANN Kd_nM,40,40,40,0,0,Exact affinity
 modified-adaptyv,complex,boltz2-exact,PCANN deltaG_kcal_mol,40,40,40,0,0,Exact affinity
 modified-adaptyv,sequence,NetSolP-D,solubility,10,10,10,0,0,sequence metric
 modified-adaptyv,sequence,NetSolP-D,usability,10,10,10,0,0,sequence metric
+modified-adaptyv,sequence,ProtSATT eSOL,relative solubility,10,10,10,0,0,sequence metric
 modified-adaptyv,complex,boltz2-exact,BRD3 working pocket distance,0,10,10,10,0,BRD3 geometry

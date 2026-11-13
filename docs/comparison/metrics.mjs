@@ -9,6 +9,7 @@ export const metrics = {
   mean_pLDDT: {label: 'Mean pLDDT (0–100)'}, native_confidence_score: {label: 'Native confidence score'},
   deltaG_kcal_mol: {label: 'Predicted ΔG (kcal/mol)'},
   solubility: {label: 'NetSolP-D solubility'}, usability: {label: 'NetSolP-D usability'},
+  protsatt_esol: {label: 'ProtSATT eSOL solubility'}, solubility_score_gap: {label: 'ProtSATT − NetSolP raw score'},
   length: {label: 'Sequence length (aa)'}, mean_residue_min_A: {label: 'Working pocket distance (Å)'}
 };
 export const finite = v => typeof v === 'number' && Number.isFinite(v);
@@ -20,6 +21,10 @@ export function selectedModel(s, state) {
 }
 export function rowData(s, state) {
   const model = selectedModel(s, state), values = {length: s.sequence.length, ...s.netSolP.scores};
+  if (s.protSATT?.sequenceSha256 === s.sequenceSha256 && finite(s.protSATT.value)) {
+    values.protsatt_esol = s.protSATT.value;
+    if (finite(values.solubility)) values.solubility_score_gap = s.protSATT.value - values.solubility;
+  }
   for (const key of ['ipSAE_full', 'ipSAE_core', 'ipTM', 'pTM', 'mean_pLDDT', 'native_confidence_score', 'Kd_nM', 'deltaG_kcal_mol']) {
     const observations = (model?.observations || []).filter(o => o.metric === key &&
       (!['Kd_nM', 'deltaG_kcal_mol'].includes(key) || o.method === state.scorer));
@@ -52,4 +57,16 @@ export function median(values) {
 }
 export function plotRows(rows, x, y, logX, logY) {
   return rows.filter(r => finite(r.values[x]) && finite(r.values[y]) && (!logX || r.values[x] > 0) && (!logY || r.values[y] > 0));
+}
+
+export function solubilityRows(subjects, threshold=.5) {
+  const rank = (key, value) => 1 + subjects.filter(s => key(s) > value).length + (subjects.filter(s => key(s) === value).length - 1) / 2;
+  const net = s => s.netSolP?.scores.solubility;
+  const prot = s => s.protSATT?.sequenceSha256 === s.sequenceSha256 ? s.protSATT.value : undefined;
+  return subjects.map(subject => {
+    const n=net(subject), p=prot(subject), complete=finite(n)&&finite(p);
+    const netRank=finite(n)?rank(net,n):null, protRank=finite(p)?rank(prot,p):null;
+    return {subject, net:n, prot:p, netRank, protRank, rankShift:complete?netRank-protRank:null,
+      difference:complete?p-n:null, opposite:complete?(n>=threshold)!==(p>=threshold):null};
+  });
 }

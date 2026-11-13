@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 1,
+  "method": "ProtSATT eSOL",
+  "runId": "2026-11-13_protsatt-selected20_002",
+  "createdAt": "2026-11-13T22:35:32.473521+00:00",
+  "sourceRepository": "https://github.com/quietbamboo/ProtSATT",
+  "sourceRevision": "13f14f18690383a26dfad3d52a53a9d21f289cb8",
+  "sourceHashes": {
+    "Model.py": "fa544abdf7e4c29be6740873d3f9e325343ab3401dcbb918d921b383237fa632",
+    "models/eSOL/best_epoch_377_1.pth": "b0073a12395797626c0ebb5251d59ce019af705e7925a805149806434e5aaf24"
+  },
+  "embeddingHashes": {
+    "esm/esm2_t33_650M_UR50D-contact-regression.pt": "8ffe6edbd4173dc8d45c2cd5cb27d43aad77ec26b4c768200c58ae1f96693575",
+    "esm/esm2_t33_650M_UR50D.pt": "ea9d0522b335a8778dea6535a65301f10208dece28cd5865482b0b1fc446168c",
+    "prott5/config.json": "c93cc8c31433fb062cad1825a9c16cde962a2015c8a3b10cfdc5f76a85128db3",
+    "prott5/pytorch_model.bin": "7f51ba885541c7dc569d46b796af57cc7a2ba7945107dced4f19d1b5ec091157",
+    "prott5/spiece.model": "74da7b4afcde53faa570114b530c726135bdfcdb813dec3abfb27f9d44db7324",
+    "prott5/tokenizer_config.json": "d3adf2fb21d1242b5c0b72602f02ce5b0c43f767c0f957e3b57a67b2f93bf4f2",
+    "unirep/config.json": "57ff7864ebe4f00069e384222415b6178f296b8425e9371e0dafc4b4253c2334",
+    "unirep/pytorch_model.bin": "e0e521440f4eee852ee29b4dcb72a1f73975444946beded0c2a346c598452e55"
+  },
+  "adapterSha256": "cae0b88c778b388bb886c775e189ca2e6d6461ce7a99b3383f50771ceb8d2ce1",
+  "packages": {
+    "torch": "2.14.0",
+    "numpy": "2.5.2",
+    "fair-esm": "2.0.0",
+    "transformers": "4.51.3",
+    "sentencepiece": "0.2.1",
+    "tape-proteins": "0.5"
+  },
+  "nativeSources": {
+    "scores.csv": {
+      "sha256": "6cc59c30fdf9ded3a76ce01365e0172f3a9964155604f93eaec76f3620249c68"
+    },
+    "input.fasta": {
+      "sha256": "85d4a02db4c853524e4a8006e7c32b74099fee415cd310fc33eb18c1ae6bce00"
+    },
+    "intent.json": {
+      "sha256": "8e724bec8c40189b9bc1e794df821e6860113885e6dfbedb44887054b8ee647c"
+    },
+    "receipt.json": {
+      "sha256": "0110e174bd75af4bcddce7735ccc9ffddde835e326c260bbefeab181142cbeeb"
+    }
+  },
+  "validation": {
+    "sequenceMatches": 20,
+    "uniqueRecords": 20,
+    "referenceFixtureRecords": 4,
+    "referenceFixtureMaximumAbsoluteError": 2.275166280929497e-07,
+    "referenceFixtureReportSha256": "bd2996b4d9fcabc2aa0f50418f874763ad343e99a9a500934df11df8be62ee24",
+    "referenceFixtureReceiptSha256": "04f46f7670f065a86eb494bc99e87b9a344e9fe15445d63b65eeb845e2125bb4",
+    "scope": "Saved file integrity, exact sequence identity and four held-out feature fixtures; no new inference or experimental validation."
+  },
+  "metricDefinition": "Continuous relative-solubility regression output from the published eSOL checkpoint; higher values predict greater solubility. This is not a calibrated probability of experimental success.",
+  "records": [
+    {
+      "candidateId": "C2K_L60_0608",
+      "group": "our-panel",
+      "sequenceSha256": "25d4a44a3115f6f25d68c00355ec4ae738d31e0a1ffec42e68461f8fba99006c",
+      "value": 0.8744760487707898
+    },
+    {
+      "candidateId": "Brd3ET_Brd3ET_1933_model_6",
+      "group": "our-panel",
+      "sequenceSha256": "b4140be439ef59b9b6c357ffb6d595f5f9ac849dd99372dc448a9651c3ecfc4b",
+      "value": 0.40633832078269877
+    },
+    {
+      "candidateId": "Brd3ET_Brd3ET_3761_model_2",
+      "group": "our-panel",
+      "sequenceSha256": "35d8dfb89c084f6e60dc655a4d140d02c3842d0ff0779405ba26cf5a79763088",
+      "value": 0.8263534069481877
+    },
+    {
+      "candidateId": "Brd3ET_Brd3ET_5020_model_5",
+      "group": "our-panel",
+      "sequenceSha256": "4a0ddf01017ba3d6dd3386fe3e48a942b99291d24638c43b4a2e4ea1552548a0",
+      "value": 0.775993209725832
+    },
+    {
+      "candidateId": "BRD3ET_rank17",
+      "group": "our-panel",
+      "sequenceSha256": "cbf92102ad6bf5a5c29196d416acec9c6c7157440c72f566efe4e75cc1097e0d",
+      "value": 0.7719545209086889
+    },
+    {
+      "candidateId": "Brd3ET_Brd3ET_1010_model_0",
+      "group": "our-panel",
+      "sequenceSha256": "8a7d3dc381bd9f4053bb7e87a0c402024c625411128f124d5178d1fd790f792c",
+      "value": 0.43177432925076137
+    },
+    {
+      "candidateId": "C-34",
+      "group": "our-panel",
+      "sequenceSha256": "c112d89b63b5b217111c5f4669637fc015a36bacee112a59afc3004fb4469176",
+      "value": 0.7081764350953239
+    },
+    {
+      "candidateId": "R3-05",
+      "group": "our-panel",
+      "sequenceSha256": "9ee1143adc4fc1f3f145585780e7397d16b0b484819f2b761ea03cd05b9e2f83",
+      "value": 0.8828262751181019
+    },
+    {
+      "candidateId": "LF-BRD2-r01",
+      "group": "our-panel",
+      "sequenceSha256": "2234566df4f180cf2bddf9846f9223d4fb7dd6e3f526149c5cd087e2f8b066fd",
+      "value": 0.8222510876373279
+    },
+    {
+      "candidateId": "AP2-9",
+      "group": "our-panel",
+      "sequenceSha256": "76d1194190a67d86fe17e8459765606af476b72ffe3dd48562c63e986aad9e9d",
+      "value": 0.8671340134488377
+    },
+    {
+      "candidateId": "miniprotein_879",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "fe190badd02b9bf9b61391d263c6b0a7702830598d1f494245f0cfa372674f2d",
+      "value": 0.8805184590995404
+    },
+    {
+      "candidateId": "miniprotein_522",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "273b845cee49562b46dcfc7f5f616739b1f52fd577b5f6614c6c5d97cc16ce2e",
+      "value": 0.880207815693859
+    },
+    {
+      "candidateId": "miniprotein_5",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "a19bb95fb9588027791c9a34e84eb09dd4bfce748a55aeef15815c815e62b589",
+      "value": 0.8788970161233618
+    },
+    {
+      "candidateId": "miniprotein_1762",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "ca8f9566298ba79c377a8e8d57d9993675ead5b645e8728a91ce2898f4b5949b",
+      "value": 0.8791181499338252
+    },
+    {
+      "candidateId": "miniprotein_2767",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "fe1242a71a979a98e51f3dc2d7130a4ae65b24472104dba6498a0d0e6a62acb8",
+      "value": 0.8788065377708714
+    },
+    {
+      "candidateId": "miniprotein_887",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "befd13aae34eb26b28f7698d21398c03b60aa22f2a3b5dee883276aedb6ce4e4",
+      "value": 0.8782484776126563
+    },
+    {
+      "candidateId": "1run_m001_fixed_sc_et_0_model_2_b0_d1",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "5e1c63949cf6341f136c57b13a5a546cf24441860af68519c7b37164b3795041",
+      "value": 0.8763774459340274
+    },
+    {
+      "candidateId": "1run_m008_redesign_sc_et_168_model_3_b0_d1",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "34fa8c676eadfc78f389960e8ac9624004d4a116da0b303095af5ddf3ae89e05",
+      "value": 0.8721913517406262
+    },
+    {
+      "candidateId": "2run_m004_fixed_sc_et_449_model_0_b0_d0",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "4a3343ef2d17ecd16b1433589ead1abc00df38bd6313369a58b6d9e19fcee5a1",
+      "value": 0.8698501798514056
+    },
+    {
+      "candidateId": "2run_m017_redesign_sc_et_200_model_2_b0_d0",
+      "group": "modified-adaptyv",
+      "sequenceSha256": "a6e1b33d89714cd6dbcd40c59bb8afd608b0146da7ead3bb725ca0de9d2f7b5a",
+      "value": 0.8769844956899757
+    }
+  ],
+  "newPredictions": 0,
+  "providerCalls": 0,
+  "creditsSpent": 0
+}

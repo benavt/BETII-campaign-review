@@ -46,6 +46,8 @@ def build():
         for key in ['solubility','usability']:
             count=sum(s.get('netSolP',{}).get('scores',{}).get(key) is not None for s in subjects)
             matrix.append(dict(group=group['id'],kind='sequence',engine='NetSolP-D',metric=key,available=count,modelsPresent=10,expectedModels=10,missingValues=10-count,missingModels=0,classification='sequence metric'))
+        count=sum(s.get('protSATT',{}).get('value') is not None for s in subjects)
+        matrix.append(dict(group=group['id'],kind='sequence',engine='ProtSATT eSOL',metric='relative solubility',available=count,modelsPresent=10,expectedModels=10,missingValues=10-count,missingModels=0,classification='sequence metric'))
         pocket=sum(any(o['key']=='mean_residue_min_A' for o in s['explorerMetrics']) for s in subjects)
         matrix.append(dict(group=group['id'],kind='complex',engine='boltz2-exact',metric='BRD3 working pocket distance',available=pocket,modelsPresent=10,expectedModels=10,missingValues=10-pocket,missingModels=0,classification='BRD3 geometry'))
     scalar=[g for g in gaps if g['metric'] in ['ipTM','pTM','mean_pLDDT']]

@@ -1,4 +1,4 @@
-import {metrics, finite, format, rowData, sortRows, median, plotRows} from './metrics.mjs';
+import {metrics, finite, format, rowData, sortRows, median, plotRows, solubilityRows} from './metrics.mjs';
 
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
@@ -6,11 +6,25 @@ const engineNames = {'boltz2-exact':'Boltz2 Exact', af3:'AlphaFold 3', 'opendde-
 const defaultState = {group:'all', search:'', kind:'complex', engine:'boltz2-exact', target:'BRD3', scorer:'DeltaForge', rank:1, x:'Kd_nM', y:'minimumPredictedSelectivity', sort:'minimumPredictedSelectivity', descending:true};
 const requestedScorer = new URLSearchParams(location.search).get('scorer');
 if (['DeltaForge','PCANN'].includes(requestedScorer)) defaultState.scorer=requestedScorer;
+if (new URLSearchParams(location.search).get('view')==='solubility') Object.assign(defaultState,{x:'solubility',y:'protsatt_esol',sort:'solubility_score_gap'});
 let data, state = {...defaultState}, rows = [], selected = null;
 const groupName = id => data.groups.find(g => g.id === id).label;
 const color = s => s.id === 'AP2-9' ? '#d5afff' : s.group === 'our-panel' ? '#f6a15d' : '#63d4c4';
 const targets = ['BRD3','BRD2','BRD4','BRDT'];
-const columns = [['label','Sequence'], ['group','Group'], ['Kd_nM','Pred. Kd (nM)'], ['minimumPredictedSelectivity','Min BRD3 pref. (×)'], ['limiting','Limiting isoform'], ['BRD2_ratio','BRD2 / BRD3'], ['BRD4_ratio','BRD4 / BRD3'], ['BRDT_ratio','BRDT / BRD3'], ['ipSAE_full','Full ipSAE'], ['ipTM','ipTM'], ['pTM','pTM'], ['mean_pLDDT','Mean pLDDT'], ['solubility','Solubility'], ['usability','Usability']];
+const columns = [['label','Sequence'], ['group','Group'], ['Kd_nM','Pred. Kd (nM)'], ['minimumPredictedSelectivity','Min BRD3 pref. (×)'], ['limiting','Limiting isoform'], ['BRD2_ratio','BRD2 / BRD3'], ['BRD4_ratio','BRD4 / BRD3'], ['BRDT_ratio','BRDT / BRD3'], ['ipSAE_full','Full ipSAE'], ['ipTM','ipTM'], ['pTM','pTM'], ['mean_pLDDT','Mean pLDDT'], ['solubility','NetSolP solubility'], ['protsatt_esol','ProtSATT eSOL'], ['usability','NetSolP usability']];
+
+function solubilityComparison() {
+  const visible=new Set(rows.map(r=>r.subject.key));
+  const compared=solubilityRows(data.subjects).filter(r=>visible.has(r.subject.key));
+  const complete=compared.filter(r=>r.opposite!==null), split=complete.filter(r=>r.opposite);
+  $('#solubility-status').textContent=`${complete.length}/${compared.length} visible sequences have both scores · ${split.length} on opposite sides of 0.5. Ranks always refer to all 20 sequences (1 = highest).`;
+  const largest=[...complete].sort((a,b)=>Math.abs(b.rankShift)-Math.abs(a.rankShift))[0];
+  $('#solubility-rank-note').textContent=largest?`Largest rank shift in this selection: ${largest.subject.label}, NetSolP rank ${format(largest.netRank)} → ProtSATT rank ${format(largest.protRank)} (${Math.abs(largest.rankShift)} places).`:'No paired scores in this selection.';
+  const onlySplits=$('#solubility-filter').value==='split';
+  const shown=compared.filter(r=>!onlySplits||r.opposite).sort((a,b)=>Number(b.opposite)-Number(a.opposite)||Math.abs(b.rankShift??0)-Math.abs(a.rankShift??0)||a.subject.key.localeCompare(b.subject.key));
+  $('#solubility-table tbody').innerHTML=shown.map(r=>`<tr class="${r.opposite?'predictor-split':''}"><td><button class="candidate" data-key="${esc(r.subject.key)}">${esc(r.subject.label)}<small>${esc(r.subject.id)}</small></button></td><td>${esc(r.subject.group==='our-panel'?'Our panel':'Jokent · modified')}</td><td>${format(r.net)}</td><td>${format(r.prot)}</td><td>${r.opposite===null?'Missing score':r.opposite?(r.net>=.5?'NetSolP ≥ 0.5; ProtSATT < 0.5':'ProtSATT ≥ 0.5; NetSolP < 0.5'):'Same side of 0.5'}</td><td>${format(r.netRank)}</td><td>${format(r.protRank)}</td><td>${r.rankShift>0?'+':''}${format(r.rankShift)}</td><td>${r.difference>0?'+':''}${format(r.difference)}</td></tr>`).join('')||'<tr><td colspan="9">No opposite-side predictions in the visible selection. Choose all scores to inspect rank differences.</td></tr>';
+  $('#solubility-table').querySelectorAll('[data-key]').forEach(n=>n.onclick=()=>select(n.dataset.key));
+}
 
 function download(name, text, type) {
   const url = URL.createObjectURL(new Blob([text], {type})), a = document.createElement('a');
@@ -26,9 +40,9 @@ function currentCsv() {
 function groupSummary() {
   $('#group-summary').innerHTML = data.groups.map(g => {
     const groupRows = rows.filter(r => r.subject.group === g.id);
-    return `<article class="group-card ${g.id === 'modified-adaptyv' ? 'jokent' : ''}"><h3>${esc(g.label)} <span class="muted">${groupRows.length} visible / 10</span></h3><div class="stats">${['Kd_nM','minimumPredictedSelectivity','ipSAE_full','solubility'].map(key => {
+    return `<article class="group-card ${g.id === 'modified-adaptyv' ? 'jokent' : ''}"><h3>${esc(g.label)} <span class="muted">${groupRows.length} visible / 10</span></h3><div class="stats">${['Kd_nM','minimumPredictedSelectivity','ipSAE_full','solubility','protsatt_esol'].map(key => {
       const values = groupRows.map(r => r.values[key]).filter(finite);
-      return `<div class="stat"><span>Median ${esc({Kd_nM:'Kd (nM)',minimumPredictedSelectivity:'BRD3 preference (×)',ipSAE_full:'full ipSAE',solubility:'solubility'}[key])}</span><strong>${format(median(values))}</strong><small>${values.length} / ${groupRows.length} available</small></div>`;
+      return `<div class="stat"><span>Median ${esc({Kd_nM:'Kd (nM)',minimumPredictedSelectivity:'BRD3 preference (×)',ipSAE_full:'full ipSAE',solubility:'NetSolP solubility',protsatt_esol:'ProtSATT eSOL'}[key])}</span><strong>${format(median(values))}</strong><small>${values.length} / ${groupRows.length} available</small></div>`;
     }).join('')}</div></article>`;
   }).join('');
 }
@@ -42,6 +56,7 @@ function scatter() {
     const values = plotted.map(r => transform(r.values[key], log));
     let lo = Math.min(...values), hi = Math.max(...values), margin = (hi - lo || Math.max(Math.abs(lo)*.1, .1))*.09;
     lo -= margin; hi += margin;
+    if (!log && ['solubility','protsatt_esol','usability'].includes(key) && values.every(v=>v>=0&&v<=1)) {lo=0;hi=1;}
     return {pos:v => start + (transform(v, log) - lo) / (hi-lo) * (end-start), ticks:Array.from({length:5},(_,i) => lo + (hi-lo)*i/4), pixel:v => start+(v-lo)/(hi-lo)*(end-start)};
   }
   const xs = scale(state.x, logX, x0, x1), ys = scale(state.y, logY, y1, y0);
@@ -49,6 +64,9 @@ function scatter() {
   html += ys.ticks.map(t => `<line class="tick" x1="${x0}" y1="${ys.pixel(t)}" x2="${x1}" y2="${ys.pixel(t)}"/><text x="${x0-14}" y="${ys.pixel(t)+4}" text-anchor="end">${format(logY ? 10**t : t)}</text>`).join('');
   html += `<text x="530" y="411" text-anchor="middle">${esc(metrics[state.x].label)}${logX?' · log scale':''}</text><text transform="translate(19,190) rotate(-90)" text-anchor="middle">${esc(metrics[state.y].label)}${logY?' · log scale':''}</text>`;
   // A neutral 1× reference helps read preference without implying a selection cutoff.
+  if (state.x==='solubility' && state.y==='protsatt_esol' && !logX && !logY) {
+    html+=`<line x1="${xs.pos(.5)}" y1="${y0}" x2="${xs.pos(.5)}" y2="${y1}" stroke="#b2c4d0" stroke-dasharray="5 6"/><line x1="${x0}" y1="${ys.pos(.5)}" x2="${x1}" y2="${ys.pos(.5)}" stroke="#b2c4d0" stroke-dasharray="5 6"/><text x="${x1-8}" y="${y0+16}" text-anchor="end">0.5 display reference · separate score scales</text>`;
+  }
   if (state.y.includes('ratio') || state.y === 'minimumPredictedSelectivity') {
     const y = ys.pos(1); if (y >= y0 && y <= y1) html += `<line x1="${x0}" y1="${y}" x2="${x1}" y2="${y}" stroke="#b2c4d0" stroke-dasharray="5 6"/><text x="${x1-4}" y="${y-7}" text-anchor="end">1× · equal predicted affinity</text>`;
   }
@@ -78,7 +96,7 @@ function details() {
   const r=rows.find(r=>r.subject.key===selected);
   if (!r) {$('#detail').innerHTML='<h2>Inspect a sequence</h2><p>Select a row or plot point to see the sequence, four-isoform predictions, native coordinates and metric sources.</p>';return;}
   const s=r.subject,m=r.model;
-  $('#detail').innerHTML=`<div class="section-title"><div><p class="eyebrow">${esc(groupName(s.group))}</p><h2>${esc(s.label)}</h2><p class="muted">${esc(s.id)} · origin: ${esc(s.origin)} · ${s.sequence.length} aa · untagged</p></div><button id="download-sequence">Sequence FASTA ↓</button></div><code class="sequence">${esc(s.sequence)}</code><p class="detail-hash">Sequence SHA-256: <code>${esc(s.sequenceSha256)}</code></p><div class="detail-grid"><div>${panelTable(s,'DeltaForge')}</div><div>${panelTable(s,'PCANN')}</div></div><h3 style="margin-top:24px">Selected native model</h3><p>${esc(engineNames[state.engine])} · ${esc(state.kind)}${state.kind==='complex'?' · '+esc(state.target):''}${state.kind==='homodimer'?' · native rank '+state.rank:''}</p>${m?`<p><a href="${esc(m.coordinateUrl)}" download>Download exact native coordinates ↓</a></p><p class="detail-hash">Model: <code>${esc(m.id)}</code><br>Coordinate SHA-256: <code>${esc(m.modelSha256)}</code></p><p class="muted">${esc(m.scope||'Native full-chain model; saved evidence only.')}</p>`:'<p class="pending">No saved native model for this combination.</p>'}<details class="sources"><summary>All metrics and source evidence for this model</summary>${m?`<div class="table-scroll"><table><thead><tr><th>Metric / method</th><th>Value</th><th>Scope</th><th>Saved source</th></tr></thead><tbody>${m.observations.map(o=>`<tr><td>${esc(o.label||o.metric)}<br>${esc(o.metric)} · ${esc(o.method)}</td><td>${format(o.value)} ${esc(o.unit||'')}</td><td>${esc(o.scope||'Selected native model')}</td><td><code>${esc(o.source.path)}</code><br><code>${esc(o.source.sha256)}</code></td></tr>`).join('')}${m.nativeConfidence?`<tr><td>Native confidence summary</td><td colspan="3"><code>${esc(JSON.stringify(m.nativeConfidence))}</code></td></tr>`:''}</tbody></table></div>`:''}<p>NetSolP-D ${esc(JSON.stringify(s.netSolP.scores))}</p><p class="detail-hash">NetSolP-D source: <code>${esc(s.netSolP.source.path)}</code> · SHA-256 <code>${esc(s.netSolP.source.sha256)}</code></p></details>`;
+  $('#detail').innerHTML=`<div class="section-title"><div><p class="eyebrow">${esc(groupName(s.group))}</p><h2>${esc(s.label)}</h2><p class="muted">${esc(s.id)} · origin: ${esc(s.origin)} · ${s.sequence.length} aa · untagged</p></div><button id="download-sequence">Sequence FASTA ↓</button></div><code class="sequence">${esc(s.sequence)}</code><p class="detail-hash">Sequence SHA-256: <code>${esc(s.sequenceSha256)}</code></p><div class="detail-grid"><div>${panelTable(s,'DeltaForge')}</div><div>${panelTable(s,'PCANN')}</div></div><h3 style="margin-top:24px">Selected native model</h3><p>${esc(engineNames[state.engine])} · ${esc(state.kind)}${state.kind==='complex'?' · '+esc(state.target):''}${state.kind==='homodimer'?' · native rank '+state.rank:''}</p>${m?`<p><a href="${esc(m.coordinateUrl)}" download>Download exact native coordinates ↓</a></p><p class="detail-hash">Model: <code>${esc(m.id)}</code><br>Coordinate SHA-256: <code>${esc(m.modelSha256)}</code></p><p class="muted">${esc(m.scope||'Native full-chain model; saved evidence only.')}</p>`:'<p class="pending">No saved native model for this combination.</p>'}<details class="sources"><summary>All metrics and source evidence for this model</summary>${m?`<div class="table-scroll"><table><thead><tr><th>Metric / method</th><th>Value</th><th>Scope</th><th>Saved source</th></tr></thead><tbody>${m.observations.map(o=>`<tr><td>${esc(o.label||o.metric)}<br>${esc(o.metric)} · ${esc(o.method)}</td><td>${format(o.value)} ${esc(o.unit||'')}</td><td>${esc(o.scope||'Selected native model')}</td><td><code>${esc(o.source.path)}</code><br><code>${esc(o.source.sha256)}</code></td></tr>`).join('')}${m.nativeConfidence?`<tr><td>Native confidence summary</td><td colspan="3"><code>${esc(JSON.stringify(m.nativeConfidence))}</code></td></tr>`:''}</tbody></table></div>`:''}<p>ProtSATT eSOL: ${format(s.protSATT?.value)} · NetSolP-D ${esc(JSON.stringify(s.netSolP.scores))}</p><p class="detail-hash">ProtSATT: <a href="./protsatt-scores.json">saved source and provenance</a> · native CSV SHA-256 <code>${esc(s.protSATT?.source.nativeScoresSha256)}</code> · sequence SHA-256 <code>${esc(s.protSATT?.sequenceSha256)}</code></p><p class="detail-hash">NetSolP-D source: <code>${esc(s.netSolP.source.path)}</code> · SHA-256 <code>${esc(s.netSolP.source.sha256)}</code></p></details>`;
   $('#download-sequence').onclick=()=>download(s.id+'.fasta','>'+s.id+' | '+s.group+'\n'+s.sequence+'\n','text/plain');
 }
 function select(key) {selected=key; table(); details(); $('#detail').scrollIntoView({behavior:'smooth',block:'start'});}
@@ -88,7 +106,7 @@ function render() {
   $('#target').disabled=state.kind!=='complex';$('#rank-label').hidden=state.kind!=='homodimer';
   const count=rows.filter(r=>finite(r.values.Kd_nM)).length, compatible=state.kind==='complex'&&state.engine==='boltz2-exact';
   $('#context').textContent=`${rows.length} sequences · untagged · ${engineNames[state.engine]} · ${state.kind}${state.kind==='complex'?' · '+state.target:''} · ${state.scorer}: ${count}/${rows.length} Kds available. ${compatible?'BRD3 selectivity uses the complete four-isoform Exact panel.':'Exact-coordinate Kds and selectivity are shown only when Boltz2 Exact complexes are selected.'} All numbers retain their saved source; no new predictions.`;
-  groupSummary();scatter();table();details();
+  groupSummary();solubilityComparison();scatter();table();details();
 }
 async function init() {
   const response=await fetch('./data.json');if(!response.ok)throw Error('Saved comparison data unavailable');data=await response.json();
@@ -101,8 +119,11 @@ async function init() {
   }
   for(const id of ['log-x','log-y'])$('#'+id).onchange=scatter;
   $('#direction').onclick=()=>{state.descending=!state.descending;render();};
-  $('#reset').onclick=()=>{state={...defaultState};for(const id of ['group','search','kind','engine','target','scorer','rank','x','y','sort'])$('#'+id).value=state[id];$('#log-x').checked=true;$('#log-y').checked=true;selected=null;render();};
+  $('#reset').onclick=()=>{state={...defaultState};for(const id of ['group','search','kind','engine','target','scorer','rank','x','y','sort'])$('#'+id).value=state[id];$('#log-x').checked=Boolean(metrics[state.x].log);$('#log-y').checked=Boolean(metrics[state.y].log);selected=null;render();};
   $('#download-current').onclick=()=>download('betii-comparison-'+state.kind+'-'+state.engine+'-'+state.scorer+'.csv',currentCsv(),'text/csv');
+  $('#solubility-filter').onchange=solubilityComparison;
+  $('#compare-solubility').onclick=()=>{state.x='solubility';state.y='protsatt_esol';$('#x').value=state.x;$('#y').value=state.y;$('#log-x').checked=false;$('#log-y').checked=false;scatter();$('#scatter').scrollIntoView({behavior:'smooth',block:'center'});};
+  $('#log-x').checked=Boolean(metrics[state.x].log);$('#log-y').checked=Boolean(metrics[state.y].log);
   $('#load-status').textContent='';render();
 }
 init().catch(e=>{$('#load-status').textContent='Comparison could not load: '+e.message;});
