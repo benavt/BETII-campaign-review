@@ -9,6 +9,7 @@ import math
 from pathlib import Path
 
 from jokent_selectivity import score_calibration
+from solubility_comparison import attach, comparison
 
 DOCS = Path(__file__).resolve().parents[1] / 'docs'
 TARGETS = ['BRD3', 'BRD2', 'BRD4', 'BRDT']
@@ -119,7 +120,7 @@ def subject_record(subject, group, base, pcann):
 
 
 def build():
-    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa', 'comparison/pcann-observations.json']
+    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa', 'comparison/pcann-observations.json', 'comparison/protsatt-scores.json']
     sources = {p: dict(sha256=sha((DOCS / p).read_bytes())) for p in source_paths}
     modified = (DOCS / source_paths[2]).read_bytes()
     assert sha(modified) == MODIFIED_SHA
@@ -145,7 +146,8 @@ def build():
         assert math.isclose(row['panels']['DeltaForge']['minimumPredictedSelectivity'], reference['minimumSelectivity'])
     for method in ['DeltaForge', 'PCANN']:
         assert len({s['panels'][method]['calibrationIdentity'] for s in records if s['panels'][method]['status'] == 'complete'}) == 1, 'Group comparisons require one compatible scorer calibration'
-    return dict(schemaVersion=1, title='Our panel + modified Adaptyv sequences', construct='untagged', sources=sources,
+    attach(records, json.loads((DOCS / source_paths[4]).read_bytes()))
+    return dict(schemaVersion=1, title='Our panel + modified Adaptyv sequences', construct='untagged', sources=sources, solubilityComparison=comparison(records),
                 groups=[dict(id='our-panel', label='Our panel + AP2-9', count=10), dict(id='modified-adaptyv', label='Jokent · modified Adaptyv', count=10)],
                 subjects=records, scientificJobs=0, providerCalls=0)
 
@@ -172,6 +174,11 @@ def write_or_check(check=False):
     for p in pcann_panels:
         writer.writerow([p['group'],p['candidateId'],*[p['Kd_nM'][t] for t in TARGETS],*[p['ratiosOverBRD3'][t] for t in TARGETS[1:]],p['minimumPredictedSelectivity'],p['limitingIsoform']])
     outputs['pcann-selectivity.csv'] = stream.getvalue()
+    outputs['solubility-comparison.json'] = json.dumps(data['solubilityComparison'], indent=2)+'\n'
+    stream = io.StringIO(newline='')
+    writer = csv.DictWriter(stream, fieldnames=list(data['solubilityComparison']['rows'][0]), lineterminator='\n')
+    writer.writeheader(); writer.writerows(data['solubilityComparison']['rows'])
+    outputs['solubility-comparison.csv'] = stream.getvalue()
     for path, text in outputs.items():
         path = DOCS / 'comparison' / path
         if check:

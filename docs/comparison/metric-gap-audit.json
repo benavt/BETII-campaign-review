@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scope": "Exactly 20 untagged sequences on the comparison page. Each complex engine has 40 cells per group; each monomer engine has 10; each homodimer engine has 50 native-rank slots.",
-  "comparisonSha256": "6b513e14022e6b28c66bb44a7579cf2d3804f637475999bb1eadf15854addd7a",
+  "comparisonSha256": "7ecaa2bb259a8692a77d0b39994117372b1ba1416cbbfcb7d6b615117ec838da",
   "groups": [
     {
       "id": "our-panel",
@@ -617,6 +617,18 @@
     },
     {
       "group": "our-panel",
+      "kind": "sequence",
+      "engine": "ProtSATT eSOL",
+      "metric": "relative solubility",
+      "available": 10,
+      "modelsPresent": 10,
+      "expectedModels": 10,
+      "missingValues": 0,
+      "missingModels": 0,
+      "classification": "sequence metric"
+    },
+    {
+      "group": "our-panel",
       "kind": "complex",
       "engine": "boltz2-exact",
       "metric": "BRD3 working pocket distance",
@@ -1220,6 +1232,18 @@
       "kind": "sequence",
       "engine": "NetSolP-D",
       "metric": "usability",
+      "available": 10,
+      "modelsPresent": 10,
+      "expectedModels": 10,
+      "missingValues": 0,
+      "missingModels": 0,
+      "classification": "sequence metric"
+    },
+    {
+      "group": "modified-adaptyv",
+      "kind": "sequence",
+      "engine": "ProtSATT eSOL",
+      "metric": "relative solubility",
       "available": 10,
       "modelsPresent": 10,
       "expectedModels": 10,
