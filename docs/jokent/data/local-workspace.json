@@ -10726,6 +10726,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_879::untagged::BRD3::boltz2-exact::DeltaForge::6234af20f2795616::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 3.2871273065019206,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_879::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "f15960732033c92fbd13dc6566d6971669d9ab9e4957c33e33d9e475ac06c81a",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7d56611c9fd495de/afceaeaa11f9a961ded1675297c869cbf0e92d5c34a92760c861c4085d3edefc.response.json",
+                      "sha256": "6234af20f2795616be9ce869320ebf10b951c6555ec792f0af075c1bb18fec31",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "b6d70f1cb5c354f21c17372422a80cc60b43a9998f35dc32d02abae90675bd45",
+                      "requestSha256": "8ac0d9528919689ef8f3935b16a11c53a5e1018be2c8585ffbd353b342f0bbfa",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_879::untagged::BRD3::boltz2-exact::DeltaForge::6234af20f2795616::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.573157718001278,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_879::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "f15960732033c92fbd13dc6566d6971669d9ab9e4957c33e33d9e475ac06c81a",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7d56611c9fd495de/afceaeaa11f9a961ded1675297c869cbf0e92d5c34a92760c861c4085d3edefc.response.json",
+                      "sha256": "6234af20f2795616be9ce869320ebf10b951c6555ec792f0af075c1bb18fec31",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "b6d70f1cb5c354f21c17372422a80cc60b43a9998f35dc32d02abae90675bd45",
+                      "requestSha256": "8ac0d9528919689ef8f3935b16a11c53a5e1018be2c8585ffbd353b342f0bbfa",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -16476,7 +16572,6 @@
             "constructVariant": "untagged",
             "status": "pending",
             "missingTargets": [
-              "BRD3",
               "BRD2",
               "BRD4",
               "BRDT"
@@ -43735,6 +43830,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 26.519041197192333,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:26b5adb83d0f509c/7667d6dfbf5be544bb5ea5f6f8af0cc1ba2aaee81bbdec7d3bca25b4b4884f29.response.json",
+                      "sha256": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "db0eab2a0801aad9c2526d12d352db5acfbb2927a96e1f988840c326a32cb781",
+                      "requestSha256": "77bfd21d46c73c213fcfb574b5c8df65e13b2bd05c37fcedf8e4eb66639e3543",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -10.3361386162378,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:26b5adb83d0f509c/7667d6dfbf5be544bb5ea5f6f8af0cc1ba2aaee81bbdec7d3bca25b4b4884f29.response.json",
+                      "sha256": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "db0eab2a0801aad9c2526d12d352db5acfbb2927a96e1f988840c326a32cb781",
+                      "requestSha256": "77bfd21d46c73c213fcfb574b5c8df65e13b2bd05c37fcedf8e4eb66639e3543",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -43921,6 +44112,102 @@
                       "manifestSha256": "1c671eadc74c83779713616840a71090c355d935be0910902b8ee1864398b1d2",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 112.64518296752524,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:a2c231cf5be71c91/83890493cd1d2850b88bdd7affc6d12a712d931969f36db4d06dbe2c41ebd749.response.json",
+                      "sha256": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "2ae996d06a545fc5b8aa1a73821b2125352215e8903c244e61e7e83f178d4061",
+                      "requestSha256": "cfc8ec633f8a8f835ef33cb571bf10d9d9b777fbd979b40be0aa94be4e74758b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.479180297355597,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:a2c231cf5be71c91/83890493cd1d2850b88bdd7affc6d12a712d931969f36db4d06dbe2c41ebd749.response.json",
+                      "sha256": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "2ae996d06a545fc5b8aa1a73821b2125352215e8903c244e61e7e83f178d4061",
+                      "requestSha256": "cfc8ec633f8a8f835ef33cb571bf10d9d9b777fbd979b40be0aa94be4e74758b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -44109,6 +44396,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 125.65938408236069,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:36135a70fac5b02f/ac6354296ec096c3ead0b1f13d388aa913d876d06b751a515529ce9e0125e725.response.json",
+                      "sha256": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "75e88e224d259827936308705c41618dc8da2ca12098a9dbe4570121e0c66c31",
+                      "requestSha256": "34923a19809b147944d6dba8d1db0b07f203c30758fc7676c259f33ea0b5c59b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.414402708785047,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:36135a70fac5b02f/ac6354296ec096c3ead0b1f13d388aa913d876d06b751a515529ce9e0125e725.response.json",
+                      "sha256": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "75e88e224d259827936308705c41618dc8da2ca12098a9dbe4570121e0c66c31",
+                      "requestSha256": "34923a19809b147944d6dba8d1db0b07f203c30758fc7676c259f33ea0b5c59b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -44295,6 +44678,102 @@
                       "manifestSha256": "1c671eadc74c83779713616840a71090c355d935be0910902b8ee1864398b1d2",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 77.47604128358601,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:397929eb78707af5/1d308a8dcfaab232fd0a7f9a908271d8d25c8378573558ea116a54012db38f07.response.json",
+                      "sha256": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "6eee86b3f761a62319c2fbc70e08c2f6f00f78a4713d46e20f54da4f9ea58548",
+                      "requestSha256": "157db6e236d52eea75d297c098710aa71d5cdb93800c46864bc20521697d919c",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.700932104859856,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:397929eb78707af5/1d308a8dcfaab232fd0a7f9a908271d8d25c8378573558ea116a54012db38f07.response.json",
+                      "sha256": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "6eee86b3f761a62319c2fbc70e08c2f6f00f78a4713d46e20f54da4f9ea58548",
+                      "requestSha256": "157db6e236d52eea75d297c098710aa71d5cdb93800c46864bc20521697d919c",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -49483,14 +49962,47 @@
             "method": "DeltaForge",
             "foldingEngine": "boltz2-exact",
             "constructVariant": "untagged",
-            "status": "pending",
-            "missingTargets": [
-              "BRD3",
-              "BRD2",
-              "BRD4",
-              "BRDT"
-            ],
-            "reason": "A complete compatible four-isoform Exact panel is required."
+            "status": "complete",
+            "missingTargets": [],
+            "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+            "Kd_nM": {
+              "BRD3": 26.519041197192333,
+              "BRD2": 112.64518296752524,
+              "BRD4": 125.65938408236069,
+              "BRDT": 77.47604128358601
+            },
+            "ratiosOverBRD3": {
+              "BRD2": 4.247709490320917,
+              "BRD4": 4.73845879826397,
+              "BRDT": 2.9215249792586273
+            },
+            "minimumPredictedSelectivity": 2.9215249792586273,
+            "limitingIsoform": "BRDT",
+            "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+            "modelIds": {
+              "BRD3": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+              "BRD2": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+              "BRD4": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+              "BRDT": "miniprotein_2871::untagged::BRDT::boltz2-exact"
+            },
+            "modelSha256s": {
+              "BRD3": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+              "BRD2": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+              "BRD4": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+              "BRDT": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c"
+            },
+            "observationIds": {
+              "BRD3": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::Kd_nM",
+              "BRD2": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::Kd_nM",
+              "BRD4": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::Kd_nM",
+              "BRDT": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::Kd_nM"
+            },
+            "responseSha256s": {
+              "BRD3": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+              "BRD2": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+              "BRD4": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+              "BRDT": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36"
+            }
           },
           "pcannPredictedSelectivity": {
             "candidateId": "miniprotein_2871",
@@ -60050,6 +60562,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 2.5479654545447397,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:595c422ae7bcbbb4/99837c4e0bef946f1bca96c0b3dce05ed9044b216abbbbba6e4559329ec1dd91.response.json",
+                      "sha256": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "7cb709154ada1e967ef3e3103beb9840916ca6fcd1430891ffb884676b86a0ae",
+                      "requestSha256": "236be4727af62ef0852b97b035d8863e0d1e95c7abd11e70e8ef5e27d2f1a9c1",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.724074799768204,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:595c422ae7bcbbb4/99837c4e0bef946f1bca96c0b3dce05ed9044b216abbbbba6e4559329ec1dd91.response.json",
+                      "sha256": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "7cb709154ada1e967ef3e3103beb9840916ca6fcd1430891ffb884676b86a0ae",
+                      "requestSha256": "236be4727af62ef0852b97b035d8863e0d1e95c7abd11e70e8ef5e27d2f1a9c1",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -60236,6 +60844,102 @@
                       "manifestSha256": "0d27e27ed8d0aef31b3d51283eb8176a5c9a6055ba6a3662b4ccf8acf69fb4e6",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 2.3615364692831298,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7e257d9baa07e211/5900cf3ad16b022fd56256dc8df358c214937a0298f14842b999714383e5204c.response.json",
+                      "sha256": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "e368f1cd70be537a467f93cb4f251048114bc15a27bcf24749ca466d8538e4fa",
+                      "requestSha256": "fca29802f3eec326c09178718a4638b09bbb5673446d425a52a08f1cf4fc7cab",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.769093421504694,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7e257d9baa07e211/5900cf3ad16b022fd56256dc8df358c214937a0298f14842b999714383e5204c.response.json",
+                      "sha256": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "e368f1cd70be537a467f93cb4f251048114bc15a27bcf24749ca466d8538e4fa",
+                      "requestSha256": "fca29802f3eec326c09178718a4638b09bbb5673446d425a52a08f1cf4fc7cab",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -60424,6 +61128,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 1.7089552759256934,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:79c7d28c011f686c/a63d986a40de65fa2d6648986596722639949797e36b78d6489f75bcaf385174.response.json",
+                      "sha256": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "120f1b90331fe76c6a5e57c0ebad70dd6da4021b6b3a767236222f8bf49e2c1a",
+                      "requestSha256": "0c38ff12164b29fbf87dbd23a20bfeebb87aca44115d59583e0c99ba1b69400d",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.960720958809992,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:79c7d28c011f686c/a63d986a40de65fa2d6648986596722639949797e36b78d6489f75bcaf385174.response.json",
+                      "sha256": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "120f1b90331fe76c6a5e57c0ebad70dd6da4021b6b3a767236222f8bf49e2c1a",
+                      "requestSha256": "0c38ff12164b29fbf87dbd23a20bfeebb87aca44115d59583e0c99ba1b69400d",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -60610,6 +61410,102 @@
                       "manifestSha256": "0d27e27ed8d0aef31b3d51283eb8176a5c9a6055ba6a3662b4ccf8acf69fb4e6",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 1.7388316469203586,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:fb957354f374698b/89a6a7e6fb6fe9136d3a5a824c0025060cf329b6c1da5fc7dda2b626d7571b85.response.json",
+                      "sha256": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "a07382b4e3203b3d5f1648bbafbfc62fcbc0d976013ff887aea2f9d74925ee9a",
+                      "requestSha256": "a219aea694f8dc9d154e32dd0152dbfae420c153f9493514f812ce1f15971a59",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.950452491739007,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:fb957354f374698b/89a6a7e6fb6fe9136d3a5a824c0025060cf329b6c1da5fc7dda2b626d7571b85.response.json",
+                      "sha256": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "a07382b4e3203b3d5f1648bbafbfc62fcbc0d976013ff887aea2f9d74925ee9a",
+                      "requestSha256": "a219aea694f8dc9d154e32dd0152dbfae420c153f9493514f812ce1f15971a59",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -65798,14 +66694,47 @@
             "method": "DeltaForge",
             "foldingEngine": "boltz2-exact",
             "constructVariant": "untagged",
-            "status": "pending",
-            "missingTargets": [
-              "BRD3",
-              "BRD2",
-              "BRD4",
-              "BRDT"
-            ],
-            "reason": "A complete compatible four-isoform Exact panel is required."
+            "status": "complete",
+            "missingTargets": [],
+            "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+            "Kd_nM": {
+              "BRD3": 2.5479654545447397,
+              "BRD2": 2.3615364692831298,
+              "BRD4": 1.7089552759256934,
+              "BRDT": 1.7388316469203586
+            },
+            "ratiosOverBRD3": {
+              "BRD2": 0.9268322162967,
+              "BRD4": 0.6707136758379021,
+              "BRDT": 0.6824392551393701
+            },
+            "minimumPredictedSelectivity": 0.6707136758379021,
+            "limitingIsoform": "BRD4",
+            "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+            "modelIds": {
+              "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+              "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+              "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+              "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact"
+            },
+            "modelSha256s": {
+              "BRD3": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+              "BRD2": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+              "BRD4": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+              "BRDT": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654"
+            },
+            "observationIds": {
+              "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::Kd_nM",
+              "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::Kd_nM",
+              "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::Kd_nM",
+              "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::Kd_nM"
+            },
+            "responseSha256s": {
+              "BRD3": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+              "BRD2": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+              "BRD4": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+              "BRDT": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4"
+            }
           },
           "pcannPredictedSelectivity": {
             "candidateId": "miniprotein_1762",
@@ -161424,6 +162353,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_879::untagged::BRD3::boltz2-exact::DeltaForge::6234af20f2795616::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 3.2871273065019206,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_879::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "f15960732033c92fbd13dc6566d6971669d9ab9e4957c33e33d9e475ac06c81a",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7d56611c9fd495de/afceaeaa11f9a961ded1675297c869cbf0e92d5c34a92760c861c4085d3edefc.response.json",
+                      "sha256": "6234af20f2795616be9ce869320ebf10b951c6555ec792f0af075c1bb18fec31",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "b6d70f1cb5c354f21c17372422a80cc60b43a9998f35dc32d02abae90675bd45",
+                      "requestSha256": "8ac0d9528919689ef8f3935b16a11c53a5e1018be2c8585ffbd353b342f0bbfa",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_879::untagged::BRD3::boltz2-exact::DeltaForge::6234af20f2795616::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.573157718001278,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_879::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "f15960732033c92fbd13dc6566d6971669d9ab9e4957c33e33d9e475ac06c81a",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7d56611c9fd495de/afceaeaa11f9a961ded1675297c869cbf0e92d5c34a92760c861c4085d3edefc.response.json",
+                      "sha256": "6234af20f2795616be9ce869320ebf10b951c6555ec792f0af075c1bb18fec31",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "b6d70f1cb5c354f21c17372422a80cc60b43a9998f35dc32d02abae90675bd45",
+                      "requestSha256": "8ac0d9528919689ef8f3935b16a11c53a5e1018be2c8585ffbd353b342f0bbfa",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -167174,7 +168199,6 @@
             "constructVariant": "untagged",
             "status": "pending",
             "missingTargets": [
-              "BRD3",
               "BRD2",
               "BRD4",
               "BRDT"
@@ -194433,6 +195457,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 26.519041197192333,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:26b5adb83d0f509c/7667d6dfbf5be544bb5ea5f6f8af0cc1ba2aaee81bbdec7d3bca25b4b4884f29.response.json",
+                      "sha256": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "db0eab2a0801aad9c2526d12d352db5acfbb2927a96e1f988840c326a32cb781",
+                      "requestSha256": "77bfd21d46c73c213fcfb574b5c8df65e13b2bd05c37fcedf8e4eb66639e3543",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -10.3361386162378,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:26b5adb83d0f509c/7667d6dfbf5be544bb5ea5f6f8af0cc1ba2aaee81bbdec7d3bca25b4b4884f29.response.json",
+                      "sha256": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "db0eab2a0801aad9c2526d12d352db5acfbb2927a96e1f988840c326a32cb781",
+                      "requestSha256": "77bfd21d46c73c213fcfb574b5c8df65e13b2bd05c37fcedf8e4eb66639e3543",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -194619,6 +195739,102 @@
                       "manifestSha256": "1c671eadc74c83779713616840a71090c355d935be0910902b8ee1864398b1d2",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 112.64518296752524,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:a2c231cf5be71c91/83890493cd1d2850b88bdd7affc6d12a712d931969f36db4d06dbe2c41ebd749.response.json",
+                      "sha256": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "2ae996d06a545fc5b8aa1a73821b2125352215e8903c244e61e7e83f178d4061",
+                      "requestSha256": "cfc8ec633f8a8f835ef33cb571bf10d9d9b777fbd979b40be0aa94be4e74758b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.479180297355597,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:a2c231cf5be71c91/83890493cd1d2850b88bdd7affc6d12a712d931969f36db4d06dbe2c41ebd749.response.json",
+                      "sha256": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "2ae996d06a545fc5b8aa1a73821b2125352215e8903c244e61e7e83f178d4061",
+                      "requestSha256": "cfc8ec633f8a8f835ef33cb571bf10d9d9b777fbd979b40be0aa94be4e74758b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -194807,6 +196023,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 125.65938408236069,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:36135a70fac5b02f/ac6354296ec096c3ead0b1f13d388aa913d876d06b751a515529ce9e0125e725.response.json",
+                      "sha256": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "75e88e224d259827936308705c41618dc8da2ca12098a9dbe4570121e0c66c31",
+                      "requestSha256": "34923a19809b147944d6dba8d1db0b07f203c30758fc7676c259f33ea0b5c59b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.414402708785047,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:36135a70fac5b02f/ac6354296ec096c3ead0b1f13d388aa913d876d06b751a515529ce9e0125e725.response.json",
+                      "sha256": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "75e88e224d259827936308705c41618dc8da2ca12098a9dbe4570121e0c66c31",
+                      "requestSha256": "34923a19809b147944d6dba8d1db0b07f203c30758fc7676c259f33ea0b5c59b",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -194993,6 +196305,102 @@
                       "manifestSha256": "1c671eadc74c83779713616840a71090c355d935be0910902b8ee1864398b1d2",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 77.47604128358601,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:397929eb78707af5/1d308a8dcfaab232fd0a7f9a908271d8d25c8378573558ea116a54012db38f07.response.json",
+                      "sha256": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "6eee86b3f761a62319c2fbc70e08c2f6f00f78a4713d46e20f54da4f9ea58548",
+                      "requestSha256": "157db6e236d52eea75d297c098710aa71d5cdb93800c46864bc20521697d919c",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -9.700932104859856,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_2871::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:397929eb78707af5/1d308a8dcfaab232fd0a7f9a908271d8d25c8378573558ea116a54012db38f07.response.json",
+                      "sha256": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "6eee86b3f761a62319c2fbc70e08c2f6f00f78a4713d46e20f54da4f9ea58548",
+                      "requestSha256": "157db6e236d52eea75d297c098710aa71d5cdb93800c46864bc20521697d919c",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -200181,14 +201589,47 @@
             "method": "DeltaForge",
             "foldingEngine": "boltz2-exact",
             "constructVariant": "untagged",
-            "status": "pending",
-            "missingTargets": [
-              "BRD3",
-              "BRD2",
-              "BRD4",
-              "BRDT"
-            ],
-            "reason": "A complete compatible four-isoform Exact panel is required."
+            "status": "complete",
+            "missingTargets": [],
+            "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+            "Kd_nM": {
+              "BRD3": 26.519041197192333,
+              "BRD2": 112.64518296752524,
+              "BRD4": 125.65938408236069,
+              "BRDT": 77.47604128358601
+            },
+            "ratiosOverBRD3": {
+              "BRD2": 4.247709490320917,
+              "BRD4": 4.73845879826397,
+              "BRDT": 2.9215249792586273
+            },
+            "minimumPredictedSelectivity": 2.9215249792586273,
+            "limitingIsoform": "BRDT",
+            "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+            "modelIds": {
+              "BRD3": "miniprotein_2871::untagged::BRD3::boltz2-exact",
+              "BRD2": "miniprotein_2871::untagged::BRD2::boltz2-exact",
+              "BRD4": "miniprotein_2871::untagged::BRD4::boltz2-exact",
+              "BRDT": "miniprotein_2871::untagged::BRDT::boltz2-exact"
+            },
+            "modelSha256s": {
+              "BRD3": "ed903d3008f67390ff6d7a71a3bfa2910db32948073c3284afaaf3a804e104ba",
+              "BRD2": "7075c062bafc297107ba6d3a57c653fedae1ca31d61e4f8ec39419b142b12c1d",
+              "BRD4": "c0c3dc01c00e33eff07a73cc64b1e9879edacdce3ceb07791dacf8672c6580a9",
+              "BRDT": "a6d494331b4223b09dd2949b6d143f2e58eb4651406883c5ccfa57e723a9fc9c"
+            },
+            "observationIds": {
+              "BRD3": "miniprotein_2871::untagged::BRD3::boltz2-exact::DeltaForge::4d4f070e7d9ac9ed::Kd_nM",
+              "BRD2": "miniprotein_2871::untagged::BRD2::boltz2-exact::DeltaForge::93d6e8e323143fb5::Kd_nM",
+              "BRD4": "miniprotein_2871::untagged::BRD4::boltz2-exact::DeltaForge::67d1a89b68ea80f1::Kd_nM",
+              "BRDT": "miniprotein_2871::untagged::BRDT::boltz2-exact::DeltaForge::e3c316ad1edb548f::Kd_nM"
+            },
+            "responseSha256s": {
+              "BRD3": "4d4f070e7d9ac9ed395d99f5d109a45b025e71979752c1926c2c04e736cfec95",
+              "BRD2": "93d6e8e323143fb563a237231f5514ba89b0b3bb0f2510b33630c02121421f21",
+              "BRD4": "67d1a89b68ea80f15006f6f9c6caa30f7d7a29dbf3becb45c5e13dea7ef3fde0",
+              "BRDT": "e3c316ad1edb548f75fa0df9d9eefea434251d4757ccdd23d6bdb62297d0fe36"
+            }
           },
           "pcannPredictedSelectivity": {
             "candidateId": "miniprotein_2871",
@@ -210748,6 +212189,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 2.5479654545447397,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:595c422ae7bcbbb4/99837c4e0bef946f1bca96c0b3dce05ed9044b216abbbbba6e4559329ec1dd91.response.json",
+                      "sha256": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "7cb709154ada1e967ef3e3103beb9840916ca6fcd1430891ffb884676b86a0ae",
+                      "requestSha256": "236be4727af62ef0852b97b035d8863e0d1e95c7abd11e70e8ef5e27d2f1a9c1",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.724074799768204,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+                    "modelSha256": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+                    "target": "BRD3",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:595c422ae7bcbbb4/99837c4e0bef946f1bca96c0b3dce05ed9044b216abbbbba6e4559329ec1dd91.response.json",
+                      "sha256": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "7cb709154ada1e967ef3e3103beb9840916ca6fcd1430891ffb884676b86a0ae",
+                      "requestSha256": "236be4727af62ef0852b97b035d8863e0d1e95c7abd11e70e8ef5e27d2f1a9c1",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -210934,6 +212471,102 @@
                       "manifestSha256": "0d27e27ed8d0aef31b3d51283eb8176a5c9a6055ba6a3662b4ccf8acf69fb4e6",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 2.3615364692831298,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7e257d9baa07e211/5900cf3ad16b022fd56256dc8df358c214937a0298f14842b999714383e5204c.response.json",
+                      "sha256": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "e368f1cd70be537a467f93cb4f251048114bc15a27bcf24749ca466d8538e4fa",
+                      "requestSha256": "fca29802f3eec326c09178718a4638b09bbb5673446d425a52a08f1cf4fc7cab",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.769093421504694,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+                    "modelSha256": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+                    "target": "BRD2",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:7e257d9baa07e211/5900cf3ad16b022fd56256dc8df358c214937a0298f14842b999714383e5204c.response.json",
+                      "sha256": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "e368f1cd70be537a467f93cb4f251048114bc15a27bcf24749ca466d8538e4fa",
+                      "requestSha256": "fca29802f3eec326c09178718a4638b09bbb5673446d425a52a08f1cf4fc7cab",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -211122,6 +212755,102 @@
                       "temperatureK": 298,
                       "predictionOnly": true
                     }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 1.7089552759256934,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:79c7d28c011f686c/a63d986a40de65fa2d6648986596722639949797e36b78d6489f75bcaf385174.response.json",
+                      "sha256": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "120f1b90331fe76c6a5e57c0ebad70dd6da4021b6b3a767236222f8bf49e2c1a",
+                      "requestSha256": "0c38ff12164b29fbf87dbd23a20bfeebb87aca44115d59583e0c99ba1b69400d",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.960720958809992,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+                    "modelSha256": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+                    "target": "BRD4",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:79c7d28c011f686c/a63d986a40de65fa2d6648986596722639949797e36b78d6489f75bcaf385174.response.json",
+                      "sha256": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "120f1b90331fe76c6a5e57c0ebad70dd6da4021b6b3a767236222f8bf49e2c1a",
+                      "requestSha256": "0c38ff12164b29fbf87dbd23a20bfeebb87aca44115d59583e0c99ba1b69400d",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
                   }
                 ],
                 "nativeEvidence": {
@@ -211308,6 +213037,102 @@
                       "manifestSha256": "0d27e27ed8d0aef31b3d51283eb8176a5c9a6055ba6a3662b4ccf8acf69fb4e6",
                       "temperatureK": 298,
                       "predictionOnly": true
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::Kd_nM",
+                    "metric": "Kd_nM",
+                    "label": "DeltaForge predicted Kd",
+                    "value": 1.7388316469203586,
+                    "unit": "nM",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:fb957354f374698b/89a6a7e6fb6fe9136d3a5a824c0025060cf329b6c1da5fc7dda2b626d7571b85.response.json",
+                      "sha256": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/kd_nm"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "a07382b4e3203b3d5f1648bbafbfc62fcbc0d976013ff887aea2f9d74925ee9a",
+                      "requestSha256": "a219aea694f8dc9d154e32dd0152dbfae420c153f9493514f812ce1f15971a59",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
+                    }
+                  },
+                  {
+                    "id": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::deltaG_kcal_mol",
+                    "metric": "deltaG_kcal_mol",
+                    "label": "DeltaForge predicted \u0394G",
+                    "value": -11.950452491739007,
+                    "unit": "kcal/mol",
+                    "method": "DeltaForge",
+                    "version": "{\"affinity_scorer_version\": \"v10_boltz2_gbr_2026_03_29\", \"calibration_head\": \"v10_boltz2_autodetected\", \"scaler_sha256\": \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"score_model_sha256\": \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\", \"scorer_version\": \"v10_2_unified_parallel_2026_05_08\"}",
+                    "calibration": {
+                      "scorer_version": "v10_2_unified_parallel_2026_05_08",
+                      "affinity_scorer_version": "v10_boltz2_gbr_2026_03_29",
+                      "score_model_sha256": "53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647",
+                      "scaler_sha256": "513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac",
+                      "calibration_head": "v10_boltz2_autodetected"
+                    },
+                    "calibrationId": "[\"v10_boltz2_autodetected\", \"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\", \"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\"]",
+                    "scope": "Selected full native untagged Boltz2 Exact binder\u2013ET complex; one model per candidate\u2013isoform; computational affinity prediction.",
+                    "modelId": "miniprotein_1762::untagged::BRDT::boltz2-exact",
+                    "modelSha256": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654",
+                    "target": "BRDT",
+                    "constructVariant": "untagged",
+                    "foldingEngine": "boltz2-exact",
+                    "source": {
+                      "path": "retained-source:fb957354f374698b/89a6a7e6fb6fe9136d3a5a824c0025060cf329b6c1da5fc7dda2b626d7571b85.response.json",
+                      "sha256": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4",
+                      "label": "Approved native Boltz2 Exact DeltaForge response",
+                      "locator": {
+                        "format": "json",
+                        "pointer": "/response/delta_g"
+                      }
+                    },
+                    "provenance": {
+                      "scoringPdbSha256": "a07382b4e3203b3d5f1648bbafbfc62fcbc0d976013ff887aea2f9d74925ee9a",
+                      "requestSha256": "a219aea694f8dc9d154e32dd0152dbfae420c153f9493514f812ce1f15971a59",
+                      "quoteSha256": "57eb10df888d67fcd69a747eff166d06a5ab22c5f42e2993f1356b656c33d86a",
+                      "approvalSha256": "d51726baccdcc4fe50f618ea7e7429ddbdcd221bd07e79b94dfce208e392f102",
+                      "scoringSettings": {
+                        "receptorChains": [
+                          "B"
+                        ],
+                        "peptideChain": "A",
+                        "scorer": "auto",
+                        "aggregateMethod": "boltzmann_parallel",
+                        "includeFeatures": true,
+                        "includePae": false
+                      }
                     }
                   }
                 ],
@@ -216496,14 +218321,47 @@
             "method": "DeltaForge",
             "foldingEngine": "boltz2-exact",
             "constructVariant": "untagged",
-            "status": "pending",
-            "missingTargets": [
-              "BRD3",
-              "BRD2",
-              "BRD4",
-              "BRDT"
-            ],
-            "reason": "A complete compatible four-isoform Exact panel is required."
+            "status": "complete",
+            "missingTargets": [],
+            "reason": "Predicted affinity ratios from four exact native models and one compatible DeltaForge calibration.",
+            "Kd_nM": {
+              "BRD3": 2.5479654545447397,
+              "BRD2": 2.3615364692831298,
+              "BRD4": 1.7089552759256934,
+              "BRDT": 1.7388316469203586
+            },
+            "ratiosOverBRD3": {
+              "BRD2": 0.9268322162967,
+              "BRD4": 0.6707136758379021,
+              "BRDT": 0.6824392551393701
+            },
+            "minimumPredictedSelectivity": 0.6707136758379021,
+            "limitingIsoform": "BRD4",
+            "calibrationIdentity": "{\"affinity_scorer_version\":\"v10_boltz2_gbr_2026_03_29\",\"calibration_head\":\"v10_boltz2_autodetected\",\"scaler_sha256\":\"513b59d2128cfc433f3741e653972be2c86728623f80661c42262e7381ba7bac\",\"score_model_sha256\":\"53112f40b01dceb762022bb9c20460218ab870312f6ca21f0367501adfafb647\",\"scorer_version\":\"v10_2_unified_parallel_2026_05_08\"}",
+            "modelIds": {
+              "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact",
+              "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact",
+              "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact",
+              "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact"
+            },
+            "modelSha256s": {
+              "BRD3": "0f99fd82be7e3f69302abd6ba6cb142c9eeda073fea84d3f4009c6de7dc1469d",
+              "BRD2": "7df4db2aead9c6385fe66317ff158f8e0c6fc5e749f4c08f240ae3d48cc8e18b",
+              "BRD4": "bfa1f66531781c367324cc5c80ab7d423fbe660676a508a78502401cee1f0b62",
+              "BRDT": "89ace94f806d85cd041731fe56ca70bb4f766b753d6f8cc7c31cf27146a37654"
+            },
+            "observationIds": {
+              "BRD3": "miniprotein_1762::untagged::BRD3::boltz2-exact::DeltaForge::4d8b0c4cdac4ffe1::Kd_nM",
+              "BRD2": "miniprotein_1762::untagged::BRD2::boltz2-exact::DeltaForge::1bd660c3f2a1e848::Kd_nM",
+              "BRD4": "miniprotein_1762::untagged::BRD4::boltz2-exact::DeltaForge::a34c5445d1925956::Kd_nM",
+              "BRDT": "miniprotein_1762::untagged::BRDT::boltz2-exact::DeltaForge::857d70fb5e3b510b::Kd_nM"
+            },
+            "responseSha256s": {
+              "BRD3": "4d8b0c4cdac4ffe122d37c031e5e8427a6ef1759a9b7e71110aecff78b074209",
+              "BRD2": "1bd660c3f2a1e8486af07d8878a0e49c0e3d7e27224bdb2ed19995fe00143cff",
+              "BRD4": "a34c5445d19259568664ff88c2c7f9d0af142cf09909b926bcabb17857eb19f6",
+              "BRDT": "857d70fb5e3b510b714e72aa6e4c67f85b41723eef6db2dc4ad5f1b35fb7a1f4"
+            }
           },
           "pcannPredictedSelectivity": {
             "candidateId": "miniprotein_1762",
