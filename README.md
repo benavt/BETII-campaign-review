@@ -4,6 +4,12 @@ A public, self-contained review snapshot of nine candidates from the edited BETI
 
 Open **[Campaign Manager](https://benavt.github.io/BETII-campaign-review/?view=candidates)** or **[selection and sequences](https://benavt.github.io/BETII-campaign-review/triage.html)**.
 
+## Twenty-sequence group comparison
+
+Open **[our panel + modified Adaptyv comparison](https://benavt.github.io/BETII-campaign-review/comparison/)** for our nine candidates plus AP2-9 and exactly the ten sequences from `sequences_for_Adaptyv_modified.fa`. Compare saved metrics with group filters, method/isoform/scorer controls, sortable tables, selectable scatterplot axes and sequence-level evidence details. The default view uses untagged Boltz2 Exact complexes; affinity scorers and native methods remain separate. DeltaForge has 19 complete panels; miniprotein_879 lacks three comparator Kds. PCANN has ten Jokent panels. Downloads include all 20 sequences, affinity/selectivity CSV, current filtered table CSV and full source-bound metric JSON.
+
+`python3 scripts/build_comparison.py --check` reproduces the dataset from the two frozen public workspaces and the hash-pinned modified FASTA. It verifies exact sequences, native coordinate hashes, model-bound observations and compatible four-isoform scoring calibrations without launching scientific jobs.
+
 ## Jokent collaborator sequences
 
 Open **[Jokent Sequences](https://benavt.github.io/BETII-campaign-review/jokent/?view=explorer)** or the **[complete folding status and downloads](https://benavt.github.io/BETII-campaign-review/jokent/status.html)**. This separate review contains all 18 unique sequences supplied in the two collaborator FASTAs, used as supplied without tags. The modified FASTA repeats ten original sequences.
