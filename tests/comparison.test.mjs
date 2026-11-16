@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {rowData, sortRows, median, plotRows, solubilityRows} from '../docs/comparison/metrics.mjs';
+import {rowData, sortRows, median, plotRows, solubilityRows, metricCoverage, completeMetrics} from '../docs/comparison/metrics.mjs';
 
 const data=JSON.parse(readFileSync(new URL('../docs/comparison/data.json',import.meta.url)));
 const state={kind:'complex',engine:'boltz2-exact',target:'BRD3',scorer:'DeltaForge',rank:1};
@@ -98,4 +98,25 @@ test('reference equality, tied ranks, missing scores and sequence hash mismatche
   assert.equal(rows[0].netRank,1.5);assert.equal(rows[1].netRank,1.5);
   assert.equal(rows[3].opposite,null);assert.equal(rows[3].rankShift,null);
   subjects[0].protSATT.sequenceSha256='mismatch';assert.equal(solubilityRows(subjects)[0].opposite,null);
+});
+
+test('view coverage uses all twenty sequences and stays specific to the scorer, method and rank',()=>{
+  const offered=(selection)=>completeMetrics(metricCoverage(data.subjects.map(s=>rowData(s,selection))),20);
+  const defaults=offered(state);
+  for(const key of ['Kd_nM','deltaG_kcal_mol','ipSAE_full','ipTM','pTM','mean_pLDDT',
+    'native_confidence_score','mean_residue_min_A','solubility','protsatt_esol']) assert.ok(defaults.includes(key),key);
+  for(const key of ['minimumPredictedSelectivity','BRD2_ratio','BRD4_ratio','BRDT_ratio','ipSAE_core'])
+    assert.ok(!defaults.includes(key),key);
+  assert.equal(defaults.length,13);
+  const pcann=offered({...state,scorer:'PCANN'});
+  for(const key of ['minimumPredictedSelectivity','BRD2_ratio','BRD4_ratio','BRDT_ratio']) assert.ok(pcann.includes(key),key);
+  assert.equal(pcann.length,17);
+  assert.ok(!offered({...state,target:'BRD2'}).includes('Kd_nM'));
+  for(const target of ['BRD3','BRD2','BRD4','BRDT'])
+    assert.ok(offered({...state,engine:'openfold',target}).includes('ipSAE_full'));
+  for(const engine of ['af3','boltz2-exact','opendde-exact','openfold']) for(let rank=1;rank<=5;rank++) {
+    const metrics=offered({...state,kind:'homodimer',engine,rank});
+    for(const key of ['ipTM','pTM','mean_pLDDT']) assert.ok(metrics.includes(key),[engine,rank,key]);
+    assert.ok(!metrics.includes('Kd_nM'));
+  }
 });

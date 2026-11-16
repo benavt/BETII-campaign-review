@@ -8,6 +8,7 @@ import json
 import math
 from pathlib import Path
 
+from comparison_recovery import apply_recovery
 from jokent_selectivity import score_calibration
 from solubility_comparison import attach, comparison
 
@@ -120,7 +121,7 @@ def subject_record(subject, group, base, pcann):
 
 
 def build():
-    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa', 'comparison/pcann-observations.json', 'comparison/protsatt-scores.json']
+    source_paths = ['data/local-workspace.json', 'jokent/data/local-workspace.json', 'comparison/sequences_for_Adaptyv_modified.fa', 'comparison/pcann-observations.json', 'comparison/protsatt-scores.json', 'comparison/recovered-evidence.json']
     sources = {p: dict(sha256=sha((DOCS / p).read_bytes())) for p in source_paths}
     modified = (DOCS / source_paths[2]).read_bytes()
     assert sha(modified) == MODIFIED_SHA
@@ -147,9 +148,10 @@ def build():
     for method in ['DeltaForge', 'PCANN']:
         assert len({s['panels'][method]['calibrationIdentity'] for s in records if s['panels'][method]['status'] == 'complete'}) == 1, 'Group comparisons require one compatible scorer calibration'
     attach(records, json.loads((DOCS / source_paths[4]).read_bytes()))
+    recovery = apply_recovery(DOCS, records, json.loads((DOCS / source_paths[5]).read_bytes()))
     return dict(schemaVersion=1, title='Our panel + modified Adaptyv sequences', construct='untagged', sources=sources, solubilityComparison=comparison(records),
                 groups=[dict(id='our-panel', label='Our panel + AP2-9', count=10), dict(id='modified-adaptyv', label='Jokent · modified Adaptyv', count=10)],
-                subjects=records, scientificJobs=0, providerCalls=0)
+                subjects=records, savedEvidenceRecovery=recovery, scientificJobs=0, providerCalls=0)
 
 
 def csv_text(data):
