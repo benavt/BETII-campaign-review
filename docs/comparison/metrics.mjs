@@ -42,6 +42,16 @@ export function rowData(s, state) {
   }
   return {subject: s, model, values, panel, compatible, limitingIsoform: compatible && panel.status === 'complete' ? panel.limitingIsoform : null};
 }
+// Call with the full two-cohort population before applying display filters.
+export function metricCoverage(rows) {
+  return Object.fromEntries(Object.keys(metrics).map(key => [key, {
+    count: rows.filter(r => finite(r.values[key])).length,
+    allPositive: rows.length > 0 && rows.every(r => finite(r.values[key]) && r.values[key] > 0)
+  }]));
+}
+export function completeMetrics(coverage, total) {
+  return Object.keys(metrics).filter(key => total > 0 && coverage[key].count === total);
+}
 export function sortRows(rows, key, descending = false) {
   return [...rows].sort((a, b) => {
     if (key === 'label' || key === 'group') return (descending ? -1 : 1) * String(a.subject[key]).localeCompare(String(b.subject[key]));
